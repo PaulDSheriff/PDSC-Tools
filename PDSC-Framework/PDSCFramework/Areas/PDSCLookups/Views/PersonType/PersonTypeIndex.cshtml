@@ -1,0 +1,24 @@
+@{
+  ViewData["Title"] = "Person Type Maintenance";
+}
+
+<h2>Person Type Maintenance</h2>
+
+@if (Model.IsDetailVisible) {
+  <partial name="_PersonTypeDetail" />
+}
+else {
+  <partial name="_PersonTypeSearch" />
+  <partial name="_PersonTypeList" />
+}
+
+@section Scripts
+{
+  <script>
+    $(document).ready(function () {
+      // Setup the form submit
+      pdscController.formSubmit();
+    });
+  </script>
+  <partial name="_ValidationScriptsPartial" />
+}

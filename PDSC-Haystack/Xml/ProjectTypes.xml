@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ProjectTypes>
+  <ProjectType>
+    <ProjectId>1</ProjectId>
+    <ProjectName>.NET 5 Entity Framework - Data Access Layer</ProjectName>
+    <IsIncluded>True</IsIncluded>
+    <IsSelected>True</IsSelected>
+    <IsVisible>True</IsVisible>
+  </ProjectType>
+</ProjectTypes>

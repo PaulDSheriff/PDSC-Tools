@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- This XML document is meant to be stored into the DBProject table -->
+<!-- This allows each project to modify these settings -->
+<Includes>
+  <IncludeWhen>
+    <Key>FW50</Key>
+    <Value>False</Value>
+  </IncludeWhen>
+  <IncludeWhen>
+    <Key>FW42</Key>
+    <Value>False</Value>
+  </IncludeWhen>
+  <IncludeWhen>
+    <Key>SilverlightPaging</Key>
+    <Value>False</Value>
+  </IncludeWhen>
+</Includes>

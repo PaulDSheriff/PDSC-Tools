@@ -1,0 +1,1 @@
+﻿services.AddScoped<IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search>, <|CLASS_NAME|>Repository>();

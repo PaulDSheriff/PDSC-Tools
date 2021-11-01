@@ -1,0 +1,17 @@
+@if (Model.IsPagerVisible) {
+  <div class="row">
+    <div class="col-12">
+      <ul class="pagination">
+        @foreach (PDSC.PagerClasses.PagerItem item in Model.Pages) {
+          <li class="page-item @item.CssClass">
+            <a class="page-link" href="#"
+               onclick="pdscController.pageOnClick('@item.Argument')"
+               title="@item.Tooltip">
+              @Html.Raw(item.Text)
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+}

@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DBUpdates>
+   <Update>
+      <Version>1.02</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD MinLength int NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBColumn</TableName>
+      <NewColumnName>MinLength</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.07</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD IsSearchField bit NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBColumn</TableName>
+      <NewColumnName>IsSearchField</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.25</Version>
+      <SQL>ALTER TABLE Haystack.DBObject ADD EntityToMapTo varchar(100) NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBObject</TableName>
+      <NewColumnName>EntityToMapTo</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.33</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD ColumnAttributes varchar(500) NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBColumn</TableName>
+      <NewColumnName>ColumnAttributes</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.33</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD ColumnRegularExpression varchar(500) NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBColumn</TableName>
+      <NewColumnName>ColumnRegularExpression</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.33</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD RegularExpressionMessage varchar(255) NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBColumn</TableName>
+      <NewColumnName>RegularExpressionMessage</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.33</Version>
+      <SQL>ALTER TABLE Haystack.DBObject ADD GenViewAsTable bit NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBObject</TableName>
+      <NewColumnName>GenViewAsTable</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.33</Version>
+      <SQL>ALTER TABLE Haystack.DBObject ADD GenViewSQL bit NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBObject</TableName>
+      <NewColumnName>GenViewSQL</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.33</Version>
+      <SQL>ALTER TABLE Haystack.DBProject ADD RegularExpressionMessage varchar(255) NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBProject</TableName>
+      <NewColumnName>RegularExpressionMessage</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.33</Version>
+      <SQL>UPDATE Haystack.DBColumn SET ColumnAttributes = '[DataMember]';</SQL>
+      <SchemaName></SchemaName>
+      <TableName></TableName>
+      <NewColumnName></NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.34</Version>
+      <SQL>ALTER TABLE Haystack.DBProject ADD UseSeparateAssemblies bit;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBProject</TableName>
+      <NewColumnName>UseSeparateAssemblies</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.40</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD DatabaseDataType varchar(100) NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBColumn</TableName>
+      <NewColumnName>DatabaseDataType</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.40</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD OrdinalPosition int NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBColumn</TableName>
+      <NewColumnName>OrdinalPosition</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.40</Version>
+      <SQL>ALTER TABLE Haystack.DBGeneratorStatement ADD IsSearch bit NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBGeneratorStatement</TableName>
+      <NewColumnName>IsSearch</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.41</Version>
+      <SQL>ALTER TABLE Haystack.DBProject ADD IsPDSAFrameworkProject bit NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBProject</TableName>
+      <NewColumnName>IsPDSAFrameworkProject</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.41</Version>
+      <SQL>ALTER TABLE Haystack.DBObject ADD DBObjectDescriptionPlural varchar(100) NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBObject</TableName>
+      <NewColumnName>DBObjectDescriptionPlural</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>ALTER TABLE Haystack.DBProject ADD [ProjectSolutionFile] [varchar](500) NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBProject</TableName>
+      <NewColumnName>ProjectSolutionFile</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD GridAttribute varchar(500) NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBColumn</TableName>
+      <NewColumnName>GridAttribute</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD EditAttribute varchar(500) NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBColumn</TableName>
+      <NewColumnName>EditAttribute</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD DisplayInGrid bit NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBColumn</TableName>
+      <NewColumnName>DisplayInGrid</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD Tooltip varchar(80) NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBColumn</TableName>
+      <NewColumnName>Tooltip</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD CONSTRAINT def_DisplayInGrid DEFAULT 1 FOR DisplayInGrid;</SQL>
+      <SchemaName></SchemaName>
+      <TableName></TableName>
+      <NewColumnName></NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>UPDATE Haystack.DBColumn SET DisplayInGrid = 1;</SQL>
+      <SchemaName></SchemaName>
+      <TableName></TableName>
+      <NewColumnName></NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD DisplayInEdit bit NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBColumn</TableName>
+      <NewColumnName>DisplayInEdit</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD CONSTRAINT def_DisplayInEdit DEFAULT 1 FOR DisplayInEdit;</SQL>
+      <SchemaName></SchemaName>
+      <TableName></TableName>
+      <NewColumnName></NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>UPDATE Haystack.DBColumn SET DisplayInEdit = 1;</SQL>
+      <SchemaName></SchemaName>
+      <TableName></TableName>
+      <NewColumnName></NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD IsFieldReadOnlyOnEdit bit NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBColumn</TableName>
+      <NewColumnName>IsFieldReadOnlyOnEdit</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD CONSTRAINT def_IsFieldReadOnlyOnEdit DEFAULT 0 FOR IsFieldReadOnlyOnEdit;</SQL>
+      <SchemaName></SchemaName>
+      <TableName></TableName>
+      <NewColumnName></NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>UPDATE Haystack.DBColumn SET IsFieldReadOnlyOnEdit = 0;</SQL>
+      <SchemaName></SchemaName>
+      <TableName></TableName>
+      <NewColumnName></NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD IsReturnValueInService bit NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBColumn</TableName>
+      <NewColumnName>IsReturnValueInService</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD CONSTRAINT def_IsReturnValueInService DEFAULT 0 FOR IsReturnValueInService;</SQL>
+      <SchemaName></SchemaName>
+      <TableName></TableName>
+      <NewColumnName></NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>UPDATE Haystack.DBColumn SET IsReturnValueInService = 1;</SQL>
+      <SchemaName></SchemaName>
+      <TableName></TableName>
+      <NewColumnName></NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD DisplayOrder int NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBColumn</TableName>
+      <NewColumnName>DisplayOrder</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD CONSTRAINT def_DisplayOrder DEFAULT 0 FOR DisplayOrder;</SQL>
+      <SchemaName></SchemaName>
+      <TableName></TableName>
+      <NewColumnName></NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>UPDATE Haystack.DBColumn SET DisplayOrder = OrdinalPosition;</SQL>
+      <SchemaName></SchemaName>
+      <TableName></TableName>
+      <NewColumnName></NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>UPDATE Haystack.Haystack.DBColumn SET DisplayInGrid = 0, DisplayInEdit = 0 WHERE IsStandardField = 1;</SQL>
+      <SchemaName></SchemaName>
+      <TableName></TableName>
+      <NewColumnName></NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.45</Version>
+      <SQL>ALTER TABLE Haystack.DBProject ADD [ProjectSolutionFile] [varchar](500) NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBProject</TableName>
+      <NewColumnName>ProjectSolutionFile</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.57</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD IsMaxColumn bit NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBColumn</TableName>
+      <NewColumnName>IsMaxColumn</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.70</Version>
+      <SQL>ALTER TABLE Haystack.DBProject ADD UseNullableTypes bit NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBProject</TableName>
+      <NewColumnName>UseNullableTypes</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.70</Version>
+      <SQL>ALTER TABLE Haystack.DBProject ADD CONSTRAINT def_UseNullableTypes DEFAULT 0 FOR UseNullableTypes;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBProject</TableName>
+      <NewColumnName></NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.70</Version>
+      <SQL>ALTER TABLE Haystack.DBProject ADD TemplatesToGen varchar(150) NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBProject</TableName>
+      <NewColumnName>TemplatesToGen</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.80</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD HTML5Type varchar(12) NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBColumn</TableName>
+      <NewColumnName>HTML5Type</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.80</Version>
+      <SQL>ALTER TABLE Haystack.DBColumn ADD MVCMethod varchar(20) NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBColumn</TableName>
+      <NewColumnName>MVCMethod</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.80</Version>
+      <SQL>ALTER TABLE Haystack.DBProject ADD AddDataMember bit NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBProject</TableName>
+      <NewColumnName>AddDataMember</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.80</Version>
+      <SQL>UPDATE Haystack.DBProject SET AddDataMember = 0;</SQL>
+      <SchemaName></SchemaName>
+      <TableName></TableName>
+      <NewColumnName></NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.80</Version>
+      <SQL>ALTER TABLE Haystack.DBProject ADD UseDataAnnotations bit NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBProject</TableName>
+      <NewColumnName>UseDataAnnotations</NewColumnName>
+   </Update>
+   <Update>
+      <Version>1.80</Version>
+      <SQL>UPDATE Haystack.DBProject SET UseDataAnnotations = 0;</SQL>
+      <SchemaName></SchemaName>
+      <TableName></TableName>
+      <NewColumnName></NewColumnName>
+   </Update>
+   <Update>
+      <Version>2.00</Version>
+      <SQL>ALTER TABLE Haystack.DBProject ADD UseGlobalization bit NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBProject</TableName>
+      <NewColumnName>UseGlobalization</NewColumnName>
+   </Update>
+   <Update>
+      <Version>2.00</Version>
+      <SQL>UPDATE Haystack.DBProject SET UseGlobalization = 0;</SQL>
+      <SchemaName></SchemaName>
+      <TableName></TableName>
+      <NewColumnName></NewColumnName>
+   </Update>
+   <Update>
+      <Version>2.00</Version>
+      <SQL>ALTER TABLE Haystack.DBProject ADD UseDataAccessLayer bit NULL;</SQL>
+      <SchemaName>Haystack</SchemaName>
+      <TableName>DBProject</TableName>
+      <NewColumnName>UseDataAccessLayer</NewColumnName>
+   </Update>
+   <Update>
+      <Version>2.00</Version>
+      <SQL>UPDATE Haystack.DBProject SET UseDataAccessLayer = 0;</SQL>
+      <SchemaName></SchemaName>
+      <TableName></TableName>
+      <NewColumnName></NewColumnName>
+   </Update>
+</DBUpdates>

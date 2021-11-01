@@ -1,0 +1,5 @@
+SELECT 
+{|FOR EACH COLUMN:IsCustomColumn=False|}
+<|COMMA|><|COLUMN_NAME|>
+{|END|}
+FROM <|TABLE_NAME|>

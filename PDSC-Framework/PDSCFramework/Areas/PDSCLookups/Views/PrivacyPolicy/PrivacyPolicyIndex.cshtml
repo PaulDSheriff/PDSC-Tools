@@ -1,0 +1,24 @@
+@{
+  ViewData["Title"] = "Privacy Policy Maintenance";
+}
+
+<h2>Privacy Policy Maintenance</h2>
+
+@if (Model.IsDetailVisible) {
+  <partial name="_PrivacyPolicyDetail" />
+}
+else {
+  <partial name="_PrivacyPolicySearch" />
+  <partial name="_PrivacyPolicyList" />
+}
+
+@section Scripts
+{
+  <script>
+    $(document).ready(function () {
+      // Setup the form submit
+      pdscController.formSubmit();
+    });
+  </script>
+  <partial name="_ValidationScriptsPartial" />
+}

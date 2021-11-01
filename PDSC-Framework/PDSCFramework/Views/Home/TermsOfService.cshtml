@@ -1,0 +1,28 @@
+﻿@model PDSC.Common.ViewModelLayer.SiteTermsViewModel
+
+@{
+  ViewBag.Title = "Terms of Service";
+  ViewBag.MetaDescription = Model.AppSettings.ApplicationName + " Terms of Service";
+  ViewBag.MetaKeywords = Model.AppSettings.ApplicationName + " Terms of Service";
+}
+
+<div class="jumbotron jumbotron-small jumbotron-fluid">
+  <div class="row">
+    <div class="col-sm-9">
+      <h1>@Model.AppSettings.ApplicationName Terms of Service</h1>
+      <p class="lead">The following are the Terms of Service for using the @Model.AppSettings.ApplicationName service.</p>
+      <p><strong>Terms Last Updated on</strong> @Model.SelectedEntity.InsertDate.ToShortDateString()</p>
+    </div>
+    <div class="col-sm-3 d-none d-sm-block">
+      <img class="img-fluid rounded float-right" src="~/Images/SiteLogo.png" asp-append-version="true" />
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <div class="jumbotron jumbotron-small jumbotron-fluid">
+      @Html.Raw(Model.SelectedEntity.TermsText)
+    </div>
+  </div>
+</div>

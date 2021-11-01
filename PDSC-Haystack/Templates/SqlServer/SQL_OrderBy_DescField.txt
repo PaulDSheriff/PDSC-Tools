@@ -1,0 +1,4 @@
+ORDER BY 
+{|FOR EACH COLUMN:IsDescriptionField=True|}
+<|COLUMN_NAME|>
+{|END|}

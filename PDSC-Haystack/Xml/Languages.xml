@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Languages>
+  <Language>
+    <Name>C#</Name>
+    <Code>CS</Code>
+    <DotNetTypesFile>CS_DotNetTypes</DotNetTypesFile>
+    <TemplateGroupFile>CS_TemplateGroups</TemplateGroupFile>
+    <Self>this</Self>
+    <NullToken>null</NullToken>
+    <TrueValue>true</TrueValue>
+    <FalseValue>false</FalseValue>
+    <LineEnding>;</LineEnding>
+    <Comment>//</Comment>
+    <And>&amp;&amp;</And>
+    <Or>||</Or>
+    <Concatenation>+</Concatenation>
+    <NullablePattern>_DOTNETTYPE_?</NullablePattern>
+    <SystemTypeOf>typeof(_DOTNETTYPE_)</SystemTypeOf>
+		<!-- In the following ColumnAttributes you can specify [DataMember] if you want -->
+    <ColumnAttributes></ColumnAttributes>
+  </Language>
+</Languages>

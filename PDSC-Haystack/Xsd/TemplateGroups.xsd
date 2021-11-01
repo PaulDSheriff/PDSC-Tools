@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="TemplateGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="TemplateGroup">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GroupId" type="xs:string" />
+              <xs:element name="GroupName" type="xs:string" />
+              <xs:element name="TemplateFileName" type="xs:string" />
+              <xs:element name="IsSelected" type="xs:string" />
+              <xs:element name="IsVisible" type="xs:string" />
+              <xs:element name="IsRequired" type="xs:string" />
+              <xs:element name="ProjectId" type="xs:string" />
+              <xs:element name="IsPDSAFramework" type="xs:string" />
+              <xs:element name="AddDataMember" type="xs:string" />
+              <xs:element name="UseDataAnnotations" type="xs:string" />
+               <xs:element name="UseDataAccessLayer" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

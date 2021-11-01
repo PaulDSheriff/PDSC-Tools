@@ -1,0 +1,55 @@
+@using PDSC.Common.EntityLayer
+@model PDSC.Common.ViewModelLayer.USStateCodeViewModel
+
+@if (Model.DataCollection == null || Model.DataCollection.Count == 0) {
+  <p>Enter search parameters, then click Search button</p>
+}
+else {
+  <form method="get" asp-action="SortPage">
+    <partial name="_SortPageHiddenFields" />
+
+    <table class="table table-bordered table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Actions</th>
+          <th>
+            <a href="#" onclick="pdscController.sortOnHeaderClick('StateCode');">
+              State Code
+            </a>
+          </th>
+          <th>
+            <a href="#" onclick="pdscController.sortOnHeaderClick('StateName');">
+              State Name
+            </a>
+          </th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (USStateCode item in Model.DataCollection) {
+        <tr>
+          <td>
+            <a asp-action="Edit"
+               asp-route-id="@item.StateCode"
+               class="btn btn-primary">
+              Edit
+            </a>
+          </td>
+          <td>@Html.DisplayFor(m => item.StateCode)</td>
+          <td>@Html.DisplayFor(m => item.StateName)</td>
+          <td>
+            @Html.ActionLink("Delete", "Delete",
+                new { id = item.StateCode },
+                new
+                  {
+                    onclick = "return confirm('Delete this US State Code?');",
+                    @class = "btn btn-danger"
+                  })
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+    <partial name="_PagerPartial" />
+  </form>
+}

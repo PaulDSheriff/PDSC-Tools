@@ -1,0 +1,1 @@
+             xmlns:vm="clr-namespace:<|NAMESPACE|>.ViewModel<|ASSEMBLY_NAMESPACE:.ViewModelLayer|>"

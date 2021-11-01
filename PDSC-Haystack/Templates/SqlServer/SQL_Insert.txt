@@ -1,0 +1,12 @@
+INSERT INTO <|TABLE_NAME|>
+(
+{|FOR EACH COLUMN:IsInsertable=True|}
+<|COMMA|><|COLUMN_NAME|>
+{|END|}
+) 
+VALUES 
+(
+{|FOR EACH COLUMN:IsInsertable=True|}
+<|COMMA|><|COLUMN_PARAMETER|>
+{|END|}
+)

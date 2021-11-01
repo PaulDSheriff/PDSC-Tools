@@ -1,0 +1,3 @@
+﻿{|FOR EACH COLUMN:IsPrimaryKey=True|}
+<|COMMA|><|COLUMN_CONVERT_TO_METHOD|>(txt<|COLUMN_PUBLIC_PROPERTY|>.Text)
+{|END|}

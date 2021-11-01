@@ -1,0 +1,39 @@
+﻿@model PDSC.Common.ViewModelLayer.UnsubscribeViewModel
+
+@{
+  ViewBag.Title = "Unsubscribe";
+  ViewBag.MetaDescription = Model.AppSettings.ApplicationName + " Unsubscribe";
+  ViewBag.MetaKeywords = Model.AppSettings.ApplicationName + " Unsubscribe";
+}
+
+<div class="jumbotron jumbotron-small jumbotron-fluid">
+  <div class="row">
+    <div class="col-sm-9">
+      <h1>@Model.AppSettings.ApplicationName Unsubscribe</h1>
+      <p class="lead">If you no longer wish to receive emails from @Model.AppSettings.ApplicationName, enter your email and click the button below.</p>
+    </div>
+    <div class="col-sm-3 d-none d-sm-block">
+      <img class="img-fluid rounded float-right" src="~/Images/SiteLogo.png" asp-append-version="true" />
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <form method="post">
+      <div asp-validation-summary="All" class="text-danger"></div>
+      <div class="form-group">
+        <label asp-for="EmailAddress"></label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">*</span>
+          </div>
+          <input asp-for="EmailAddress" class="form-control" />
+        </div>
+        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+      </div>
+      <button data-custom-cmd="unsubscribe" class="btn btn-primary">Unsubscribe</button>
+      <button data-custom-cmd="cancel" class="btn btn-primary">Cancel</button>
+    </form>
+  </div>
+</div>

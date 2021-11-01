@@ -1,0 +1,25 @@
+@model PDSC.Common.ViewModelLayer.PrivacyPolicyViewModel
+
+<form method="post" asp-action="PrivacyPolicyIndex">  
+  <input type="hidden" asp-for="SelectedEntity.PrivacyPolicyId" />
+
+  <partial name="_ValidationPartial" />
+
+  <div class="form-group">
+    <label asp-for="SelectedEntity.PrivacyText" class="control-label"></label>
+    <input asp-for="SelectedEntity.PrivacyText" class="form-control" />
+    <span asp-validation-for="SelectedEntity.PrivacyText" class="text-danger" />
+  </div>
+  <div class="form-group">
+    <label asp-for="SelectedEntity.IsActive" class="control-label"></label>
+    <input asp-for="SelectedEntity.IsActive" class="form-control" />
+    <span asp-validation-for="SelectedEntity.IsActive" class="text-danger" />
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-primary">Save</button>
+    <a class="btn btn-secondary" formnovalidate="formnovalidate" asp-action="PrivacyPolicyIndex">
+      Cancel
+    </a>
+  </div>
+</form>

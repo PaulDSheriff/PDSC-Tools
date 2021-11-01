@@ -1,0 +1,20 @@
+﻿    #region Public Properties
+    {|FOR EACH COLUMN|}
+
+    /// <summary>
+    /// Get/Set the <|COLUMN_HEADER_TEXT|> value
+    /// </summary>
+    <|COLUMN_DATA_ANNOTATIONS|>
+    public <|COLUMN_DOTNET_DATATYPE_NO_NULLABLE|> <|COLUMN_PUBLIC_PROPERTY|> { get; set; }
+    {|END|}
+
+    {|REMOVE_WHEN_AUTO_NUMBER|}
+    {|FOR EACH COLUMN:IsPrimaryKey=True|}
+
+    /// <summary>
+    /// Get/Set the <|COLUMN_HEADER_TEXT|>Old value
+    /// </summary>
+    public <|COLUMN_DOTNET_DATATYPE_NO_NULLABLE|> <|COLUMN_PUBLIC_PROPERTY|>Old { get; set; }
+    {|END|}
+    {|END_REMOVE|}
+    #endregion

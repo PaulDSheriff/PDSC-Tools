@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DBServers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Server">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" type="xs:string" />
+              <xs:element name="Name" type="xs:string" />
+              <xs:element name="ProviderName" type="xs:string" />
+              <xs:element name="DBDataTypesFile" type="xs:string" />
+              <xs:element name="DBDataTypesExcludeFile" type="xs:string" />
+              <xs:element name="SPSettingsFile" type="xs:string" />
+              <xs:element name="TemplatesFile" type="xs:string" />
+              <xs:element name="TemplatesPath" type="xs:string" />
+              <xs:element name="UsePackageName" type="xs:string" />
+              <xs:element name="PackageSpecTemplateFile" type="xs:string" />
+              <xs:element name="PackageBodyTemplateFile" type="xs:string" />
+              <xs:element name="PackageSuffix" type="xs:string" />
+              <xs:element name="SPBlankFile" type="xs:string" />
+              <xs:element name="DefaultDataType" type="xs:string" />
+              <xs:element name="MaxKeyword" type="xs:string" />
+              <xs:element name="AllowSPGeneration" type="xs:string" />
+              <xs:element name="UsePrecisionScale" type="xs:string" />
+              <xs:element name="CommandParameterPrefix" type="xs:string" />
+              <xs:element name="SPParameterPrefix" type="xs:string" />
+              <xs:element name="NameOfReturnValueParam" type="xs:string" />
+              <xs:element name="AndOperator" type="xs:string" />
+              <xs:element name="OrOperator" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

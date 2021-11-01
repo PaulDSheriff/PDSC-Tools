@@ -1,0 +1,24 @@
+﻿@{
+  ViewData["Title"] = "<|CLASS_DESCRIPTION|> Maintenance";
+}
+
+<h2><|CLASS_DESCRIPTION|> Maintenance</h2>
+
+@if (Model.IsDetailVisible) {
+  <partial name="_<|CLASS_NAME|>Detail" />
+}
+else {
+  <partial name="_<|CLASS_NAME|>Search" />
+  <partial name="_<|CLASS_NAME|>List" />
+}
+
+@section Scripts
+{
+  <script>
+    $(document).ready(function () {
+      // Setup the form submit
+      pdscController.formSubmit();
+    });
+  </script>
+  <partial name="_ValidationScriptsPartial" />
+}

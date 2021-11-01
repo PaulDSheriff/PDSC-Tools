@@ -1,0 +1,60 @@
+@model PDSC.Common.ViewModelLayer.ContactUsViewModel
+
+<form method="post" asp-action="ContactUsIndex">  
+  <input type="hidden" asp-for="SelectedEntity.ContactUsId" />
+
+  <partial name="_ValidationPartial" />
+
+  <div class="form-group">
+    <label asp-for="SelectedEntity.FirstName" class="control-label"></label>
+    <input asp-for="SelectedEntity.FirstName" class="form-control" />
+    <span asp-validation-for="SelectedEntity.FirstName" class="text-danger" />
+  </div>
+  <div class="form-group">
+    <label asp-for="SelectedEntity.LastName" class="control-label"></label>
+    <input asp-for="SelectedEntity.LastName" class="form-control" />
+    <span asp-validation-for="SelectedEntity.LastName" class="text-danger" />
+  </div>
+  <div class="form-group">
+    <label asp-for="SelectedEntity.EmailAddress" class="control-label"></label>
+    <input asp-for="SelectedEntity.EmailAddress" class="form-control" />
+    <span asp-validation-for="SelectedEntity.EmailAddress" class="text-danger" />
+  </div>
+  <div class="form-group">
+    <label asp-for="SelectedEntity.Phone" class="control-label"></label>
+    <input asp-for="SelectedEntity.Phone" class="form-control" />
+    <span asp-validation-for="SelectedEntity.Phone" class="text-danger" />
+  </div>
+  <div class="form-group">
+    <label asp-for="SelectedEntity.ContactText" class="control-label"></label>
+    <input asp-for="SelectedEntity.ContactText" class="form-control" />
+    <span asp-validation-for="SelectedEntity.ContactText" class="text-danger" />
+  </div>
+  <div class="form-group">
+    <label asp-for="SelectedEntity.IPAddress" class="control-label"></label>
+    <input asp-for="SelectedEntity.IPAddress" class="form-control" />
+    <span asp-validation-for="SelectedEntity.IPAddress" class="text-danger" />
+  </div>
+  <div class="form-group">
+    <label asp-for="SelectedEntity.RespondedByName" class="control-label"></label>
+    <input asp-for="SelectedEntity.RespondedByName" class="form-control" />
+    <span asp-validation-for="SelectedEntity.RespondedByName" class="text-danger" />
+  </div>
+  <div class="form-group">
+    <label asp-for="SelectedEntity.RespondedDate" class="control-label"></label>
+    <input asp-for="SelectedEntity.RespondedDate" class="form-control" />
+    <span asp-validation-for="SelectedEntity.RespondedDate" class="text-danger" />
+  </div>
+  <div class="form-group">
+    <label asp-for="SelectedEntity.IsActive" class="control-label"></label>
+    <input asp-for="SelectedEntity.IsActive" class="form-control" />
+    <span asp-validation-for="SelectedEntity.IsActive" class="text-danger" />
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-primary">Save</button>
+    <a class="btn btn-secondary" formnovalidate="formnovalidate" asp-action="ContactUsIndex">
+      Cancel
+    </a>
+  </div>
+</form>

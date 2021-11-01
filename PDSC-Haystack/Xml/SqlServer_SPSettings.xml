@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StoredProcSetting>
+  <Setting>
+    <ID>1</ID>
+    <SkipWithThisPrefix>dt_</SkipWithThisPrefix>
+    <RemoveSuffixAfterThisCharacter>;</RemoveSuffixAfterThisCharacter>
+  </Setting>
+</StoredProcSetting>

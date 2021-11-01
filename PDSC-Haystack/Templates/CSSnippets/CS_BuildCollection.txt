@@ -1,0 +1,87 @@
+﻿    #region BuildCollection Method
+    /// <summary>
+    /// Returns a collection of <|ENTITY_CLASS_NAME|> classes based on the filters set
+    /// You can set the SearchEntity object with values to search on partial data
+    /// prior to calling this method to filter the results
+    /// </summary>
+    /// <returns><|ENTITY_CLASS_NAME|>Collection</returns>
+    public <|ENTITY_CLASS_NAME|>Collection BuildCollection()
+    {
+      <|ENTITY_CLASS_NAME|>Collection coll = new <|ENTITY_CLASS_NAME|>Collection();
+      <|ENTITY_CLASS_NAME|> entity = null;
+      DataSet ds;
+
+      try
+      {
+        DataObject.Entity = Entity;
+        ds = DataObject.GetDataSet();
+
+        if (ds.Tables.Count > 0)
+        {
+          foreach (DataRow dr in ds.Tables[ds.Tables.Count - 1].Rows)
+          {
+            entity = DataObject.CreateEntityFromDataRow(dr);
+          
+            // You can set any additional properties here
+          
+            coll.Add(entity);
+          }
+        }
+      }
+      catch (Exception ex)
+      {
+        // This is here for design time exceptions
+        System.Diagnostics.Debug.WriteLine(ex.Message);
+      }
+
+      return coll;
+    }
+
+    /// <summary>
+    /// Build collection from a DataSet returned from a stored procedure
+    /// </summary>
+    /// <param name="ds">A DataSet</param>
+    /// <returns>A collection of <|ENTITY_CLASS_NAME|> objects</returns>
+    public <|ENTITY_CLASS_NAME|>Collection BuildCollection(DataSet ds)
+    {
+      <|ENTITY_CLASS_NAME|>Collection coll = new <|ENTITY_CLASS_NAME|>Collection();
+
+      if (ds != null)
+      {
+        if (ds.Tables.Count > 0)
+        {
+          foreach (DataRow item in ds.Tables[0].Rows)
+          {
+            coll.Add(DataObject.CreateEntityFromDataRow(item));
+          }
+        }
+      }
+
+      return coll;
+    }
+    
+    /// <summary>
+    /// Build collection from a DataTable returned from a stored procedure
+    /// </summary>
+    /// <param name="dt">A DataTable</param>
+    /// <returns>A collection of <|ENTITY_CLASS_NAME|> objects</returns>
+    public <|ENTITY_CLASS_NAME|>Collection BuildCollection(DataTable dt)
+    {
+      DataSet ds = new DataSet();
+
+      ds.Tables.Add(dt);
+
+      return BuildCollection(ds);
+    }
+    #endregion
+
+    #region GetCollectionAsJSON Method
+    /// <summary>
+    /// Returns a collection of <|ENTITY_CLASS_NAME|> objects as a JSON formatted string
+    /// </summary>
+    /// <returns>A JSON formatted string</returns>
+    public string GetCollectionAsJSON()
+    {
+      return PDSAString.GetAsJSON(typeof(<|ENTITY_CLASS_NAME|>Collection), BuildCollection());
+    }
+    #endregion

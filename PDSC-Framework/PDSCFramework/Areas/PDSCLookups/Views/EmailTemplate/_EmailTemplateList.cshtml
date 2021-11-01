@@ -1,0 +1,67 @@
+@using PDSC.Common.EntityLayer
+@model PDSC.Common.ViewModelLayer.EmailTemplateViewModel
+
+@if (Model.DataCollection == null || Model.DataCollection.Count == 0) {
+  <p>Enter search parameters, then click Search button</p>
+}
+else {
+  <form method="get" asp-action="SortPage">
+    <partial name="_SortPageHiddenFields" />
+
+    <table class="table table-bordered table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Actions</th>
+          <th>
+            <a href="#" onclick="pdscController.sortOnHeaderClick('EmailTemplateName');">
+              Email Template Name
+            </a>
+          </th>
+          <th>
+            <a href="#" onclick="pdscController.sortOnHeaderClick('EmailSubject');">
+              Email Subject
+            </a>
+          </th>
+          <th>
+            <a href="#" onclick="pdscController.sortOnHeaderClick('EmailTemplateText');">
+              Email Template Text
+            </a>
+          </th>
+          <th>
+            <a href="#" onclick="pdscController.sortOnHeaderClick('IsBodyHtml');">
+              Is Body Html
+            </a>
+          </th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (EmailTemplate item in Model.DataCollection) {
+        <tr>
+          <td>
+            <a asp-action="Edit"
+               asp-route-id="@item.EmailTemplateId"
+               class="btn btn-primary">
+              Edit
+            </a>
+          </td>
+          <td>@Html.DisplayFor(m => item.EmailTemplateName)</td>
+          <td>@Html.DisplayFor(m => item.EmailSubject)</td>
+          <td>@Html.DisplayFor(m => item.EmailTemplateText)</td>
+          <td>@Html.DisplayFor(m => item.IsBodyHtml)</td>
+          <td>
+            @Html.ActionLink("Delete", "Delete",
+                new { id = item.EmailTemplateId },
+                new
+                  {
+                    onclick = "return confirm('Delete this Email Template?');",
+                    @class = "btn btn-danger"
+                  })
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+    <partial name="_PagerPartial" />
+  </form>
+}

@@ -1,0 +1,48 @@
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using <|NAMESPACE|>.Common;
+
+namespace <|NAMESPACE|>.EntityLayer
+{
+  /// <summary>
+  /// This class contains properties that map to each field in the <|TABLE_NAME|> table.
+  /// </summary>
+  <|CLASS_ATTRIBUTES|>
+  [Table("<|TABLE_NAME_ONLY|>", Schema = "<|SCHEMA_NAME|>")]
+  {|REMOVE_WHEN_NO_AUTO_NUMBER|}
+  public partial class <|CLASS_NAME|> : AppTableEntityBase
+  {|END_REMOVE|}
+  {|REMOVE_WHEN_AUTO_NUMBER|}
+  public partial class <|CLASS_NAME|> : AppEntityStringPKBase 
+  {|END_REMOVE|}
+  {
+    #region Constructor
+    public <|CLASS_NAME|>() {
+    }
+    #endregion
+
+    {|FOR EACH COLUMN:IsPrimaryKey=true|}
+    /// <summary>
+    /// Get/Set the <|COLUMN_PUBLIC_PROPERTY|> value
+    /// </summary>
+    <|COLUMN_DATA_ANNOTATIONS|>
+    public <|COLUMN_DOTNET_DATATYPE_USENULLABLE|> <|COLUMN_PUBLIC_PROPERTY|> { get; set; }
+    {|END|}
+    {|FOR EACH COLUMN:IsNotStandardField_IsNotPrimaryKey=true|}
+
+    /// <summary>
+    /// Get/Set the <|COLUMN_PUBLIC_PROPERTY|> value
+    /// </summary>
+    <|COLUMN_DATA_ANNOTATIONS|>
+    public <|COLUMN_DOTNET_DATATYPE_NO_NULLABLE|> <|COLUMN_PUBLIC_PROPERTY|> { get; set; }
+    {|END|}
+
+    #region ToString Override
+    public override string ToString()
+    {
+      return $"{<|DESC_FIELD|>}";
+    }
+    #endregion
+  }
+}

@@ -1,0 +1,57 @@
+﻿@using <|PROJECT_NAMESPACE|>.EntityLayer
+@model <|PROJECT_NAMESPACE|>.ViewModelLayer.<|CLASS_NAME|>ViewModel
+
+@if (Model.DataCollection == null || Model.DataCollection.Count == 0) {
+  <p>Enter search parameters, then click Search button</p>
+}
+else {
+  <form method="get" asp-action="SortPage">
+    <partial name="_SortPageHiddenFields" />
+
+    <table class="table table-bordered table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Actions</th>
+          {|FOR EACH GRIDCOLUMN|}
+          <th>
+            <a href="#" onclick="pdscController.sortOnHeaderClick('<|COLUMN_PUBLIC_PROPERTY|>');">
+              <|COLUMN_HEADER_TEXT|>
+            </a>
+          </th>
+          {|END|}
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (<|CLASS_NAME|> item in Model.DataCollection) {
+        <tr>
+          {|FOR EACH COLUMNANDPARAMETER:IsPrimaryKey=true|}
+          <td>
+            <a asp-action="Edit"
+               asp-route-id="@item.<|COLUMN_PUBLIC_PROPERTY|>"
+               class="btn btn-primary">
+              Edit
+            </a>
+          </td>
+          {|END|}
+          {|FOR EACH GRIDCOLUMN|}
+          <td>@Html.DisplayFor(m => item.<|COLUMN_PUBLIC_PROPERTY|>)</td>
+          {|END|}
+          {|FOR EACH COLUMNANDPARAMETER:IsPrimaryKey=true|}
+          <td>
+            @Html.ActionLink("Delete", "Delete",
+                new { id = item.<|COLUMN_PUBLIC_PROPERTY|> },
+                new
+                  {
+                    onclick = "return confirm('Delete this <|CLASS_DESCRIPTION|>?');",
+                    @class = "btn btn-danger"
+                  })
+          </td>
+          {|END|}
+        </tr>
+        }
+      </tbody>
+    </table>
+    <partial name="_PagerPartial" />
+  </form>
+}

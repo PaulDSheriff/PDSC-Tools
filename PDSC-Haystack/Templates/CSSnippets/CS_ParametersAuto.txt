@@ -1,0 +1,9 @@
+﻿    #region Public Properties
+    {|FOR EACH COLUMNANDPARAMETER|}
+    /// <summary>
+    /// Get/Set the <|COLUMN_HEADER_TEXT|> value
+    /// </summary>
+    <|COLUMN_ATTRIBUTES|>
+    public <|COLUMN_DOTNET_DATATYPE_NO_NULLABLE|> <|COLUMN_PUBLIC_PROPERTY|> { get; set; }
+    {|END|}
+    #endregion

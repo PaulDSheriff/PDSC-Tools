@@ -1,0 +1,32 @@
+/************************************************************
+'* This stored procedure is used to retrieve all columns from
+'* the <|TABLE_NAME|> table 
+'* for a single row of data based on the primary key passed in
+'************************************************************/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'<|SCHEMA_NAME|>.[<|STORED_PROC_PREFIX|><|CLASS_NAME|><|STORED_PROC_SUFFIX|>]') AND type in (N'P', N'PC'))
+DROP PROCEDURE <|SCHEMA_NAME|>.[<|STORED_PROC_PREFIX|><|CLASS_NAME|><|STORED_PROC_SUFFIX|>]
+GO
+CREATE PROCEDURE <|SCHEMA_NAME|>.[<|STORED_PROC_PREFIX|><|CLASS_NAME|><|STORED_PROC_SUFFIX|>]
+{|FOR EACH COLUMN:IsPrimaryKey=True|}
+<|COMMA|><|COLUMN_PARAMETER|> <|COLUMN_DB_DATATYPE_WITH_SIZE|> 
+{|END|}
+AS
+
+declare @ret int;
+select @ret = 0;
+
+SELECT 
+{|FOR EACH COLUMN:IsCustomColumn=False|}
+<|COMMA|><|COLUMN_NAME|>
+{|END|}
+FROM <|TABLE_NAME|>
+WHERE 
+{|FOR EACH COLUMN:IsPrimaryKey=True|}
+<|SQL_AND|><|COLUMN_NAME|> = <|COLUMN_PARAMETER|>
+{|END|}
+
+if @@ROWCOUNT = 0
+  SELECT @ret = -1;
+
+RETURN @ret;
+GO

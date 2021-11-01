@@ -1,0 +1,24 @@
+@{
+  ViewData["Title"] = "Contact Us Maintenance";
+}
+
+<h2>Contact Us Maintenance</h2>
+
+@if (Model.IsDetailVisible) {
+  <partial name="_ContactUsDetail" />
+}
+else {
+  <partial name="_ContactUsSearch" />
+  <partial name="_ContactUsList" />
+}
+
+@section Scripts
+{
+  <script>
+    $(document).ready(function () {
+      // Setup the form submit
+      pdscController.formSubmit();
+    });
+  </script>
+  <partial name="_ValidationScriptsPartial" />
+}

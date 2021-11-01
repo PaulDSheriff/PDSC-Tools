@@ -1,0 +1,1 @@
+SELECT Count(*) As NumRecs FROM <|TABLE_NAME|>

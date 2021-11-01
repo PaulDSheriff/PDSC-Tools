@@ -1,0 +1,12 @@
+/// <summary>
+/// Get/Set <|PUBLICNAME|>
+/// </summary>
+<|SCOPE|> <|DATATYPE|> <|PUBLICNAME|>
+{
+  get { return <|PRIVATENAME|>; }
+  <READONLY>set 
+  { 
+    <|PRIVATENAME|> = value; 
+    RaisePropertyChanged("<|PUBLICNAME|>");
+  }</READONLY>
+}

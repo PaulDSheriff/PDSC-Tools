@@ -1,0 +1,1 @@
+             xmlns:bl="clr-namespace:<|NAMESPACE|>.BusinessLayer<|ASSEMBLY_NAMESPACE:.BusinessLayer|>"

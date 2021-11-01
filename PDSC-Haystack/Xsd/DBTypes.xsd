@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DBDataTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="DBDataType">
+          <xs:complexType mixed="true">
+            <xs:sequence>
+              <xs:choice maxOccurs="unbounded">
+                <xs:element name="DBType" type="xs:string" />
+                <xs:element name="DBTypeNumber" type="xs:unsignedByte" />
+                <xs:element name="GenericType" type="xs:string" />
+                <xs:element name="MaxLength" type="xs:unsignedInt" />
+                <xs:element name="Precision" type="xs:unsignedByte" />
+                <xs:element name="MinScale" type="xs:unsignedByte" />
+                <xs:element name="MaxScale" type="xs:unsignedByte" />
+                <xs:element name="UsePrecisionAndScaleForMinMax" type="xs:string" />
+                <xs:element name="UseMaxLength" type="xs:string" />
+                <xs:element name="IsNullable" type="xs:string" />
+                <xs:element name="IncludeSize" type="xs:string" />
+                <xs:element name="IsInsertable" type="xs:string" />
+                <xs:element name="IsUpdatable" type="xs:string" />
+                <xs:element name="DisplayInGrid" type="xs:string" />
+                <xs:element name="DisplayInEdit" type="xs:string" />
+                <xs:element name="IncludeInAuditTracking" type="xs:string" />
+                <xs:element name="DotNetType" type="xs:string" />
+                <xs:element name="DbTypeEnum" type="xs:string" />
+                <xs:element name="DatabaseDataTypeEnum" type="xs:string" />
+                <xs:element name="DbTypeForNull" type="xs:string" />
+              </xs:choice>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

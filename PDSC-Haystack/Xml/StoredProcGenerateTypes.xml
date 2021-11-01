@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StoredProcGenerateType>
+  <SPGenerateType>
+    <GenerateType>Unknown</GenerateType>
+    <GetColumns>False</GetColumns>
+    <Parameters>False</Parameters>
+    <IsDefault>True</IsDefault>
+  </SPGenerateType>
+  <SPGenerateType>
+    <GenerateType>Execute</GenerateType>
+    <GetColumns>False</GetColumns>
+    <Parameters>True</Parameters>
+    <IsDefault>False</IsDefault>
+  </SPGenerateType>
+  <SPGenerateType>
+    <GenerateType>ReadOnlyNoParams</GenerateType>
+    <GetColumns>True</GetColumns>
+    <Parameters>False</Parameters>
+    <IsDefault>False</IsDefault>
+  </SPGenerateType>
+  <SPGenerateType>
+    <GenerateType>ReadOnlyWithParams</GenerateType>
+    <GetColumns>True</GetColumns>
+    <Parameters>True</Parameters>
+    <IsDefault>False</IsDefault>
+  </SPGenerateType>
+</StoredProcGenerateType>

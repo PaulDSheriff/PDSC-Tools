@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenTypes>
+  <!-- ********************** -->
+  <!--  SELECT TEMPLATES   -->
+  <!-- ********************** -->
+  <CodeGenType>
+    <ID>1</ID>
+    <EnumName>All</EnumName>
+    <IsAll>True</IsAll>
+    <IsSearch>False</IsSearch>
+    <CodeType>SELECT</CodeType>
+    <DBObjectTypes>Table,View</DBObjectTypes>
+    <RegenOnChange>True</RegenOnChange>
+    <SQLFileName>SQL_SelectAll.txt</SQLFileName>
+    <SPFileName>SP_SelectAll.txt</SPFileName>
+    <SPPrefix></SPPrefix>
+    <SPSuffix>_SelectAll</SPSuffix>
+    <IsConcurrencyUpdate>false</IsConcurrencyUpdate>
+  </CodeGenType>
+  <CodeGenType>
+    <ID>2</ID>
+    <EnumName>ListBox</EnumName>
+    <IsAll>False</IsAll>
+    <IsSearch>False</IsSearch>
+    <CodeType>SELECT</CodeType>
+    <DBObjectTypes>Table</DBObjectTypes>
+    <RegenOnChange>False</RegenOnChange>
+    <SQLFileName>SQL_SelectListBox.txt</SQLFileName>
+    <SPFileName>SP_SelectListBox.txt</SPFileName>
+    <SPPrefix></SPPrefix>
+    <SPSuffix>_SelectListBox</SPSuffix>
+    <IsConcurrencyUpdate>false</IsConcurrencyUpdate>
+  </CodeGenType>
+  <CodeGenType>
+    <ID>3</ID>
+    <EnumName>PrimaryKey</EnumName>
+    <IsAll>True</IsAll>
+    <IsSearch>False</IsSearch>
+    <CodeType>SELECT</CodeType>
+    <DBObjectTypes>Table</DBObjectTypes>
+    <RegenOnChange>False</RegenOnChange>
+    <SQLFileName>SQL_SelectByPK.txt</SQLFileName>
+    <SPFileName>SP_SelectByPK.txt</SPFileName>
+    <SPPrefix></SPPrefix>
+    <SPSuffix>_SelectByPK</SPSuffix>
+    <IsConcurrencyUpdate>false</IsConcurrencyUpdate>
+  </CodeGenType>
+  <CodeGenType>
+    <ID>18</ID>
+    <EnumName>Search</EnumName>
+    <IsAll>False</IsAll>
+    <IsSearch>True</IsSearch>
+    <CodeType>SELECT</CodeType>
+    <DBObjectTypes>Table,View</DBObjectTypes>
+    <RegenOnChange>False</RegenOnChange>
+    <SQLFileName>SQL_SelectSearch.txt</SQLFileName>
+    <SPFileName>SP_SelectSearch.txt</SPFileName>
+    <SPPrefix></SPPrefix>
+    <SPSuffix>_SelectSearch</SPSuffix>
+    <IsConcurrencyUpdate>false</IsConcurrencyUpdate>
+  </CodeGenType>
+  <!-- ************************************ -->
+  <!--  STORED PROC SELECT TEMPLATES        -->
+  <!--  FOR FOREIGN KEYS                    -->
+  <!--  USED WHEN GENERATING SPs ONLY       -->
+  <!-- ************************************ -->
+  <CodeGenType>
+    <ID>4</ID>
+    <EnumName>By|COLUMN_NAME|</EnumName>
+    <IsAll>False</IsAll>
+    <IsSearch>False</IsSearch>
+    <CodeType>SELECT_FK</CodeType>
+    <DBObjectTypes>Table</DBObjectTypes>
+    <RegenOnChange>False</RegenOnChange>
+    <SQLFileName></SQLFileName>
+    <SPFileName>SP_SelectByFK.txt</SPFileName>
+    <SPPrefix></SPPrefix>
+    <SPSuffix>_By|COLUMN_NAME|</SPSuffix>
+    <IsConcurrencyUpdate>false</IsConcurrencyUpdate>
+  </CodeGenType>
+  <!-- ********************************** -->
+  <!--  DATA MODIFICATION TEMPLATES       -->
+  <!-- ********************************** -->
+  <CodeGenType>
+    <ID>5</ID>
+    <EnumName>All</EnumName>
+    <IsAll>True</IsAll>
+    <IsSearch>False</IsSearch>
+    <CodeType>INSERT</CodeType>
+    <DBObjectTypes>Table</DBObjectTypes>
+    <RegenOnChange>True</RegenOnChange>
+    <SQLFileName>SQL_Insert.txt</SQLFileName>
+    <SPFileName>SP_Insert.txt</SPFileName>
+    <SPPrefix></SPPrefix>
+    <SPSuffix>_Insert</SPSuffix>
+    <IsConcurrencyUpdate>false</IsConcurrencyUpdate>
+  </CodeGenType>
+  <CodeGenType>
+    <ID>6</ID>
+    <EnumName>PrimaryKey</EnumName>
+    <IsAll>True</IsAll>
+    <IsSearch>False</IsSearch>
+    <CodeType>UPDATE</CodeType>
+    <DBObjectTypes>Table</DBObjectTypes>
+    <RegenOnChange>False</RegenOnChange>
+    <SQLFileName>SQL_UpdateByPK.txt</SQLFileName>
+    <SPFileName>SP_UpdateByPK.txt</SPFileName>
+    <SPPrefix></SPPrefix>
+    <SPSuffix>_Update</SPSuffix>
+    <IsConcurrencyUpdate>false</IsConcurrencyUpdate>
+  </CodeGenType>
+  <CodeGenType>
+    <ID>7</ID>
+    <EnumName>UpdateConcurrency</EnumName>
+    <IsAll>False</IsAll>
+    <IsSearch>False</IsSearch>
+    <CodeType>UPDATE</CodeType>
+    <DBObjectTypes>Table</DBObjectTypes>
+    <RegenOnChange>False</RegenOnChange>
+    <SQLFileName>SQL_UpdateConcurrency.txt</SQLFileName>
+    <SPFileName>SP_UpdateConcurrency.txt</SPFileName>
+    <SPPrefix></SPPrefix>
+    <SPSuffix>_UpdateConcurrency</SPSuffix>
+    <IsConcurrencyUpdate>true</IsConcurrencyUpdate>
+  </CodeGenType>
+  <CodeGenType>
+    <ID>8</ID>
+    <EnumName>All</EnumName>
+    <IsAll>False</IsAll>
+    <IsSearch>False</IsSearch>
+    <CodeType>DELETE</CodeType>
+    <DBObjectTypes>Table</DBObjectTypes>
+    <RegenOnChange>False</RegenOnChange>
+    <SQLFileName>SQL_Delete.txt</SQLFileName>
+    <SPFileName></SPFileName>
+    <SPPrefix></SPPrefix>
+    <SPSuffix></SPSuffix>
+    <IsConcurrencyUpdate>false</IsConcurrencyUpdate>
+  </CodeGenType>
+  <CodeGenType>
+    <ID>9</ID>
+    <EnumName>DeleteByPK</EnumName>
+    <IsAll>False</IsAll>
+    <IsSearch>False</IsSearch>
+    <CodeType>DELETE</CodeType>
+    <DBObjectTypes>Table</DBObjectTypes>
+    <RegenOnChange>False</RegenOnChange>
+    <SQLFileName>SQL_DeleteByPK.txt</SQLFileName>
+    <SPFileName>SP_DeleteByPK.txt</SPFileName>
+    <SPPrefix></SPPrefix>
+    <SPSuffix>_DeleteByPK</SPSuffix>
+    <IsConcurrencyUpdate>false</IsConcurrencyUpdate>
+  </CodeGenType>
+  <CodeGenType>
+    <ID>10</ID>
+    <EnumName>All</EnumName>
+    <IsAll>False</IsAll>
+    <IsSearch>False</IsSearch>
+    <CodeType>ROWCOUNT</CodeType>
+    <DBObjectTypes>Table,View</DBObjectTypes>
+    <RegenOnChange>False</RegenOnChange>
+    <SQLFileName>SQL_RowCount.txt</SQLFileName>
+    <SPFileName>SP_RowCount.txt</SPFileName>
+    <SPPrefix></SPPrefix>
+    <SPSuffix>_RowCount</SPSuffix>
+    <IsConcurrencyUpdate>false</IsConcurrencyUpdate>
+  </CodeGenType>
+  <!-- ****************************** -->
+  <!--  WHERE CLAUSE TEMPLATES        -->
+  <!-- ****************************** -->
+  <CodeGenType>
+    <ID>11</ID>
+    <EnumName>PrimaryKey</EnumName>
+    <IsAll>False</IsAll>
+    <IsSearch>False</IsSearch>
+    <CodeType>WHERE</CodeType>
+    <DBObjectTypes>Table</DBObjectTypes>
+    <RegenOnChange>False</RegenOnChange>
+    <SQLFileName>SQL_WherePK.txt</SQLFileName>
+    <SPFileName></SPFileName>
+    <SPPrefix></SPPrefix>
+    <SPSuffix></SPSuffix>
+    <IsConcurrencyUpdate>false</IsConcurrencyUpdate>
+  </CodeGenType>
+  <CodeGenType>
+    <ID>12</ID>
+    <EnumName>|COLUMN_NAME|</EnumName>
+    <IsAll>False</IsAll>
+    <IsSearch>False</IsSearch>
+    <CodeType>WHERE</CodeType>
+    <DBObjectTypes>Table,View</DBObjectTypes>
+    <RegenOnChange>False</RegenOnChange>
+    <SQLFileName>SQL_WhereDescField.txt</SQLFileName>
+    <SPFileName></SPFileName>
+    <SPPrefix></SPPrefix>
+    <SPSuffix></SPSuffix>
+    <IsConcurrencyUpdate>false</IsConcurrencyUpdate>
+  </CodeGenType>
+  <CodeGenType>
+    <ID>13</ID>
+    <EnumName>Like|COLUMN_NAME|</EnumName>
+    <IsAll>False</IsAll>
+    <IsSearch>False</IsSearch>
+    <CodeType>WHERE</CodeType>
+    <DBObjectTypes>Table,View</DBObjectTypes>
+    <RegenOnChange>False</RegenOnChange>
+    <SQLFileName>SQL_WhereLikeDescField.txt</SQLFileName>
+    <SPFileName></SPFileName>
+    <SPPrefix></SPPrefix>
+    <SPSuffix></SPSuffix>
+    <IsConcurrencyUpdate>false</IsConcurrencyUpdate>
+  </CodeGenType>
+  <!-- ************************************************* -->
+  <!--  WHERE CLAUSE TEMPLATES FOR FOREIGN KEYS  -->
+  <!-- ************************************************* -->
+  <CodeGenType>
+    <ID>14</ID>
+    <EnumName>|COLUMN_NAME|</EnumName>
+    <IsAll>False</IsAll>
+    <IsSearch>False</IsSearch>
+    <CodeType>WHERE_FK</CodeType>
+    <DBObjectTypes>Table</DBObjectTypes>
+    <RegenOnChange>False</RegenOnChange>
+    <SQLFileName>SQL_WhereFK.txt</SQLFileName>
+    <SPFileName></SPFileName>
+    <SPPrefix></SPPrefix>
+    <SPSuffix></SPSuffix>
+    <IsConcurrencyUpdate>false</IsConcurrencyUpdate>
+  </CodeGenType>
+  <!-- ************************************************* -->
+  <!--  WHERE CLAUSE TEMPLATES FOR INDEXES  -->
+  <!-- ************************************************* -->
+  <CodeGenType>
+    <ID>15</ID>
+    <EnumName>|COLUMN_NAME|</EnumName>
+    <IsAll>False</IsAll>
+    <IsSearch>False</IsSearch>
+    <CodeType>WHERE_INDEX</CodeType>
+    <DBObjectTypes>Table,View</DBObjectTypes>
+    <RegenOnChange>False</RegenOnChange>
+    <SQLFileName>SQL_WhereIndex.txt</SQLFileName>
+    <SPFileName></SPFileName>
+    <SPPrefix></SPPrefix>
+    <SPSuffix></SPSuffix>
+    <IsConcurrencyUpdate>false</IsConcurrencyUpdate>
+  </CodeGenType>
+  <!-- ************************************************* -->
+  <!--  ORDER BY TEMPLATES -->
+  <!-- ************************************************* -->
+  <CodeGenType>
+    <ID>16</ID>
+    <EnumName>|COLUMN_NAME|</EnumName>
+    <IsAll>False</IsAll>
+    <IsSearch>False</IsSearch>
+    <CodeType>ORDERBY</CodeType>
+    <DBObjectTypes>Table,View</DBObjectTypes>
+    <RegenOnChange>False</RegenOnChange>
+    <SQLFileName>SQL_OrderBy_DescField.txt</SQLFileName>
+    <SPFileName></SPFileName>
+    <SPPrefix></SPPrefix>
+    <SPSuffix></SPSuffix>
+    <IsConcurrencyUpdate>false</IsConcurrencyUpdate>
+  </CodeGenType>
+</CodeGenTypes>

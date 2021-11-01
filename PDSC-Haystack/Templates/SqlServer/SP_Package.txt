@@ -1,0 +1,3 @@
+﻿/* All Stored Procedures for table: <|TABLE_NAME|> */
+
+<|STORED_PROC_BODY|>

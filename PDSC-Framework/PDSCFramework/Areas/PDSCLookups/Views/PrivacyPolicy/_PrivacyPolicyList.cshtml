@@ -1,0 +1,55 @@
+@using PDSC.Common.EntityLayer
+@model PDSC.Common.ViewModelLayer.PrivacyPolicyViewModel
+
+@if (Model.DataCollection == null || Model.DataCollection.Count == 0) {
+  <p>Enter search parameters, then click Search button</p>
+}
+else {
+  <form method="get" asp-action="SortPage">
+    <partial name="_SortPageHiddenFields" />
+
+    <table class="table table-bordered table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Actions</th>
+          <th>
+            <a href="#" onclick="pdscController.sortOnHeaderClick('PrivacyText');">
+              Privacy Text
+            </a>
+          </th>
+          <th>
+            <a href="#" onclick="pdscController.sortOnHeaderClick('IsActive');">
+              Is Active
+            </a>
+          </th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (PrivacyPolicy item in Model.DataCollection) {
+        <tr>
+          <td>
+            <a asp-action="Edit"
+               asp-route-id="@item.PrivacyPolicyId"
+               class="btn btn-primary">
+              Edit
+            </a>
+          </td>
+          <td>@Html.DisplayFor(m => item.PrivacyText)</td>
+          <td>@Html.DisplayFor(m => item.IsActive)</td>
+          <td>
+            @Html.ActionLink("Delete", "Delete",
+                new { id = item.PrivacyPolicyId },
+                new
+                  {
+                    onclick = "return confirm('Delete this Privacy Policy?');",
+                    @class = "btn btn-danger"
+                  })
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+    <partial name="_PagerPartial" />
+  </form>
+}

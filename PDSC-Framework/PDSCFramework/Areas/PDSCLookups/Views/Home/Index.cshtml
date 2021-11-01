@@ -1,0 +1,54 @@
+﻿@{
+  ViewBag.Title = "Lookup Tables";
+  ViewBag.MetaDescription = "Lookup Tables";
+  ViewBag.MetaKeywords = "Lookup Tables";
+}
+
+<div class="jumbotron jumbotron-small jumbotron-fluid">
+  <div class="row">
+    <div class="col-sm-9">
+      <h1>Lookup Tables</h1>
+      <p class="lead">Administrators use these pages to configure the website.</p>
+    </div>
+    <div class="col-sm-3 d-none d-sm-block">
+      <img class="img-fluid rounded float-right" src="~/images/SiteLogo.png" asp-append-version="true" />
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Lookup Tables</h4>
+        <h6 class="card-subtitle">Manage list items used within the site</h6>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <div class="list-group">
+              <a asp-area="PDSCLookups" asp-action="ContactUsIndex" asp-controller="ContactUs" class="list-group-item maint-items">Contact Us</a>
+              <a asp-area="PDSCLookups" asp-action="EmailTemplateIndex" asp-controller="EmailTemplate" class="list-group-item maint-items">Email Templates</a>
+              <a asp-area="PDSCLookups" asp-action="PersonTypeIndex" asp-controller="PersonType" class="list-group-item maint-items">Person Types</a>
+              <a asp-area="PDSCLookups" asp-action="LogInfoIndex" asp-controller="LogInfo" class="list-group-item maint-items">Logs</a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="list-group">
+              <a asp-area="PDSCLookups" asp-action="FAQIndex" asp-controller="FAQ" class="list-group-item maint-items">FAQs</a>
+              <a asp-area="PDSCLookups" asp-action="SiteTermsIndex" asp-controller="SiteTerms" class="list-group-item maint-items">Terms of Service</a>
+              <a asp-area="PDSCLookups" asp-action="PrivacyPolicyIndex" asp-controller="PrivacyPolicy" class="list-group-item maint-items">Privacy Policies</a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="list-group">
+              <a asp-area="PDSCLookups" asp-action="CountryIndex" asp-controller="Country" class="list-group-item maint-items">Country Codes</a>
+              <a asp-area="PDSCLookups" asp-action="USStateCodeIndex" asp-controller="USStateCode" class="list-group-item maint-items">US State Codes</a>
+              <a asp-area="PDSCLookups" asp-action="CanadianProvinceIndex" asp-controller="CanadianProvince" class="list-group-item maint-items">Canadian Provinces</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

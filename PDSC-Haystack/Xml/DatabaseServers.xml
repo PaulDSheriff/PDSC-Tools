@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DBServers>
+  <Server>
+    <ID>1</ID>
+    <Name>SQL Server 20xx</Name>
+    <ProviderName>SqlClient</ProviderName>
+    <DBDataTypesFile>SqlServer_DBTypes</DBDataTypesFile>
+    <DBDataTypesExcludeFile>SqlServer_DBTypesExcludes</DBDataTypesExcludeFile>
+    <SPSettingsFile>SqlServer_SPSettings</SPSettingsFile>
+    <TemplatesFile>SqlServer_Templates</TemplatesFile>
+    <TemplatesPath>SqlServer</TemplatesPath>
+    <UsePackageName>False</UsePackageName>
+    <PackageSpecTemplateFile></PackageSpecTemplateFile>
+    <PackageBodyTemplateFile>SP_Package.txt</PackageBodyTemplateFile>
+    <PackageSuffix></PackageSuffix>
+    <SPBlankFile>SP_Blank.txt</SPBlankFile>
+    <DefaultDataType>varchar</DefaultDataType>
+    <MaxKeyword>max</MaxKeyword>
+    <AllowSPGeneration>True</AllowSPGeneration>
+    <UsePrecisionScale>False</UsePrecisionScale>
+    <CommandParameterPrefix>@</CommandParameterPrefix>
+    <SPParameterPrefix>@</SPParameterPrefix>
+    <NameOfReturnValueParam>@RETURN_VALUE</NameOfReturnValueParam>
+    <AndOperator>And</AndOperator>
+    <OrOperator>Or</OrOperator>
+  </Server>
+</DBServers>

@@ -1,0 +1,18 @@
+﻿    {|REMOVE_WHEN_STORED_PROCS_ONLY|}
+    {|FOR EACH WHEREFILTER|}
+    #region Get<|CLASS_NAME_PLURAL|>By<|STATEMENT_NAME_FUNCTION|> Method
+    /// <summary>
+    /// Sets the specified WhereFilter and calls the BuildCollection() method
+    /// Assumes you have set the appropriate column(s) in the Entity object
+    /// prior to calling this method. Ex. mgr.Entity.'ColumName' = 'Value'
+    /// </summary>
+    public <|ENTITY_CLASS_NAME|>Collection Get<|CLASS_NAME_PLURAL|>By<|STATEMENT_NAME_FUNCTION|>()
+    {
+      DataObject.WhereFilter = <|CLASS_NAME|>Data.WhereFilters.<|STATEMENT_NAME|>;
+
+      return BuildCollection();
+    }
+    #endregion
+    
+    {|END|}
+    {|END_REMOVE|}

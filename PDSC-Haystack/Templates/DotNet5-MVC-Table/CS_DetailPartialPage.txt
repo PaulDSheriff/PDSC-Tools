@@ -1,0 +1,31 @@
+﻿@model <|PROJECT_NAMESPACE|>.ViewModelLayer.<|CLASS_NAME|>ViewModel
+
+<form method="post" asp-action="<|CLASS_NAME|>Index">  
+  {|REMOVE_WHEN_NO_AUTO_NUMBER|}
+  {|FOR EACH COLUMN:IsPrimaryKey=true|}
+  <input type="hidden" asp-for="SelectedEntity.<|COLUMN_PUBLIC_PROPERTY|>" />
+  {|END|}
+  {|END_REMOVE|}
+  {|REMOVE_WHEN_AUTO_NUMBER|}
+  {|FOR EACH COLUMN:IsPrimaryKey=true|}
+  <input type="hidden" asp-for="SelectedEntity.IsAdding" />
+  {|END|}
+  {|END_REMOVE|}
+
+  <partial name="_ValidationPartial" />
+
+  {|FOR EACH EDITCOLUMN|}
+  <div class="form-group">
+    <label asp-for="SelectedEntity.<|COLUMN_PUBLIC_PROPERTY|>" class="control-label"></label>
+    <input asp-for="SelectedEntity.<|COLUMN_PUBLIC_PROPERTY|>" class="form-control" />
+    <span asp-validation-for="SelectedEntity.<|COLUMN_PUBLIC_PROPERTY|>" class="text-danger" />
+  </div>
+  {|END|}
+
+  <div class="form-group">
+    <button class="btn btn-primary">Save</button>
+    <a class="btn btn-secondary" formnovalidate="formnovalidate" asp-action="<|CLASS_NAME|>Index">
+      Cancel
+    </a>
+  </div>
+</form>

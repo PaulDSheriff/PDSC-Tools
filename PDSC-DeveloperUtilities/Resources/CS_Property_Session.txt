@@ -1,0 +1,5 @@
+<|SCOPE|><|STATIC|> <|DATATYPE|> <|PUBLICNAME|>
+{
+   get { return Convert.<|CONVERSIONMETHOD|>(HttpContext.Current.Session["PDSA<|PUBLICNAME|>"]); }
+   <READONLY>set { HttpContext.Current.Session["PDSA<|PUBLICNAME|>"] = value; }</READONLY>
+}

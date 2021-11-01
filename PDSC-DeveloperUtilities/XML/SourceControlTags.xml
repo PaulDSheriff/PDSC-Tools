@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SourceControlTags>
+  <SourceControlTag>
+    <Name>Visual SourceSafe / TFS</Name>
+    <BeginTag>&lt;SccProjectName&gt;</BeginTag>
+    <EndTag>&lt;/SccProjectName&gt;</EndTag>
+    <DeleteLine>true</DeleteLine>
+    <DeleteLinesBetweenTags>false</DeleteLinesBetweenTags>
+    <IsSolutionTag>false</IsSolutionTag>
+    <IsProjectTag>true</IsProjectTag>
+  </SourceControlTag>
+  <SourceControlTag>
+    <Name>Visual SourceSafe / TFS</Name>
+    <BeginTag>&lt;SccLocalPath&gt;</BeginTag>
+    <EndTag>&lt;/SccLocalPath&gt;</EndTag>
+    <DeleteLine>true</DeleteLine>
+    <DeleteLinesBetweenTags>false</DeleteLinesBetweenTags>
+    <IsSolutionTag>false</IsSolutionTag>
+    <IsProjectTag>true</IsProjectTag>
+  </SourceControlTag>
+  <SourceControlTag>
+    <Name>Visual SourceSafe / TFS</Name>
+    <BeginTag>&lt;SccAuxPath&gt;</BeginTag>
+    <EndTag>&lt;/SccAuxPath&gt;</EndTag>
+    <DeleteLine>true</DeleteLine>
+    <DeleteLinesBetweenTags>false</DeleteLinesBetweenTags>
+    <IsSolutionTag>false</IsSolutionTag>
+    <IsProjectTag>true</IsProjectTag>
+  </SourceControlTag>
+  <SourceControlTag>
+    <Name>Visual SourceSafe / TFS</Name>
+    <BeginTag>&lt;SccProvider&gt;</BeginTag>
+    <EndTag>&lt;/SccProvider&gt;</EndTag>
+    <DeleteLine>true</DeleteLine>
+    <DeleteLinesBetweenTags>false</DeleteLinesBetweenTags>
+    <IsSolutionTag>false</IsSolutionTag>
+    <IsProjectTag>true</IsProjectTag>
+  </SourceControlTag>
+  <SourceControlTag>
+    <Name>Visual SourceSafe</Name>
+    <BeginTag>&lt;SourceControl&gt;</BeginTag>
+    <EndTag>&lt;/SourceControl&gt;</EndTag>
+    <DeleteLine>false</DeleteLine>
+    <DeleteLinesBetweenTags>true</DeleteLinesBetweenTags>
+    <IsSolutionTag>true</IsSolutionTag>
+    <IsProjectTag>false</IsProjectTag>
+  </SourceControlTag>  
+  <SourceControlTag>
+    <Name>Visual SourceSafe</Name>
+    <BeginTag>GlobalSection(SourceCodeControl) = preSolution</BeginTag>
+    <EndTag>EndGlobalSection</EndTag>
+    <DeleteLine>false</DeleteLine>
+    <DeleteLinesBetweenTags>true</DeleteLinesBetweenTags>
+    <IsSolutionTag>true</IsSolutionTag>
+    <IsProjectTag>false</IsProjectTag>
+  </SourceControlTag>
+  <SourceControlTag>
+    <Name>Team Studio Source Control</Name>
+    <BeginTag>GlobalSection(TeamFoundationVersionControl) = preSolution</BeginTag>
+    <EndTag>EndGlobalSection</EndTag>
+    <DeleteLine>false</DeleteLine>
+    <DeleteLinesBetweenTags>true</DeleteLinesBetweenTags>
+    <IsSolutionTag>true</IsSolutionTag>
+    <IsProjectTag>false</IsProjectTag>
+  </SourceControlTag>
+</SourceControlTags>

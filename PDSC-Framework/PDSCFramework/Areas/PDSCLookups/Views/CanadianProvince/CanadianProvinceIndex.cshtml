@@ -1,0 +1,24 @@
+@{
+  ViewData["Title"] = "Canadian Province Maintenance";
+}
+
+<h2>Canadian Province Maintenance</h2>
+
+@if (Model.IsDetailVisible) {
+  <partial name="_CanadianProvinceDetail" />
+}
+else {
+  <partial name="_CanadianProvinceSearch" />
+  <partial name="_CanadianProvinceList" />
+}
+
+@section Scripts
+{
+  <script>
+    $(document).ready(function () {
+      // Setup the form submit
+      pdscController.formSubmit();
+    });
+  </script>
+  <partial name="_ValidationScriptsPartial" />
+}

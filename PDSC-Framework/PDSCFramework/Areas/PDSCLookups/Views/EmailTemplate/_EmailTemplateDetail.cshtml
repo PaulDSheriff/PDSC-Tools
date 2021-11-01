@@ -1,0 +1,35 @@
+@model PDSC.Common.ViewModelLayer.EmailTemplateViewModel
+
+<form method="post" asp-action="EmailTemplateIndex">  
+  <input type="hidden" asp-for="SelectedEntity.EmailTemplateId" />
+
+  <partial name="_ValidationPartial" />
+
+  <div class="form-group">
+    <label asp-for="SelectedEntity.EmailTemplateName" class="control-label"></label>
+    <input asp-for="SelectedEntity.EmailTemplateName" class="form-control" />
+    <span asp-validation-for="SelectedEntity.EmailTemplateName" class="text-danger" />
+  </div>
+  <div class="form-group">
+    <label asp-for="SelectedEntity.EmailSubject" class="control-label"></label>
+    <input asp-for="SelectedEntity.EmailSubject" class="form-control" />
+    <span asp-validation-for="SelectedEntity.EmailSubject" class="text-danger" />
+  </div>
+  <div class="form-group">
+    <label asp-for="SelectedEntity.EmailTemplateText" class="control-label"></label>
+    <input asp-for="SelectedEntity.EmailTemplateText" class="form-control" />
+    <span asp-validation-for="SelectedEntity.EmailTemplateText" class="text-danger" />
+  </div>
+  <div class="form-group">
+    <label asp-for="SelectedEntity.IsBodyHtml" class="control-label"></label>
+    <input asp-for="SelectedEntity.IsBodyHtml" class="form-control" />
+    <span asp-validation-for="SelectedEntity.IsBodyHtml" class="text-danger" />
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-primary">Save</button>
+    <a class="btn btn-secondary" formnovalidate="formnovalidate" asp-action="EmailTemplateIndex">
+      Cancel
+    </a>
+  </div>
+</form>

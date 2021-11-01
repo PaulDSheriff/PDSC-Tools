@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataTypeExcludes>
+  <Excludes>
+    <ID>1</ID>
+    <DataType>image</DataType>
+    <IsSelectable>false</IsSelectable>
+    <IsInsertable>false</IsInsertable>
+    <IsUpdatable>false</IsUpdatable>
+  </Excludes>
+  <Excludes>
+    <ID>2</ID>
+    <DataType>binary</DataType>
+    <IsSelectable>false</IsSelectable>
+    <IsInsertable>false</IsInsertable>
+    <IsUpdatable>false</IsUpdatable>
+  </Excludes>
+  <Excludes>
+    <ID>3</ID>
+    <DataType>varbinary</DataType>
+    <IsSelectable>false</IsSelectable>
+    <IsInsertable>false</IsInsertable>
+    <IsUpdatable>false</IsUpdatable>
+  </Excludes>
+   <Excludes>
+      <ID>3</ID>
+      <DataType>geography</DataType>
+      <IsSelectable>false</IsSelectable>
+      <IsInsertable>false</IsInsertable>
+      <IsUpdatable>false</IsUpdatable>
+   </Excludes>
+</DataTypeExcludes>

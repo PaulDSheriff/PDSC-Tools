@@ -1,0 +1,1 @@
+﻿public virtual DbSet<<|CLASS_NAME|>> <|CLASS_DESCRIPTION_PLURAL_NOSPACE|> { get; set; }
