@@ -1,0 +1,11 @@
+''' <summary>
+''' Get/Set <|PUBLICNAME|>
+''' </summary>
+<|SCOPE|><|SHARED|><|READONLY|> Property <|PUBLICNAME|>() As <|DATATYPE|>
+   Get
+      Return Convert.<|CONVERSIONMETHOD|>(HttpContext.Current.Session("<|PUBLICNAME|>"))
+   End Get
+   <READONLY>Set(ByVal Value As <|DATATYPE|>)
+      HttpContext.Current.Session("<|PUBLICNAME|>") = Value
+   End Set</READONLY>
+End Property

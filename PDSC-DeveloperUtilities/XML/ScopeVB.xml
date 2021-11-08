@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Scopes>
+  <Scope>
+    <Name>Public</Name>
+  </Scope>
+  <Scope>
+    <Name>Private</Name>
+  </Scope>
+  <Scope>
+    <Name>Protected</Name>
+  </Scope>
+  <Scope>
+    <Name>Friend</Name>
+  </Scope>
+  <Scope>
+    <Name>Protected Friend</Name>
+  </Scope>
+</Scopes>

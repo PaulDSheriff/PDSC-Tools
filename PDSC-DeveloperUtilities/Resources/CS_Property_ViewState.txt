@@ -1,0 +1,8 @@
+/// <summary>
+/// Get/Set <|PUBLICNAME|>
+/// </summary>
+<|SCOPE|><|STATIC|> <|DATATYPE|> <|PUBLICNAME|>
+{
+   get { return Convert.<|CONVERSIONMETHOD|>(ViewState["<|PUBLICNAME|>"]); }
+   <READONLY>set { ViewState["<|PUBLICNAME|>"] = value; }</READONLY>
+}

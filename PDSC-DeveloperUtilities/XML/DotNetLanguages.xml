@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Languages>
+  <Language>
+    <Name>C#</Name>
+    <Code>CSharp</Code>
+  </Language>
+  <Language>
+    <Name>VB.NET</Name>
+    <Code>VBNET</Code>
+  </Language>
+</Languages>
