@@ -32,4 +32,12 @@
     <VersionNumber>16.0</VersionNumber>
     <BuiltOn>.NET 4.0</BuiltOn>
   </Version>
+	<Version>
+		<Name>.NET 4.8.03752</Name>
+		<VSNETName>Visual Studio 2022</VSNETName>
+		<Number>v4.8.03752</Number>
+		<RegKey>Software\Microsoft\VisualStudio\17.0\</RegKey>
+		<VersionNumber>17.0</VersionNumber>
+		<BuiltOn>.NET 4.0</BuiltOn>
+	</Version>
 </Versions>
