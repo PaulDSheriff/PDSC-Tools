@@ -16,8 +16,14 @@ This utility will allow you to choose a table, view or a SELECT stored procedure
 ## XML Builder
 This utility will allow you to choose a table, view or a SELECT stored procedure and will generate an XML file of the data, or an XSD file of the schema of the table or view.
 
-## Application Creator
-This utility copies all the files and folders from the where you installed the PDSC Framework template project to a new folder and name that you specify. It then renames the appropriate files to the new application name you specify.
-
 ## SQL Compare
 This utility compares two SQL Server databases to determine what objects are missing, or have been changed between them.
+
+## C# Application Creator
+This utility copies all the files and folders from the where you installed the PDSC Framework template project to a new folder and name that you specify. It then renames the appropriate files to the new application name you specify.
+
+## C# Entity Generator
+A typical entity class in C# is one that has a one-to-one correlation between the properties of the class and a table in a database. If you have a Product table in a database, this tool generates a Product class with one property for each column in your Product table.
+
+## C# Hard-Coded Repository Generator
+A repository class is one that has methods to return data from a data source. When creating exercises for a training class, or to test some functionality, but you don't want to have to connect to a database, it is nice to have a collection of hard-coded data that can be returned. Instead of you having to create all this data by hand, if you have a table with data, you can use this generator to select some data and have it hard-coded into a repository class.
