@@ -27,12 +27,17 @@
 	</DataAnnotation>
 	<DataAnnotation>
 		<DataType>decimal</DataType>
+		<ColumnNames></ColumnNames>
+		<Annotation>[Column(TypeName = "decimal({|PRECISION|}, {|SCALE|})")]</Annotation>
+	</DataAnnotation>
+	<DataAnnotation>
+		<DataType>decimal</DataType>
 		<ColumnNames>price,cost,paid,amount,total,payment</ColumnNames>
-		<Annotation>[DataType(DataType.Currency)]{CRLF}    [Column(TypeName = "decimal(18, 2)")]</Annotation>
+		<Annotation>[DataType(DataType.Currency)]</Annotation>
 	</DataAnnotation>
 	<DataAnnotation>
 		<DataType>decimal</DataType>
 		<ColumnNames>percent</ColumnNames>
-		<Annotation>[DisplayFormat(DataFormatString = "{0:P0}")]{CRLF}    [Column(TypeName = "decimal(18, 2)")]</Annotation>
+		<Annotation>[DisplayFormat(DataFormatString = "{0:P0}")]</Annotation>
 	</DataAnnotation>
 </DataAnnotations>
