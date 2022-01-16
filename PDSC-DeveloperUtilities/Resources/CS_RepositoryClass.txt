@@ -1,0 +1,20 @@
+﻿using System;
+
+namespace <|NAMESPACE|>
+{
+  /// <summary>
+  /// This class creates some fake data for the <|TABLENAME|> table.
+  /// </summary>
+  public partial class <|REPO_CLASSNAME|>
+  {
+    #region GetAll Method
+    public static List<<|CLASSNAME|>> GetAll()
+    {
+      return new List<<|CLASSNAME|>>
+      {
+        <|HARD_CODED_DATA|>
+      };
+    }
+    #endregion
+  }
+}
