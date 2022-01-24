@@ -8,13 +8,6 @@
     <GenPublic>True</GenPublic>
   </PropertyTemplate>
   <PropertyTemplate>
-    <Description>C# GetValue/SetValue Properties</Description>
-    <FileName>CS_Property_GetValueSetValue.txt</FileName>
-    <Language>CSharp</Language>
-    <GenPrivateVars>False</GenPrivateVars>
-    <GenPublic>True</GenPublic>
-  </PropertyTemplate>
-  <PropertyTemplate>
     <Description>C# Normal Get/Set</Description>
     <FileName>CS_Property.txt</FileName>
     <Language>CSharp</Language>
@@ -24,20 +17,6 @@
   <PropertyTemplate>
     <Description>C# INotifyChanged Property</Description>
     <FileName>CS_Property_INotify.txt</FileName>
-    <Language>CSharp</Language>
-    <GenPrivateVars>True</GenPrivateVars>
-    <GenPublic>True</GenPublic>
-  </PropertyTemplate>
-  <PropertyTemplate>
-    <Description>C# Property in Session Variable</Description>
-    <FileName>CS_Property_Session.txt</FileName>
-    <Language>CSharp</Language>
-    <GenPrivateVars>True</GenPrivateVars>
-    <GenPublic>True</GenPublic>
-  </PropertyTemplate>
-  <PropertyTemplate>
-    <Description>C# Property in ViewState Variable</Description>
-    <FileName>CS_Property_ViewState.txt</FileName>
     <Language>CSharp</Language>
     <GenPrivateVars>True</GenPrivateVars>
     <GenPublic>True</GenPublic>
