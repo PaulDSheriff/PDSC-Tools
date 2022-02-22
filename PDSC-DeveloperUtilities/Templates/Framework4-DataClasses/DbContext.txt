@@ -1,0 +1,16 @@
+// TODO: Add the NuGet Package 'EntityFramework'
+
+using <|NAMESPACE|>.EntityLayer;
+using System.Data.Entity;
+
+namespace <|NAMESPACE|>.DataLayer {
+  public partial class <|NAMESPACE|>DbContext : DbContext {
+    public <|NAMESPACE|>DbContext() : base("name=DefaultConnection") {
+    }
+
+    // Add your DbSet Classes here
+    // {|APPEND_START|}
+    public virtual DbSet<<|CLASS_NAME|>> <|CLASS_NAME_PLURAL|> { get; set; }
+    // {|APPEND_END|}    
+  }
+}

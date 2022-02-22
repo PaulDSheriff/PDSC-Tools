@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenTemplates>
+  <Template>
+		<Name>Controller Class</Name>
+    <TemplateFileName>DotNet6-MVC\Controller.txt</TemplateFileName>
+		<BaseClassName>AppControllerBase</BaseClassName>
+		<OutputSubFolder>Controllers</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix>Controller</OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+	<Template>
+		<Name>Index Page</Name>
+		<TemplateFileName>DotNet6-MVC\Index.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>Views\{|CLASS_NAME|}</OutputSubFolder>
+		<OutputFileExtension>.cshtml</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix>Index</OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+	<Template>
+		<Name>Detail Page</Name>
+		<TemplateFileName>DotNet6-MVC\Detail.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>Views\{|CLASS_NAME|}</OutputSubFolder>
+		<OutputFileExtension>.cshtml</OutputFileExtension>
+		<OutputFilePrefix>_</OutputFilePrefix>
+		<OutputFileSuffix>Detail</OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+	<Template>
+		<Name>List Page</Name>
+		<TemplateFileName>DotNet6-MVC\List.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>Views\{|CLASS_NAME|}</OutputSubFolder>
+		<OutputFileExtension>.cshtml</OutputFileExtension>
+		<OutputFilePrefix>_</OutputFilePrefix>
+		<OutputFileSuffix>List</OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+	<Template>
+		<Name>Search Page</Name>
+		<TemplateFileName>DotNet6-MVC\Search.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>Views\{|CLASS_NAME|}</OutputSubFolder>
+		<OutputFileExtension>.cshtml</OutputFileExtension>
+		<OutputFilePrefix>_</OutputFilePrefix>
+		<OutputFileSuffix>Search</OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+	<Template>
+		<Name>Program.cs</Name>
+		<TemplateFileName>DotNet6-MVC\Program.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder></OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>true</AppendToFile>
+	</Template>
+	<Template>
+		<Name>appsettings.json</Name>
+		<TemplateFileName>DotNet6-MVC\appsettings.Development.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder></OutputSubFolder>
+		<OutputFileExtension>.json</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+	</Template>
+</CodeGenTemplates>

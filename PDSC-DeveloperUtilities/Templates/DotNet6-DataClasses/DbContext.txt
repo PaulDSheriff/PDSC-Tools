@@ -1,0 +1,40 @@
+#nullable disable
+
+// TODO: Add the NuGet Package 'Microsoft.EntityFrameworkCore.SqlServer'
+
+using <|NAMESPACE|>.EntityLayer;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace <|NAMESPACE|>.DataLayer {
+  public partial class <|NAMESPACE|>DbContext : DbContext {
+    public <|NAMESPACE|>DbContext(DbContextOptions<<|NAMESPACE|>DbContext> options) : base(options) {
+    }
+        
+    // Add your DbSet Classes here
+    // {|APPEND_START|}
+    public virtual DbSet<<|CLASS_NAME|>> <|CLASS_NAME_PLURAL|> { get; set; }
+    // {|APPEND_END|}
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder) {
+      // The following is an example of adding a table with multiple primary keys
+      // modelBuilder.Entity<CustomerAddress>().HasKey(key => new {
+      //   key.CustomerID, 
+      //   key.AddressID 
+      // });
+
+      <|COMMA_RESET|>
+      {|REMOVE_WHEN:OnlyOnePrimaryKey|}
+      // Add multiple primary keys for <|CLASS_NAME|>
+      modelBuilder.Entity<<|CLASS_NAME|>>().HasKey(key => new {
+        {|FOR EACH COLUMN:IsPrimaryKey|}
+        <|COMMA|>key.<|PROPERTY_NAME|>
+        {|END_LOOP|}
+      });
+      {|END_REMOVE|}
+
+      base.OnModelCreating(modelBuilder);
+    }
+  }
+}

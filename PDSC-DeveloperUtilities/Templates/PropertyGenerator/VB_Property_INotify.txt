@@ -1,0 +1,13 @@
+<|PRIVATE_VARIABLES|>
+''' <summary>
+''' Get/Set <|PUBLICNAME|>
+''' </summary>
+<|SCOPE|><|SHARED|> <|READONLY|> Property <|PUBLICNAME|>() As <|PROPERTY_DATA_TYPE|>
+  Get
+    Return <|PRIVATENAME|>
+  End Get
+  {|READONLY|}Set(ByVal Value As <|PROPERTY_DATA_TYPE|>)
+    <|PRIVATENAME|> = Value
+    RaisePropertyChanged("<|PUBLICNAME|>")
+  End Set{/|READONLY|}
+End Property
