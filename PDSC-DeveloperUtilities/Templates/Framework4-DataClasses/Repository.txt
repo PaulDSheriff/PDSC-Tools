@@ -29,33 +29,67 @@ namespace <|NAMESPACE|>.DataLayer
     private readonly <|DB_CONTEXT|> _DbContext;
     #endregion
 
-    #region Get Method
-    public List<<|CLASS_NAME|>> Get()
-    {
-      return _DbContext.<|CLASS_NAME_PLURAL|>.ToList();
-    }
-    #endregion
-
     #region Get(id) Method
     public <|CLASS_NAME|> Get(<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|> id)
     {
-      return _DbContext.<|CLASS_NAME_PLURAL|>.Where(prop => prop.<|PK_PROPERTY_NAME|> == id).FirstOrDefault();
+      return _DbContext.<|CLASS_NAME_PLURAL|>.Find(id);
     }
     #endregion
 
     #region Search Method
-    public List<<|CLASS_NAME|>> Search(<|CLASS_NAME|>Search search)
+    public IQueryable<<|CLASS_NAME|>> Search(<|CLASS_NAME|>Search search)
     {
-      // Perform Searching
-      return _DbContext.<|CLASS_NAME_PLURAL|>.Where(prop =>
-        <|AND_RESET|>
-        {|FOR EACH COLUMN:IsSearchField|}
-        <|AND|> (<|PROPERTY_SEARCH_PATTERN|>)
-        {|END_LOOP|}
-        ).ToList();
+      IQueryable<<|CLASS_NAME|>> query = _DbContext.<|CLASS_NAME_PLURAL|>;
+      
+      // Add WHERE clause(s)
+      query = AddWhereClause(query, search);
+
+      // Add ORDER BY clause(s)
+      query = AddOrderByClause(query, search);
+            
+      return query;
     }
     #endregion
 
+    #region AddWhereClause Method
+    public IQueryable<<|CLASS_NAME|>> AddWhereClause(IQueryable<<|CLASS_NAME|>> query, <|CLASS_NAME|>Search search)
+    {
+      // Perform Searching
+      query = query.Where(prop =>
+          <|AND_RESET|>
+          {|FOR EACH COLUMN:IsSearchField|}
+          <|AND|> (<|PROPERTY_SEARCH_PATTERN|>)
+          {|END_LOOP|}
+          );
+
+      return query;
+    }
+    #endregion
+
+    #region AddOrderByClause Method
+    public IQueryable<<|CLASS_NAME|>> AddOrderByClause(IQueryable<<|CLASS_NAME|>> query, <|CLASS_NAME|>Search search)
+    {
+      search.SortExpression = search.SortExpression.ToLower();
+      if (!search.SortExpression.Contains("_asc") && !search.SortExpression.Contains("_desc")) {
+        search.SortExpression = search.SortExpression + "_asc";
+      }
+
+      // Determine how to sort the data
+      switch (search.SortExpression) {
+      {|FOR EACH COLUMN|}
+        case "<|PROPERTY_NAME_ALL_LOWER|>_asc":
+          query = query.OrderBy(x => x.<|PROPERTY_NAME|>);
+          break;
+        case "<|PROPERTY_NAME_ALL_LOWER|>_desc":
+          query = query.OrderByDescending(x => x.<|PROPERTY_NAME|>);
+          break;
+      {|END_LOOP|}
+      }
+
+      return query;
+    }
+    #endregion
+   
     #region CreateEmpty Method
     public <|CLASS_NAME|> CreateEmpty()
     {

@@ -8,6 +8,8 @@ namespace <|NAMESPACE|>.EntityLayer
   /// </summary>
   public partial class <|CLASS_NAME|>Search
   {
+    public string SortExpression { get; set; }
+
     {|FOR EACH COLUMN:IsSearchField|}
     [Display(Name = "<|PROPERTY_LABEL|>")]
     public <|DOTNET_DATA_TYPE|> <|PROPERTY_NAME|> { get; set; }
