@@ -33,7 +33,7 @@ namespace <|NAMESPACE|>.Controllers
       <|CLASS_NAME|>ViewModel vm = new(_Repo);
 
       // Call method to load <|CLASS_NAME|> objects
-      vm.Get();
+      vm.Search();
 
       return View(vm);
     }

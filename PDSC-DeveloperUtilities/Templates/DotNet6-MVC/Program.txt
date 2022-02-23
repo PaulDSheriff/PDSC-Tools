@@ -17,17 +17,11 @@ builder.Services.AddDbContext<<|NAMESPACE|>DbContext>(
 
 // Create scoped versions of your Repository classes
 {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
-{|FOR EACH TABLE|}
-// {|APPEND_START|}
-builder.Services.AddScoped<IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search>, <|CLASS_NAME|>Repository>();
-// {|APPEND_END|}
-{|END_LOOP|}
+{|INCLUDE:ProgramScopedRepos.txt|}
 {|END_REMOVE|}
 
 {|REMOVE_WHEN:IsPrimaryKeyInteger|}
-{|FOR EACH TABLE|}
-builder.Services.AddScoped<IRepositoryOtherPK<<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search>, <|CLASS_NAME|>Repository>();
-{|END_LOOP|}
+{|INCLUDE:ProgramScopedReposOther.txt|}
 {|END_REMOVE|}
 
 var app = builder.Build();
