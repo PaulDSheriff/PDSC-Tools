@@ -47,28 +47,11 @@ namespace <|NAMESPACE|>.ViewModelLayer
     
     #region Init Method
     public void Init() {
-      SelectedEntity = new <|CLASS_NAME|>();
-      SearchEntity = new <|CLASS_NAME|>Search();
+      SelectedEntity = new();
+      SearchEntity = new();
+      SearchEntity.SortExpression = "<|DESCRIPTION_FIELD|>";
+
       TotalRows = 0;
-    }
-    #endregion
-
-    #region Get Method
-    public virtual void Get()
-    {
-      IsAdding = false;
-      IsDetailVisible = false;
-
-      if (Repository == null) {
-        throw new ApplicationException("Must set the Repository property.");
-      }
-      else {
-        <|CLASS_NAME_PLURAL|> = Repository.Get().OrderBy(prop => prop.<|DESCRIPTION_FIELD|>).ToList();
-      }
-
-      if (<|CLASS_NAME_PLURAL|> != null) {
-        TotalRows = <|CLASS_NAME_PLURAL|>.Count;
-      }
     }
     #endregion
 
@@ -102,7 +85,7 @@ namespace <|NAMESPACE|>.ViewModelLayer
       }
       else
       {
-        <|CLASS_NAME_PLURAL|> = Repository.Search(SearchEntity).OrderBy(prop => prop.<|DESCRIPTION_FIELD|>).ToList();
+        <|CLASS_NAME_PLURAL|> = Repository.Search(SearchEntity).ToList();
       }
 
       if (<|CLASS_NAME_PLURAL|> != null)

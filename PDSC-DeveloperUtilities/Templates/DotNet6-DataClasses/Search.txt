@@ -10,6 +10,8 @@ namespace <|NAMESPACE|>.EntityLayer
   /// </summary>
   public partial class <|CLASS_NAME|>Search
   {
+    public string SortExpression { get; set; }
+
     {|FOR EACH COLUMN:IsSearchField|}
     private <|DOTNET_DATA_TYPE|> <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|>;
 
