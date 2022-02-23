@@ -24,7 +24,7 @@ namespace <|NAMESPACE|>.Controllers {
       <|CLASS_NAME|>ViewModel vm = new <|CLASS_NAME|>ViewModel(_Repo);
 
       // Call method to load <|CLASS_NAME_PLURAL|>
-      vm.Get();
+      vm.Search();
 
       return View(vm);
     }
