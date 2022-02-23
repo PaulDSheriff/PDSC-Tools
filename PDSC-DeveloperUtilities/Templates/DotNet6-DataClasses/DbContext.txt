@@ -13,9 +13,7 @@ namespace <|NAMESPACE|>.DataLayer {
     }
         
     // Add your DbSet Classes here
-    // {|APPEND_START|}
-    public virtual DbSet<<|CLASS_NAME|>> <|CLASS_NAME_PLURAL|> { get; set; }
-    // {|APPEND_END|}
+{|INCLUDE:DbContextDbSets.txt|}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
       // The following is an example of adding a table with multiple primary keys
@@ -24,15 +22,7 @@ namespace <|NAMESPACE|>.DataLayer {
       //   key.AddressID 
       // });
 
-      <|COMMA_RESET|>
-      {|REMOVE_WHEN:OnlyOnePrimaryKey|}
-      // Add multiple primary keys for <|CLASS_NAME|>
-      modelBuilder.Entity<<|CLASS_NAME|>>().HasKey(key => new {
-        {|FOR EACH COLUMN:IsPrimaryKey|}
-        <|COMMA|>key.<|PROPERTY_NAME|>
-        {|END_LOOP|}
-      });
-      {|END_REMOVE|}
+{|INCLUDE:DbContextMultiplePKs.txt|}
 
       base.OnModelCreating(modelBuilder);
     }
