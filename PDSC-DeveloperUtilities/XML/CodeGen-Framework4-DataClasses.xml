@@ -78,12 +78,23 @@
 		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
-		<Name>DbContextClass</Name>
+		<Name>DbContext Class</Name>
 		<TemplateFileName>Framework4-DataClasses\DbContext.txt</TemplateFileName>
 		<BaseClassName></BaseClassName>
 		<OutputSubFolder>Models</OutputSubFolder>
 		<OutputFileExtension>.cs</OutputFileExtension>
 		<OutputFilePrefix>{|NAMESPACE|}</OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+	<Template>
+		<Name>DbContext DbSets</Name>
+		<TemplateFileName>Framework4-DataClasses\DbContextDbSets.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>DoNotAddToProject-Includes</OutputSubFolder>
+		<OutputFileExtension>.txt</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
 		<OutputFileSuffix></OutputFileSuffix>
 		<UseClassNameAsFileName>false</UseClassNameAsFileName>
 		<AppendToFile>true</AppendToFile>

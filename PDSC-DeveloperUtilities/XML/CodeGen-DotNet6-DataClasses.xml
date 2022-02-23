@@ -78,12 +78,34 @@
 		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
-		<Name>DbContextClass</Name>
+		<Name>DbContext Class</Name>
 		<TemplateFileName>DotNet6-DataClasses\DbContext.txt</TemplateFileName>
 		<BaseClassName></BaseClassName>
 		<OutputSubFolder>Models</OutputSubFolder>
 		<OutputFileExtension>.cs</OutputFileExtension>
 		<OutputFilePrefix>{|NAMESPACE|}</OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+	<Template>
+		<Name>DbContext DbSets</Name>
+		<TemplateFileName>DotNet6-DataClasses\DbContextDbSets.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>DoNotAddToProject-Includes</OutputSubFolder>
+		<OutputFileExtension>.txt</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>true</AppendToFile>
+	</Template>
+	<Template>
+		<Name>DbContext Multiple PKs</Name>
+		<TemplateFileName>DotNet6-DataClasses\DbContextMultiplePKs.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>DoNotAddToProject-Includes</OutputSubFolder>
+		<OutputFileExtension>.txt</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
 		<OutputFileSuffix></OutputFileSuffix>
 		<UseClassNameAsFileName>false</UseClassNameAsFileName>
 		<AppendToFile>true</AppendToFile>
