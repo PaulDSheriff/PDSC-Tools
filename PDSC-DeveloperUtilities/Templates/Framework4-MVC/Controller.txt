@@ -1,0 +1,94 @@
+using <|NAMESPACE|>.Common;
+using <|NAMESPACE|>.DataLayer;
+using <|NAMESPACE|>.EntityLayer;
+using <|NAMESPACE|>.ViewModelLayer;
+using System;
+using System.Web.Mvc;
+
+namespace <|NAMESPACE|>.Controllers {
+  public class <|CLASS_NAME|><|OUTPUT_SUFFIX|> : Controller {
+    public <|CLASS_NAME|>Controller() {
+      _Repo = new <|CLASS_NAME|>Repository(new <|NAMESPACE|>DbContext());
+    }
+
+    {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
+    private readonly IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> _Repo;
+    {|END_REMOVE|}
+    {|REMOVE_WHEN:IsPrimaryKeyInteger|}
+    private readonly IRepositoryOtherPK<<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> _Repo;
+    {|END_REMOVE|}
+    
+    [HttpGet]
+    public ActionResult <|CLASS_NAME|>Index() {
+      // Create view model, passing in repository
+      <|CLASS_NAME|>ViewModel vm = new <|CLASS_NAME|>ViewModel(_Repo);
+
+      // Call method to load <|CLASS_NAME_PLURAL|>
+      vm.Get();
+
+      return View(vm);
+    }
+
+    [HttpPost]
+    public ActionResult <|CLASS_NAME|>Index(<|CLASS_NAME|>ViewModel vm) {
+      vm.Repository = _Repo;
+
+      if (ModelState.IsValid) {
+        // Save the <|CLASS_NAME|>
+        vm.Save();
+
+        // Redirect back to Index page
+        return RedirectToAction("<|CLASS_NAME|>Index");
+      }
+      else {
+        vm.IsDetailVisible = true;
+
+        return View(vm);
+      }
+    }
+
+    [HttpGet]
+    public ActionResult <|CLASS_NAME|>Search(<|CLASS_NAME|>ViewModel vm) {
+      vm.Repository = _Repo;
+
+      // Search for <|CLASS_NAME_PLURAL|>
+      vm.Search();
+
+      return View("<|CLASS_NAME|>Index", vm);
+    }
+
+    [HttpGet]
+    public ActionResult <|CLASS_NAME|>Add() {
+      // Create view model, passing in repository
+      <|CLASS_NAME|>ViewModel vm = new <|CLASS_NAME|>ViewModel(_Repo);
+      vm.IsDetailVisible = true;
+
+      // Create an empty <|CLASS_NAME|> object
+      vm.CreateEmpty();
+
+      return View("<|CLASS_NAME|>Index", vm);
+    }
+    
+    [HttpGet]
+    public ActionResult <|CLASS_NAME|>Edit(<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|> id) {
+      // Create view model, passing in repository
+      <|CLASS_NAME|>ViewModel vm = new <|CLASS_NAME|>ViewModel(_Repo);
+
+      // Call method to load a <|CLASS_NAME|>
+      vm.Get(id);
+
+      return View("<|CLASS_NAME|>Index", vm);
+    }
+
+    [HttpGet]
+    public ActionResult <|CLASS_NAME|>Delete(<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|> id) {
+      // Create view model, passing in repository
+      <|CLASS_NAME|>ViewModel vm = new <|CLASS_NAME|>ViewModel(_Repo);
+
+      // Call method to delete a <|CLASS_NAME|>
+      vm.Delete(id);
+
+      return RedirectToAction("<|CLASS_NAME|>Index");
+    }
+  }
+}

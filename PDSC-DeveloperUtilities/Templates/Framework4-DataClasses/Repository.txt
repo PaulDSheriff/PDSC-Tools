@@ -1,0 +1,111 @@
+﻿using <|NAMESPACE|>.Common;
+using <|NAMESPACE|>.EntityLayer;
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace <|NAMESPACE|>.DataLayer
+{
+  {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
+  public partial class <|CLASS_NAME|>Repository : IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search>
+  {|END_REMOVE|}
+  {|REMOVE_WHEN:IsPrimaryKeyInteger|}
+  public partial class <|CLASS_NAME|>Repository : IRepositoryOtherPK<<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search>
+  {|END_REMOVE|}
+  {
+    #region Constructor
+    public <|CLASS_NAME|>Repository()
+    {
+    }
+
+    public <|CLASS_NAME|>Repository(<|DB_CONTEXT|> context)
+    {
+      _DbContext = context;
+    }
+    #endregion
+
+    #region Private Variables
+    private readonly <|DB_CONTEXT|> _DbContext;
+    #endregion
+
+    #region Get Method
+    public List<<|CLASS_NAME|>> Get()
+    {
+      return _DbContext.<|CLASS_NAME_PLURAL|>.ToList();
+    }
+    #endregion
+
+    #region Get(id) Method
+    public <|CLASS_NAME|> Get(<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|> id)
+    {
+      return _DbContext.<|CLASS_NAME_PLURAL|>.Where(prop => prop.<|PK_PROPERTY_NAME|> == id).FirstOrDefault();
+    }
+    #endregion
+
+    #region Search Method
+    public List<<|CLASS_NAME|>> Search(<|CLASS_NAME|>Search search)
+    {
+      // Perform Searching
+      return _DbContext.<|CLASS_NAME_PLURAL|>.Where(prop =>
+        <|AND_RESET|>
+        {|FOR EACH COLUMN:IsSearchField|}
+        <|AND|> (<|PROPERTY_SEARCH_PATTERN|>)
+        {|END_LOOP|}
+        ).ToList();
+    }
+    #endregion
+
+    #region CreateEmpty Method
+    public <|CLASS_NAME|> CreateEmpty()
+    {
+      return new <|CLASS_NAME|>
+      {
+        <|COMMA_RESET|>
+        {|FOR EACH COLUMN|}
+        <|COMMA|><|PROPERTY_NAME|> = <|PROPERTY_INITIALIZER|>
+        {|END_LOOP|}
+      };
+    }
+    #endregion
+
+    #region Insert Method
+    public <|CLASS_NAME|> Insert(<|CLASS_NAME|> entity)
+    {
+      // Add new entity to <|CLASS_NAME_PLURAL|> DbSet
+      _DbContext.<|CLASS_NAME_PLURAL|>.Add(entity);
+
+      // Save changes in database
+      _DbContext.SaveChanges();
+
+      return entity;
+    }
+    #endregion
+
+    #region Update Method
+    public <|CLASS_NAME|> Update(<|CLASS_NAME|> entity)
+    {
+      // Update entity in <|CLASS_NAME_PLURAL|> DbSet
+      _DbContext.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+
+      // Save changes in database
+      _DbContext.SaveChanges();
+
+      return entity;
+    }
+    #endregion
+
+    #region Delete Method
+    public bool Delete(<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|> id)
+    {
+      // Locate the entity to delete in the <|CLASS_NAME_PLURAL|> DbSet
+      _DbContext.<|CLASS_NAME_PLURAL|>.Remove(_DbContext.<|CLASS_NAME_PLURAL|>.Find(id));
+
+      // Save changes in database
+      _DbContext.SaveChanges();
+
+      return true;
+    }
+    #endregion
+  }
+}

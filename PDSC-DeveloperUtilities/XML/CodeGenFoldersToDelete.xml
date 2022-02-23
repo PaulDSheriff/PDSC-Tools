@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenFoldersToDelete>
+	<Folder>
+		<Name>DoNotAddToProject-Includes</Name>
+	</Folder>
+</CodeGenFoldersToDelete>

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenTemplates>
+  <Template>
+		<Name>Entity Class</Name>
+    <TemplateFileName>DotNet6-DataClasses\Entity.txt</TemplateFileName>
+		<BaseClassName>AppEntityBase</BaseClassName>
+		<OutputSubFolder>EntityClasses</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+  </Template>
+	<Template>
+		<Name>Search Class</Name>
+		<TemplateFileName>DotNet6-DataClasses\Search.txt</TemplateFileName>
+		<BaseClassName>AppSearchBase</BaseClassName>
+		<OutputSubFolder>SearchClasses</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix>Search</OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+	</Template>
+	<Template>
+		<Name>Repository Class</Name>
+		<TemplateFileName>DotNet6-DataClasses\Repository.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>RepositoryClasses</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix>Repository</OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+	</Template>
+	<Template>
+		<Name>View Model Class</Name>
+		<TemplateFileName>DotNet6-DataClasses\ViewModel.txt</TemplateFileName>
+		<BaseClassName>ViewModelBase</BaseClassName>
+		<OutputSubFolder>ViewModelClasses</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix>ViewModel</OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+	</Template>
+	<Template>
+		<Name>IRepositoryBase Interface</Name>
+		<TemplateFileName>Common\IRepositoryBase.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>RepositoryInterfaces</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+	</Template>
+	<Template>
+		<Name>IRepository Interface</Name>
+		<TemplateFileName>Common\IRepository.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>RepositoryInterfaces</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+	</Template>
+	<Template>
+		<Name>IRepositoryOtherPK Interface</Name>
+		<TemplateFileName>Common\IRepositoryOtherPK.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>RepositoryInterfaces</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+	</Template>
+	<Template>
+		<Name>DbContext Class</Name>
+		<TemplateFileName>DotNet6-DataClasses\DbContext.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>Models</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix>{|NAMESPACE|}</OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+	</Template>
+	<Template>
+		<Name>DbContext DbSets</Name>
+		<TemplateFileName>DotNet6-DataClasses\DbContextDbSets.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>DoNotAddToProject-Includes</OutputSubFolder>
+		<OutputFileExtension>.txt</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+	</Template>
+	<Template>
+		<Name>DbContext Multiple PKs</Name>
+		<TemplateFileName>DotNet6-DataClasses\DbContextMultiplePKs.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>DoNotAddToProject-Includes</OutputSubFolder>
+		<OutputFileExtension>.txt</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+	</Template>
+</CodeGenTemplates>

@@ -1,0 +1,154 @@
+using <|NAMESPACE|>.Common;
+using <|NAMESPACE|>.EntityLayer;
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace <|NAMESPACE|>.ViewModelLayer
+{
+  public partial class <|CLASS_NAME|>ViewModel
+  {
+    #region Constructors
+    /// <summary>
+    ///  NOTE: You need to have a parameterless constructor for Post-Backs in MVC    
+    /// </summary>
+    public <|CLASS_NAME|>ViewModel() : base()
+    {
+      Init();
+    }
+
+    {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
+    public <|CLASS_NAME|>ViewModel(IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository) : base()
+    {|END_REMOVE|}
+    {|REMOVE_WHEN:IsPrimaryKeyInteger|}
+    public <|CLASS_NAME|>ViewModel(IRepositoryOtherPK<<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> repository) : base()
+    {|END_REMOVE|}
+    {
+      Repository = repository;
+      Init();
+    }
+    #endregion
+
+    #region Properties
+    {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
+    public IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> Repository { get; set; }
+    {|END_REMOVE|}
+    {|REMOVE_WHEN:IsPrimaryKeyInteger|}
+    public IRepositoryOtherPK<<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> Repository { get; set; }
+    {|END_REMOVE|}
+    public List<<|CLASS_NAME|>> <|CLASS_NAME_PLURAL|> { get; set; }
+    
+    public <|CLASS_NAME|> SelectedEntity { get; set; }
+    public <|CLASS_NAME|>Search SearchEntity { get; set; }
+
+    public bool IsAdding { get; set; }
+    public bool IsDetailVisible { get; set; }
+    public int TotalRows { get; set; }
+    #endregion
+    
+    #region Init Method
+    public void Init() {
+      SelectedEntity = new <|CLASS_NAME|>();
+      SearchEntity = new <|CLASS_NAME|>Search();
+      TotalRows = 0;
+    }
+    #endregion
+
+    #region Get Method
+    public virtual void Get()
+    {
+      IsAdding = false;
+      IsDetailVisible = false;
+
+      if (Repository == null) {
+        throw new ApplicationException("Must set the Repository property.");
+      }
+      else {
+        <|CLASS_NAME_PLURAL|> = Repository.Get().OrderBy(prop => prop.<|DESCRIPTION_FIELD|>).ToList();
+      }
+
+      if (<|CLASS_NAME_PLURAL|> != null) {
+        TotalRows = <|CLASS_NAME_PLURAL|>.Count;
+      }
+    }
+    #endregion
+
+    #region Get(id) Method
+    public virtual void Get(<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|> id)
+    {
+      IsAdding = false;
+      IsDetailVisible = true;
+
+      if (Repository == null) {
+        throw new ApplicationException("Must set the Repository property.");
+      }
+      else {
+        SelectedEntity = Repository.Get(id);
+      }
+
+      if (SelectedEntity != null) {
+        TotalRows = 1;
+      }
+    }
+    #endregion
+
+    #region Search Method
+    public virtual void Search()
+    {
+      IsDetailVisible = false;
+
+      if (Repository == null)
+      {
+        throw new ApplicationException("Must set the Repository property.");
+      }
+      else
+      {
+        <|CLASS_NAME_PLURAL|> = Repository.Search(SearchEntity).OrderBy(prop => prop.<|DESCRIPTION_FIELD|>).ToList();
+      }
+
+      if (<|CLASS_NAME_PLURAL|> != null)
+      {
+        TotalRows = <|CLASS_NAME_PLURAL|>.Count;
+      }
+    }
+    #endregion
+
+    #region CreateEmpty Method
+    public void CreateEmpty()
+    {
+      IsAdding = true;
+      // Set SelectedEntity to an empty <|CLASS_NAME|> object
+      SelectedEntity = Repository.CreateEmpty();
+    }
+    #endregion
+
+    #region Save Method
+    public virtual bool Save()
+    {      
+      if (IsAdding)
+      {
+        // Adding a new <|CLASS_NAME|>
+        Repository.Insert(SelectedEntity);
+        IsAdding = false;
+      }
+      else
+      {
+        // Editing an existing <|CLASS_NAME|>
+        Repository.Update(SelectedEntity);
+      }
+
+      return true;
+    }
+    #endregion
+
+    #region Delete Method
+    public bool Delete(<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|> id)
+    {
+      Repository.Delete(id);
+
+      return true;
+    }
+    #endregion
+  }
+}
