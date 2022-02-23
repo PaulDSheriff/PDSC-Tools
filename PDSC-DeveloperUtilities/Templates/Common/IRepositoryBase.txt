@@ -1,9 +1,10 @@
+using System.Linq;
+
 namespace <|NAMESPACE|>.Common
 {
   public interface IRepositoryBase<TEntity, TSearch>
   {
-    List<TEntity> Get();
-    List<TEntity> Search(TSearch search);
+    IQueryable<TEntity> Search(TSearch search);
     TEntity CreateEmpty();
     TEntity Insert(TEntity entity);
     TEntity Update(TEntity entity);
