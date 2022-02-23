@@ -9,6 +9,7 @@
 		<OutputFilePrefix></OutputFilePrefix>
 		<OutputFileSuffix>Controller</OutputFileSuffix>
 		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
 		<Name>Index Page</Name>
@@ -19,6 +20,7 @@
 		<OutputFilePrefix></OutputFilePrefix>
 		<OutputFileSuffix>Index</OutputFileSuffix>
 		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
 		<Name>Detail Page</Name>
@@ -29,6 +31,7 @@
 		<OutputFilePrefix>_</OutputFilePrefix>
 		<OutputFileSuffix>Detail</OutputFileSuffix>
 		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
 		<Name>List Page</Name>
@@ -39,6 +42,7 @@
 		<OutputFilePrefix>_</OutputFilePrefix>
 		<OutputFileSuffix>List</OutputFileSuffix>
 		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
 		<Name>Search Page</Name>
@@ -49,6 +53,7 @@
 		<OutputFilePrefix>_</OutputFilePrefix>
 		<OutputFileSuffix>Search</OutputFileSuffix>
 		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
 		<Name>Program.cs</Name>
@@ -59,6 +64,7 @@
 		<OutputFilePrefix></OutputFilePrefix>
 		<OutputFileSuffix></OutputFileSuffix>
 		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
 		<Name>appsettings.json</Name>
@@ -69,5 +75,28 @@
 		<OutputFilePrefix></OutputFilePrefix>
 		<OutputFileSuffix></OutputFileSuffix>
 		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+	<Template>
+		<Name>Program.cs Scoped Repos</Name>
+		<TemplateFileName>DotNet6-MVC\ProgramScopedRepos.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>DoNotAddToProject-Includes</OutputSubFolder>
+		<OutputFileExtension>.txt</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>true</AppendToFile>
+	</Template>
+	<Template>
+		<Name>Program.cs Scoped Repos (other PK type)</Name>
+		<TemplateFileName>DotNet6-MVC\ProgramScopedReposOther.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>DoNotAddToProject-Includes</OutputSubFolder>
+		<OutputFileExtension>.txt</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>true</AppendToFile>
 	</Template>
 </CodeGenTemplates>

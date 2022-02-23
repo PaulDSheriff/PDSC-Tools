@@ -9,6 +9,7 @@
 		<OutputFilePrefix></OutputFilePrefix>
 		<OutputFileSuffix></OutputFileSuffix>
 		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
 		<Name>Search Class</Name>
@@ -19,6 +20,7 @@
 		<OutputFilePrefix></OutputFilePrefix>
 		<OutputFileSuffix>Search</OutputFileSuffix>
 		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
 		<Name>Repository Class</Name>
@@ -29,6 +31,7 @@
 		<OutputFilePrefix></OutputFilePrefix>
 		<OutputFileSuffix>Repository</OutputFileSuffix>
 		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
 		<Name>View Model Class</Name>
@@ -39,6 +42,7 @@
 		<OutputFilePrefix></OutputFilePrefix>
 		<OutputFileSuffix>ViewModel</OutputFileSuffix>
 		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
 		<Name>IRepositoryBase Interface</Name>
@@ -49,6 +53,7 @@
 		<OutputFilePrefix></OutputFilePrefix>
 		<OutputFileSuffix></OutputFileSuffix>
 		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
 		<Name>IRepository Interface</Name>
@@ -59,6 +64,7 @@
 		<OutputFilePrefix></OutputFilePrefix>
 		<OutputFileSuffix></OutputFileSuffix>
 		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
 		<Name>IRepositoryOtherPK Interface</Name>
@@ -69,6 +75,7 @@
 		<OutputFilePrefix></OutputFilePrefix>
 		<OutputFileSuffix></OutputFileSuffix>
 		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
 		<Name>DbContext Class</Name>
@@ -79,6 +86,7 @@
 		<OutputFilePrefix>{|NAMESPACE|}</OutputFilePrefix>
 		<OutputFileSuffix></OutputFileSuffix>
 		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
 		<Name>DbContext DbSets</Name>
@@ -89,5 +97,6 @@
 		<OutputFilePrefix></OutputFilePrefix>
 		<OutputFileSuffix></OutputFileSuffix>
 		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>true</AppendToFile>
 	</Template>
 </CodeGenTemplates>
