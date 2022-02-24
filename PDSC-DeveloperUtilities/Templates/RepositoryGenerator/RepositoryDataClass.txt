@@ -1,0 +1,95 @@
+﻿using System;
+
+namespace <|NAMESPACE|>
+{
+  /// <summary>
+  /// This class creates some fake data for the <|TABLE_NAME|> table.
+  /// </summary>
+  public partial class <|CLASSNAME_REPOSITORY|>
+  {
+    #region GetAll Method
+    /// <summary>
+    /// Get all <|CLASS_NAME_SINGULAR|> objects
+    /// </summary>
+    /// <returns>A list of <|CLASS_NAME_SINGULAR|> objects</returns>
+    public static List<<|CLASS_NAME_SINGULAR|>> GetAll()
+    {
+      return new List<<|CLASS_NAME_SINGULAR|>>
+      {
+        <|HARD_CODED_DATA|>
+      };
+    }
+    #endregion
+
+    #region Get Method
+    /// <summary>
+    /// Get a single <|CLASS_NAME_SINGULAR|> object
+    /// </summary>
+    /// <param name="id">The value to locate</param>
+    /// <returns>A valid <|CLASS_NAME_SINGULAR|> object object, or null if not found</returns>
+    public <|CLASS_NAME_SINGULAR|> Get(int id) {
+      return GetAll().Where(row => row.<|PRIMARY_KEY_FIELD|> == id).FirstOrDefault();
+    }
+    #endregion
+
+    #region Insert Method
+    /// <summary>
+    /// Insert a new <|CLASS_NAME_SINGULAR|> object
+    /// </summary>
+    /// <param name="entity">The data to insert</param>
+    /// <returns>The inserted <|CLASS_NAME_SINGULAR|> object</returns>
+    public <|CLASS_NAME_SINGULAR|> Insert(<|CLASS_NAME_SINGULAR|> entity) {
+      GetAll().Add(entity);
+
+      // TODO: Insert into data store
+      entity.<|PRIMARY_KEY_FIELD|> = GetAll().Max(row => row.<|PRIMARY_KEY_FIELD|>) + 1;
+
+      return entity;
+    }
+    #endregion
+
+    #region Update Method
+    /// <summary>
+    /// Update existing <|CLASS_NAME_SINGULAR|> object
+    /// </summary>
+    /// <param name="entity">The data to update</param>
+    /// <returns>The updated <|CLASS_NAME_SINGULAR|> object</returns>
+    public <|CLASS_NAME_SINGULAR|> Update(<|CLASS_NAME_SINGULAR|> entity) {
+      // Look up the data by the specified id
+      <|CLASS_NAME_SINGULAR|> current = Get(entity.<|PRIMARY_KEY_FIELD|>);
+
+      if (current != null) {
+        // TODO: Update the entity
+        <|UPDATE_COLUMNS|>
+
+        // TODO: Update data store
+
+      }
+
+      return current;
+    }
+    #endregion
+
+    #region Delete Method
+    /// <summary>
+    /// Delete a <|CLASS_NAME_SINGULAR|> object
+    /// </summary>
+    /// <param name="id">The value to delete</param>
+    /// <returns>True if delete, false if not found</returns>
+    public bool Delete(int id) {
+      bool ret = false;
+
+      // Look up the data by the specified id
+      <|CLASS_NAME_SINGULAR|> current = Get(id);
+
+      if (current != null) {
+        // TODO: Delete data from data store
+        GetAll().RemoveAll(row => row.<|PRIMARY_KEY_FIELD|> == id);
+        ret = true;
+      }
+
+      return ret;
+    }
+    #endregion
+  }
+}
