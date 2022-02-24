@@ -1,4 +1,0 @@
-/// <summary>
-/// Get/Set <|PUBLICNAME|>
-/// </summary>
-<|SCOPE|><|STATIC|> <|PROPERTY_DATA_TYPE|> <|PUBLICNAME|> { get; {|READONLY|}set;{/|READONLY|} }
