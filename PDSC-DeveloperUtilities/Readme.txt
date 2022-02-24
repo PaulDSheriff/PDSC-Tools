@@ -23,7 +23,7 @@ This utility generates a repository class that returns hard-coded data that you 
 Code Generator
 This utility generates Entity, Repository, View Model and Search classes from a table. It can also generate a complete set of CRUD MVC pages.
 
-C# Application Creator
+C# Application Creator (COMING SOON)
 This utility copies all the files and folders from the where you installed the PDSC Framework template project to a new folder and name that you specify. It then renames the appropriate files to the new application name you specify.
 
 SQL Compare
