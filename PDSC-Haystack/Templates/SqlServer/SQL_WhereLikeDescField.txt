@@ -1,4 +1,0 @@
-WHERE
-{|FOR EACH COLUMN:IsDescriptionField=True|}
-<|SQL_AND|><|COLUMN_NAME|> LIKE <|COLUMN_PARAMETER|> + '%'
-{|END|}

@@ -1,1 +1,0 @@
-﻿using <|TEMPLATE_NAMESPACE|>[|ListView/Detail ViewModel Class for WPF|];

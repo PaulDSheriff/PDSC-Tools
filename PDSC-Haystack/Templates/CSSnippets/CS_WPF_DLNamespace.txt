@@ -1,1 +1,0 @@
-             xmlns:dl="clr-namespace:<|NAMESPACE|>.DataLayer<|ASSEMBLY_NAMESPACE:.DataLayer|>"

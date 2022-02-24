@@ -1,4 +1,0 @@
-WHERE
-{|FOR EACH COLUMN:IsPrimaryKey=True|}
-<|SQL_AND|><|COLUMN_NAME|> = <|COLUMN_PARAMETER|>
-{|END|}

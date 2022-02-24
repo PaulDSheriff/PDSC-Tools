@@ -1,9 +1,0 @@
-SELECT 
-{|FOR EACH COLUMN:IsPrimaryKey=True|}
-<|COMMA|><|COLUMN_NAME|>
-{|END|}
-<|COMMA_CONTINUE|>
-{|FOR EACH COLUMN:IsDescriptionField=True|}
-<|COMMA|><|COLUMN_NAME|>
-{|END|}
-FROM <|TABLE_NAME|>

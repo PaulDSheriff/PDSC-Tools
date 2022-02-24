@@ -1,3 +1,0 @@
-﻿{|FOR EACH COLUMN:IsPrimaryKey=True|}
-<|COMMA|><|COLUMN_PUBLIC_PROPERTY_LOWER|>
-{|END|}

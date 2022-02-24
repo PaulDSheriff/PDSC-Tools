@@ -1,8 +1,0 @@
-UPDATE <|TABLE_NAME|> SET 
-{|FOR EACH COLUMN:IsUpdatable=True|}
-<|COMMA|><|COLUMN_NAME|> = <|COLUMN_PARAMETER|>
-{|END|}
-<|COMMA_CONTINUE|>
-{|FOR EACH COLUMN:IsConcurrencyField=True|}
-<|COMMA|><|COLUMN_NAME|> = <|COLUMN_NAME|> + 1
-{|END|}

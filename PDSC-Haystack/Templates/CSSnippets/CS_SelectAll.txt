@@ -1,3 +1,0 @@
-{|FOR EACH COLUMN:IsSelectable=True|}
-<|COMMA|><|COLUMN_NAME|>
-{|END|}

@@ -1,3 +1,0 @@
-﻿{|FOR EACH COLUMN:IsPrimaryKey=True|}
- <|COLUMN_PUBLIC_PROPERTY_ASPNET|>='<%# Eval("<|COLUMN_NAME_ONLY|>") %>'
-{|END|}
