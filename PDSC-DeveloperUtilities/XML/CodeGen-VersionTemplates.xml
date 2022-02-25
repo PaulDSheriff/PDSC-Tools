@@ -24,4 +24,10 @@
 		<TemplatesXmlFileName>CodeGen-Framework4-MVC.xml</TemplatesXmlFileName>
 		<IsDotNet6OrLater>false</IsDotNet6OrLater>
 	</Template>
+	<Template>
+		<Group>TypeScript</Group>
+		<Name>TypeScript Dto Class</Name>
+		<TemplatesXmlFileName>CodeGen-TypeScript.xml</TemplatesXmlFileName>
+		<IsDotNet6OrLater>false</IsDotNet6OrLater>
+	</Template>
 </CodeGenVersionTemplates>
