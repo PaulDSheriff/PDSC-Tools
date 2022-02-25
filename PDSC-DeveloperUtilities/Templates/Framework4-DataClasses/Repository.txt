@@ -48,6 +48,9 @@ namespace <|NAMESPACE|>.DataLayer
       // Add ORDER BY clause(s)
       query = AddOrderByClause(query, search);
             
+      // Apply Paging
+      query = ApplyPaging(query, search);
+
       return query;
     }
     #endregion
@@ -72,7 +75,7 @@ namespace <|NAMESPACE|>.DataLayer
     {
       search.SortExpression = search.SortExpression.ToLower();
       if (!search.SortExpression.Contains("_asc") && !search.SortExpression.Contains("_desc")) {
-        search.SortExpression = search.SortExpression + "_asc";
+        search.SortExpression += "_asc";
       }
 
       // Determine how to sort the data
@@ -91,6 +94,30 @@ namespace <|NAMESPACE|>.DataLayer
     }
     #endregion
    
+    #region ApplyPaging Method
+    public IQueryable<<|CLASS_NAME|>> ApplyPaging(IQueryable<<|CLASS_NAME|>> query, <|CLASS_NAME|>Search search)
+    {
+      //query = query.Skip(search.PageIndex *
+      //                   search.PageSize)
+      //             .Take(search.PageSize);
+
+      return query;
+    }
+    #endregion
+        
+    #region Count Method
+    public int Count(<|CLASS_NAME|>Search search)
+    {
+      // Count using Search Criteria
+       return _DbContext.<|CLASS_NAME_PLURAL|>.Where(prop =>
+          <|AND_RESET|>
+          {|FOR EACH COLUMN:IsSearchField|}
+          <|AND|> (<|PROPERTY_SEARCH_PATTERN|>)
+          {|END_LOOP|}
+          ).Count();
+    }
+    #endregion
+
     #region CreateEmpty Method
     public <|CLASS_NAME|> CreateEmpty()
     {
