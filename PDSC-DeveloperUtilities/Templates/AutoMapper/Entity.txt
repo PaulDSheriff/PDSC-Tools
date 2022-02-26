@@ -6,19 +6,18 @@ public DbSet<<|CLASS_NAME|>> <|CLASS_NAME_PLURAL|> { get; set; }
 public class <|CLASS_NAME|>
 {
        internal <|CLASS_NAME|>() { }
+
        {|FOR EACH COLUMN|}
-          public <|DOTNET_DATA_TYPE|> <|PROPERTY_NAME|> { get; set; }
+       public <|LANGUAGE_DATA_TYPE|> <|PROPERTY_NAME|> { get; set; }
        {|END_LOOP|}
 }
 
 /* === DTO Class === */
 public class <|CLASS_NAME|>Dto
 { 
-       internal <|CLASS_NAME|>() { }
-
        {|FOR EACH COLUMN|}
        {|DATA_ANNOTATION:MaxLength|}
-       public <|DOTNET_DATA_TYPE|> <|PROPERTY_NAME|> { get; set; }
+       public <|LANGUAGE_DATA_TYPE|> <|PROPERTY_NAME|> { get; set; }
        {|END_LOOP|}
 }
 
