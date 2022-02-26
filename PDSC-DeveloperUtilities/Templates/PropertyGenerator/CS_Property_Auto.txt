@@ -1,4 +1,4 @@
 /// <summary>
-/// Get/Set <|PUBLICNAME|>
+/// Get/Set <|PROPERTY_NAME|>
 /// </summary>
-<|SCOPE|><|STATIC|> <|PROPERTY_DATA_TYPE|> <|PUBLICNAME|> { get; {|READONLY|}set;{/|READONLY|} }
+<|SCOPE|> <|STATIC|> <|DOTNET_DATA_TYPE|> <|PROPERTY_NAME|> { get; {|READ_ONLY|}set;{/|READ_ONLY|} }

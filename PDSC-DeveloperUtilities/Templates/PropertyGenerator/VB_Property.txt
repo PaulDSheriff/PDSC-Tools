@@ -1,11 +1,11 @@
 ''' <summary>
-''' Get/Set <|PUBLICNAME|>
+''' Get/Set <|PROPERTY_NAME|>
 ''' </summary>
-<|SCOPE|><|SHARED|> <|READONLY|> Property <|PUBLICNAME|>() As <|PROPERTY_DATA_TYPE|>
+<|SCOPE|> <|SHARED|> <|READ_ONLY|> Property <|PROPERTY_NAME|>() As <|DOTNET_DATA_TYPE|>
    Get
-      Return <|PRIVATENAME|>
+      Return <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|>
    End Get
-   {|READONLY|}Set(ByVal Value As <|PROPERTY_DATA_TYPE|>)
-      <|PRIVATENAME|> = Value
-   End Set{/|READONLY|}
+   {|READ_ONLY|}Set(ByVal Value As <|DOTNET_DATA_TYPE|>)
+      <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|> = Value
+   End Set{/|READ_ONLY|}
 End Property

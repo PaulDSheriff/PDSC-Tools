@@ -1,12 +1,12 @@
 /// <summary>
-/// Get/Set <|PUBLICNAME|>
+/// Get/Set <|PROPERTY_NAME|>
 /// </summary>
-<|SCOPE|> <|PROPERTY_DATA_TYPE|> <|PUBLICNAME|>
+<|SCOPE|> <|STATIC|> <|DOTNET_DATA_TYPE|> <|PROPERTY_NAME|>
 {
-  get { return <|PRIVATENAME|>; }
-  {|READONLY|}set 
+  get { return <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|>; }
+  {|READ_ONLY|}set 
   { 
-    <|PRIVATENAME|> = value; 
-    RaisePropertyChanged("<|PUBLICNAME|>");
-  }{/|READONLY|}
+    <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|> = value; 
+    RaisePropertyChanged("<|PROPERTY_NAME|>");
+  }{/|READ_ONLY|}
 }

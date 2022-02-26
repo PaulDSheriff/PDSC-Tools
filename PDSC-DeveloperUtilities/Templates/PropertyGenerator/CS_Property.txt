@@ -1,8 +1,8 @@
 /// <summary>
-/// Get/Set <|PUBLICNAME|>
+/// Get/Set <|PROPERTY_NAME|>
 /// </summary>
-<|SCOPE|><|STATIC|> <|PROPERTY_DATA_TYPE|> <|PUBLICNAME|>
+<|SCOPE|> <|STATIC|> <|DOTNET_DATA_TYPE|> <|PROPERTY_NAME|>
 {
-   get { return <|PRIVATENAME|>; }
-   {|READONLY|}set { <|PRIVATENAME|> = value; }{/|READONLY|}
+   get { return <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|>; }
+   {|READ_ONLY|}set { <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|> = value; }{/|READ_ONLY|}
 }
