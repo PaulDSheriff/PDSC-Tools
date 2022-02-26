@@ -7,7 +7,7 @@
 		<Prefix>bln</Prefix>
 		<Initializer>false</Initializer>
 		<ConversionMethod>ToBoolean</ConversionMethod>
-		<SearchPattern>prop.&lt;|PROPERTY_NAME|&gt; == search.&lt;|PROPERTY_NAME|&gt;</SearchPattern>
+		<SearchPattern>prop.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<Name>byte</Name>
@@ -16,7 +16,7 @@
 		<Prefix>byt</Prefix>
 		<Initializer>0</Initializer>
 		<ConversionMethod></ConversionMethod>
-		<SearchPattern>prop.&lt;|PROPERTY_NAME|&gt; == search.&lt;|PROPERTY_NAME|&gt;</SearchPattern>
+		<SearchPattern>prop.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<Name>Guid</Name>
@@ -25,7 +25,7 @@
 		<Prefix>g</Prefix>
 		<Initializer>new System.Guid()</Initializer>
 		<ConversionMethod></ConversionMethod>
-		<SearchPattern>prop.&lt;|PROPERTY_NAME|&gt; == search.&lt;|PROPERTY_NAME|&gt;</SearchPattern>
+		<SearchPattern>prop.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<Name>char</Name>
@@ -34,7 +34,7 @@
 		<Prefix>chr</Prefix>
 		<Initializer></Initializer>
 		<ConversionMethod>ToChar</ConversionMethod>
-		<SearchPattern>prop.&lt;|PROPERTY_NAME|&gt; == search.&lt;|PROPERTY_NAME|&gt;</SearchPattern>
+		<SearchPattern>prop.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<Name>DateTime</Name>
@@ -43,7 +43,7 @@
 		<Prefix>dt</Prefix>
 		<Initializer>System.DateTime.Now</Initializer>
 		<ConversionMethod>ToDateTime</ConversionMethod>
-		<SearchPattern>prop.&lt;|PROPERTY_NAME|&gt; == search.&lt;|PROPERTY_NAME|&gt;</SearchPattern>
+		<SearchPattern>prop.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<Name>decimal</Name>
@@ -52,7 +52,7 @@
 		<Prefix>dec</Prefix>
 		<Initializer>0</Initializer>
 		<ConversionMethod>ToDecimal</ConversionMethod>
-		<SearchPattern>prop.&lt;|PROPERTY_NAME|&gt; >= search.&lt;|PROPERTY_NAME|&gt;</SearchPattern>
+		<SearchPattern>prop.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<Name>double</Name>
@@ -61,7 +61,7 @@
 		<Prefix>dbl</Prefix>
 		<Initializer>0</Initializer>
 		<ConversionMethod>ToDouble</ConversionMethod>
-		<SearchPattern>prop.&lt;|PROPERTY_NAME|&gt; >= search.&lt;|PROPERTY_NAME|&gt;</SearchPattern>
+		<SearchPattern>prop.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<Name>int</Name>
@@ -70,7 +70,7 @@
 		<Prefix>int</Prefix>
 		<Initializer>0</Initializer>
 		<ConversionMethod>ToInt32</ConversionMethod>
-		<SearchPattern>prop.&lt;|PROPERTY_NAME|&gt; >= search.&lt;|PROPERTY_NAME|&gt;</SearchPattern>
+		<SearchPattern>prop.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<Name>long</Name>
@@ -79,7 +79,7 @@
 		<Prefix>lng</Prefix>
 		<Initializer>0</Initializer>
 		<ConversionMethod>ToInt64</ConversionMethod>
-		<SearchPattern>prop.&lt;|PROPERTY_NAME|&gt; >= search.&lt;|PROPERTY_NAME|&gt;</SearchPattern>
+		<SearchPattern>prop.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<Name>object</Name>
@@ -97,7 +97,7 @@
 		<Prefix>sbyt</Prefix>
 		<Initializer></Initializer>
 		<ConversionMethod>ToByte</ConversionMethod>
-		<SearchPattern>prop.&lt;|PROPERTY_NAME|&gt; == search.&lt;|PROPERTY_NAME|&gt;</SearchPattern>
+		<SearchPattern>prop.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<Name>short</Name>
@@ -106,7 +106,7 @@
 		<Prefix>srt</Prefix>
 		<Initializer>0</Initializer>
 		<ConversionMethod>ToInt16</ConversionMethod>
-		<SearchPattern>prop.&lt;|PROPERTY_NAME|&gt; >= search.&lt;|PROPERTY_NAME|&gt;</SearchPattern>
+		<SearchPattern>prop.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<Name>Single</Name>
@@ -115,7 +115,7 @@
 		<Prefix>sng</Prefix>
 		<Initializer>0</Initializer>
 		<ConversionMethod>ToSingle</ConversionMethod>
-		<SearchPattern>prop.&lt;|PROPERTY_NAME|&gt; >= search.&lt;|PROPERTY_NAME|&gt;</SearchPattern>
+		<SearchPattern>prop.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<Name>string</Name>
@@ -124,7 +124,7 @@
 		<Prefix>str</Prefix>
 		<Initializer>string.Empty</Initializer>
 		<ConversionMethod>ToString</ConversionMethod>
-		<SearchPattern>string.IsNullOrEmpty(search.&lt;|PROPERTY_NAME|&gt;) ? true : prop.&lt;|PROPERTY_NAME|&gt;.StartsWith(search.&lt;|PROPERTY_NAME|&gt;)</SearchPattern>
+		<SearchPattern>string.IsNullOrEmpty(search.{|PROPERTY_NAME|}) ? true : prop.{|PROPERTY_NAME|}.StartsWith(search.{|PROPERTY_NAME|})</SearchPattern>
 	</DataType>
 	<DataType>
 		<Name>uint</Name>
@@ -133,7 +133,7 @@
 		<Prefix>uint</Prefix>
 		<Initializer>0</Initializer>
 		<ConversionMethod>ToUInt32</ConversionMethod>
-		<SearchPattern>prop.&lt;|PROPERTY_NAME|&gt; >= search.&lt;|PROPERTY_NAME|&gt;</SearchPattern>
+		<SearchPattern>prop.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<Name>ulong</Name>
@@ -142,7 +142,7 @@
 		<Prefix>ulng</Prefix>
 		<Initializer>0</Initializer>
 		<ConversionMethod>ToUInt64</ConversionMethod>
-		<SearchPattern>prop.&lt;|PROPERTY_NAME|&gt; >= search.&lt;|PROPERTY_NAME|&gt;</SearchPattern>
+		<SearchPattern>prop.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<Name>ushort</Name>
@@ -151,7 +151,7 @@
 		<Prefix>usrt</Prefix>
 		<Initializer>0</Initializer>
 		<ConversionMethod>ToUInt16</ConversionMethod>
-		<SearchPattern>prop.&lt;|PROPERTY_NAME|&gt; >= search.&lt;|PROPERTY_NAME|&gt;</SearchPattern>
+		<SearchPattern>prop.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<Name>Boolean</Name>
