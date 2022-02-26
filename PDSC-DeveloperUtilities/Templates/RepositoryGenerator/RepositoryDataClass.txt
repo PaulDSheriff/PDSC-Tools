@@ -5,7 +5,7 @@ namespace <|NAMESPACE|>
   /// <summary>
   /// This class creates some fake data for the <|TABLE_NAME|> table.
   /// </summary>
-  public partial class <|CLASSNAME_REPOSITORY|>
+  public partial class <|CLASS_NAME_REPOSITORY|>
   {
     #region GetAll Method
     /// <summary>
