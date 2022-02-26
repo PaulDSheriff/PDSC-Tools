@@ -12,7 +12,7 @@ namespace <|NAMESPACE|>.EntityLayer
 
     {|FOR EACH COLUMN:IsSearchField|}
     [Display(Name = "<|PROPERTY_LABEL|>")]
-    public <|DOTNET_DATA_TYPE|> <|PROPERTY_NAME|> { get; set; }
+    public <|LANGUAGE_DATA_TYPE|> <|PROPERTY_NAME|> { get; set; }
     {|END_LOOP|}
   }
 }

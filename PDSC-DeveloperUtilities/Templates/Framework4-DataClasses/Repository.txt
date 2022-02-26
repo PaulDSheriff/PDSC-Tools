@@ -12,7 +12,7 @@ namespace <|NAMESPACE|>.DataLayer
   public partial class <|CLASS_NAME|>Repository : IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search>
   {|END_REMOVE|}
   {|REMOVE_WHEN:IsPrimaryKeyInteger|}
-  public partial class <|CLASS_NAME|>Repository : IRepositoryOtherPK<<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search>
+  public partial class <|CLASS_NAME|>Repository : IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search>
   {|END_REMOVE|}
   {
     #region Constructor
@@ -31,7 +31,7 @@ namespace <|NAMESPACE|>.DataLayer
     #endregion
 
     #region Get(id) Method
-    public <|CLASS_NAME|> Get(<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|> id)
+    public <|CLASS_NAME|> Get(<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|> id)
     {
       return _DbContext.<|CLASS_NAME_PLURAL|>.Find(id);
     }
@@ -60,9 +60,9 @@ namespace <|NAMESPACE|>.DataLayer
     {
       // Perform Searching
       query = query.Where(prop =>
-          <|AND_RESET|>
+          <|DOUBLE_AMPERSAND_RESET|>
           {|FOR EACH COLUMN:IsSearchField|}
-          <|AND|> (<|PROPERTY_SEARCH_PATTERN|>)
+          <|DOUBLE_AMPERSAND|> (<|PROPERTY_SEARCH_PATTERN|>)
           {|END_LOOP|}
           );
 
@@ -110,9 +110,9 @@ namespace <|NAMESPACE|>.DataLayer
     {
       // Count using Search Criteria
        return _DbContext.<|CLASS_NAME_PLURAL|>.Where(prop =>
-          <|AND_RESET|>
+          <|DOUBLE_AMPERSAND_RESET|>
           {|FOR EACH COLUMN:IsSearchField|}
-          <|AND|> (<|PROPERTY_SEARCH_PATTERN|>)
+          <|DOUBLE_AMPERSAND|> (<|PROPERTY_SEARCH_PATTERN|>)
           {|END_LOOP|}
           ).Count();
     }
@@ -158,7 +158,7 @@ namespace <|NAMESPACE|>.DataLayer
     #endregion
 
     #region Delete Method
-    public bool Delete(<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|> id)
+    public bool Delete(<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|> id)
     {
       // Locate the entity to delete in the <|CLASS_NAME_PLURAL|> DbSet
       _DbContext.<|CLASS_NAME_PLURAL|>.Remove(_DbContext.<|CLASS_NAME_PLURAL|>.Find(id));
