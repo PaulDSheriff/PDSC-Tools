@@ -1,0 +1,35 @@
+/* === DBSet === */
+public DbSet<<|CLASS_NAME|>> <|CLASS_NAME_PLURAL|> { get; set; }
+
+/* === POCO Class === */
+[Table("<|TABLE_NAME|>", Schema = "<|SCHEMA_NAME|>")]
+public class <|CLASS_NAME|>
+{
+       internal <|CLASS_NAME|>() { }
+       {|FOR EACH COLUMN|}
+          public <|DOTNET_DATA_TYPE|> <|PROPERTY_NAME|> { get; set; }
+       {|END_LOOP|}
+}
+
+/* === DTO Class === */
+public class <|CLASS_NAME|>Dto
+{ 
+       internal <|CLASS_NAME|>() { }
+
+       {|FOR EACH COLUMN|}
+       {|DATA_ANNOTATION:MaxLength|}
+       public <|DOTNET_DATA_TYPE|> <|PROPERTY_NAME|> { get; set; }
+       {|END_LOOP|}
+}
+
+/* === DTO Create Method (put in (static) Extensions class) === */
+public static <|CLASS_NAME|>Dto ToDto(this <|CLASS_NAME|> model)
+{
+       return new <|CLASS_NAME|>Dto()
+       {
+             <|COMMA_RESET|>
+             {|FOR EACH COLUMN|}
+                <|COMMA|><|PROPERTY_NAME|> = model.<|PROPERTY_NAME|>
+             {|END_LOOP|}
+       };
+}
