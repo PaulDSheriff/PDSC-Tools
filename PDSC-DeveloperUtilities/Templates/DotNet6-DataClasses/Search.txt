@@ -13,10 +13,10 @@ namespace <|NAMESPACE|>.EntityLayer
     public string SortExpression { get; set; }
 
     {|FOR EACH COLUMN:IsSearchField|}
-    private <|DOTNET_DATA_TYPE|> <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|>;
+    private <|LANGUAGE_DATA_TYPE|> <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|>;
 
     [Display(Name = "<|PROPERTY_LABEL|>")]
-    public <|DOTNET_DATA_TYPE|> <|PROPERTY_NAME|>
+    public <|LANGUAGE_DATA_TYPE|> <|PROPERTY_NAME|>
     {
       get { return <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|>; }
       set { <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|> = value; }

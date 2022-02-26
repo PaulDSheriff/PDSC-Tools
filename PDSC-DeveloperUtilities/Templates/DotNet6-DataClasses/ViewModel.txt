@@ -20,7 +20,7 @@ namespace <|NAMESPACE|>.ViewModelLayer
     public <|CLASS_NAME|>ViewModel(IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository) : base()
     {|END_REMOVE|}
     {|REMOVE_WHEN:IsPrimaryKeyInteger|}
-    public <|CLASS_NAME|>ViewModel(IRepositoryOtherPK<<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> repository) : base()
+    public <|CLASS_NAME|>ViewModel(IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> repository) : base()
     {|END_REMOVE|}
     {
       Repository = repository;
@@ -33,7 +33,7 @@ namespace <|NAMESPACE|>.ViewModelLayer
     public IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> Repository { get; set; }
     {|END_REMOVE|}
     {|REMOVE_WHEN:IsPrimaryKeyInteger|}
-    public IRepositoryOtherPK<<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> Repository { get; set; }
+    public IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> Repository { get; set; }
     {|END_REMOVE|}
     public List<<|CLASS_NAME|>> <|CLASS_NAME_PLURAL|> { get; set; }
     
@@ -57,7 +57,7 @@ namespace <|NAMESPACE|>.ViewModelLayer
     #endregion
 
     #region Get(id) Method
-    public virtual void Get(<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|> id)
+    public virtual void Get(<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|> id)
     {
       IsAdding = false;
       IsDetailVisible = true;
@@ -125,7 +125,7 @@ namespace <|NAMESPACE|>.ViewModelLayer
     #endregion
 
     #region Delete Method
-    public bool Delete(<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|> id)
+    public bool Delete(<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|> id)
     {
       Repository.Delete(id);
 
