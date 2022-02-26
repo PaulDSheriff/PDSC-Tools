@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <CodeGenTemplates>
   <Template>
-		<Name>Dto Class</Name>
-    <TemplateFileName>TypeScript\Entity.txt</TemplateFileName>
+		<Name>AutoMapper Classes</Name>
+    <TemplateFileName>AutoMapper\Entity.txt</TemplateFileName>
 		<BaseClassName></BaseClassName>
-		<OutputSubFolder>TypeScript</OutputSubFolder>
-		<OutputFileExtension>.ts</OutputFileExtension>
+		<OutputSubFolder>AutoMapper</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
 		<OutputFilePrefix></OutputFilePrefix>
 		<OutputFileSuffix></OutputFileSuffix>
 		<UseClassNameAsFileName>true</UseClassNameAsFileName>

@@ -2,32 +2,44 @@
 <CodeGenVersionTemplates>
 	<Template>
 		<Group>.NET 6</Group>
+		<Language>CSharp</Language>
 		<Name>.NET 6 (Data Classes)</Name>
 		<TemplatesXmlFileName>CodeGen-DotNet6-DataClasses.xml</TemplatesXmlFileName>
 		<IsDotNet6OrLater>true</IsDotNet6OrLater>
 	</Template>
 	<Template>
 		<Group>.NET 6</Group>
+		<Language>CSharp</Language>
 		<Name>.NET 6 (MVC)</Name>
 		<TemplatesXmlFileName>CodeGen-DotNet6-MVC.xml</TemplatesXmlFileName>
 		<IsDotNet6OrLater>true</IsDotNet6OrLater>
 	</Template>
 	<Template>
 		<Group>.NET Framework 4.x</Group>
+		<Language>CSharp</Language>
 		<Name>.NET Framework 4.x (Data Classes)</Name>
 		<TemplatesXmlFileName>CodeGen-Framework4-DataClasses.xml</TemplatesXmlFileName>
 		<IsDotNet6OrLater>false</IsDotNet6OrLater>
 	</Template>
 	<Template>
 		<Group>.NET Framework 4.x</Group>
+		<Language>CSharp</Language>
 		<Name>.NET Framework 4.x (MVC)</Name>
 		<TemplatesXmlFileName>CodeGen-Framework4-MVC.xml</TemplatesXmlFileName>
 		<IsDotNet6OrLater>false</IsDotNet6OrLater>
 	</Template>
 	<Template>
 		<Group>TypeScript</Group>
+		<Language>TypeScript</Language>
 		<Name>TypeScript Dto Class</Name>
 		<TemplatesXmlFileName>CodeGen-TypeScript.xml</TemplatesXmlFileName>
+		<IsDotNet6OrLater>false</IsDotNet6OrLater>
+	</Template>
+	<Template>
+		<Group>AutoMapper</Group>
+		<Language>AutoMapper</Language>
+		<Name>AutoMapper Classes and Methods</Name>
+		<TemplatesXmlFileName>CodeGen-AutoMapper.xml</TemplatesXmlFileName>
 		<IsDotNet6OrLater>false</IsDotNet6OrLater>
 	</Template>
 </CodeGenVersionTemplates>
