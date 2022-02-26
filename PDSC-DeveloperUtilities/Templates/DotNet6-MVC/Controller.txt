@@ -13,7 +13,7 @@ namespace <|NAMESPACE|>.Controllers
     public <|CLASS_NAME|><|OUTPUT_SUFFIX|>(IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> repo)
     {|END_REMOVE|}
     {|REMOVE_WHEN:IsPrimaryKeyInteger|}
-    public <|CLASS_NAME|><|OUTPUT_SUFFIX|>(IRepositoryOtherPK<<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> repo)
+    public <|CLASS_NAME|><|OUTPUT_SUFFIX|>(IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> repo)
     {|END_REMOVE|}
     {
       _Repo = repo;
@@ -23,7 +23,7 @@ namespace <|NAMESPACE|>.Controllers
     private readonly IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> _Repo;
     {|END_REMOVE|}
     {|REMOVE_WHEN:IsPrimaryKeyInteger|}
-    private readonly IRepositoryOtherPK<<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> _Repo;
+    private readonly IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> _Repo;
     {|END_REMOVE|}
 
     [HttpGet]
@@ -60,7 +60,7 @@ namespace <|NAMESPACE|>.Controllers
     }
 
     [HttpGet]
-    public IActionResult <|CLASS_NAME|>Edit(<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|> id)
+    public IActionResult <|CLASS_NAME|>Edit(<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|> id)
     {
       // Create view model, passing in repository
       <|CLASS_NAME|>ViewModel vm = new(_Repo);
@@ -98,7 +98,7 @@ namespace <|NAMESPACE|>.Controllers
     }
 
     [HttpGet]
-    public IActionResult <|CLASS_NAME|>Delete(<|PK_DOTNET_DATA_TYPE_NEVER_NULLABLE|> id)
+    public IActionResult <|CLASS_NAME|>Delete(<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|> id)
     {
       // Create view model, passing in repository
       <|CLASS_NAME|>ViewModel vm = new(_Repo);
