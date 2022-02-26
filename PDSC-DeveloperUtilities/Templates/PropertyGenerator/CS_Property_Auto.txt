@@ -1,4 +1,5 @@
+<|NO_PRIVATE_VARIABLES|>
 /// <summary>
 /// Get/Set <|PROPERTY_NAME|>
 /// </summary>
-<|SCOPE|> <|STATIC|> <|DOTNET_DATA_TYPE|> <|PROPERTY_NAME|> { get; {|READ_ONLY|}set;{/|READ_ONLY|} }
+<|SCOPE|> <|STATIC|> <|LANGUAGE_DATA_TYPE|> <|PROPERTY_NAME|> { get; {|READ_ONLY|}set;{/|READ_ONLY|} }
