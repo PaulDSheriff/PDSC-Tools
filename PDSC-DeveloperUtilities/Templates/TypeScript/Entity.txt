@@ -1,7 +1,0 @@
-/* === Typescript Class === */
-export interface <|CLASS_NAME|>Dto { 
-<|COMMA_RESET|>
-{|FOR EACH COLUMN|}
-  <|COMMA|><|PROPERTY_NAME|><|NULLABLE_CHARACTER|>: <|IS_NUMERIC_OR_STRING|>
-{|END_LOOP|}
-}
