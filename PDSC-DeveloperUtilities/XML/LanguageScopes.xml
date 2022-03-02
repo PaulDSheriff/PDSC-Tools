@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Scopes>
+  <Scope>
+    <Name>public</Name>
+		<LanguageCode>CSharp</LanguageCode>
+  </Scope>
+  <Scope>
+    <Name>private</Name>
+		<LanguageCode>CSharp</LanguageCode>
+  </Scope>
+  <Scope>
+    <Name>protected</Name>
+		<LanguageCode>CSharp</LanguageCode>
+	</Scope>
+  <Scope>
+    <Name>internal</Name>
+		<LanguageCode>CSharp</LanguageCode>
+  </Scope>
+  <Scope>
+    <Name>protected internal</Name>
+		<LanguageCode>CSharp</LanguageCode>
+  </Scope>
+	<Scope>
+		<Name>Public</Name>
+		<LanguageCode>VBNET</LanguageCode>
+	</Scope>
+	<Scope>
+		<Name>Private</Name>
+		<LanguageCode>VBNET</LanguageCode>
+	</Scope>
+	<Scope>
+		<Name>Protected</Name>
+		<LanguageCode>VBNET</LanguageCode>
+	</Scope>
+	<Scope>
+		<Name>Friend</Name>
+		<LanguageCode>VBNET</LanguageCode>
+	</Scope>
+	<Scope>
+		<Name>Protected Friend</Name>
+		<LanguageCode>VBNET</LanguageCode>
+	</Scope>
+</Scopes>

@@ -1,0 +1,8 @@
+/// <summary>
+/// Get/Set <|PROPERTY_NAME|>
+/// </summary>
+<|SCOPE|> <|STATIC|> <|LANGUAGE_DATA_TYPE|> <|PROPERTY_NAME|>
+{
+   get { return <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|>; }
+   {|READ_ONLY|}set { <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|> = value; }{/|READ_ONLY|}
+}

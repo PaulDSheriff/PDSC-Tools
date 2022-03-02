@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenTemplateGroups>
+	<TemplateGroup>
+		<Group>.NET 6</Group>
+		<LanguageCode>CSharp</LanguageCode>
+		<Name>.NET 6 (Data Classes)</Name>
+		<TemplatesXmlFileName>CodeGen-DotNet6-DataClasses.xml</TemplatesXmlFileName>
+		<IsDotNet6OrLater>true</IsDotNet6OrLater>
+	</TemplateGroup>
+	<TemplateGroup>
+		<Group>.NET 6</Group>
+		<LanguageCode>CSharp</LanguageCode>
+		<Name>.NET 6 (MVC)</Name>
+		<TemplatesXmlFileName>CodeGen-DotNet6-MVC.xml</TemplatesXmlFileName>
+		<IsDotNet6OrLater>true</IsDotNet6OrLater>
+	</TemplateGroup>
+	<TemplateGroup>
+		<Group>.NET Framework 4.x</Group>
+		<LanguageCode>CSharp</LanguageCode>
+		<Name>.NET Framework 4.x (Data Classes)</Name>
+		<TemplatesXmlFileName>CodeGen-Framework4-DataClasses.xml</TemplatesXmlFileName>
+		<IsDotNet6OrLater>false</IsDotNet6OrLater>
+	</TemplateGroup>
+	<TemplateGroup>
+		<Group>.NET Framework 4.x</Group>
+		<LanguageCode>CSharp</LanguageCode>
+		<Name>.NET Framework 4.x (MVC)</Name>
+		<TemplatesXmlFileName>CodeGen-Framework4-MVC.xml</TemplatesXmlFileName>
+		<IsDotNet6OrLater>false</IsDotNet6OrLater>
+	</TemplateGroup>
+</CodeGenTemplateGroups>

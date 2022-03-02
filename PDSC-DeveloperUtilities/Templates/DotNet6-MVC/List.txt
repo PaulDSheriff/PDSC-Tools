@@ -1,0 +1,44 @@
+@using <|NAMESPACE|>.EntityLayer
+@model <|NAMESPACE|>.ViewModelLayer.<|CLASS_NAME|>ViewModel
+
+@if (Model.<|CLASS_NAME_PLURAL|>.Count > 0) {
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <tr>
+        <th>Actions</th>
+        {|FOR EACH COLUMN:DisplayInTable|}
+        <th><|PROPERTY_LABEL|></th>
+        {|END_LOOP|}
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (<|CLASS_NAME|> item in Model.<|CLASS_NAME_PLURAL|>) {
+      <tr>
+        <td>
+          <a asp-action="<|CLASS_NAME|>Edit"
+             asp-route-id="@item.<|PK_PROPERTY_NAME|>"
+             class="btn btn-primary">
+            Edit
+          </a>
+        </td>
+        {|FOR EACH COLUMN:DisplayInTable|}
+        <td>@Html.DisplayFor(m => item.<|PROPERTY_NAME|>)</td>
+        {|END_LOOP|}
+        <td>
+          @Html.ActionLink("Delete", "<|CLASS_NAME|>Delete",
+              new { id = item.<|PK_PROPERTY_NAME|> },
+              new
+                {
+                  onclick = "return confirm('Delete this <|CLASS_DESC_SINGULAR|>?');",
+                    @class = "btn btn-danger"
+                })
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+}
+else {
+  <p>No <|CLASS_NAME_PLURAL|> were found</p>
+}

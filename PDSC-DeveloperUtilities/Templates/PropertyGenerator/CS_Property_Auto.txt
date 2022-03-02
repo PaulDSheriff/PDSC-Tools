@@ -1,0 +1,5 @@
+<|NO_PRIVATE_VARIABLES|>
+/// <summary>
+/// Get/Set <|PROPERTY_NAME|>
+/// </summary>
+<|SCOPE|> <|STATIC|> <|LANGUAGE_DATA_TYPE|> <|PROPERTY_NAME|> { get; {|READ_ONLY|}set;{/|READ_ONLY|} }
