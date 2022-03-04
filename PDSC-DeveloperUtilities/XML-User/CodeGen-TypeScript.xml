@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenTemplates>
+  <Template>
+		<Name>Dto Class</Name>
+    <TemplateFileName>TypeScript\Entity.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>TypeScript</OutputSubFolder>
+		<OutputFileExtension>.ts</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+</CodeGenTemplates>

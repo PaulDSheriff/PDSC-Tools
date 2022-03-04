@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataAnnotations>
+	<DataAnnotation>
+		<Name>StringLength</Name>
+		<LanguageCode>CSharp</LanguageCode>
+		<DataType>string</DataType>
+		<ColumnNames></ColumnNames>
+		<Annotation>[StringLength({|MAX_LENGTH|}, MinimumLength=0, ErrorMessage = "{0} must be between {2} and {1} characters long.")]</Annotation>
+	</DataAnnotation>
+	<DataAnnotation>
+		<Name>CreditCard</Name>
+		<LanguageCode>CSharp</LanguageCode>
+		<DataType>string</DataType>
+		<ColumnNames>creditcard</ColumnNames>
+		<Annotation>[CreditCard()]</Annotation>
+	</DataAnnotation>
+	<DataAnnotation>
+		<Name>Phone</Name>
+		<LanguageCode>CSharp</LanguageCode>
+		<DataType>string</DataType>
+		<ColumnNames>phone</ColumnNames>
+		<Annotation>[Phone()]</Annotation>
+	</DataAnnotation>
+	<DataAnnotation>
+		<Name>Email</Name>
+		<LanguageCode>CSharp</LanguageCode>
+		<DataType>string</DataType>
+		<ColumnNames>email</ColumnNames>
+		<Annotation>[EmailAddress()]</Annotation>
+	</DataAnnotation>
+	<DataAnnotation>
+		<Name>DataType-DateTime</Name>
+		<LanguageCode>CSharp</LanguageCode>
+		<DataType>DateTime</DataType>
+		<ColumnNames></ColumnNames>
+		<Annotation>[DataType(DataType.Date)]</Annotation>
+	</DataAnnotation>
+	<DataAnnotation>
+		<Name>DataType-Currency</Name>
+		<LanguageCode>CSharp</LanguageCode>
+		<DataType>decimal</DataType>
+		<ColumnNames>price,cost,paid,amount,total,payment</ColumnNames>
+		<Annotation>[DataType(DataType.Currency)]</Annotation>
+	</DataAnnotation>
+	<DataAnnotation>
+		<Name>Decimal-Range</Name>
+		<LanguageCode>CSharp</LanguageCode>
+		<DataType>decimal</DataType>
+		<ColumnNames>price,cost,paid,amount,total,payment</ColumnNames>
+		<Annotation>[Range(0.01, 9999999)]</Annotation>
+	</DataAnnotation>
+	<DataAnnotation>
+		<Name>Decimal-DisplayFormat-Percentage</Name>
+		<LanguageCode>CSharp</LanguageCode>
+		<DataType>decimal</DataType>
+		<ColumnNames>percent</ColumnNames>
+		<Annotation>[DisplayFormat(DataFormatString = "{0:P0}")]</Annotation>
+	</DataAnnotation>
+</DataAnnotations>

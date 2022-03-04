@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenTemplates>
+  <Template>
+		<Name>Entity Class</Name>
+    <TemplateFileName>DotNet6-DataClasses-Common\Entity.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>EntityLayer\EntityClasses</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+  </Template>
+	<Template>
+		<Name>Search Class</Name>
+		<TemplateFileName>DotNet6-DataClasses\Search.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>EntityLayer\SearchClasses</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix>Search</OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+	<Template>
+		<Name>Repository Class</Name>
+		<TemplateFileName>DotNet6-DataClasses\Repository.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>DataLayer\RepositoryClasses</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix>Repository</OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+	<Template>
+		<Name>View Model Class</Name>
+		<TemplateFileName>DotNet6-DataClasses\ViewModel.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>ViewModelLayer\ViewModelClasses</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix>ViewModel</OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+	<Template>
+		<Name>DbContext Class</Name>
+		<TemplateFileName>DotNet6-DataClasses-Common\DbContext.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>DataLayer\DbContextClasses</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix>{|NAMESPACE|}</OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+	<Template>
+		<Name>DbContext DbSets</Name>
+		<TemplateFileName>DotNet6-DataClasses-Common\DbContextDbSets.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>_DoNotAddToProject-Includes</OutputSubFolder>
+		<OutputFileExtension>.txt</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>true</AppendToFile>
+	</Template>
+	<Template>
+		<Name>DbContext Multiple PKs</Name>
+		<TemplateFileName>DotNet6-DataClasses-Common\DbContextMultiplePKs.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>_DoNotAddToProject-Includes</OutputSubFolder>
+		<OutputFileExtension>.txt</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>true</AppendToFile>
+	</Template>
+</CodeGenTemplates>

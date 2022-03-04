@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataAnnotations>
+	<DataAnnotation>
+		<Name>MaxLength</Name>
+		<Language>AutoMapper</Language>
+		<DataType>string</DataType>
+		<ColumnNames></ColumnNames>
+		<Annotation>[MaxLength({|MAX_LENGTH|})]</Annotation>
+	</DataAnnotation>
+</DataAnnotations>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenFoldersToCopy>
+	<Folder>
+		<Group>.NET 6</Group>
+		<CopyFrom>PDSC.Common</CopyFrom>
+		<CopyTo>PDSC.Common</CopyTo>
+	</Folder>
+	<Folder>
+		<Group>.NET 6 - Sorting and Paging</Group>
+		<CopyFrom>PDSC.Common</CopyFrom>
+		<CopyTo>PDSC.Common</CopyTo>
+	</Folder>
+	<Folder>
+		<Group>.NET 6 - Sorting and Paging</Group>
+		<CopyFrom>PDSC.Common-SortingPaging\BaseClasses</CopyFrom>
+		<CopyTo>PDSC.Common\BaseClasses</CopyTo>
+	</Folder>
+	<Folder>
+		<Group>.NET 6 - Sorting and Paging</Group>
+		<CopyFrom>PDSC.Common-SortingPaging\Controllers</CopyFrom>
+		<CopyTo>Controllers</CopyTo>
+	</Folder>
+	<Folder>
+		<Group>.NET 6 - Sorting and Paging</Group>
+		<CopyFrom>PDSC.Common-SortingPaging\Models</CopyFrom>
+		<CopyTo>Models</CopyTo>
+	</Folder>
+	<Folder>
+		<Group>.NET 6 - Sorting and Paging</Group>
+		<CopyFrom>PDSC.Common-SortingPaging\PagerClasses</CopyFrom>
+		<CopyTo>PDSC.Common\PagerClasses</CopyTo>
+	</Folder>
+	<Folder>
+		<Group>.NET 6 - Sorting and Paging</Group>
+		<CopyFrom>PDSC.Common-SortingPaging\Views</CopyFrom>
+		<CopyTo>Views</CopyTo>
+	</Folder>
+	<Folder>
+		<Group>.NET 6 - Sorting and Paging</Group>
+		<CopyFrom>PDSC.Common-SortingPaging\wwwroot</CopyFrom>
+		<CopyTo>wwwroot</CopyTo>
+	</Folder>
+	<Folder>
+		<Group>.NET Framework 4.x</Group>
+		<CopyFrom>PDSC.Common</CopyFrom>
+		<CopyTo>PDSC.Common</CopyTo>
+	</Folder>
+</CodeGenFoldersToCopy>

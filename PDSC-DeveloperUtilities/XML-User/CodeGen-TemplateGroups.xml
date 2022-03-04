@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenTemplateGroups>
+	<TemplateGroup>
+		<Group>TypeScript (User Sample)</Group>
+		<LanguageCode>TypeScript</LanguageCode>
+		<Name>TypeScript Dto Class</Name>
+		<TemplatesXmlFileName>CodeGen-TypeScript.xml</TemplatesXmlFileName>
+		<IsDotNet6OrLater>false</IsDotNet6OrLater>
+	</TemplateGroup>
+	<TemplateGroup>
+		<Group>AutoMapper (.NET object mapper) (User Sample)</Group>
+		<LanguageCode>AutoMapper</LanguageCode>
+		<Name>AutoMapper Classes and Methods</Name>
+		<TemplatesXmlFileName>CodeGen-AutoMapper.xml</TemplatesXmlFileName>
+		<IsDotNet6OrLater>false</IsDotNet6OrLater>
+	</TemplateGroup>
+</CodeGenTemplateGroups>
