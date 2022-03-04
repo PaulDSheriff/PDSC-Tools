@@ -1,0 +1,34 @@
+﻿@model PDSC.Common.ViewModelLayer.ErrorViewModel
+@{
+  ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Error</h1>
+<h2 class="text-danger">An error occurred while processing your request</h2>
+
+<h3>Error Information</h3>
+
+<div class="row">
+  <div class="col-3">Error Message:</div>
+  <div class="col-9">@Model.ErrorMessage</div>
+</div>
+<div class="row">
+  <div class="col-3">Application Name:</div>
+  <div class="col-9">@Model.ApplicationName</div>
+</div>
+<div class="row">
+  <div class="col-3">Root Path:</div>
+  <div class="col-9">@Model.ContentRootPath</div>
+</div>
+<div class="row">
+  <div class="col-3">Error Source:</div>
+  <div class="col-9">@Model.ErrorSource</div>
+</div>
+<div class="row">
+  <div class="col-3">Request ID:</div>
+  <div class="col-9">@Model.RequestId</div>
+</div>
+<div class="row">
+  <div class="col-3">Stack Trace:</div>
+  <div class="col-9">@Model.StackTrace</div>
+</div>
