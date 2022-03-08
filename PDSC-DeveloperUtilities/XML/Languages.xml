@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Languages>
+  <Language>
+    <Name>C#</Name>
+		<LanguageCode>CSharp</LanguageCode>
+		<LogicalAnd>&amp;</LogicalAnd>
+		<ConditionalAnd>&amp;&amp;</ConditionalAnd>
+		<LogicalOr>|</LogicalOr>
+		<ConditionalOr>||</ConditionalOr>
+  </Language>
+  <Language>
+    <Name>VB.NET</Name>
+		<LanguageCode>VBNET</LanguageCode>
+		<LogicalAnd>And</LogicalAnd>
+		<ConditionalAnd>AndAlso</ConditionalAnd>
+		<LogicalOr>Or</LogicalOr>
+		<ConditionalOr>OrElse</ConditionalOr>
+  </Language>
+	<Language>
+		<Name>TypeScript</Name>
+		<LanguageCode>TypeScript</LanguageCode>
+		<LogicalAnd>&amp;</LogicalAnd>
+		<ConditionalAnd>&amp;&amp;</ConditionalAnd>
+		<LogicalOr>|</LogicalOr>
+		<ConditionalOr>||</ConditionalOr>
+	</Language>
+	<Language>
+		<Name>AutoMapper (.NET object mapper)</Name>
+		<LanguageCode>AutoMapper</LanguageCode>
+		<LogicalAnd>&amp;</LogicalAnd>
+		<ConditionalAnd>&amp;&amp;</ConditionalAnd>
+		<LogicalOr>|</LogicalOr>
+		<ConditionalOr>||</ConditionalOr>
+	</Language>
+</Languages>

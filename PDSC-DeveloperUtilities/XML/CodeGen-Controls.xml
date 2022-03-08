@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Controls>
+	<Control>
+		<Group>.NET 6 - MVC</Group>
+		<GenericType>IsBoolean</GenericType>
+		<TemplateFileName>DotNet6-MVC-Controls\Checkbox.txt</TemplateFileName>
+	</Control>
+	<Control>
+		<Group>.NET 6 - MVC</Group>
+		<GenericType>Default</GenericType>
+		<TemplateFileName>DotNet6-MVC-Controls\TextBox.txt</TemplateFileName>
+	</Control>
+</Controls>

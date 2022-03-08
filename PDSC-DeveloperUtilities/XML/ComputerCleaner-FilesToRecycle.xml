@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FilesToRecycle>
+	<File>
+		<Name>[RoamingData]\Code\storage.json</Name>
+		<Description>Automatically rebuilt by VS Code</Description>
+		<Category>VS Code</Category>
+		<IsSelected>True</IsSelected>
+	</File>
+</FilesToRecycle>
