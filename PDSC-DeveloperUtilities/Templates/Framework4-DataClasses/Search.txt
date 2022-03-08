@@ -1,0 +1,19 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+using <|NAMESPACE|>.Common;
+
+namespace <|NAMESPACE|>.EntityLayer
+{
+  /// <summary>
+  /// This class contains properties for searching
+  /// </summary>
+  public partial class <|CLASS_NAME|>Search : AppSearch
+  {
+    public string SortExpression { get; set; }
+
+    {|FOR EACH COLUMN:IsSearchField|}
+    [Display(Name = "<|PROPERTY_LABEL|>")]
+    public <|LANGUAGE_DATA_TYPE|> <|PROPERTY_NAME|> { get; set; }
+    {|END_LOOP|}
+  }
+}
