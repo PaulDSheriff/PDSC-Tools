@@ -1,0 +1,79 @@
+﻿#nullable disable
+
+using Microsoft.EntityFrameworkCore;
+using PDSC.Common;
+using <|NAMESPACE|>.Common;
+using <|NAMESPACE|>.DataLayer;
+using <|NAMESPACE|>.EntityLayer;
+
+/// <summary>
+/// This partial class is used to configure builder services
+/// </summary>
+partial class Program {
+  protected static AppSettings _AppSettings { get; set; }
+
+  #region ConfigureAppSettings Method
+  /// <summary>
+  /// Call this method to create new instance of AppSettings and read in the settings from the appsettings.json file
+  /// </summary>
+  /// <param name="builder">An instance of the WebApplicationBuilder</param>
+  public static void ConfigureAppSettings(WebApplicationBuilder builder) {
+    // Create a singleton AppSettings object
+    _AppSettings = new(builder.Configuration);
+    _AppSettings.LoadApplicationSettings();
+    builder.Services.AddSingleton(typeof(AppSettings), _AppSettings);
+  }
+  #endregion
+
+  #region ConfigureSessionState Method
+  /// <summary>
+  /// Cal this method to configure session state for your application
+  /// </summary>
+  /// <param name="builder">An instance of the WebApplicationBuilder</param>
+  public static void ConfigureSessionState(WebApplicationBuilder builder) {
+    // The next three lines are for session state
+    builder.Services.AddDistributedMemoryCache();
+    builder.Services.AddSession(options =>
+    {
+      options.IdleTimeout = TimeSpan.FromMinutes(20);
+      options.Cookie.HttpOnly = false;
+      options.Cookie.IsEssential = true;
+    });
+    builder.Services.AddHttpContextAccessor();
+
+    // Add a UserSession object before setting up global action filter AppViewDataFilter
+    builder.Services.AddScoped<AppSession>();
+  }
+  #endregion
+
+  #region ConfigureGlobalActionFilter Method
+  /// <summary>
+  /// Cal this method to configure any action filters
+  /// </summary>
+  /// <param name="builder">An instance of the WebApplicationBuilder</param>
+  public static void ConfigureGlobalActionFilter(WebApplicationBuilder builder) {
+    // Set global action filters
+    builder.Services.AddMvc(options =>
+    {
+      options.Filters.Add<AppViewDataFilter>();
+    });
+  }
+  #endregion
+
+  #region ConfigureCookiePolicy Method
+  /// <summary>
+  /// Use this method to configure cookie consent needed by the user
+  /// </summary>
+  /// <param name="builder">An instance of the WebApplicationBuilder</param>
+  public static void ConfigureCookiePolicy(WebApplicationBuilder builder) {
+    builder.Services.Configure<CookiePolicyOptions>(options =>
+    {
+      // This lambda determines whether user consent for non-essential 
+      // cookies is needed for a given request.
+      options.CheckConsentNeeded = context => true;
+      // requires using Microsoft.AspNetCore.Http;
+      options.MinimumSameSitePolicy = SameSiteMode.None;
+    });
+  }
+  #endregion
+}
