@@ -133,7 +133,7 @@
 		<Nullable>string</Nullable>
 		<Initializer>string.Empty</Initializer>
 		<ConversionMethod>ToString</ConversionMethod>
-		<SearchPattern>string.IsNullOrEmpty(search.{|PROPERTY_NAME|}) ? true : prop.{|PROPERTY_NAME|}.StartsWith(search.{|PROPERTY_NAME|})</SearchPattern>
+		<SearchPattern>prop.{|PROPERTY_NAME|}.StartsWith(search.{|PROPERTY_NAME|})</SearchPattern>
 	</DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
