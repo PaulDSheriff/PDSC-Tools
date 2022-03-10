@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using <|NAMESPACE|>.Common;
 
 namespace <|NAMESPACE|>.Controllers {
   public class HomeController : AppController {
