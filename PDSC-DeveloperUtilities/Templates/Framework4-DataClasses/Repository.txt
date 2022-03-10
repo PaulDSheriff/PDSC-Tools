@@ -63,12 +63,11 @@ namespace <|NAMESPACE|>.DataLayer
     public IQueryable<<|CLASS_NAME|>> AddWhereClause(IQueryable<<|CLASS_NAME|>> query, <|CLASS_NAME|>Search search)
     {
       // Perform Searching
-      query = query.Where(prop =>
-          <|CONDITIONAL_AND_RESET|>
-          {|FOR EACH COLUMN:IsSearchField|}
-          <|CONDITIONAL_AND|> (<|PROPERTY_SEARCH_PATTERN|>)
-          {|END_LOOP|}
-          );
+      {|FOR EACH COLUMN:IsSearchField|}
+      if (<|PROPERTY_SEARCH_IF|>) {
+        query = query.Where(prop => <|PROPERTY_SEARCH_PATTERN|>);
+      }
+      {|END_LOOP|}
 
       return query;
     }
@@ -112,13 +111,13 @@ namespace <|NAMESPACE|>.DataLayer
     #region Count Method
     public int Count(<|CLASS_NAME|>Search search)
     {
+      QueryObject = _DbContext.<|CLASS_NAME_PLURAL|>;
+
+      // Add WHERE clause(s)
+      QueryObject = AddWhereClause(QueryObject, search);
+
       // Count using Search Criteria
-       return _DbContext.<|CLASS_NAME_PLURAL|>.Where(prop =>
-          <|CONDITIONAL_AND_RESET|>
-          {|FOR EACH COLUMN:IsSearchField|}
-          <|CONDITIONAL_AND|> (<|PROPERTY_SEARCH_PATTERN|>)
-          {|END_LOOP|}
-          ).Count();
+      return QueryObject.Count();
     }
     #endregion
 

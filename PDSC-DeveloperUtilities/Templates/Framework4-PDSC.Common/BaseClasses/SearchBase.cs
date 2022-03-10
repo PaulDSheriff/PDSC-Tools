@@ -13,8 +13,13 @@ namespace PDSC.Common
     }
 
     /// <summary>
+    /// Get/Set the complete sort expression such as lastname_asc, firstname_desc, etc.
+    /// </summary>
+    public string SortExpression { get; set; }
+
+    /// <summary>
     /// Get/Set any message to display after user performs a search
     /// </summary>
-    public string NoFilterAppliedMessage { get; set; }
+    public string NoFilterAppliedMessage { get; set; }        
   }
 }
