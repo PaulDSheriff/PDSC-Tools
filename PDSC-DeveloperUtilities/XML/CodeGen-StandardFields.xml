@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenStandardFields>
+	<StandardField>
+		<FieldName>InsertName</FieldName>
+		<Initializer>System.Environment.UserName</Initializer>
+	</StandardField>
+	<StandardField>
+		<FieldName>InsertDate</FieldName>
+		<Initializer>DateTime.Now</Initializer>
+	</StandardField>
+	<StandardField>
+		<FieldName>UpdateName</FieldName>
+		<Initializer>System.Environment.UserName</Initializer>
+	</StandardField>
+	<StandardField>
+		<FieldName>UpdateDate</FieldName>
+		<Initializer>DateTime.Now</Initializer>
+	</StandardField>
+</CodeGenStandardFields>
