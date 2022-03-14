@@ -1,0 +1,8 @@
+﻿@{
+  ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+  <h1><|APPLICATION_NAME|></h1>
+  <p class="lead">This site was generated using the PDSC Developer Utilities.</p>
+</div>

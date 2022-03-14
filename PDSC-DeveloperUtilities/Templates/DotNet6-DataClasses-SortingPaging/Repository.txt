@@ -1,0 +1,168 @@
+﻿#nullable disable
+
+using PDSC.Common;
+using <|NAMESPACE|>.EntityLayer;
+
+namespace <|NAMESPACE|>.DataLayer
+{
+  {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
+  public partial class <|CLASS_NAME|>Repository : IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search>
+  {|END_REMOVE|}
+  {|REMOVE_WHEN:IsPrimaryKeyInteger|}
+  public partial class <|CLASS_NAME|>Repository : IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search>
+  {|END_REMOVE|}
+  {
+    #region Constructor
+    public <|CLASS_NAME|>Repository(<|DB_CONTEXT|> context)
+    {
+      _DbContext = context;
+    }
+    #endregion
+
+    #region Private Variables
+    private readonly <|DB_CONTEXT|> _DbContext;
+    #endregion
+    
+    #region Public Properties
+    public IQueryable<<|CLASS_NAME|>> QueryObject { get; set; }
+    #endregion
+
+    #region Get(id) Method
+    public <|CLASS_NAME|> Get(<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|> id)
+    {
+      return _DbContext.<|CLASS_NAME_PLURAL|>.Find(id);
+    }
+    #endregion
+
+    #region Search Method
+    public IQueryable<<|CLASS_NAME|>> Search(<|CLASS_NAME|>Search search)
+    {
+      QueryObject = _DbContext.<|CLASS_NAME_PLURAL|>;
+      
+      // Add WHERE clause(s)
+      QueryObject = AddWhereClause(QueryObject, search);
+
+      // Add ORDER BY clause(s)
+      QueryObject = AddOrderByClause(QueryObject, search);
+
+      // Apply Paging
+      QueryObject = ApplyPaging(QueryObject, search);
+
+      return QueryObject;
+    }
+    #endregion
+
+    #region AddWhereClause Method
+    public IQueryable<<|CLASS_NAME|>> AddWhereClause(IQueryable<<|CLASS_NAME|>> query, <|CLASS_NAME|>Search search)
+    {
+      // Perform Searching
+      {|FOR EACH COLUMN:IsSearchField|}
+      if (<|PROPERTY_SEARCH_IF|>) {
+        query = query.Where(prop => <|PROPERTY_SEARCH_PATTERN|>);
+      }
+      {|END_LOOP|}
+
+      return query;
+    }
+    #endregion
+
+    #region AddOrderByClause Method
+    public IQueryable<<|CLASS_NAME|>> AddOrderByClause(IQueryable<<|CLASS_NAME|>> query, <|CLASS_NAME|>Search search)
+    {
+      search.SortExpression = search.SortExpression.ToLower();
+      if (!search.SortExpression.Contains("_asc") && !search.SortExpression.Contains("_desc")) {
+        search.SortExpression += "_asc";
+      }
+
+      // Determine how to sort the data
+      switch (search.SortExpression) {
+      {|FOR EACH COLUMN|}
+        case "<|PROPERTY_NAME_ALL_LOWER|>_asc":
+          query = query.OrderBy(x => x.<|PROPERTY_NAME|>);
+          break;
+        case "<|PROPERTY_NAME_ALL_LOWER|>_desc":
+          query = query.OrderByDescending(x => x.<|PROPERTY_NAME|>);
+          break;
+      {|END_LOOP|}
+      }
+
+      return query;
+    }
+    #endregion
+  
+    #region ApplyPaging Method
+    public IQueryable<<|CLASS_NAME|>> ApplyPaging(IQueryable<<|CLASS_NAME|>> query, <|CLASS_NAME|>Search search)
+    {
+      query = query.Skip(search.PageIndex * search.PageSize)
+                   .Take(search.PageSize);
+
+      return query;
+    }
+    #endregion
+        
+    #region Count Method
+    public int Count(<|CLASS_NAME|>Search search)
+    {
+      QueryObject = _DbContext.<|CLASS_NAME_PLURAL|>;
+
+      // Add WHERE clause(s)
+      QueryObject = AddWhereClause(QueryObject, search);
+
+      // Count using Search Criteria
+      return QueryObject.Count();
+    }
+    #endregion
+
+    #region CreateEmpty Method
+    public <|CLASS_NAME|> CreateEmpty()
+    {
+      return new()
+      {
+        <|COMMA_RESET|>
+        {|FOR EACH COLUMN|}
+        <|COMMA|><|PROPERTY_NAME|> = <|PROPERTY_INITIALIZER|>
+        {|END_LOOP|}
+      };
+    }
+    #endregion
+
+    #region Insert Method
+    public <|CLASS_NAME|> Insert(<|CLASS_NAME|> entity)
+    {
+      // Add new entity to <|CLASS_NAME_PLURAL|> DbSet
+      _DbContext.<|CLASS_NAME_PLURAL|>.Add(entity);
+
+      // Save changes in database
+      _DbContext.SaveChanges();
+
+      return entity;
+    }
+    #endregion
+
+    #region Update Method
+    public <|CLASS_NAME|> Update(<|CLASS_NAME|> entity)
+    {
+      // Update entity in <|CLASS_NAME_PLURAL|> DbSet
+      _DbContext.<|CLASS_NAME_PLURAL|>.Update(entity);
+
+      // Save changes in database
+      _DbContext.SaveChanges();
+
+      return entity;
+    }
+    #endregion
+
+    #region Delete Method
+    public bool Delete(<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|> id)
+    {
+      // Locate the entity to delete in the <|CLASS_NAME_PLURAL|> DbSet
+      _DbContext.<|CLASS_NAME_PLURAL|>.Remove(_DbContext.<|CLASS_NAME_PLURAL|>.Find(id));
+
+      // Save changes in database
+      _DbContext.SaveChanges();
+
+      return true;
+    }
+    #endregion
+  }
+}

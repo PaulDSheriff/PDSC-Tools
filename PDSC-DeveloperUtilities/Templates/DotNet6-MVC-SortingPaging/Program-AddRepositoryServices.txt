@@ -1,0 +1,31 @@
+#nullable disable
+
+using PDSC.Common;
+using <|NAMESPACE|>.DataLayer;
+using <|NAMESPACE|>.EntityLayer;
+
+/// <summary>
+/// This partial class is used to add your repositories as Scoped services
+/// </summary>
+partial class Program {
+  #region AddRepositoryServices Method
+  /// <summary>
+  /// Call this method to add your Repository classes as injectable services
+  /// </summary>
+  /// <param name="builder">An instance of the WebApplicationBuilder</param>
+  public static void AddRepositoryServices(WebApplicationBuilder builder) {
+    // Create scoped versions of your Repository classes
+    {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
+    {|FOR EACH TABLE|}
+    builder.Services.AddScoped<IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search>, <|CLASS_NAME|>Repository>();
+    {|END_LOOP|}
+    {|END_REMOVE|}
+
+    {|REMOVE_WHEN:IsPrimaryKeyInteger|}
+    {|FOR EACH TABLE|}
+    builder.Services.AddScoped<IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search>, <|CLASS_NAME|>Repository>();
+    {|END_LOOP|}
+    {|END_REMOVE|}
+  }
+  #endregion
+}
