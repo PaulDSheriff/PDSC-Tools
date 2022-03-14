@@ -78,6 +78,17 @@
 		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
+		<Name>Error.cshtml</Name>
+		<TemplateFileName>DotNet6-MVC-SortingPaging\Error.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>Views\Shared</OutputSubFolder>
+		<OutputFileExtension>.cshtml</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+	<Template>
 		<Name>_ViewImports.cshtml</Name>
 		<TemplateFileName>DotNet6-MVC-SortingPaging\_ViewImports.txt</TemplateFileName>
 		<BaseClassName></BaseClassName>
