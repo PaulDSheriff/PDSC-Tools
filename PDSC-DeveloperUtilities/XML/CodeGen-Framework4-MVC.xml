@@ -55,6 +55,17 @@
 		<UseClassNameAsFileName>true</UseClassNameAsFileName>
 		<AppendToFile>false</AppendToFile>
 	</Template>
+		<Template>
+		<Name>Home Page</Name>
+		<TemplateFileName>Framework4-MVC\Home\Index.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>Views\Home</OutputSubFolder>
+		<OutputFileExtension>.cshtml</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
 	<Template>
 		<Name>_Layout.cshtml</Name>
 		<TemplateFileName>Framework4-MVC\_Layout.txt</TemplateFileName>

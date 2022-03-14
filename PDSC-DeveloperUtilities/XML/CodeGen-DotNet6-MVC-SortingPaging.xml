@@ -67,10 +67,10 @@
 		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
-		<Name>_Layout.cshtml</Name>
-		<TemplateFileName>DotNet6-MVC-SortingPaging\_Layout.txt</TemplateFileName>
+		<Name>Home Page</Name>
+		<TemplateFileName>DotNet6-MVC-SortingPaging\Home\Index.txt</TemplateFileName>
 		<BaseClassName></BaseClassName>
-		<OutputSubFolder>Views\Shared</OutputSubFolder>
+		<OutputSubFolder>Views\Home</OutputSubFolder>
 		<OutputFileExtension>.cshtml</OutputFileExtension>
 		<OutputFilePrefix></OutputFilePrefix>
 		<OutputFileSuffix></OutputFileSuffix>
@@ -78,8 +78,8 @@
 		<AppendToFile>false</AppendToFile>
 	</Template>
 	<Template>
-		<Name>Error.cshtml</Name>
-		<TemplateFileName>DotNet6-MVC-SortingPaging\Error.txt</TemplateFileName>
+		<Name>_Layout.cshtml</Name>
+		<TemplateFileName>DotNet6-MVC-SortingPaging\_Layout.txt</TemplateFileName>
 		<BaseClassName></BaseClassName>
 		<OutputSubFolder>Views\Shared</OutputSubFolder>
 		<OutputFileExtension>.cshtml</OutputFileExtension>

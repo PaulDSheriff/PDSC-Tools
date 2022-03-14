@@ -7,8 +7,18 @@
 	</Folder>
 	<Folder>
 		<Group>.NET 6 - MVC</Group>
-		<CopyFrom>DotNet6-PDSC.Common</CopyFrom>
-		<CopyTo>PDSC.Common</CopyTo>
+		<CopyFrom>DotNet6-PDSC.Common\BaseClasses</CopyFrom>
+		<CopyTo>PDSC.Common\BaseClasses</CopyTo>
+	</Folder>
+	<Folder>
+		<Group>.NET 6 - MVC</Group>
+		<CopyFrom>DotNet6-PDSC.Common\ExceptionHandling</CopyFrom>
+		<CopyTo>PDSC.Common\ExceptionHandling</CopyTo>
+	</Folder>
+	<Folder>
+		<Group>.NET 6 - MVC</Group>
+		<CopyFrom>DotNet6-PDSC.Common-MVC\Views</CopyFrom>
+		<CopyTo>Views</CopyTo>
 	</Folder>
 	<Folder>
 		<Group>.NET 6 - MVC (Sorting and Paging)</Group>
@@ -72,7 +82,7 @@
 	</Folder>
 	<Folder>
 		<Group>.NET Framework 4.x - MVC Application</Group>
-		<CopyFrom>Framework4-PDSC.Common.MVC</CopyFrom>
+		<CopyFrom>Framework4-PDSC.Common-MVC</CopyFrom>
 		<CopyTo>PDSC.Common</CopyTo>
 	</Folder>
 	<Folder>
