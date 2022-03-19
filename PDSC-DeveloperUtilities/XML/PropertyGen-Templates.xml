@@ -21,7 +21,7 @@
     <GenPrivateVars>True</GenPrivateVars>
     <GenPublic>True</GenPublic>
   </PropertyTemplate>
-  <PropertyTemplate>
+	<PropertyTemplate>
     <Description>VB.NET Normal Get/Set</Description>
     <FileName>VB_Property.txt</FileName>
     <LanguageCode>VBNET</LanguageCode>

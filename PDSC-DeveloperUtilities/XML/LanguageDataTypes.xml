@@ -7,7 +7,7 @@
 		<Nullable>bool?</Nullable>
 		<Initializer>false</Initializer>
 		<ConversionMethod>ToBoolean</ConversionMethod>
-		<SearchPattern>prop.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
+		<SearchPattern>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -16,7 +16,7 @@
 		<Nullable>byte?</Nullable>
 		<Initializer>0</Initializer>
 		<ConversionMethod></ConversionMethod>
-		<SearchPattern>prop.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
+		<SearchPattern>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -25,7 +25,7 @@
 		<Nullable>Guid?</Nullable>
 		<Initializer>new System.Guid()</Initializer>
 		<ConversionMethod></ConversionMethod>
-		<SearchPattern>prop.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
+		<SearchPattern>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -34,7 +34,7 @@
 		<Nullable>char?</Nullable>
 		<Initializer></Initializer>
 		<ConversionMethod>ToChar</ConversionMethod>
-		<SearchPattern>prop.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
+		<SearchPattern>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -43,7 +43,7 @@
 		<Nullable>DateTime?</Nullable>
 		<Initializer>System.DateTime.Now</Initializer>
 		<ConversionMethod>ToDateTime</ConversionMethod>
-		<SearchPattern>prop.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
+		<SearchPattern>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -52,7 +52,7 @@
 		<Nullable>decimal?</Nullable>
 		<Initializer>0</Initializer>
 		<ConversionMethod>ToDecimal</ConversionMethod>
-		<SearchPattern>prop.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -61,7 +61,7 @@
 		<Nullable>double?</Nullable>
 		<Initializer>0</Initializer>
 		<ConversionMethod>ToDouble</ConversionMethod>
-		<SearchPattern>prop.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -70,7 +70,7 @@
 		<Nullable>int?</Nullable>
 		<Initializer>0</Initializer>
 		<ConversionMethod>ToInt32</ConversionMethod>
-		<SearchPattern>prop.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -79,7 +79,7 @@
 		<Nullable>long?</Nullable>
 		<Initializer>0</Initializer>
 		<ConversionMethod>ToInt64</ConversionMethod>
-		<SearchPattern>prop.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -106,7 +106,7 @@
 		<Nullable>sbyte?</Nullable>
 		<Initializer></Initializer>
 		<ConversionMethod>ToByte</ConversionMethod>
-		<SearchPattern>prop.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
+		<SearchPattern>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -115,7 +115,7 @@
 		<Nullable>short?</Nullable>
 		<Initializer>0</Initializer>
 		<ConversionMethod>ToInt16</ConversionMethod>
-		<SearchPattern>prop.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -124,7 +124,7 @@
 		<Nullable>Single?</Nullable>
 		<Initializer>0</Initializer>
 		<ConversionMethod>ToSingle</ConversionMethod>
-		<SearchPattern>prop.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -133,7 +133,7 @@
 		<Nullable>string</Nullable>
 		<Initializer>string.Empty</Initializer>
 		<ConversionMethod>ToString</ConversionMethod>
-		<SearchPattern>prop.{|PROPERTY_NAME|}.StartsWith(search.{|PROPERTY_NAME|})</SearchPattern>
+		<SearchPattern>row.{|PROPERTY_NAME|}.StartsWith(search.{|PROPERTY_NAME|})</SearchPattern>
 	</DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -142,7 +142,7 @@
 		<Nullable>unit?</Nullable>
 		<Initializer>0</Initializer>
 		<ConversionMethod>ToUInt32</ConversionMethod>
-		<SearchPattern>prop.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -151,7 +151,7 @@
 		<Nullable>ulong?</Nullable>
 		<Initializer>0</Initializer>
 		<ConversionMethod>ToUInt64</ConversionMethod>
-		<SearchPattern>prop.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -160,7 +160,7 @@
 		<Nullable>ushort?</Nullable>
 		<Initializer>0</Initializer>
 		<ConversionMethod>ToUInt16</ConversionMethod>
-		<SearchPattern>prop.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
 	</DataType>
 	<DataType>
 		<LanguageCode>VBNET</LanguageCode>
