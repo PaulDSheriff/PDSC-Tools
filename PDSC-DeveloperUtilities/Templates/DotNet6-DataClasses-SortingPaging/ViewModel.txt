@@ -89,6 +89,9 @@ namespace <|NAMESPACE|>.ViewModelLayer
 
         // Set Sort Property
         SearchEntity.SortExpression = base.SetSortProperties();
+        
+        // Get Total Rows
+        TotalRows = Repository.Count(SearchEntity);
 
         // Setup the Pager object
         base.SetPagerObject(Repository.Count(SearchEntity));
@@ -102,11 +105,6 @@ namespace <|NAMESPACE|>.ViewModelLayer
         else
         {
           <|CLASS_NAME_PLURAL|> = Repository.Search(SearchEntity).ToList();
-        }
-
-        if (<|CLASS_NAME_PLURAL|> != null)
-        {
-          TotalRows = <|CLASS_NAME_PLURAL|>.Count;
         }
       }
       catch (Exception ex) {
