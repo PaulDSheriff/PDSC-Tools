@@ -58,7 +58,7 @@ namespace <|NAMESPACE|>.DataLayer
       // Perform Searching
       {|FOR EACH COLUMN:IsSearchField|}
       if (<|PROPERTY_SEARCH_IF|>) {
-        query = query.Where(prop => <|PROPERTY_SEARCH_PATTERN|>);
+        query = query.Where(row => <|PROPERTY_SEARCH_PATTERN|>);
       }
       {|END_LOOP|}
 
@@ -78,10 +78,10 @@ namespace <|NAMESPACE|>.DataLayer
       switch (search.SortExpression) {
       {|FOR EACH COLUMN|}
         case "<|PROPERTY_NAME_ALL_LOWER|>_asc":
-          query = query.OrderBy(x => x.<|PROPERTY_NAME|>);
+          query = query.OrderBy(row => row.<|PROPERTY_NAME|>);
           break;
         case "<|PROPERTY_NAME_ALL_LOWER|>_desc":
-          query = query.OrderByDescending(x => x.<|PROPERTY_NAME|>);
+          query = query.OrderByDescending(row => row.<|PROPERTY_NAME|>);
           break;
       {|END_LOOP|}
       }
