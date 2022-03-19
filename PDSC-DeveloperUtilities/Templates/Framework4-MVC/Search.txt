@@ -14,14 +14,21 @@
       {|END_LOOP|}
     </div>
     <div class="panel-footer">
-      <a class="me-5 btn btn-info"
-         href="@Url.Action("<|CLASS_NAME|>Add")">
-        Add
-      </a>
-      <button formnovalidate="formnovalidate" class="btn btn-success">Search</button>
-      <a class="btn btn-primary" href="@Url.Action("<|CLASS_NAME|>Index")">
-        Reset
-      </a>
+      <div class="row">
+        <div class="col-sm-9">
+          <a class="me-5 btn btn-info"
+             href="@Url.Action("<|CLASS_NAME|>Add")">
+            Add
+          </a>
+          <button formnovalidate="formnovalidate" class="btn btn-success">Search</button>
+          <a class="btn btn-primary" href="@Url.Action("<|CLASS_NAME|>Index")">
+            Reset
+          </a>
+        </div>
+        <div class="col-sm-3">
+          <span class="mt-1 float-end">Total Records: @Model.TotalRows</span>
+        </div>
+      </div>
     </div>
   </div>
 }
