@@ -14,13 +14,20 @@
       {|END_LOOP|}
     </div>
     <div class="card-footer bg-primary text-light">
-      <a class="me-5 btn btn-secondary" asp-action="<|CLASS_NAME|>Add">
-        Add
-      </a>
-      <button formnovalidate="formnovalidate" class="btn btn-success">Search</button>
-      <a class="btn btn-primary" asp-action="<|CLASS_NAME|>Index">
-        Reset
-      </a>
+      <div class="row">
+        <div class="col-9">
+          <a class="me-5 btn btn-secondary" asp-action="<|CLASS_NAME|>Add">
+            Add
+          </a>
+          <button formnovalidate="formnovalidate" class="btn btn-success">Search</button>
+          <a class="btn btn-primary" asp-action="<|CLASS_NAME|>Index">
+            Reset
+          </a>
+        </div>
+        <div class="col-3">
+          <span class="mt-1 float-end">Total Records: @Model.TotalRows</span>
+        </div>
+      </div>
     </div>
   </div>
 </form>
