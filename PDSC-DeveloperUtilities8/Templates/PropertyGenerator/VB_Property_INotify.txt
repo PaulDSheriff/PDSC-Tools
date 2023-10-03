@@ -1,0 +1,12 @@
+''' <summary>
+''' Get/Set <|PROPERTY_NAME|>
+''' </summary>
+<|SCOPE|> <|SHARED|> <|READ_ONLY|> Property <|PROPERTY_NAME|>() As <|LANGUAGE_DATA_TYPE|>
+  Get
+    Return <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|>
+  End Get
+  {|READ_ONLY|}Set(ByVal Value As <|LANGUAGE_DATA_TYPE|>)
+    <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|> = Value
+    RaisePropertyChanged("<|PROPERTY_NAME|>")
+  End Set{/|READ_ONLY|}
+End Property
