@@ -3,9 +3,10 @@ PDS Consulting has a set of tools that help you develop MVC or .NET MAUI applica
 
 ## Documentation
 For best results, it is important that you read the documentation.
+
 You will find the documentation under the \Documentation folder.
 
 ## How to Use PDSC Developer Utilities v8 
-Download the PDSC-DeveloperUtilities8 to you computer
-Unzip or go to the folder where you did the git
-Run the PDSCDeveloperUtilities.exe
+1. Download the PDSC-DeveloperUtilities8 to you computer.
+2. Unzip or go to the folder where you did the git.
+3. Run the PDSCDeveloperUtilities.exe.
