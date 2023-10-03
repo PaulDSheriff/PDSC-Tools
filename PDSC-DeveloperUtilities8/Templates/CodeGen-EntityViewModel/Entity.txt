@@ -1,0 +1,21 @@
+using <|NAMESPACE|>.EntityLayer.AppClasses;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
+
+namespace <|NAMESPACE|>.EntityLayer;
+
+/// <summary>
+/// This class contains properties that map to each field in the <|SCHEMA_NAME|>.<|TABLE_NAME|> table.
+/// </summary>
+<|TABLE_DATA_ANNOTATION|>
+public partial class <|CLASS_NAME|> : AppEntity
+{
+  <|PROPERTIES_NO_STD_FIELDS|>
+
+  #region ToString Override
+  public override string ToString() {
+    return $"{<|DESCRIPTION_FIELD|>} ({<|PK_PROPERTY_NAME|>})";
+  }
+  #endregion
+}

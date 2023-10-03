@@ -1,0 +1,11 @@
+﻿using PDSC.Common;
+
+namespace <|NAMESPACE|>.EntityLayer.AppClasses;
+
+/// <summary>
+/// All Search classes in your project should inherit from this class
+/// </summary>
+public class AppSearch : SearchBase
+{
+  // TODO: Add any properties/methods you need for your application here
+}

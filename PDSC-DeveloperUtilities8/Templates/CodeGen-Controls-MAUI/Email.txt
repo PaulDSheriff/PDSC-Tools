@@ -1,0 +1,4 @@
+        <Entry Grid.Row="<|GRID_ROW_SECOND|>"
+               Grid.Column="1"
+               Keyboard="Email"
+               Text="{Binding CurrentEntity.<|PROPERTY_NAME|>}" />

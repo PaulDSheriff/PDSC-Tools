@@ -1,0 +1,3 @@
+        <Entry Grid.Row="<|GRID_ROW_SECOND|>"
+               Grid.Column="1"
+               Text="{Binding CurrentEntity.<|PROPERTY_NAME|>}" />

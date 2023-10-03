@@ -1,0 +1,183 @@
+﻿using <|NAMESPACE|>.EntityLayer;
+using PDSC.Common;
+using PDSC.Common.HttpClasses;
+using System.Net;
+
+namespace <|NAMESPACE|>.DataLayer.API;
+
+public class <|CLASS_NAME|>RepositoryAPI : HttpClientRepositoryBase, IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search>
+{
+  #region Constructors
+  public <|CLASS_NAME|>RepositoryAPI()
+  {
+  }
+
+  public <|CLASS_NAME|>RepositoryAPI(HttpClient client) : base(client)
+  {
+  }
+  #endregion
+
+  #region Private constants
+  private const string URL_PATH = "/api/<|CLASS_NAME|>";
+  #endregion
+
+  #region Init Method
+  public override void Init()
+  {
+    base.Init();
+
+    UrlPath = URL_PATH;
+    UserAgent = "<|APPLICATION_NAME_NO_SPACES|>";
+  }
+  #endregion
+
+  #region GetAsync Method
+  public async Task<List<<|CLASS_NAME|>>> GetAsync()
+  {
+    DataResponse<List<<|CLASS_NAME|>>> dr;
+
+    // Attempt to get the data
+    dr = await GetAsync<List<<|CLASS_NAME|>>>(URL_PATH);
+
+    // Calculate rows returned
+    if (dr.Data != null) {
+      RowsAffected = dr.Data.Count;
+    }
+
+    // Set ResponseObject Property
+    ResponseObject = dr;
+
+    return dr.Data ?? new();
+  }
+  #endregion
+
+  #region GetAsync(id) Method
+  public async Task<<|CLASS_NAME|>?> GetAsync(int id)
+  {
+    DataResponse<<|CLASS_NAME|>> response;
+
+    // Attempt to get the data
+    response = await GetAsync<<|CLASS_NAME|>>(URL_PATH, id.ToString());
+
+    // Calculate rows returned
+    if (response.Data != null) {
+      RowsAffected = 1;
+    }
+
+    // Set ResponseObject Property
+    ResponseObject = response;
+
+    return response.Data ?? null;
+  }
+  #endregion
+
+  #region SearchAsync Method
+  public async Task<List<<|CLASS_NAME|>>> SearchAsync(<|CLASS_NAME|>Search search)
+  {
+    DataResponse<List<<|CLASS_NAME|>>> response;
+
+    // Attempt to get the data
+    response = await SearchAsync<List<<|CLASS_NAME|>>, <|CLASS_NAME|>Search>(URL_PATH, search);
+
+    // Calculate rows returned
+    if (response.Data != null) {
+      RowsAffected = response.Data.Count;
+    }
+
+    // Set ResponseObject Property
+    ResponseObject = response;
+
+    return response.Data ?? new();
+  }
+  #endregion
+
+  #region CountAsync Method
+  public async Task<int> CountAsync(<|CLASS_NAME|>Search? search)
+  {
+    DataResponse<int> response;
+
+    // Attempt to count the data
+    response = await CountAsync<int, <|CLASS_NAME|>Search>(URL_PATH, search);
+
+    // Check response, if OK, then success
+    if (response.StatusCode == HttpStatusCode.OK) {
+      RowsAffected = Convert.ToInt32(response.RowsAffected);
+    }
+
+    // Set ResponseObject Property
+    ResponseObject = response;
+
+    return RowsAffected;
+  }
+  #endregion
+
+  #region InsertAsync Method
+  public async Task<<|CLASS_NAME|>?> InsertAsync(<|CLASS_NAME|>? entity)
+  {
+    DataResponse<<|CLASS_NAME|>> ret;
+
+    // Attempt to insert the data
+    ret = await PostAsync<<|CLASS_NAME|>>(URL_PATH, entity);
+
+    // Calculate rows returned
+    if (ret.StatusCode == HttpStatusCode.Created) {
+      RowsAffected = 1;
+    }
+
+    // Set ResponseObject Property
+    ResponseObject = ret;
+
+    return ret.Data;
+  }
+  #endregion
+
+  #region UpdateAsync Method
+  public async Task<<|CLASS_NAME|>?> UpdateAsync(<|CLASS_NAME|>? entity)
+  {
+    DataResponse<<|CLASS_NAME|>> ret;
+    string id;
+
+    // Get the primary key to locate
+    id = (entity?.<|CLASS_NAME|>Id ?? 0).ToString();
+
+    // Attempt to update a record
+    ret = await PutAsync<<|CLASS_NAME|>>(URL_PATH, id, entity);
+
+    // Calculate rows returned
+    if (ret.StatusCode == HttpStatusCode.OK) {
+      RowsAffected = 1;
+    }
+
+    // Set ResponseObject Property
+    ResponseObject = ret;
+
+    return ret.Data;
+  }
+  #endregion
+
+  #region DeleteAsync Method
+  public async Task<bool?> DeleteAsync(<|CLASS_NAME|>? entity)
+  {
+    DataResponse<<|CLASS_NAME|>> dr;
+    bool ret = false;
+    string id;
+
+    // Get the primary key to locate
+    id = (entity?.<|CLASS_NAME|>Id ?? 0).ToString();
+
+    // Attempt to delete a record
+    dr = await DeleteAsync<<|CLASS_NAME|>>(URL_PATH, id);
+
+    // Check response, if NoContent, then success
+    if (dr.StatusCode == HttpStatusCode.NoContent) {
+      ret = true;
+      RowsAffected = 1;
+    }
+
+    // Set ResponseObject Property
+    ResponseObject = dr;
+
+    return ret;
+  }
+  #endregion
+}

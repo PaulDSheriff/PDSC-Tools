@@ -1,0 +1,4 @@
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" asp-for="CurrentEntity.<|PROPERTY_NAME|>">
+    <label asp-for="CurrentEntity.<|PROPERTY_NAME|>"></label>
+  </div>

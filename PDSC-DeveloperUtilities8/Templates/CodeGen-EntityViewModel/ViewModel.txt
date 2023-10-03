@@ -1,0 +1,608 @@
+using <|NAMESPACE|>.EntityLayer;
+using <|NAMESPACE|>.ViewModelLayer.AppClasses;
+using Microsoft.Extensions.Logging;
+using PDSC.Common;
+using PDSC.Common.HelperClasses;
+using System.Collections.ObjectModel;
+using System.Net;
+
+namespace <|NAMESPACE|>.ViewModelLayer;
+
+/// <summary>
+/// This class contains the class definition, inheritance chain, 
+/// constructors and properties.
+/// This class makes async calls to your repository class.
+/// </summary>
+{|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
+public partial class <|CLASS_NAME|>ViewModel : AppViewModel<<|CLASS_NAME|>, <|CLASS_NAME|>Search>, IViewModel<<|CLASS_NAME|>, <|CLASS_NAME|>Search>
+{|END_REMOVE|}
+{|REMOVE_WHEN:IsPrimaryKeyInteger|}
+public partial class <|CLASS_NAME|>ViewModel : AppViewModel<<|CLASS_NAME|>, <|CLASS_NAME|>Search>, IViewModelOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search>
+{|END_REMOVE|}
+{
+  #region Constructors
+  /// <summary>
+  ///  NOTE: You need to have a parameterless constructor for Post-Backs in MVC    
+  /// </summary>
+  public <|CLASS_NAME|>ViewModel()
+  {
+  }
+
+  {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
+  public <|CLASS_NAME|>ViewModel(IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository) : base()
+  {|END_REMOVE|}
+  {|REMOVE_WHEN:IsPrimaryKeyInteger|}
+  public <|CLASS_NAME|>ViewModel(IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> repository) : base()
+  {|END_REMOVE|}
+  {
+    Repository = repository;
+  }
+
+  {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
+  public <|CLASS_NAME|>ViewModel(IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository,
+    ILogger<<|CLASS_NAME|>ViewModel> logger) : base(logger)
+  {|END_REMOVE|}
+  {|REMOVE_WHEN:IsPrimaryKeyInteger|}
+  public <|CLASS_NAME|>ViewModel(IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> repository, 
+    ILogger<<|CLASS_NAME|>ViewModel> logger) : base(logger)
+  {|END_REMOVE|}
+  {
+    Repository = repository;
+  }    
+  #endregion
+
+  #region Private Variables
+  private ObservableCollection<<|CLASS_NAME|>> _<|CLASS_NAME_PLURAL|> = new();
+  private <|CLASS_NAME|>? _CurrentEntity = new();
+  private <|CLASS_NAME|>Search _SearchEntity = new() {
+    SortExpression = nameof(<|CLASS_NAME|>Search.<|DESCRIPTION_FIELD|>)
+  };
+  #endregion
+
+  #region Public Properties
+  {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
+  public IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search>? Repository { get; set; }
+  {|END_REMOVE|}
+  {|REMOVE_WHEN:IsPrimaryKeyInteger|}
+  public IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search>? Repository { get; set; }
+  {|END_REMOVE|}
+  public ObservableCollection<<|CLASS_NAME|>> <|CLASS_NAME_PLURAL|>
+  {
+    get { return _<|CLASS_NAME_PLURAL|>; }
+    set
+    {
+      _<|CLASS_NAME_PLURAL|> = value;
+      RaisePropertyChanged(nameof(<|CLASS_NAME_PLURAL|>));
+    }
+  }
+
+  public <|CLASS_NAME|>? CurrentEntity
+  {
+    get { return _CurrentEntity; }
+    set
+    {
+      _CurrentEntity = value;
+      RaisePropertyChanged(nameof(CurrentEntity));
+    }
+  }
+
+  public <|CLASS_NAME|>Search SearchEntity
+  {
+    get { return _SearchEntity; }
+    set
+    {
+      _SearchEntity = value;
+      RaisePropertyChanged(nameof(SearchEntity));
+    }
+  }
+  #endregion
+    
+  #region Init Method
+  public override void Init() {
+    base.Init();
+    
+    ClassDescriptionSingular = "<|CLASS_DESC_SINGULAR|>";
+    ClassDescriptionPlural = "<|CLASS_DESC_PLURAL|>";
+
+    RepositoryNotSetMessage = $"The Repository Object is not set in the {nameof(<|CLASS_NAME|>ViewModel)} Class.";
+  }
+  #endregion
+
+  #region GetAsync Method
+  public async Task<DataResponse<ObservableCollection<<|CLASS_NAME|>>>> GetAsync()
+  {
+    IsDetailVisible = false;
+    DataResponse<ObservableCollection<<|CLASS_NAME|>>> ret = new();
+
+    // Ensure Repository Object is Set
+    if (Repository == null) {
+      SetRepositoryNotSetStatus(ret);
+    }
+    else {
+      // Reset RowsAffected and Message Properties
+      ResetRowsAffectedAndMessages();
+      
+      InfoMessage = $"Loading {ClassDescriptionPlural}...";
+
+      try {
+        var list = await Repository.GetAsync();
+        <|CLASS_NAME_PLURAL|> = new ObservableCollection<<|CLASS_NAME|>>(list);
+
+        if (<|CLASS_NAME_PLURAL|>.Count > 0) {
+          RowsAffected = <|CLASS_NAME_PLURAL|>.Count;
+          ret.StatusMessage = "Success";
+          ret.ResultMessage = $"Found {RowsAffected} {ClassDescriptionPlural}.";
+          ret.StatusCode = HttpStatusCode.OK;
+        }
+        else {
+          ret.StatusMessage = "NotFound";
+          ret.ResultMessage = $"No {ClassDescriptionPlural} are available.";
+          ret.LastErrorMessage = ret.ResultMessage;
+          ret.StatusCode = HttpStatusCode.NotFound;
+        }
+        ret.Data = <|CLASS_NAME_PLURAL|>;
+        ret.RowsAffected = RowsAffected;
+      }
+      catch (Exception ex) {
+        // Publish the exception here
+        PublishException(ex, ret);
+        // Do NOT send the real exception to the user
+        ret = SetGenericExceptionStatus(ret, $"Exception while trying to get all {ClassDescriptionPlural}.");
+      }
+    }
+    
+    // Set View Model Info and Error Message objects
+    SetInfoAndErrorMessages(ret);
+
+    return ret;
+  }
+  #endregion
+
+  #region GetAsync(id) Method
+  public async Task<DataResponse<<|CLASS_NAME|>>> GetAsync(<|PK_LANGUAGE_DATA_TYPE|> id)
+  {
+    IsAdding = false;
+    IsDetailVisible = true;
+    DataResponse<<|CLASS_NAME|>> ret = new();
+
+    // Ensure Repository Object is Set
+    if (Repository == null) {
+      SetRepositoryNotSetStatus(ret);
+    }
+    else {
+      // Reset RowsAffected and Message Properties
+      ResetRowsAffectedAndMessages();
+      
+      InfoMessage = $"Loading a {ClassDescriptionSingular}...";
+
+      try {
+        CurrentEntity = await Repository.GetAsync(id);
+
+        if (CurrentEntity != null) {
+          RowsAffected = 1;
+          ret.StatusMessage = "Success";
+          ret.ResultMessage = $"Found a {ClassDescriptionSingular} with an ID of '{id}'.";
+          ret.StatusCode = HttpStatusCode.OK;
+        }
+        else {
+          ret.StatusMessage = "NotFound";
+          ret.ResultMessage = $"Can't find a {ClassDescriptionSingular} with an ID of '{id}'.";
+          ret.LastErrorMessage = ret.ResultMessage;
+          ret.StatusCode = HttpStatusCode.NotFound;
+        }
+        ret.Data = CurrentEntity;
+        ret.RowsAffected = RowsAffected;
+      }
+      catch (Exception ex) {
+        // Publish the exception here
+        PublishException(ex, ret);
+        // Do NOT send the real exception to the user
+        ret = SetGenericExceptionStatus(ret, $"Exception while trying to get a {ClassDescriptionSingular} with an ID of '{id}'.");
+      }
+    }
+    
+    // Set View Model Info and Error Message objects
+    SetInfoAndErrorMessages(ret);
+
+    return ret;
+  }
+  #endregion
+
+  #region SearchAsync Method
+  public async Task<DataResponse<ObservableCollection<<|CLASS_NAME|>>>> SearchAsync()
+  {
+    return await SearchAsync(SearchEntity);
+  }
+
+  public async Task<DataResponse<ObservableCollection<<|CLASS_NAME|>>>> SearchAsync(<|CLASS_NAME|>Search search)
+  {
+    IsDetailVisible = false;
+    DataResponse<ObservableCollection<<|CLASS_NAME|>>> ret = new();
+    
+    // Ensure Repository Object is Set
+    if (Repository == null) {
+      SetRepositoryNotSetStatus(ret);
+    }
+    else {
+      // Reset RowsAffected and Message Properties
+      ResetRowsAffectedAndMessages();
+      
+      InfoMessage = $"Searching for {ClassDescriptionPlural}...";
+
+      try {
+        var list = await Repository.SearchAsync(search);
+        <|CLASS_NAME_PLURAL|> = new ObservableCollection<<|CLASS_NAME|>>(list);
+
+        if (<|CLASS_NAME_PLURAL|>.Count > 0) {
+          RowsAffected = <|CLASS_NAME_PLURAL|>.Count;
+          ret.StatusMessage = "Success";
+          ret.ResultMessage = $"Found {RowsAffected} {ClassDescriptionPlural}.";
+          ret.StatusCode = HttpStatusCode.OK;
+        }
+        else {
+          ret.StatusMessage = "NotFound";
+          ret.ResultMessage = $"No {ClassDescriptionPlural} match the search criteria of '{JsonHelper.SerializeEntity<<|CLASS_NAME|>Search>(search)}'.";
+          ret.LastErrorMessage = ret.ResultMessage;
+          ret.StatusCode = HttpStatusCode.NotFound;
+        }
+        ret.Data = <|CLASS_NAME_PLURAL|>;
+        ret.RowsAffected = RowsAffected;
+      }
+      catch (Exception ex) {
+        // Publish the exception here
+        PublishException(ex, ret);
+        // Do NOT send the real exception to the user
+        ret = SetGenericExceptionStatus(ret, $"Exception while trying to search for {ClassDescriptionPlural}.");
+      }
+    }
+    
+    // Set View Model Info and Error Message objects
+    SetInfoAndErrorMessages(ret);
+
+    return ret;
+  }
+  #endregion
+
+  #region CountAsync Method
+  public async Task<DataResponse<int>> CountAsync(<|CLASS_NAME|>Search? search)
+  {
+    IsDetailVisible = false;
+    DataResponse<int> ret = new();
+
+    // Ensure Repository Object is Set
+    if (Repository == null) {
+      SetRepositoryNotSetStatus(ret);
+    }
+    else {
+      // Reset RowsAffected and Message Properties
+      ResetRowsAffectedAndMessages();
+      
+      InfoMessage = $"Counting {ClassDescriptionPlural}...";
+
+      // Ensure we have a valid search entity
+      search ??= new();
+
+      try {
+        RowsAffected = await Repository.CountAsync(search);
+
+        if (RowsAffected > 0) {
+          ret.StatusMessage = "Success";
+          ret.ResultMessage = $"Counted {RowsAffected} {ClassDescriptionPlural}.";
+          ret.StatusCode = HttpStatusCode.OK;
+        }
+        else {
+          ret.StatusMessage = "NotFound";
+          ret.ResultMessage = $"No {ClassDescriptionPlural} match the search criteria of '{JsonHelper.SerializeEntity<<|CLASS_NAME|>Search>(search)}'.";
+          ret.LastErrorMessage = ret.ResultMessage;
+          ret.StatusCode = HttpStatusCode.NotFound;
+        }
+        ret.Data = RowsAffected;
+        ret.RowsAffected = RowsAffected;
+      }
+      catch (Exception ex) {
+        // Publish the exception here
+        PublishException(ex, ret);
+        // Do NOT send the real exception to the user
+        ret = SetGenericExceptionStatus(ret, $"Exception while trying to count {ClassDescriptionPlural}.");
+      }
+    }
+    
+    // Set View Model Info and Error Message objects
+    SetInfoAndErrorMessages(ret);
+
+    return ret;
+  }
+  #endregion
+  
+  #region Save Method
+  public async virtual Task<DataResponse<<|CLASS_NAME|>>> SaveAsync()
+  {
+    if (IsAdding) {
+      return await InsertAsync();
+    }
+    else {
+      return await UpdateAsync();
+    }
+  }
+  #endregion
+
+  #region InsertAsync Method
+  public async Task<DataResponse<<|CLASS_NAME|>>> InsertAsync()
+  {
+    return await InsertAsync(CurrentEntity);
+  }
+
+  public async Task<DataResponse<<|CLASS_NAME|>>> InsertAsync(<|CLASS_NAME|>? entity)
+  {
+    DataResponse<<|CLASS_NAME|>> ret = new();
+
+    if (entity == null) {
+      ret.StatusMessage = "BadRequest";
+      ret.ResultMessage = $"{ClassDescriptionSingular} object passed to Insert is empty.";
+      ret.StatusCode = HttpStatusCode.BadRequest;
+    }
+    else {
+      // Validate Properties
+      if (Validate<<|CLASS_NAME|>>(entity)) {
+        // Ensure Repository Object is Set
+        if (Repository == null) {
+          SetRepositoryNotSetStatus(ret);
+        }
+        else {
+          // Reset RowsAffected and Message Properties
+          ResetRowsAffectedAndMessages();
+          
+          InfoMessage = $"Attempting to Add a {ClassDescriptionSingular}...";
+
+          try {
+            // Update any common fields
+            {|REMOVE_WHEN:NoStandardFields|}
+            {|FOR EACH COLUMN:StandardFieldIsInsertable|}
+            entity.<|PROPERTY_NAME|> <|STD_PROPERTY_MODIFY|>;
+            {|END_LOOP|}
+            {|END_REMOVE|}
+
+            // Insert the new <|CLASS_NAME|> into data store
+            CurrentEntity = await Repository.InsertAsync(entity);
+            if (CurrentEntity != null) {
+              IsAdding = false;
+              RowsAffected = 1;
+
+              // Success, return a '201 Created'
+              ret.Data = CurrentEntity;
+              ret.StatusMessage = "Created";
+              ret.ResultMessage = $"{ClassDescriptionSingular} was successfully added.";
+              ret.StatusCode = HttpStatusCode.Created;
+            }
+            else {
+              RowsAffected = 0;
+              
+              // Don't allow a null CurrentEntity
+              CurrentEntity = new();
+
+              // Something went wrong, return a '400 Bad Request'
+              ret.StatusMessage = "BadRequest";
+              ret.ResultMessage = $"Something went wrong attempting to add the {ClassDescriptionSingular}.";
+              ret.LastErrorMessage = ret.ResultMessage;
+              ret.StatusCode = HttpStatusCode.BadRequest;
+            }
+            ret.RowsAffected = RowsAffected;
+          }
+          catch (PDSC.Common.ValidationException ex) {
+            // Set Validation Messages Property
+            ValidationMessages = ex.ValidationError.ValidationMessages;
+
+            // Set Validation Status
+            SetValidationStatus<<|CLASS_NAME|>>(ret, CurrentEntity, ex.ValidationError.ValidationMessages);
+          }
+          catch (Exception ex) {
+            // Publish the exception here
+            PublishException(ex, ret);
+            // Do NOT send the real exception to the user
+            ret = SetGenericExceptionStatus(ret, $"Exception while trying to insert the {ClassDescriptionSingular}.");
+          }
+        }
+      }
+      else {
+        // Set Validation Status
+        SetValidationStatus<<|CLASS_NAME|>>(ret, entity, ValidationMessages);
+      }
+    }
+
+    // Set View Model Info and Error Message objects
+    SetInfoAndErrorMessages(ret);
+
+    return ret;
+  }
+  #endregion
+
+  #region UpdateAsync Method
+  public async Task<DataResponse<<|CLASS_NAME|>>> UpdateAsync()
+  {
+    return await UpdateAsync(CurrentEntity?.<|PRIMARY_KEY_FIELD|> ?? <|PROPERTY_INITIALIZER|>, CurrentEntity);
+  }
+
+  public async Task<DataResponse<<|CLASS_NAME|>>> UpdateAsync(<|PK_LANGUAGE_DATA_TYPE|> id, <|CLASS_NAME|>? entity)
+  {
+    DataResponse<<|CLASS_NAME|>> ret = new();
+
+    if (entity == null) {
+      ret.StatusMessage = "BadRequest";
+      ret.ResultMessage = $"{ClassDescriptionSingular} object passed to Update is empty.";
+      ret.StatusCode = HttpStatusCode.BadRequest;
+    }
+    else {
+      // Validate Properties
+      if (Validate<<|CLASS_NAME|>>(entity)) {
+        // Ensure Repository Object is Set
+        if (Repository == null) {
+          SetRepositoryNotSetStatus(ret);
+        }
+        else {
+          // Reset RowsAffected and Message Properties
+          ResetRowsAffectedAndMessages();
+          
+          InfoMessage = $"Attempting to Update a {ClassDescriptionSingular}...";
+
+          try {
+            // Attempt to locate the data to update
+            <|CLASS_NAME|>? current = await Repository.GetAsync(id);
+
+            if (current != null) {
+              // Update any common fields
+              {|FOR EACH COLUMN:StandardFieldIsEditable|}
+              entity.<|PROPERTY_NAME|> <|STD_PROPERTY_MODIFY|>;
+              {|END_LOOP|}
+
+              // Update 'current' with values passed in
+              current = SetValues(current, entity);
+
+              // Update the existing <|CLASS_NAME|> in the data store
+              CurrentEntity = await Repository.UpdateAsync(current);
+              if (CurrentEntity != null) {
+                RowsAffected = 1;
+
+                // Success, return a '200 Success'
+                ret.Data = CurrentEntity;
+                ret.StatusMessage = "Success";
+                ret.ResultMessage = $"{ClassDescriptionSingular} was successfully updated.";
+                ret.StatusCode = HttpStatusCode.OK;
+              }
+              else {
+                RowsAffected = 0;
+                
+                // Don't allow a null CurrentEntity
+                CurrentEntity = new();
+
+                // Something went wrong, return a '400 Bad Request'
+                ret.StatusMessage = "BadRequest";
+                ret.ResultMessage = $"Something went wrong attempting to update the {ClassDescriptionSingular}.";
+                ret.LastErrorMessage = ret.ResultMessage;
+                ret.StatusCode = HttpStatusCode.BadRequest;
+              }
+              ret.RowsAffected = RowsAffected;
+            }
+            else {
+              ret.StatusMessage = "NotFound";
+              ret.ResultMessage = $"Can't find a {ClassDescriptionSingular} with an ID of '{id}' to update.";
+              ret.LastErrorMessage = ret.ResultMessage;
+              ret.StatusCode = HttpStatusCode.NotFound;
+            }
+          }
+          catch (PDSC.Common.ValidationException ex) {
+            // Set Validation Messages Property
+            ValidationMessages = ex.ValidationError.ValidationMessages;
+
+            // Set Validation Status
+            SetValidationStatus<<|CLASS_NAME|>>(ret, CurrentEntity, ex.ValidationError.ValidationMessages);
+          }
+          catch (Exception ex) {
+            // Publish the exception here
+            PublishException(ex, ret);
+            // Do NOT send the real exception to the user
+            ret = SetGenericExceptionStatus(ret, $"Exception trying to update {ClassDescriptionSingular} with an ID of '{id}'.");
+          }
+        }
+      }
+      else {
+        // Set Validation Status
+        SetValidationStatus<<|CLASS_NAME|>>(ret, entity, ValidationMessages);
+      }
+    }
+ 
+    // Set View Model Info and Error Message objects
+    SetInfoAndErrorMessages(ret);
+
+    return ret;
+  }
+  #endregion
+
+  #region DeleteAsync Method
+  public async Task<DataResponse<<|CLASS_NAME|>>> DeleteAsync(<|PK_LANGUAGE_DATA_TYPE|> id)
+  {
+    DataResponse<<|CLASS_NAME|>> ret = new();
+        
+    // Ensure Repository Object is Set
+    if (Repository == null) {
+      SetRepositoryNotSetStatus(ret);
+    }
+    else {
+      // Reset RowsAffected and Message Properties
+      ResetRowsAffectedAndMessages();
+
+      InfoMessage = $"Attempting to Delete a {ClassDescriptionSingular}...";
+
+      try {
+        // Attempt to locate the data to delete
+        <|CLASS_NAME|>? entity = await Repository.GetAsync(id);
+        if (entity != null) {
+          var tmp = await Repository.DeleteAsync(entity);
+          if (tmp.HasValue && tmp.Value) {
+            RowsAffected = 1;
+            ret.StatusMessage = "Deleted";
+            ret.ResultMessage = $"{ClassDescriptionSingular} was successfully deleted.";
+            ret.StatusCode = HttpStatusCode.NoContent;
+          }
+          else {
+            ret.StatusMessage = "InternalServerError";
+            ret.ResultMessage = $"Exception trying to delete {ClassDescriptionSingular} with an ID of '{id}'.";
+            ret.LastErrorMessage = ret.ResultMessage;
+            ret.StatusCode = HttpStatusCode.InternalServerError;
+          }
+        }
+        else {
+          ret.StatusMessage = "NotFound";
+          ret.ResultMessage = $"Can't find a {ClassDescriptionSingular} with an ID of '{id}' to delete.";
+          ret.LastErrorMessage = ret.ResultMessage;
+          ret.StatusCode = HttpStatusCode.NotFound;
+        }
+
+        ret.RowsAffected = RowsAffected;
+      }
+      catch (Exception ex) {
+        // Publish the exception here
+        PublishException(ex, ret);
+        // Do NOT send the real exception to the user
+        ret = SetGenericExceptionStatus(ret, $"Exception trying to delete {ClassDescriptionSingular} with an ID of '{id}'.");
+      }
+    }
+    
+    // Set View Model Info and Error Message objects
+    SetInfoAndErrorMessages(ret);
+
+    return ret;
+  }
+  #endregion
+
+  #region SetValues Method
+  public override <|CLASS_NAME|> SetValues(<|CLASS_NAME|> current, <|CLASS_NAME|> changes)
+  {
+    // Overwrite the changed properties in the entity
+    // read from the database with the entity submitted by the user
+    {|FOR EACH COLUMN:IsNotPrimaryKey|}
+    <|PROPERTY_SETVALUE_STATEMENT|>;
+    {|END_LOOP|}
+
+    return current;
+  }
+  #endregion
+    
+  #region CreateEmpty Method
+  public override <|CLASS_NAME|> CreateEmpty()
+  {
+    return new()
+    {
+      <|COMMA_SET|>
+      {|FOR EACH COLUMN:NoStandardFields|}
+      <|PROPERTY_NAME|> = <|PROPERTY_INITIALIZER|><|COMMA|>
+      {|END_LOOP|}
+      {|REMOVE_WHEN:NoStandardFields|}
+      {|FOR EACH COLUMN:StandardFields|}
+      <|PROPERTY_NAME|> <|PROPERTY_INITIALIZER|><|COMMA|>
+      {|END_LOOP|}
+      <|COMMA_REMOVE|>
+      {|END_REMOVE|}
+    };
+  }
+  #endregion
+}

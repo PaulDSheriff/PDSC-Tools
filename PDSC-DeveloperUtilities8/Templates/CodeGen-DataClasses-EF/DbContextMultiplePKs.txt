@@ -1,0 +1,9 @@
+    <|COMMA_RESET|>
+    {|REMOVE_WHEN:OnlyOnePrimaryKey|}
+    // Add multiple primary keys for <|CLASS_NAME|>
+    modelBuilder.Entity<<|CLASS_NAME|>>().HasKey(key => new {
+      {|FOR EACH COLUMN:IsPrimaryKey|}
+      <|COMMA|>key.<|PROPERTY_NAME|>
+      {|END_LOOP|}
+    });
+    {|END_REMOVE|}

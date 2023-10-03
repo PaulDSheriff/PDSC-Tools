@@ -1,0 +1,34 @@
+using <|NAMESPACE|>.EntityLayer.AppClasses;
+using System.ComponentModel.DataAnnotations;
+
+namespace <|NAMESPACE|>.EntityLayer;
+
+/// <summary>
+/// This class contains properties for searching
+/// All of the properties in this class should be nullable unless 
+/// you wish to require the user to enter at least one 
+/// search value prior to displaying records
+/// </summary>
+public partial class <|CLASS_NAME|>Search : AppSearch
+{
+  #region Constructor
+  public <|CLASS_NAME|>Search()
+  {
+    SortExpression = "<|DESCRIPTION_FIELD|>";
+  }
+  #endregion
+
+  {|FOR EACH COLUMN:IsSearchField|}
+  private <|LANGUAGE_DATA_TYPE_NULLABLE|> <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|> <|PROPERTY_INITIALIZER_STATEMENT|>;
+
+  [Display(Name = "<|PROPERTY_LABEL|>")]
+  public <|LANGUAGE_DATA_TYPE_NULLABLE|> <|PROPERTY_NAME|>
+  {
+    get { return <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|>; }
+    set { 
+      <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|> = value; 
+      RaisePropertyChanged(nameof(<|PROPERTY_NAME|>));
+    }
+  }
+  {|END_LOOP|}
+}

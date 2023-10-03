@@ -1,0 +1,23 @@
+﻿using Microsoft.Extensions.Logging;
+using PDSC.Common;
+
+namespace <|NAMESPACE|>.ViewModelLayer.AppClasses;
+
+/// <summary>
+/// All View Model classes in your project should inherit from this class.
+/// This allows you to add any properties/methods that are in common to all View Model classes in this project.
+/// </summary>
+/// <typeparam name="TEntity">An entity data type</typeparam>
+/// <typeparam name="TSearch">A search entity data type</typeparam>
+public abstract class AppViewModel<TEntity, TSearch> : ViewModelEFBase<TEntity, TSearch> {
+  #region Constructors
+  public AppViewModel()
+  {
+  }
+
+  public AppViewModel(ILogger logger)
+  {
+    LoggerObject = logger;
+  }
+  #endregion
+}

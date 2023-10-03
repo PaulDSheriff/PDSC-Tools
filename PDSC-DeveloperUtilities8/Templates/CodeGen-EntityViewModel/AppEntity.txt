@@ -1,0 +1,19 @@
+﻿using PDSC.Common;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
+
+namespace <|NAMESPACE|>.EntityLayer.AppClasses;
+
+/// <summary>
+/// All Entity classes in your project should inherit from this class.
+/// This allows you to add any properties/methods that are in common to all Entity classes in this project.
+/// </summary>
+public class AppEntity : CommonBase
+{
+  // TODO: Add any properties/methods you need for your application here
+  
+  {|REMOVE_WHEN:NoStandardFields|}
+  <|PROPERTIES_STD_FIELDS_ONLY|>
+  {|END_REMOVE|}
+}

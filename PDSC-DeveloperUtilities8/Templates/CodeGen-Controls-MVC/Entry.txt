@@ -1,0 +1,5 @@
+  <div class="form-group">
+    <label asp-for="CurrentEntity.<|PROPERTY_NAME|>"></label>
+    <input class="form-control" asp-for="CurrentEntity.<|PROPERTY_NAME|>" type="<|HTML_INPUT_TYPE|>" />
+    <span asp-validation-for="CurrentEntity.<|PROPERTY_NAME|>" class="text-danger" />
+  </div>

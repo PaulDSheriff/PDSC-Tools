@@ -1,0 +1,187 @@
+﻿using <|NAMESPACE|>.EntityLayer;
+using Microsoft.EntityFrameworkCore;
+using PDSC.Common;
+
+namespace <|NAMESPACE|>.DataLayer;
+
+/// <summary>
+/// This partial class contains the class definition, inheritance chain, 
+/// constructors and properties.
+/// This class makes async calls to your data store.
+/// </summary>
+{|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
+public partial class <|CLASS_NAME|>Repository : RepositoryBase, IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search>
+{|END_REMOVE|}
+{|REMOVE_WHEN:IsPrimaryKeyInteger|}
+public partial class <|CLASS_NAME|>Repository : RepositoryBase, IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search>
+{|END_REMOVE|}
+{
+  #region Constructor
+  public <|CLASS_NAME|>Repository(<|DB_CONTEXT|> context)
+  {
+    DbContextObject = context;
+  }
+  #endregion
+
+  #region Public Properties
+  public <|DB_CONTEXT|> DbContextObject { get; set; }
+  #endregion
+  
+  #region GetAsync Method
+  public async Task<List<<|CLASS_NAME|>>> GetAsync()
+  {
+    return await SearchAsync(new <|CLASS_NAME|>Search());
+  }
+  #endregion
+
+  #region GetAsync(id) Method
+  public async Task<<|CLASS_NAME|>?> GetAsync(<|PK_LANGUAGE_DATA_TYPE|> id)
+  {
+    <|CLASS_NAME|>? entity;
+
+    entity = await DbContextObject.<|CLASS_NAME_PLURAL|>.FindAsync(id);
+    RowsAffected = entity == null ? 0 : 1;
+
+    return entity;
+  }
+  #endregion
+
+  #region SearchAsync Method
+  public async Task<List<<|CLASS_NAME|>>> SearchAsync(<|CLASS_NAME|>Search search)
+  {
+    List<<|CLASS_NAME|>> ret;
+
+    // Get a Query object for this DbSet<T>
+    IQueryable<<|CLASS_NAME|>> query = DbContextObject.<|CLASS_NAME_PLURAL|>;
+
+    // Add WHERE clause(s)
+    query = AddWhereClause(query, search);
+
+    // Add ORDER BY clause(s)
+    query = AddOrderByClause(query, search);
+
+    // Apply Paging
+    query = ApplyPaging(query);
+
+    ret = await query.ToListAsync();
+
+    RowsAffected = ret.Count;
+
+    return ret;
+  }
+  #endregion
+  
+  #region AddWhereClause Method
+  protected IQueryable<<|CLASS_NAME|>> AddWhereClause(IQueryable<<|CLASS_NAME|>> query, <|CLASS_NAME|>Search search)
+  {
+    // Perform Searching
+    {|FOR EACH COLUMN:IsSearchField|}
+    if (<|PROPERTY_SEARCH_IF|>) {
+      query = query.Where(row => <|PROPERTY_SEARCH_PATTERN|>);
+    }
+    {|END_LOOP|}
+    return query;
+  }
+  #endregion
+
+  #region AddOrderByClause Method
+  protected IQueryable<<|CLASS_NAME|>> AddOrderByClause(IQueryable<<|CLASS_NAME|>> query, <|CLASS_NAME|>Search search)
+  {
+    // Convert sort expression to all lower-case
+    search.SortExpression = search.SortExpression?.ToLower();
+
+    // Determine how to sort the data
+    switch (search.SortExpression) {
+    {|FOR EACH COLUMN:NoStandardFields|}
+      case "<|PROPERTY_NAME_ALL_LOWER|>":
+      case "<|PROPERTY_NAME_ALL_LOWER|>_asc":
+        query = query.OrderBy(row => row.<|PROPERTY_NAME|>);
+        break;
+      case "<|PROPERTY_NAME_ALL_LOWER|>_desc":
+        query = query.OrderByDescending(row => row.<|PROPERTY_NAME|>);
+        break;
+    {|END_LOOP|}
+      default:
+        query = query.OrderBy(row => row.<|DESCRIPTION_FIELD|>);
+        break;
+    }
+
+    return query;
+  }
+  #endregion
+  
+  #region ApplyPaging Method
+  protected IQueryable<<|CLASS_NAME|>> ApplyPaging(IQueryable<<|CLASS_NAME|>> query)
+  {
+    //query = query.Skip(PagerObject.PageIndex *
+    //                   PagerObject.PageSize)
+    //             .Take(PagerObject.PageSize);
+
+    return query;
+  }
+  #endregion
+  
+  #region CountAsync Method
+  public async Task<int> CountAsync(<|CLASS_NAME|>Search search)
+  {
+    IQueryable<<|CLASS_NAME|>> query = DbContextObject.<|CLASS_NAME_PLURAL|>;
+
+    // Add WHERE clause(s)
+    query = AddWhereClause(query, search);
+
+    // Count using Search Criteria
+    RowsAffected = await query.CountAsync();
+
+    return RowsAffected;
+  }
+  #endregion
+
+  #region InsertAsync Method
+  public async Task<<|CLASS_NAME|>?> InsertAsync(<|CLASS_NAME|>? entity)
+  {
+    if (entity != null) {
+      // Add new entity to <|CLASS_NAME_PLURAL|> DbSet
+      DbContextObject.<|CLASS_NAME_PLURAL|>.Add(entity);
+
+      // Save changes in database
+      RowsAffected = await DbContextObject.SaveChangesAsync();
+    }
+
+    return entity;
+  }
+  #endregion
+
+  #region UpdateAsync Method
+  public async Task<<|CLASS_NAME|>?> UpdateAsync(<|CLASS_NAME|>? entity)
+  {
+    if (entity != null) {
+      // Update entity in <|CLASS_NAME_PLURAL|> DbSet
+      DbContextObject.<|CLASS_NAME_PLURAL|>.Update(entity);
+
+      // Save changes in database
+      RowsAffected = await DbContextObject.SaveChangesAsync();
+    }
+
+    return entity;
+  }
+  #endregion
+
+  #region DeleteAsync Method
+  public async Task<bool?> DeleteAsync(<|CLASS_NAME|>? entity)
+  {
+    bool? ret = false;
+
+    if (entity != null) {
+      // Remove the record
+      DbContextObject.<|CLASS_NAME_PLURAL|>.Remove(entity);
+
+      // Save changes in database
+      RowsAffected = await DbContextObject.SaveChangesAsync();
+
+      ret = true;
+    }
+
+    return ret;
+  }
+  #endregion
+}
