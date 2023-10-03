@@ -1,0 +1,33 @@
+@model <|NAMESPACE|>.ViewModelLayer.<|CLASS_NAME|>ViewModel
+
+<form method="get" asp-action="<|CLASS_NAME|>Search">
+  <div class="card">
+    <div class="card-header bg-primary text-light">
+      <h5 class="card-title">Search for <|CLASS_DESC_PLURAL|></h5>
+    </div>
+    <div class="card-body">
+      {|FOR EACH COLUMN:IsSearchField|}
+      <div class="form-group">
+        <label asp-for="SearchEntity.<|PROPERTY_NAME|>"></label>
+        <input class="form-control" asp-for="SearchEntity.<|PROPERTY_NAME|>" />
+      </div>
+      {|END_LOOP|}
+    </div>
+    <div class="card-footer bg-primary text-light">
+      <div class="row">
+        <div class="col-9">
+          <a class="me-5 btn btn-secondary" asp-action="<|CLASS_NAME|>Add">
+            Add
+          </a>
+          <button formnovalidate="formnovalidate" class="btn btn-success">Search</button>
+          <a class="btn btn-primary" asp-action="<|CLASS_NAME|>Index">
+            Reset
+          </a>
+        </div>
+        <div class="col-3">
+          <span class="mt-1 float-end">Total Records: @Model.RowsAffected</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

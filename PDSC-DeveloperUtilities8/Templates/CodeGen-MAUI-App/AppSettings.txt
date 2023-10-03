@@ -1,0 +1,20 @@
+﻿namespace <|NAMESPACE|>;
+
+/// <summary>
+/// Put any application-specific settings in this class
+/// </summary>
+public class <|NAMESPACE|>AppSettings
+{
+  public <|NAMESPACE|>AppSettings()
+  {
+    ApplicationName = "<|APPLICATION_NAME|>";
+    BaseWebAPIAddress = "https://your.webapiurl.com/api";
+    LoginDateTime = DateTime.Now;
+    UserName = "Unknown";
+  }
+
+  public string ApplicationName { get; set; }
+  public string BaseWebAPIAddress { get; set; }
+  public DateTime LoginDateTime { get; set; }
+  public string UserName { get; set; }
+}

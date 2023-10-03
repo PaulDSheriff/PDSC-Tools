@@ -1,0 +1,110 @@
+using <|NAMESPACE|>.EntityLayer;
+using <|NAMESPACE|>.ViewModelLayer;
+using PDSC.Common;
+using Microsoft.AspNetCore.Mvc;
+
+namespace <|NAMESPACE|>.Controllers;
+
+public class <|CLASS_NAME|><|OUTPUT_SUFFIX|> : Controller
+{
+  {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
+  public <|CLASS_NAME|><|OUTPUT_SUFFIX|>(IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> repo)
+  {|END_REMOVE|}
+  {|REMOVE_WHEN:IsPrimaryKeyInteger|}
+  public <|CLASS_NAME|><|OUTPUT_SUFFIX|>(IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> repo)
+  {|END_REMOVE|}
+  {
+    _Repo = repo;
+  }
+
+  {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
+  private readonly IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> _Repo;
+  {|END_REMOVE|}
+  {|REMOVE_WHEN:IsPrimaryKeyInteger|}
+  private readonly IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> _Repo;
+  {|END_REMOVE|}
+
+  [HttpGet]
+  public async Task<IActionResult> <|CLASS_NAME|>Index()
+  {
+    // Create view model, passing in repository
+    <|CLASS_NAME|>ViewModel vm = new(_Repo);
+
+    // Call method to load <|CLASS_NAME|> objects
+    await vm.SearchAsync();
+
+    return View(vm);
+  }
+
+  [HttpPost]
+  public async Task<IActionResult> <|CLASS_NAME|>Index(<|CLASS_NAME|>ViewModel vm)
+  {
+    vm.Repository = _Repo;
+      
+    if (ModelState.IsValid)
+    {
+      // Save the <|CLASS_NAME|>
+      await vm.SaveAsync();
+
+      // Redirect back to <|CLASS_NAME|> list
+      return RedirectToAction("<|CLASS_NAME|>Index");
+    }
+    else
+    {
+      vm.IsDetailVisible = true;
+
+      return View(vm);
+    }
+  }
+
+  [HttpGet]
+  public async Task<IActionResult> <|CLASS_NAME|>Edit(<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|> id)
+  {
+    // Create view model, passing in repository
+    <|CLASS_NAME|>ViewModel vm = new(_Repo);
+
+    // Call method to load a single <|CLASS_NAME|> object
+    await vm.GetAsync(id);
+
+    return View("<|CLASS_NAME|>Index", vm);
+  }
+
+  [HttpGet]
+  public async Task<IActionResult> <|CLASS_NAME|>Search(<|CLASS_NAME|>ViewModel vm)
+  {
+    vm.Repository = _Repo;
+
+    // Call method to search for <|CLASS_NAME|> objects
+    await vm.SearchAsync();
+
+    return View("<|CLASS_NAME|>Index", vm);
+  }
+
+  [HttpGet]
+  public IActionResult <|CLASS_NAME|>Add()
+  {
+    // Create view model, passing in repository
+    <|CLASS_NAME|>ViewModel vm = new(_Repo)
+    {
+      IsDetailVisible = true,
+      IsAdding = true
+    };
+
+    // Call method to create an empty <|CLASS_NAME|> object
+    vm.CreateEmpty();
+
+    return View("<|CLASS_NAME|>Index", vm);
+  }
+
+  [HttpGet]
+  public async Task<IActionResult> <|CLASS_NAME|>Delete(<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|> id)
+  {
+    // Create view model, passing in repository
+    <|CLASS_NAME|>ViewModel vm = new(_Repo);
+
+    // Call method to delete a single <|CLASS_NAME|> object
+    await vm.DeleteAsync(id);
+
+    return RedirectToAction("<|CLASS_NAME|>Index");
+  }
+}

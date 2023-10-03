@@ -1,0 +1,141 @@
+﻿using PDSC.Common.HelperClasses;
+using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
+
+namespace <|NAMESPACE|>;
+
+public class ControllerBaseAPI : ControllerBase
+{
+  #region Constructor
+  public ControllerBaseAPI(ILogger logger)
+  {
+    _Logger = logger;
+
+    // TODO: Set User Name here
+    // UserName = "";
+  }
+  #endregion
+
+  #region Protected Variables
+  protected readonly ILogger _Logger;
+  #endregion
+
+  #region Private Variables
+  private string _UserName = "unknown";
+  private string _EntityAsJson = string.Empty;
+  private string _InfoMessage = string.Empty;
+  private string _LastErrorMessage = string.Empty;
+  private Exception? _LastException = null;
+  #endregion
+
+  #region Public Properties
+  /// <summary>
+  /// Get/Set the current user name for logging purposes
+  /// </summary>
+  [NotMapped]
+  [JsonIgnore]
+  public string UserName
+  {
+    get { return _UserName; }
+    set { _UserName = value; }
+  }
+
+  /// <summary>
+  /// Get/Set the current object as JSON
+  /// </summary>
+  [NotMapped]
+  [JsonIgnore]
+  public string EntityAsJson
+  {
+    get { return _EntityAsJson; }
+    set { _EntityAsJson = value; }
+  }
+
+  /// <summary>
+  /// Get/Set the last informational message to display
+  /// </summary>
+  [NotMapped]
+  [JsonIgnore]
+  public string InfoMessage
+  {
+    get { return _InfoMessage; }
+    set { _InfoMessage = value; }
+  }
+
+  /// <summary>
+  /// Get/Set the class description as a singular word for messages
+  /// </summary>
+  [NotMapped]
+  [JsonIgnore]
+  protected string ClassDescriptionSingular { get; set; } = string.Empty;
+
+  /// <summary>
+  /// Get/Set the class description as a plural word for messages
+  /// </summary>
+  [NotMapped]
+  [JsonIgnore]
+  protected string ClassDescriptionPlural { get; set; } = string.Empty;
+
+  /// <summary>
+  /// Get/Set the message to display when the Repository object is not set
+  /// </summary>
+  [NotMapped]
+  [JsonIgnore]
+  protected string RepositoryNotSetMessage { get; set; } = "The Repository Object is not Set.";
+
+  /// <summary>
+  /// Get/Set the last error message from the last operation
+  /// </summary>
+  [NotMapped]
+  [JsonIgnore]
+  public string LastErrorMessage
+  {
+    get { return _LastErrorMessage; }
+    set { _LastErrorMessage = value; }
+  }
+
+  /// <summary>
+  /// Get/Set the last exception object from the last operation
+  /// Sets the ErrorMessage to LastException.Message if ErrorMessage is blank
+  /// </summary>
+  [NotMapped]
+  [JsonIgnore]
+  public Exception? LastException
+  {
+    get { return _LastException; }
+    set
+    {
+      _LastException = value;
+      if (_LastException != null) {
+        if (string.IsNullOrEmpty(LastErrorMessage)) {
+          LastErrorMessage = _LastException.Message;
+        }
+      }
+    }
+  }
+  #endregion
+
+  #region SerializeEntity Method
+  /// <summary>
+  /// Serialize an object into a JSON string
+  /// </summary>
+  /// <typeparam name="T">The type to serialize</typeparam>
+  /// <param name="entity">An instance of the type</param>
+  /// <returns>A JSON string</returns>
+  protected string SerializeEntity<T>(T? entity)
+  {
+    EntityAsJson = "Nothing serialized";
+
+    try {
+      // Attempt to serialize entity
+      EntityAsJson = JsonHelper.SerializeEntity<T>(entity);
+    }
+    catch {
+      // Ignore the error
+    }
+
+    return EntityAsJson;
+  }
+  #endregion
+}

@@ -1,0 +1,159 @@
+﻿using <|NAMESPACE|>.DataLayer.API;
+using <|NAMESPACE|>.EntityLayer;
+using <|NAMESPACE|>.MAUI.CommandClasses;
+using <|NAMESPACE|>.MAUI.Views;
+using Microsoft.Extensions.Logging;
+using PDSC.Common;
+#if WINDOWS
+using Microsoft.Maui.LifecycleEvents;
+#endif
+
+namespace <|NAMESPACE|>.MAUI;
+
+public static class MauiProgram
+{
+  public static MauiApp CreateMauiApp()
+  {
+    // Create MauiAppBuilder object
+    var builder = MauiApp.CreateBuilder();
+    // Setup default MAUI application options
+    builder
+      .UseMauiApp<App>()
+      .ConfigureFonts(fonts =>
+      {
+        fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+        fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+      });
+
+    //**********************************
+    //* Add DI Services to MAUI App
+    //**********************************
+    // Register <|NAMESPACE|>AppSettings object
+    builder.Services.AddSingleton<<|NAMESPACE|>AppSettings>(new <|NAMESPACE|>AppSettings());
+    // Add HttpClient with base address for Web API calls
+    RegisterHttpClient(builder, new <|NAMESPACE|>AppSettings().BaseWebAPIAddress);
+    // Add repositories
+    builder.RegisterRepositories();
+    // Add view models
+    builder.RegisterViewModels();
+    // Add views
+    builder.RegisterViews();
+
+#if WINDOWS
+    // Set Window options if running on Windows
+    SetWindowOptions(builder);
+    
+    // Turn off labels on <Switch> element
+    SetWindowHandlers();
+#endif
+
+#if DEBUG
+    // Add debugging capabilities
+    builder.Logging.AddDebug();
+#endif
+
+    return builder.Build();
+  }
+
+  #region RegisterHttpClient Method
+  /// <summary>
+  /// Create an instance of an HttpClient to use for all Web API calls
+  /// </summary>
+  public static MauiAppBuilder RegisterHttpClient(this MauiAppBuilder mauiAppBuilder, string baseAddress)
+  {
+    HttpClient client = new()
+    {
+      BaseAddress = new Uri(baseAddress)
+    };
+
+    mauiAppBuilder.Services.AddSingleton<HttpClient>(client);
+
+    return mauiAppBuilder;
+  }
+  #endregion
+
+  #region RegisterRepositories Method
+  /// <summary>
+  /// Add repository classes to DI services
+  /// </summary>
+  public static MauiAppBuilder RegisterRepositories(this MauiAppBuilder mauiAppBuilder)
+  {
+    {|FOR EACH TABLE|}
+    mauiAppBuilder.Services.AddScoped<IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search>, <|CLASS_NAME|>RepositoryAPI>();
+    {|END_LOOP|}
+
+    return mauiAppBuilder;
+  }
+  #endregion
+
+  #region RegisterViewModels Method
+  /// <summary>
+  /// Add View Model classes to DI services
+  /// </summary>
+  public static MauiAppBuilder RegisterViewModels(this MauiAppBuilder mauiAppBuilder)
+  {      
+    {|FOR EACH TABLE|}
+    mauiAppBuilder.Services.AddScoped<<|CLASS_NAME|>ViewModelCommands>();
+    {|END_LOOP|}
+
+    return mauiAppBuilder;
+  }
+  #endregion
+
+  #region RegisterViews Method
+  /// <summary>
+  /// Add views/pages to DI services
+  /// </summary>
+  public static MauiAppBuilder RegisterViews(this MauiAppBuilder mauiAppBuilder)
+  {
+    {|FOR EACH TABLE|}
+    mauiAppBuilder.Services.AddScoped<<|CLASS_NAME|>ListView>();
+    mauiAppBuilder.Services.AddScoped<<|CLASS_NAME|>DetailView>();
+    {|END_LOOP|}
+
+    return mauiAppBuilder;
+  }
+  #endregion
+
+  #region SetWindowHandlers Method
+#if WINDOWS
+  public static void SetWindowHandlers()
+  {
+    Microsoft.Maui.Handlers.SwitchHandler.Mapper.AppendToMapping("Custom", (h, v) =>
+    {
+      // Get rid of On/Off label beside switch, to match other platforms
+      h.PlatformView.OffContent = string.Empty;
+      h.PlatformView.OnContent = string.Empty;
+
+      h.PlatformView.MinWidth = 0;
+    });
+  }
+#endif
+  #endregion
+
+  #region SetWindowOptions Method
+#if WINDOWS
+  public static void SetWindowOptions(MauiAppBuilder builder)
+  {
+    builder.ConfigureLifecycleEvents(events =>
+    {
+      events.AddWindows(wndLifeCycleBuilder =>
+      {
+        wndLifeCycleBuilder.OnWindowCreated(window =>
+        {
+          IntPtr nativeWindowHandle = WinRT.Interop.WindowNative.GetWindowHandle(window);
+          Microsoft.UI.WindowId win32WindowsId = Microsoft.UI.Win32Interop.GetWindowIdFromWindow(nativeWindowHandle);
+          Microsoft.UI.Windowing.AppWindow winuiAppWindow = Microsoft.UI.Windowing.AppWindow.GetFromWindowId(win32WindowsId);
+          if (winuiAppWindow.Presenter is Microsoft.UI.Windowing.OverlappedPresenter p) {
+            p.Maximize();
+            //p.IsResizable = false;
+            //p.IsMaximizable = false;
+            //p.IsMinimizable = false;
+          }
+        });
+      });
+    });
+}
+#endif
+  #endregion
+}

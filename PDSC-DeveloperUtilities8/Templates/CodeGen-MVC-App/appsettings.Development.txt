@@ -1,0 +1,16 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "<|CONNECTION_STRING|>;MultipleActiveResultSets=true;TrustServerCertificate=True;Application Name=<|APPLICATION_NAME_NO_SPACES|>"
+  },
+  "SiteSettings": {
+    "ApplicationName": "<|APPLICATION_NAME|>",
+    "RecordsPerPage": "10",
+    "LogFileName": "Logs.txt"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  }
+}

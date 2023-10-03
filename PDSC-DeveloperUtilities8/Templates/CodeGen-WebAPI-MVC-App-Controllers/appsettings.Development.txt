@@ -1,0 +1,17 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "<|CONNECTION_STRING|>;MultipleActiveResultSets=true;TrustServerCertificate=True;Application Name=<|APPLICATION_NAME_NO_SPACES|>"
+  },
+  "<|NAMESPACE|>AppSettings": {
+    "ApplicationName" : "<|APPLICATION_NAME|>",
+    "BaseWebAPIService": "http://localhost:5000/api",
+    "UserName" : "ApiUser",  // This should be overridden in your application
+    "InfoMessageDefault": "Problem Attempting to {Verb} using the {ClassName} API. Please Contact Your System Administrator."
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+﻿namespace <|NAMESPACE|>.MAUI
+{
+  public partial class AppShell : Shell
+  {
+    public AppShell()
+    {
+      InitializeComponent();
+
+      // Add routes for detail views
+      {|FOR EACH TABLE|}
+      Routing.RegisterRoute(nameof(Views.<|CLASS_NAME|>DetailView), typeof(Views.<|CLASS_NAME|>DetailView));
+      {|END_LOOP|}
+    }
+  }
+}

@@ -1,0 +1,224 @@
+﻿using System.Collections.ObjectModel;
+using System.Net;
+using System.Windows.Input;
+using <|NAMESPACE|>.EntityLayer;
+using <|NAMESPACE|>.MAUI.Views;
+using <|NAMESPACE|>.ViewModelLayer;
+using Microsoft.Extensions.Logging;
+using PDSC.Common;
+
+namespace <|NAMESPACE|>.MAUI.CommandClasses
+{
+  public class <|CLASS_NAME|>ViewModelCommands : <|CLASS_NAME|>ViewModel
+  {
+    #region Constructors
+    public <|CLASS_NAME|>ViewModelCommands(IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository) : base(repository)
+    {
+    }
+
+    public <|CLASS_NAME|>ViewModelCommands(IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository,
+      ILogger<<|CLASS_NAME|>ViewModel> logger) : base(repository, logger)
+    {
+    }
+    #endregion
+    
+    #region Private Variables    
+    private bool _IsGetCommandEnabled = true;
+    private bool _IsSearchCommandEnabled = true;
+    private bool _IsAddCommandEnabled = true;
+    private bool _IsEditCommandEnabled = true;
+    private bool _IsDeleteCommandEnabled = true;
+    private bool _IsSaveCommandEnabled = true;
+    private bool _IsCancelCommandEnabled = true;
+    #endregion
+
+    #region Public Properties
+    public <|CLASS_NAME|>ListView TheView { get; set; }
+
+    /// <summary>
+    /// Get/Set IsGetCommandEnabled
+    /// </summary>
+    public bool IsGetCommandEnabled
+    {
+      get { return _IsGetCommandEnabled; }
+      set {
+        _IsGetCommandEnabled = value;
+        RaisePropertyChanged(nameof(IsGetCommandEnabled));
+      }
+    }
+
+    /// <summary>
+    /// Get/Set IsSearchCommandEnabled
+    /// </summary>
+    public bool IsSearchCommandEnabled
+    {
+      get { return _IsSearchCommandEnabled; }
+      set {
+        _IsSearchCommandEnabled = value;
+        RaisePropertyChanged(nameof(IsSearchCommandEnabled));
+      }
+    }
+
+    /// <summary>
+    /// Get/Set IsAddCommandEnabled
+    /// </summary>
+    public bool IsAddCommandEnabled
+    {
+      get { return _IsAddCommandEnabled; }
+      set {
+        _IsAddCommandEnabled = value;
+        RaisePropertyChanged(nameof(IsAddCommandEnabled));
+      }
+    }
+
+    /// <summary>
+    /// Get/Set IsEditCommandEnabled
+    /// </summary>
+    public bool IsEditCommandEnabled
+    {
+      get { return _IsEditCommandEnabled; }
+      set {
+        _IsEditCommandEnabled = value;
+        RaisePropertyChanged(nameof(IsEditCommandEnabled));
+      }
+    }
+
+    /// <summary>
+    /// Get/Set IsDeleteCommandEnabled
+    /// </summary>
+    public bool IsDeleteCommandEnabled
+    {
+      get { return _IsDeleteCommandEnabled; }
+      set {
+        _IsDeleteCommandEnabled = value;
+        RaisePropertyChanged(nameof(IsDeleteCommandEnabled));
+      }
+    }
+
+    /// <summary>
+    /// Get/Set IsSaveCommandEnabled
+    /// </summary>
+    public bool IsSaveCommandEnabled
+    {
+      get { return _IsSaveCommandEnabled; }
+      set {
+        _IsSaveCommandEnabled = value;
+        RaisePropertyChanged(nameof(IsSaveCommandEnabled));
+      }
+    }
+
+    /// <summary>
+    /// Get/Set IsCancelCommandEnabled
+    /// </summary>
+    public bool IsCancelCommandEnabled
+    {
+      get { return _IsCancelCommandEnabled; }
+      set {
+        _IsCancelCommandEnabled = value;
+        RaisePropertyChanged(nameof(IsCancelCommandEnabled));
+      }
+    }
+    #endregion
+
+    #region Commands
+    public ICommand GetCommand { get; private set; }
+    public ICommand SearchCommand { get; private set; }
+    public ICommand AddCommand { get; private set; }
+    public ICommand EditCommand { get; private set; }
+    public ICommand DeleteCommand { get; private set; }
+    public ICommand SaveCommand { get; private set; }
+    public ICommand CancelCommand { get; private set; }
+    #endregion
+
+    #region Init Method
+    public override void Init()
+    {
+      base.Init();
+
+      // Initialize Commands
+      GetCommand = new Command(async () => await GetAllAsync(), () => IsGetCommandEnabled);
+      SearchCommand = new Command(async () => await SearchAsync(), () => IsSearchCommandEnabled);
+      AddCommand = new Command(async () => await AddAsync(), () => IsAddCommandEnabled);
+      EditCommand = new Command<int>(async (int id) => await EditAsync(id), (id) => IsEditCommandEnabled);
+      DeleteCommand = new Command<int>(async (int id) => await DeleteAsync(id), (id) => IsDeleteCommandEnabled);
+      SaveCommand = new Command(async () => await SaveAsync(), () => IsSaveCommandEnabled);
+      CancelCommand = new Command(async () => await CancelAsync(), () => IsCancelCommandEnabled);
+    }
+    #endregion
+        
+    #region GetAllAsync Method
+    protected async Task GetAllAsync()
+    {
+      base.SearchEntity = new();
+      await base.GetAsync();
+    }
+    #endregion
+
+    #region SearchAsync Method
+    protected new async Task SearchAsync()
+    {
+      DataResponse<ObservableCollection<<|CLASS_NAME|>>> response = await base.SearchAsync(base.SearchEntity);
+      if (response != null && response.StatusCode == HttpStatusCode.OK) {
+        base.InfoMessage = $"Total Searched and Found: {(response.Data ?? new()).Count}";
+      }
+    }
+    #endregion
+
+    #region CancelAsync Method
+    protected async Task CancelAsync()
+    {      
+      await Shell.Current.GoToAsync("..");
+    }
+    #endregion
+
+    #region AddAsync Method
+    protected async Task AddAsync()
+    {
+      await Shell.Current.GoToAsync($"{nameof(Views.<|CLASS_NAME|>DetailView)}?id={0}&isAdding={true}");
+    }
+    #endregion
+
+    #region EditAsync Method
+    protected async Task EditAsync(int id)
+    {
+      await Shell.Current.GoToAsync($"{nameof(Views.<|CLASS_NAME|>DetailView)}?id={id}&isAdding={false}");
+    }
+    #endregion
+
+    #region SaveAsync Method
+    public async override Task<DataResponse<<|CLASS_NAME|>>> SaveAsync()
+    {
+      DataResponse<<|CLASS_NAME|>> response = await base.SaveAsync();
+
+      if (response.StatusCode == HttpStatusCode.Created ||
+          response.StatusCode == HttpStatusCode.OK) {
+        await Shell.Current.GoToAsync("..");
+      }
+
+      return response;
+    }
+    #endregion
+
+    #region DeleteAsync Method
+    protected new async Task DeleteAsync(int id)
+    {
+      // TODO: Ask user for confirmation
+      string action = await TheView.DisplayActionSheet("Delete this <|CLASS_NAME_SINGULAR|>?", "Cancel", "Delete");
+      switch (action) {
+        case "Delete":
+          // Perform delete
+          DataResponse<<|CLASS_NAME|>> response = await base.DeleteAsync(id);
+          if (response != null && response.StatusCode == HttpStatusCode.NoContent) {
+            base.InfoMessage = "<|CLASS_NAME_SINGULAR|> Deleted";
+          }
+
+          // Redisplay list
+          await GetAsync();
+          break;
+        default:
+          break;
+      }
+    }
+    #endregion
+  }
+}

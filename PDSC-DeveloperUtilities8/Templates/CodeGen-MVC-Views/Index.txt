@@ -1,0 +1,20 @@
+﻿@{
+  ViewData["Title"] = "<|CLASS_NAME|> Maintenance";
+}
+
+<h2><|CLASS_NAME|> Maintenance</h2>
+
+@if (Model.IsDetailVisible)
+{
+  <partial name="_<|CLASS_NAME|>Detail" />
+}
+else
+{
+  <partial name="_<|CLASS_NAME|>Search" />
+  <partial name="_<|CLASS_NAME|>List" />
+}
+
+@section Scripts
+{
+  <partial name="_ValidationScriptsPartial" />
+}

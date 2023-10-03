@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:<|NAMESPACE|>.MAUI.CommandClasses"
+             xmlns:partialViews="clr-namespace:<|NAMESPACE|>.MAUI.ViewsPartial"
+             xmlns:val="clr-namespace:PDSC.Common;assembly=PDSC.Common"
+             x:Class="<|NAMESPACE|>.MAUI.Views.<|CLASS_NAME|>DetailView"
+             x:DataType="vm:<|CLASS_NAME|>ViewModelCommands"
+             Title="<|CLASS_NAME|> Information">
+
+  <ScrollView>
+    <Border Style="{StaticResource Border.Page}">
+      <Grid RowDefinitions="<|GRID_ROW_AUTO|>,Auto,*"
+            ColumnDefinitions="Auto,*"
+            Style="{StaticResource Grid.Page}">
+
+        <!-- *********** -->
+        <!-- Header Area -->
+        <!-- *********** -->
+        <partialViews:HeaderView Grid.Row="0"
+                                 Grid.ColumnSpan="2"
+                                 ViewTitle="<|CLASS_NAME_SINGULAR|> Detail"
+                                 ViewDescription="Use this form to add and edit <|CLASS_NAME_PLURAL|>." />
+
+        <!-- *************** -->
+        <!-- Data Entry Area -->
+        <!-- *************** -->
+        <|GRID_ROW_RESET:1|>
+        {|FOR EACH COLUMN:DisplayInEdit|}
+        <Label Grid.Row="<|GRID_ROW_FIRST|>"
+               Grid.Column="0"
+               Text="<|PROPERTY_LABEL|>" />
+        <|EDIT_CONTROL|>
+        {|END_LOOP|}
+
+        <!-- ******************** -->
+        <!-- Action Commands Area -->
+        <!-- ******************** -->
+        <HorizontalStackLayout Grid.Row="<|GRID_ROW|>"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2">
+          <ImageButton Source="save.png"
+                       ToolTipProperties.Text="Save <|CLASS_NAME_SINGULAR|>"
+                       BackgroundColor="{StaticResource SaveButton}"
+                       Command="{Binding SaveCommand}" />
+          <ImageButton Source="cancel.png"
+                       BackgroundColor="{StaticResource CancelButton}"
+                       ToolTipProperties.Text="Cancel Edit/Return to List"
+                       Command="{Binding CancelCommand}" />
+          <Label Style="{StaticResource ErrorMessage}"
+                 Text="{Binding LastErrorMessage}"/>
+        </HorizontalStackLayout>
+
+        <!-- ******************************** -->
+        <!-- Validation Failure Messages Area -->
+        <!-- ******************************** -->
+        <Border Grid.Row="16"
+                Grid.Column="1"
+                IsVisible="{Binding HasValidationErrors}"
+                Style="{StaticResource ValidationErrorArea}">
+          <VerticalStackLayout>
+            <Label FontSize="Medium"
+                   Text="Please Fix These Validation Data Entry Errors" />
+            <ListView ItemsSource="{Binding ValidationMessages}">
+              <ListView.ItemTemplate>
+                <DataTemplate x:DataType="val:ValidationMessage">
+                  <ViewCell>
+                    <HorizontalStackLayout>
+                      <Label Text="{Binding Message}"
+                             Style="{StaticResource ValidationMessage}" />
+                    </HorizontalStackLayout>
+                  </ViewCell>
+                </DataTemplate>
+              </ListView.ItemTemplate>
+            </ListView>
+          </VerticalStackLayout>
+        </Border>
+      </Grid>
+    </Border>
+  </ScrollView>
+</ContentPage>

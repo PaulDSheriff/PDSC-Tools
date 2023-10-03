@@ -1,0 +1,38 @@
+﻿using System.Collections.ObjectModel;
+using <|NAMESPACE|>.EntityLayer;
+using <|NAMESPACE|>.MAUI.CommandClasses;
+using PDSC.Common;
+
+namespace <|NAMESPACE|>.MAUI.Views;
+
+public partial class <|CLASS_NAME|>ListView : ContentPage
+{
+	public <|CLASS_NAME|>ListView(<|CLASS_NAME|>ViewModelCommands viewModel)
+	{
+		InitializeComponent();
+
+    ViewModel = viewModel;
+  }
+
+  private readonly <|CLASS_NAME|>ViewModelCommands ViewModel;
+
+  protected async override void OnAppearing()
+  {
+    base.OnAppearing();
+
+    if (ViewModel.<|CLASS_NAME_PLURAL|>.Count == 0) {
+      // Set 'TheView' property to 'this' so you can display alerts
+      ViewModel.TheView = this;
+
+      // Set the binding for this page to the view model
+      BindingContext = ViewModel;
+      
+      // Set the field to sort by
+      ViewModel.SearchEntity.SortExpression = "<|DESCRIPTION_FIELD|>";
+    }
+
+    // NOTE: The list is refreshed each time the page appears.
+    // If this is not want you want, move the following line within the if() statement above.
+    DataResponse<ObservableCollection<<|CLASS_NAME|>>> response = await ViewModel.GetAsync();
+  }
+}

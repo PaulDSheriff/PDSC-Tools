@@ -1,0 +1,40 @@
+﻿using <|NAMESPACE|>.DataLayer;
+using <|NAMESPACE|>.EntityLayer;
+using <|NAMESPACE|>.ViewModelLayer;
+using Microsoft.EntityFrameworkCore;
+using PDSC.Common;
+
+namespace <|NAMESPACE|>.ExtensionClasses;
+
+public static class ServiceExtension
+{
+  public static void AddRepositoryClasses(this IServiceCollection services)
+  {
+    // Add Repository Classes
+    {|FOR EACH TABLE|}
+    services.AddScoped<{|REPO_INTERFACE|} <|CLASS_NAME|>, <|CLASS_NAME|>Search>, <|CLASS_NAME|>Repository>();
+    {|END_LOOP|}
+  }
+  
+  public static void AddViewModelClasses(this IServiceCollection services)
+  {
+    // Add View Model Classes
+    {|FOR EACH TABLE|}
+    services.AddScoped<<|CLASS_NAME|>ViewModel, <|CLASS_NAME|>ViewModel>();
+    {|END_LOOP|}
+  }
+
+  public static IServiceCollection ConfigureDataStore(this IServiceCollection services, string? cnn)
+  {
+    // Setup the DbContext object
+    return services.AddDbContext<<|DB_CONTEXT|>>(
+      options => options.UseSqlServer(cnn));
+  }
+
+  public static void ConfigureOpenAPI(this IServiceCollection services)
+  {
+    // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+    services.AddEndpointsApiExplorer();
+    services.AddSwaggerGen();
+  }
+}

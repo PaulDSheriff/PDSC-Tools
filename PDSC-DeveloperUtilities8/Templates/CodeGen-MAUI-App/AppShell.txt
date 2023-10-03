@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell x:Class="FilmCollection.MAUI.AppShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:FilmCollection.MAUI"
+       xmlns:views="clr-namespace:FilmCollection.MAUI.Views"
+       Shell.FlyoutBehavior="Disabled"
+       Title="{StaticResource ApplicationTitle}">
+
+  <TabBar>
+    <ShellContent Title="Home"
+                  ContentTemplate="{DataTemplate local:MainPage}"
+                  Route="MainPage" />
+
+    {|FOR EACH TABLE|}
+    <ShellContent Title="<|CLASS_NAME_PLURAL|>"
+                  ContentTemplate="{DataTemplate views:<|CLASS_NAME|>ListView}"
+                  Route="<|CLASS_NAME_PLURAL|>List" />
+    {|END_LOOP|}
+   
+  </TabBar>
+  
+</Shell>

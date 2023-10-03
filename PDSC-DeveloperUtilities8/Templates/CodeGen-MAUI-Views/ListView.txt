@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FilmCollection.MAUI.CommandClasses"
+             xmlns:model="clr-namespace:FilmCollection.EntityLayer;assembly=FilmCollection.EntityLayer"
+             xmlns:partialViews="clr-namespace:FilmCollection.MAUI.ViewsPartial"
+             x:Class="FilmCollection.MAUI.Views.<|CLASS_NAME|>ListView"
+             x:Name="<|CLASS_NAME|>ListPage"
+             x:DataType="vm:<|CLASS_NAME|>ViewModelCommands"
+             Title="<|CLASS_NAME|> List">
+
+  <Border Style="{StaticResource Border.Page}">
+    <Grid RowDefinitions="Auto,Auto,*"
+          Style="{StaticResource Grid.Page}">
+
+      <!-- *********** -->
+      <!-- Header Area -->
+      <!-- *********** -->
+      <partialViews:HeaderView Grid.Row="0"
+                               ViewTitle="<|CLASS_NAME|> List"
+                               ViewDescription="List, Search, Add, and Select <|CLASS_NAME_PLURAL|>." />
+
+      <!-- *********** -->
+      <!-- Search Area -->
+      <!-- *********** -->
+      <VerticalStackLayout Grid.Row="1">
+        <Label Text="Search for <|CLASS_NAME_PLURAL|> by..."
+               Style="{StaticResource SearchAreaHeader}" />
+        <Grid RowDefinitions="Auto,Auto"
+              ColumnDefinitions="Auto,*"
+              Style="{StaticResource Grid.SearchArea}">
+          {|FOR EACH COLUMN:IsSearchField|}
+          <Label Grid.Row="0"
+                  Grid.Column="0"
+                  TextColor="{StaticResource SearchLabel}"
+                  Text="<|PROPERTY_LABEL|>" />
+          <Entry Grid.Row="0"
+                  Grid.Column="1"
+                  Placeholder="Enter partial <|PROPERTY_LABEL|>"
+                  Text="{Binding SearchEntity.<|PROPERTY_NAME|>}" />
+          {|END_LOOP|}
+          <HorizontalStackLayout Grid.Row="1"
+                                  Grid.Column="1">
+            <ImageButton Source="magnifyingglass.png"
+                          ToolTipProperties.Text="Search for <|CLASS_NAME_PLURAL|>"
+                          BackgroundColor="{StaticResource SearchButton}"
+                          Command="{Binding SearchCommand}" />
+            <ImageButton Source="refresh.png"
+                          ToolTipProperties.Text="Reset Search/Get All"
+                          BackgroundColor="{StaticResource RefreshButton}"
+                          Command="{Binding GetCommand}" />
+            <BoxView Style="{StaticResource Separator.Left}" />
+            <ImageButton Source="plus.png"
+                          BackgroundColor="{StaticResource AddButton}"
+                          ToolTipProperties.Text="Add New <|CLASS_NAME_SINGULAR|>"
+                          Command="{Binding AddCommand}" />
+          </HorizontalStackLayout>
+        </Grid>
+      </VerticalStackLayout>
+
+      <!-- ********* -->
+      <!-- List Area -->
+      <!-- ********* -->
+      <Border Grid.Row="2"
+              Style="{StaticResource Border.List}">
+        <CollectionView Grid.Row="2"
+                        VerticalScrollBarVisibility="Always"
+                        ItemsSource="{Binding <|CLASS_NAME_PLURAL|>}">
+          <CollectionView.EmptyView>
+            <Label Style="{StaticResource EmptyView.Message}"
+                   Text="{Binding BindingContext.InfoMessage, Source={x:Reference <|CLASS_NAME|>ListPage}}" />
+          </CollectionView.EmptyView>
+          <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="model:<|CLASS_NAME|>">
+              <Frame Style="{StaticResource Frame.CollectionTemplate}">
+                <VerticalStackLayout Spacing="5"
+                                     Padding="5">
+                  <VerticalStackLayout.Resources>
+                    <Style TargetType="HorizontalStackLayout">
+                      <Setter Property="Padding"
+                              Value="5" />
+                    </Style>
+                  </VerticalStackLayout.Resources>
+                  {|FOR EACH COLUMN:DisplayInTable|}
+                  <HorizontalStackLayout>
+                    <Label Text="<|PROPERTY_LABEL|>"
+                           FontAttributes="Bold" />
+                    <Label Text="{Binding <|PROPERTY_NAME|>}" />
+                  </HorizontalStackLayout>
+                  {|END_LOOP|}
+                  <HorizontalStackLayout>
+                    <ImageButton Source="edit.png"
+                                 ToolTipProperties.Text="Edit <|CLASS_NAME_SINGULAR|>"                                 
+                                 BackgroundColor="{StaticResource EditButton}"
+                                 CommandParameter="{Binding <|CLASS_NAME|>Id}"
+                                 Command="{Binding BindingContext.EditCommand, Source={x:Reference <|CLASS_NAME|>ListPage}}" />
+                    <ImageButton Source="trash.png"
+                                 ToolTipProperties.Text="Delete <|CLASS_NAME_SINGULAR|>"
+                                 BackgroundColor="{StaticResource DeleteButton}"
+                                 CommandParameter="{Binding <|CLASS_NAME|>Id}"
+                                 Command="{Binding BindingContext.DeleteCommand, Source={x:Reference <|CLASS_NAME|>ListPage}}" />
+                  </HorizontalStackLayout>
+                </VerticalStackLayout>
+              </Frame>
+            </DataTemplate>
+          </CollectionView.ItemTemplate>
+        </CollectionView>
+      </Border>
+    </Grid>
+  </Border>
+</ContentPage>
