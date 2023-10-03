@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenTemplates>
+  <Template>
+    <Name>MVC Web API - Create Solution Instructions</Name>
+    <TemplateFileName>CodeGen-WebAPI-MVC-App-Controllers\InstructionsToCreateWebAPISolution.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder></OutputSubFolder>
+    <OutputFileExtension>.txt</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>MVC Web API - Create Solution CMD File</Name>
+    <TemplateFileName>CodeGen-WebAPI-MVC-App-Controllers\CreateWebAPISolution.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder></OutputSubFolder>
+    <OutputFileExtension>.cmd</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>MVC Web API - Program.cs</Name>
+    <TemplateFileName>CodeGen-WebAPI-MVC-App-Controllers\Program.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WebAPI</OutputSubFolder>
+    <OutputFileExtension>.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>MVC Web API - Readme.txt file for \Logs folder</Name>
+    <TemplateFileName>CodeGen-WebAPI-MVC-App-Controllers\Readme.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WebAPI\Logs</OutputSubFolder>
+    <OutputFileExtension>.txt</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>MVC Web API - Error Controller</Name>
+    <TemplateFileName>CodeGen-WebAPI-MVC-App-Controllers\ErrorController.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WebAPI\Controllers</OutputSubFolder>
+    <OutputFileExtension>.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>MVC Web API - ControllerBaseAPI Class</Name>
+    <TemplateFileName>CodeGen-WebAPI-MVC-App-Controllers\ControllerBaseAPI.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WebAPI\BaseClasses</OutputSubFolder>
+    <OutputFileExtension>.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>MVC Web API - Defaults Class</Name>
+    <TemplateFileName>CodeGen-WebAPI-MVC-App-Controllers\AppSettings.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WebAPI\ConfigurationClasses</OutputSubFolder>
+    <OutputFileExtension>.cs</OutputFileExtension>
+    <OutputFilePrefix>{|NAMESPACE|}</OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>MVC Web API - Host Extensions Class</Name>
+    <TemplateFileName>CodeGen-WebAPI-MVC-App-Controllers\HostExtensions.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WebAPI\ExtensionClasses</OutputSubFolder>
+    <OutputFileExtension>.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>MVC Web API - MVC Builder Extensions Class</Name>
+    <TemplateFileName>CodeGen-WebAPI-MVC-App-Controllers\MvcBuilderExtensions.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WebAPI\ExtensionClasses</OutputSubFolder>
+    <OutputFileExtension>.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>MVC Web API - Service Extensions Class</Name>
+    <TemplateFileName>CodeGen-WebAPI-MVC-App-Controllers\ServiceExtensions.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WebAPI\ExtensionClasses</OutputSubFolder>
+    <OutputFileExtension>.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>MVC Web API - WebApplication Builder Extensions Class</Name>
+    <TemplateFileName>CodeGen-WebAPI-MVC-App-Controllers\WebApplicationBuilderExtensions.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WebAPI\ExtensionClasses</OutputSubFolder>
+    <OutputFileExtension>.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>MVC Web API - appSettings.Development.json</Name>
+    <TemplateFileName>CodeGen-WebAPI-MVC-App-Controllers\appSettings.Development.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WebAPI</OutputSubFolder>
+    <OutputFileExtension>.Development.json</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+</CodeGenTemplates>

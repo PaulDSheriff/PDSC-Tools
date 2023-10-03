@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenTemplates>
+  <Template>
+		<Name>MVC Web API - Controller Class</Name>
+    <TemplateFileName>CodeGen-WebAPI-MVC-Controllers\Controller.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>{|NAMESPACE|}.WebAPI\Controllers</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix>Controller</OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>Service Extensions - Repository Classes</Name>
+    <TemplateFileName>CodeGen-WebAPI-MVC-Controllers\ServiceExtensionRepositories.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>_DoNotAddToProject-Includes</OutputSubFolder>
+    <OutputFileExtension>.txt</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>true</AppendToFile>
+  </Template>
+</CodeGenTemplates>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenTemplates>
+	<Template>
+		<Name>Repository Class</Name>
+		<TemplateFileName>CodeGen-DataClasses-API\RepositoryAPI.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>{|NAMESPACE|}.DataLayer.API\RepositoryClasses</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix>RepositoryAPI</OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+</CodeGenTemplates>

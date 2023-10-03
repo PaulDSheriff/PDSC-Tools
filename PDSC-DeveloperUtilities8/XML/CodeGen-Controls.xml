@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Controls>
+  <!-- *************************************************** -->
+  <!-- Valid GenericType values are: 
+         IsBoolean,IsDateTime,IsTime,IsNumeric,
+         IsCurrency,IsCreditCard,IsEmail,IsTelephone,
+         IsString,IsUniqueIdentifier -->
+  <!-- *************************************************** -->
+
+  <!-- .NET MAUI Controls -->
+  <Control>
+    <GroupId>202</GroupId>
+    <GenericType>IsBoolean</GenericType>
+    <TemplateFileName>CodeGen-Controls-MAUI\Checkbox.txt</TemplateFileName>
+  </Control>
+  <Control>
+    <GroupId>202</GroupId>
+    <GenericType>IsEmail</GenericType>
+    <TemplateFileName>CodeGen-Controls-MAUI\Email.txt</TemplateFileName>
+  </Control>
+  <Control>
+    <GroupId>202</GroupId>
+    <GenericType>IsDateTime</GenericType>
+    <TemplateFileName>CodeGen-Controls-MAUI\DatePicker.txt</TemplateFileName>
+  </Control>
+  <Control>
+    <GroupId>202</GroupId>
+    <GenericType>IsTelephone</GenericType>
+    <TemplateFileName>CodeGen-Controls-MAUI\Phone.txt</TemplateFileName>
+  </Control>
+  <Control>
+    <GroupId>202</GroupId>
+    <GenericType>IsTime</GenericType>
+    <TemplateFileName>CodeGen-Controls-MAUI\TimePicker.txt</TemplateFileName>
+  </Control>
+  <Control>
+    <GroupId>202</GroupId>
+    <GenericType>IsString</GenericType>
+    <TemplateFileName>CodeGen-Controls-MAUI\Entry.txt</TemplateFileName>
+  </Control>
+  <Control>
+    <GroupId>202</GroupId>
+    <GenericType>Default</GenericType>
+    <TemplateFileName>CodeGen-Controls-MAUI\Entry.txt</TemplateFileName>
+  </Control>
+
+  <!-- MVC Controls -->
+  <Control>
+    <GroupId>302</GroupId>
+    <GenericType>IsBoolean</GenericType>
+    <TemplateFileName>CodeGen-Controls-MVC\CheckBox.txt</TemplateFileName>
+  </Control>
+  <Control>
+    <GroupId>302</GroupId>
+    <GenericType>IsString</GenericType>
+    <TemplateFileName>CodeGen-Controls-MVC\Entry.txt</TemplateFileName>
+  </Control>
+  <Control>
+    <GroupId>302</GroupId>
+    <GenericType>Default</GenericType>
+    <TemplateFileName>CodeGen-Controls-MVC\Entry.txt</TemplateFileName>
+  </Control>
+</Controls>

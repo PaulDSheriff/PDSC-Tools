@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FoldersToRecycle>
+  <Folder>
+    <Path>[LocalApplicationData]\Microsoft\CLR_v2.0\UsageLogs</Path>
+		<Description>Automatically rebuilt by .NET</Description>
+		<Category>.NET</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+    <Path>[LocalApplicationData]\Microsoft\CLR_v2.0_32\UsageLogs</Path>
+		<Description>Automatically rebuilt by .NET</Description>
+		<Category>.NET</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+    <Path>[LocalApplicationData]\Microsoft\CLR_v4.0\UsageLogs</Path>
+		<Description>Automatically rebuilt by .NET</Description>
+		<Category>.NET</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+	<Folder>
+    <Path>[LocalApplicationData]\Microsoft\CLR_v4.0_32\UsageLogs</Path>
+		<Description>Automatically rebuilt by .NET</Description>
+		<Category>.NET</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+    <RecycleSubFolders>True</RecycleSubFolders>
+		<IsSelected>True</IsSelected>
+  </Folder>
+	<Folder>
+		<Path>[LocalApplicationData]\Microsoft\VisualStudio\16.0_de0dbad0\WebTools</Path>
+		<Description>Automatically rebuilt by .NET</Description>
+		<Category>.NET</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+		<Path>[LocalApplicationData]\Microsoft\VisualStudio\15.0_1aea4690\WebTools</Path>
+		<Description>Automatically rebuilt by .NET</Description>
+		<Category>.NET</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+		<Path>[LocalApplicationData]\Microsoft\VisualStudio\16.0_3bc90a3c\WebTools</Path>
+		<Description>Automatically rebuilt by .NET</Description>
+		<Category>.NET</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>	
+  <Folder>
+		<Path>[LocalApplicationData]\TechSmith\Camtasia Studio\CrashDumps</Path>
+		<Description></Description>
+		<Category>TechSmith</Category>
+		<RecycleFolder>False</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+    <Path>[LocalApplicationData]\CrashDumps</Path>
+		<Description></Description>
+		<Category>Windows</Category>
+		<RecycleFolder>False</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+    <Path>[LocalApplicationData]\Temp</Path>
+		<Description></Description>
+		<Category>Windows</Category>
+		<RecycleFolder>False</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+	<Folder>
+		<Path>[LocalApplicationData]\assembly\Tmp</Path>
+		<Description>Automatically rebuilt by .NET</Description>
+		<Category>.NET</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+	<Folder>
+		<Path>[LocalApplicationData]\assembly\dl3</Path>
+		<Description>Automatically rebuilt by .NET</Description>
+		<Category>.NET</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+    <Path>[LocalApplicationData]\Downloaded Installations</Path>
+		<Description></Description>
+		<Category>Windows</Category>
+		<RecycleFolder>False</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+    <Path>[RoamingData]\Apple Computer\MobileSync\Backup</Path>
+		<Description></Description>
+		<Category>Apple</Category>
+		<RecycleFolder>False</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+    <Path>[MyDocuments]\Haystack\Gen</Path>
+		<Description>Automatically rebuilt by Haystack</Description>
+		<Category>Haystack</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+    <Path>[MyDocuments]\IISExpress</Path>
+		<Description>Automatically rebuilt by IIS Express</Description>
+		<Category>IIS Express</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+	<Folder>
+		<Path>[MyDocuments]\IISExpress\Logs</Path>
+		<Description>Automatically rebuilt by IIS Express</Description>
+		<Category>IIS Express</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+	<Folder>
+		<Path>[MyDocuments]\IISExpress\TraceLogsFiles</Path>
+		<Description>Automatically rebuilt by IIS Express</Description>
+		<Category>IIS Express</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+	<Folder>
+		<Path>[MyDocuments]\SQL Server Management Studio\Backup Files</Path>
+		<Category>SQL Server</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+    <Path>[LocalApplicationData]\Microsoft\VisualStudio\BackupFiles</Path>
+		<Description>Automatically rebuilt by Visual Studio</Description>
+		<Category>Visual Studio</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+    <Path>[RoamingData]\Code\Backups</Path>
+		<Description>Automatically rebuilt by VS Code</Description>
+		<Category>VS Code</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+    <Path>[RoamingData]\Code\Cache</Path>
+		<Description>Automatically rebuilt by VS Code</Description>
+		<Category>VS Code</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+    <Path>[RoamingData]\Code\CachedData</Path>
+		<Description>Automatically rebuilt by VS Code</Description>
+		<Category>VS Code</Category>
+		<RecycleFolder>True</RecycleFolder>
+    <RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+  </Folder>
+  <Folder>
+    <Path>[RoamingData]\Code\GPUCache</Path>
+		<Description>Automatically rebuilt by VS Code</Description>
+		<Category>VS Code</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+    <Path>[RoamingData]\Code\LocalStorage</Path>
+		<Description>Automatically rebuilt by VS Code</Description>
+		<Category>VS Code</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+    <Path>[RoamingData]\Code\logs</Path>
+		<Description>Automatically rebuilt by VS Code</Description>
+		<Category>VS Code</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+    <Path>[RoamingData]\Code\Session Storage</Path>
+		<Description>Automatically rebuilt by VS Code</Description>
+		<Category>VS Code</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+    <Path>[RoamingData]\Code\User\globalStorage</Path>
+		<Description>Automatically rebuilt by VS Code</Description>
+		<Category>VS Code</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+    <Path>[RoamingData]\Code\User\workspaceStorage</Path>
+		<Description>Automatically rebuilt by VS Code</Description>
+		<Category>VS Code</Category>
+		<RecycleFolder>True</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+	<Folder>
+		<Path>[LocalApplicationData]\Dropbox\Crashpad\reports</Path>
+		<Description></Description>
+		<Category>DropBox</Category>
+		<RecycleFolder>False</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+	<Folder>
+		<Path>[LocalApplicationData]\Dropbox\logs</Path>
+		<Description></Description>
+		<Category>DropBox</Category>
+		<RecycleFolder>False</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+	<Folder>
+		<Path>[LocalApplicationData]\Google\CrashReports</Path>
+		<Description></Description>
+		<Category>Google</Category>
+		<RecycleFolder>False</RecycleFolder>
+		<RecycleSubFolders>True</RecycleSubFolders>
+		<RecycleFilesOnly>True</RecycleFilesOnly>
+		<IsSelected>True</IsSelected>
+	</Folder>
+  <Folder>
+    <Path>[RoamingData]\Notepad++\backup</Path>
+    <Description>Notepad++ Backup Files</Description>
+    <Category>Notepad++</Category>
+    <RecycleFolder>False</RecycleFolder>
+    <RecycleSubFolders>False</RecycleSubFolders>
+    <RecycleFilesOnly>True</RecycleFilesOnly>
+    <IsSelected>False</IsSelected>
+  </Folder>
+</FoldersToRecycle>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ReservedWords>
+	<ReservedWord>
+		<LanguageCode>CSharp</LanguageCode>		
+		<WordListFileName>ReservedWords\CSharp.txt</WordListFileName>
+	</ReservedWord>
+	<ReservedWord>
+		<LanguageCode>TypeScript</LanguageCode>
+		<WordListFileName>ReservedWords\TypeScript.txt</WordListFileName>
+	</ReservedWord>
+</ReservedWords>

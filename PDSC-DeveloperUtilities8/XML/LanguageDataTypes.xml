@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataTypes>
+	<DataType>
+		<LanguageCode>CSharp</LanguageCode>
+		<SqlServerType>bit</SqlServerType>
+		<LanguageType>bool</LanguageType>
+		<Nullable>bool?</Nullable>
+		<Initializer>false</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|}</SetValueStatement>
+		<ConversionMethod>ToBoolean</ConversionMethod>
+		<SearchPattern>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|} == null ? true : search.{|PROPERTY_NAME|}</SearchPatternNullable>
+	</DataType>
+	<DataType>
+		<LanguageCode>CSharp</LanguageCode>
+		<SqlServerType>tinyint</SqlServerType>
+		<LanguageType>byte</LanguageType>
+		<Nullable>byte?</Nullable>
+		<Initializer>0</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod></ConversionMethod>
+		<SearchPattern>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|} == null ? true : search.{|PROPERTY_NAME|}</SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>CSharp</LanguageCode>
+		<SqlServerType>uniqueidentifier</SqlServerType>
+		<LanguageType>Guid</LanguageType>
+		<Nullable>Guid?</Nullable>
+		<Initializer>new()</Initializer>
+    <InitializerStatement>= new()</InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == Guid.NewGuid() ? current.{|PROPERTY_NAME|} : Guid.NewGuid()</SetValueStatement>
+    <ConversionMethod></ConversionMethod>
+		<SearchPattern>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|} == null ? true : search.{|PROPERTY_NAME|}</SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>CSharp</LanguageCode>
+		<SqlServerType></SqlServerType>
+		<LanguageType>char</LanguageType>
+		<Nullable>char?</Nullable>
+		<Initializer></Initializer>
+    <InitializerStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|}</InitializerStatement>
+    <SetValueStatement></SetValueStatement>
+    <ConversionMethod>ToChar</ConversionMethod>
+		<SearchPattern>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|} == null ? true : search.{|PROPERTY_NAME|}</SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>CSharp</LanguageCode>
+		<SqlServerType>date,datetime,datetime2,datetimeoffset,smalldatetime</SqlServerType>
+		<LanguageType>DateTime</LanguageType>
+		<Nullable>DateTime?</Nullable>
+		<Initializer>System.DateTime.Now</Initializer>
+    <InitializerStatement>= System.DateTime.Now</InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == DateTime.MinValue ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod>ToDateTime</ConversionMethod>
+		<SearchPattern>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|} == null ? true : search.{|PROPERTY_NAME|}</SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>CSharp</LanguageCode>
+		<SqlServerType>decimal,money,smallmoney,numeric</SqlServerType>
+		<LanguageType>decimal</LanguageType>
+		<Nullable>decimal?</Nullable>
+		<Initializer>0</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod>ToDecimal</ConversionMethod>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|} == null ? true : search.{|PROPERTY_NAME|}</SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>CSharp</LanguageCode>
+		<SqlServerType>float</SqlServerType>
+		<LanguageType>double</LanguageType>
+		<Nullable>double?</Nullable>
+		<Initializer>0</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod>ToDouble</ConversionMethod>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|} == null ? true : search.{|PROPERTY_NAME|}</SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>CSharp</LanguageCode>
+		<SqlServerType>int</SqlServerType>
+		<LanguageType>int</LanguageType>
+		<Nullable>int?</Nullable>
+		<Initializer>0</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod>ToInt32</ConversionMethod>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|} == null ? true : search.{|PROPERTY_NAME|}</SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>CSharp</LanguageCode>
+		<SqlServerType>bigint</SqlServerType>
+		<LanguageType>long</LanguageType>
+		<Nullable>long?</Nullable>
+		<Initializer>0</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod>ToInt64</ConversionMethod>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|} == null ? true : search.{|PROPERTY_NAME|}</SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>CSharp</LanguageCode>
+		<SqlServerType>binary,varbinary,image,filestream,timestamp</SqlServerType>
+		<LanguageType>byte[]</LanguageType>
+		<Nullable>byte[]?</Nullable>
+		<Initializer>Array.Empty&lt;byte&gt;()</Initializer>
+    <InitializerStatement>= Array.Empty&lt;byte&gt;()</InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod>ToByteArray</ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>CSharp</LanguageCode>
+		<SqlServerType>sql_variant</SqlServerType>
+		<LanguageType>object</LanguageType>
+		<Nullable>object</Nullable>
+		<Initializer>null</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod>ToObject</ConversionMethod>
+		<SearchPattern></SearchPattern>
+	</DataType>
+	<DataType>
+		<LanguageCode>CSharp</LanguageCode>
+		<SqlServerType></SqlServerType>
+		<LanguageType>sbyte</LanguageType>
+		<Nullable>sbyte?</Nullable>
+		<Initializer></Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod>ToByte</ConversionMethod>
+		<SearchPattern>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|} == null ? true : search.{|PROPERTY_NAME|}</SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>CSharp</LanguageCode>
+		<SqlServerType>smallint</SqlServerType>
+		<LanguageType>short</LanguageType>
+		<Nullable>short?</Nullable>
+		<Initializer>0</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod>ToInt16</ConversionMethod>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|} == null ? true : search.{|PROPERTY_NAME|}</SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>CSharp</LanguageCode>
+		<SqlServerType>real</SqlServerType>
+		<LanguageType>Single</LanguageType>
+		<Nullable>Single?</Nullable>
+		<Initializer>0</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod>ToSingle</ConversionMethod>
+    <SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|} == null ? true : search.{|PROPERTY_NAME|}</SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>CSharp</LanguageCode>
+		<SqlServerType>text,ntext,char,nchar,varchar,nvarchar,xml</SqlServerType>
+		<LanguageType>string</LanguageType>
+		<Nullable>string?</Nullable>
+		<Initializer>string.Empty</Initializer>
+    <InitializerStatement>= string.Empty</InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = string.IsNullOrWhiteSpace(changes.{|PROPERTY_NAME|}) ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod>ToString</ConversionMethod>
+		<SearchPattern>row.{|PROPERTY_NAME|}.StartsWith(search.{|PROPERTY_NAME|})</SearchPattern>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} == null ? true : row.{|PROPERTY_NAME|}.StartsWith(search.{|PROPERTY_NAME|})</SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>CSharp</LanguageCode>
+		<SqlServerType></SqlServerType>
+		<LanguageType>uint</LanguageType>
+		<Nullable>unit?</Nullable>
+		<Initializer>0</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod>ToUInt32</ConversionMethod>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|} == null ? true : search.{|PROPERTY_NAME|}</SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>CSharp</LanguageCode>
+		<SqlServerType></SqlServerType>
+		<LanguageType>ulong</LanguageType>
+		<Nullable>ulong?</Nullable>
+		<Initializer>0</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod>ToUInt64</ConversionMethod>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|} == null ? true : search.{|PROPERTY_NAME|}</SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>CSharp</LanguageCode>
+		<SqlServerType></SqlServerType>
+		<LanguageType>ushort</LanguageType>
+		<Nullable>ushort?</Nullable>
+		<Initializer>0</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod>ToUInt16</ConversionMethod>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|} == null ? true : search.{|PROPERTY_NAME|}</SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>VBNET</LanguageCode>
+		<SqlServerType>bit</SqlServerType>
+		<LanguageType>Boolean</LanguageType>
+		<Nullable>Boolean?</Nullable>
+		<Initializer>False</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod>ToBoolean</ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>VBNET</LanguageCode>
+		<SqlServerType>tinyint</SqlServerType>
+		<LanguageType>Byte</LanguageType>
+		<Nullable>Byte?</Nullable>
+		<Initializer></Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = IIF(changes.{|PROPERTY_NAME|} == 0, current.{|PROPERTY_NAME|}, changes.{|PROPERTY_NAME|})</SetValueStatement>
+    <ConversionMethod>ToByte</ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>VBNET</LanguageCode>
+		<SqlServerType></SqlServerType>
+		<LanguageType>Char</LanguageType>
+		<Nullable>Char?</Nullable>
+		<Initializer></Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod>ToChar</ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>VBNET</LanguageCode>
+		<SqlServerType>date,datetime,datetime2,datetimeoffset,smalldatetime</SqlServerType>
+		<LanguageType>DateTime</LanguageType>
+		<Nullable>DateTime?</Nullable>
+		<Initializer>System.DateTime.Now</Initializer>
+    <InitializerStatement>= System.DateTime.Now</InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = Iif(changes.{|PROPERTY_NAME|} == DateTime.MinValue, current.{|PROPERTY_NAME|}, changes.{|PROPERTY_NAME|})</SetValueStatement>
+    <ConversionMethod>ToDateTime</ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>VBNET</LanguageCode>
+		<SqlServerType>decimal,money,smallmoney,numeric</SqlServerType>
+		<LanguageType>Decimal</LanguageType>
+		<Nullable>Decimal?</Nullable>
+		<Initializer>0</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = Iif(changes.{|PROPERTY_NAME|} == 0, current.{|PROPERTY_NAME|}, changes.{|PROPERTY_NAME|})</SetValueStatement>
+    <ConversionMethod>ToDecimal</ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>VBNET</LanguageCode>
+		<SqlServerType>float</SqlServerType>
+		<LanguageType>Double</LanguageType>
+		<Nullable>Double?</Nullable>
+		<Initializer>0</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = Iif(changes.{|PROPERTY_NAME|} == 0, current.{|PROPERTY_NAME|}, changes.{|PROPERTY_NAME|})</SetValueStatement>
+    <ConversionMethod>ToDouble</ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>VBNET</LanguageCode>
+		<SqlServerType>int</SqlServerType>
+		<LanguageType>Integer</LanguageType>
+		<Nullable>Integer?</Nullable>
+		<Initializer>0</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = Iif(changes.{|PROPERTY_NAME|} == 0, current.{|PROPERTY_NAME|}, changes.{|PROPERTY_NAME|})</SetValueStatement>
+    <ConversionMethod>ToInt32</ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>VBNET</LanguageCode>
+		<SqlServerType>bigint</SqlServerType>
+		<LanguageType>Long</LanguageType>
+		<Nullable>Long?</Nullable>
+		<Initializer>0</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = Iif(changes.{|PROPERTY_NAME|} == 0, current.{|PROPERTY_NAME|}, changes.{|PROPERTY_NAME|})</SetValueStatement>
+    <ConversionMethod>ToInt64</ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>VBNET</LanguageCode>
+		<SqlServerType>binary,varbinary,image,filestream,timestamp</SqlServerType>
+		<LanguageType>byte[]</LanguageType>
+		<Nullable>byte[]</Nullable>
+		<Initializer>null</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>PROPERTY_NAME|} = changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod>ToByteArray</ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>VBNET</LanguageCode>
+		<SqlServerType>sql_variant</SqlServerType>
+		<LanguageType>Object</LanguageType>
+		<Nullable>Object?</Nullable>
+		<Initializer>Nothing</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>PROPERTY_NAME|} = changes.{|PROPERTY_NAME|}</SetValueStatement>
+    <ConversionMethod>ToObject</ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>VBNET</LanguageCode>
+		<SqlServerType>smallint</SqlServerType>
+		<LanguageType>Short</LanguageType>
+		<Nullable>Short?</Nullable>
+		<Initializer>0</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = Iif(changes.{|PROPERTY_NAME|} == 0, current.{|PROPERTY_NAME|}, changes.{|PROPERTY_NAME|})</SetValueStatement>
+    <ConversionMethod>ToInt16</ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>VBNET</LanguageCode>
+		<SqlServerType>real</SqlServerType>
+		<LanguageType>Single</LanguageType>
+		<Nullable>Single?</Nullable>
+		<Initializer>0</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = Iif(changes.{|PROPERTY_NAME|} == 0, current.{|PROPERTY_NAME|}, changes.{|PROPERTY_NAME|})</SetValueStatement>
+    <ConversionMethod>ToSingle</ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>VBNET</LanguageCode>
+		<SqlServerType>text,ntext,char,nchar,varchar,nvarchar,xml</SqlServerType>
+		<LanguageType>String</LanguageType>
+		<Nullable>String?</Nullable>
+		<Initializer>String.Empty</Initializer>
+    <InitializerStatement>= String.Empty</InitializerStatement>
+    <SetValueStatement>current.{|PROPERTY_NAME|} = Iif(String.IsNullOrWhiteSpace(changes.{|PROPERTY_NAME|}), current.{|PROPERTY_NAME|}, changes.{|PROPERTY_NAME|})</SetValueStatement>
+    <ConversionMethod>ToString</ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>TypeScript</LanguageCode>
+		<SqlServerType>text,ntext,char,nchar,varchar,nvarchar,xml</SqlServerType>
+		<LanguageType>string</LanguageType>
+		<Nullable>string?</Nullable>
+		<Initializer>""</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement></SetValueStatement>
+    <ConversionMethod>String</ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+  <DataType>
+		<LanguageCode>TypeScript</LanguageCode>
+		<SqlServerType>real,smallint,tinyint,decimal,money,smallmoney,numeric,float,int,bigint</SqlServerType>
+		<LanguageType>number</LanguageType>
+		<Nullable>number?</Nullable>
+		<Initializer>0</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement></SetValueStatement>
+    <ConversionMethod>Number</ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>TypeScript</LanguageCode>
+		<SqlServerType>bit</SqlServerType>
+		<LanguageType>boolean</LanguageType>
+		<Nullable>boolean?</Nullable>
+		<Initializer>false</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement></SetValueStatement>
+    <ConversionMethod>Boolean</ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>TypeScript</LanguageCode>
+		<SqlServerType>date,datetime,datetime2,datetimeoffset,smalldatetime</SqlServerType>
+		<LanguageType>Date</LanguageType>
+		<Nullable>Date?</Nullable>
+		<Initializer>new()</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement></SetValueStatement>
+    <ConversionMethod>Date()</ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>TypeScript</LanguageCode>
+		<SqlServerType>binary,varbinary,image,filestream,timestamp</SqlServerType>
+		<LanguageType>any[]</LanguageType>
+		<Nullable>any[]</Nullable>
+		<Initializer>null</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement></SetValueStatement>
+    <ConversionMethod></ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+	<DataType>
+		<LanguageCode>TypeScript</LanguageCode>
+		<SqlServerType>uniqueidentifier,sql_variant</SqlServerType>
+		<LanguageType>any</LanguageType>
+		<Nullable>any</Nullable>
+		<Initializer>null</Initializer>
+    <InitializerStatement></InitializerStatement>
+    <SetValueStatement></SetValueStatement>
+    <ConversionMethod></ConversionMethod>
+		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
+  </DataType>
+</DataTypes>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenFoldersToCopy>
+  <!-- Entity/View Model Generation-->
+  <Folder>
+    <GroupId>1</GroupId>
+    <CopyFrom>CodeGen-PDSC.Common</CopyFrom>
+    <CopyTo>PDSC.Common</CopyTo>
+  </Folder>
+
+  <!-- Data Classes Generation-->
+  <Folder>
+    <GroupId>2</GroupId>
+    <CopyFrom>CodeGen-PDSC.Common</CopyFrom>
+    <CopyTo>PDSC.Common</CopyTo>
+  </Folder>
+  
+  <!--.NET 8 MAUI Generation-->
+  <Folder>
+    <GroupId>201</GroupId>
+    <CopyFrom>CodeGen-FilesToCopy-MAUI</CopyFrom>
+    <CopyTo>{|NAMESPACE|}.MAUI\Resources</CopyTo>
+  </Folder>
+</CodeGenFoldersToCopy>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PropertyTemplates>
+  <PropertyTemplate>
+    <Description>C# Auto Properties</Description>
+    <FileName>CS_Property_Auto.txt</FileName>
+    <LanguageCode>CSharp</LanguageCode>
+    <GenPrivateVars>False</GenPrivateVars>
+    <GenPublic>True</GenPublic>
+  </PropertyTemplate>
+  <PropertyTemplate>
+    <Description>C# Normal Get/Set</Description>
+    <FileName>CS_Property.txt</FileName>
+    <LanguageCode>CSharp</LanguageCode>
+    <GenPrivateVars>True</GenPrivateVars>
+    <GenPublic>True</GenPublic>
+  </PropertyTemplate>
+  <PropertyTemplate>
+    <Description>C# INotifyChanged Property</Description>
+    <FileName>CS_Property_INotify.txt</FileName>
+    <LanguageCode>CSharp</LanguageCode>
+    <GenPrivateVars>True</GenPrivateVars>
+    <GenPublic>True</GenPublic>
+  </PropertyTemplate>
+	<PropertyTemplate>
+    <Description>VB.NET Normal Get/Set</Description>
+    <FileName>VB_Property.txt</FileName>
+    <LanguageCode>VBNET</LanguageCode>
+    <GenPrivateVars>True</GenPrivateVars>
+    <GenPublic>True</GenPublic>
+  </PropertyTemplate>
+  <PropertyTemplate>
+    <Description>VB.NET INotifyChanged Property</Description>
+    <FileName>VB_Property_INotify.txt</FileName>
+    <LanguageCode>VBNET</LanguageCode>
+    <GenPrivateVars>True</GenPrivateVars>
+    <GenPublic>True</GenPublic>
+  </PropertyTemplate>
+</PropertyTemplates>

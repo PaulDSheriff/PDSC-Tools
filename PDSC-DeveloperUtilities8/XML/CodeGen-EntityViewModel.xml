@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenTemplates>
+  <Template>
+		<Name>Entity Class</Name>
+    <TemplateFileName>CodeGen-EntityViewModel\Entity.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>{|NAMESPACE|}.EntityLayer\EntityClasses</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>AppEntity Class</Name>
+    <TemplateFileName>CodeGen-EntityViewModel\AppEntity.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.EntityLayer\AppClasses</OutputSubFolder>
+    <OutputFileExtension>.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>AppSearch Class</Name>
+    <TemplateFileName>CodeGen-EntityViewModel\AppSearch.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.EntityLayer\AppClasses</OutputSubFolder>
+    <OutputFileExtension>.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+		<Name>Search Class</Name>
+		<TemplateFileName>CodeGen-EntityViewModel\Search.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>{|NAMESPACE|}.EntityLayer\SearchClasses</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix>Search</OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+	<Template>
+		<Name>View Model Class</Name>
+		<TemplateFileName>CodeGen-EntityViewModel\ViewModel.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>{|NAMESPACE|}.ViewModelLayer\ViewModelClasses</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix>ViewModel</OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+  <Template>
+    <Name>AppViewModel Class</Name>
+    <TemplateFileName>CodeGen-EntityViewModel\AppViewModel.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.ViewModelLayer\AppClasses</OutputSubFolder>
+    <OutputFileExtension>.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+</CodeGenTemplates>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenTemplates>
+  <Template>
+    <Name>.NET MAUI - DetailView.xaml</Name>
+    <TemplateFileName>CodeGen-MAUI-Views\DetailView.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.MAUI\Views</OutputSubFolder>
+    <OutputFileExtension>.xaml</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix>DetailView</OutputFileSuffix>
+    <UseClassNameAsFileName>true</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>.NET MAUI - DetailView.cs</Name>
+    <TemplateFileName>CodeGen-MAUI-Views\DetailView.cs.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.MAUI\Views</OutputSubFolder>
+    <OutputFileExtension>.xaml.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix>DetailView</OutputFileSuffix>
+    <UseClassNameAsFileName>true</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>.NET MAUI - ListView.xaml</Name>
+    <TemplateFileName>CodeGen-MAUI-Views\ListView.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.MAUI\Views</OutputSubFolder>
+    <OutputFileExtension>.xaml</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix>ListView</OutputFileSuffix>
+    <UseClassNameAsFileName>true</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>.NET MAUI - ListView.cs</Name>
+    <TemplateFileName>CodeGen-MAUI-Views\ListView.cs.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.MAUI\Views</OutputSubFolder>
+    <OutputFileExtension>.xaml.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix>ListView</OutputFileSuffix>
+    <UseClassNameAsFileName>true</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>.NET MAUI - MauiProgram.cs Dependency Injections</Name>
+    <TemplateFileName>CodeGen-MAUI-Views\ProgramDI.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>_DoNotAddToProject-Includes</OutputSubFolder>
+    <OutputFileExtension>.txt</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>true</AppendToFile>
+  </Template>
+  <Template>
+    <Name>.NET MAUI - ViewModelCommands Class</Name>
+    <TemplateFileName>CodeGen-MAUI-Views\ViewModelCommands.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.MAUI\CommandClasses</OutputSubFolder>
+    <OutputFileExtension>.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix>ViewModelCommands</OutputFileSuffix>
+    <UseClassNameAsFileName>true</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+</CodeGenTemplates>
