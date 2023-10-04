@@ -1,0 +1,48 @@
+Instructions to Create a .NET MAUI Application
+------------------------------------------------------------------
+If you have not already done so, generate the following templates groups:
+   Entity/ViewModel Classes
+   Data Classes - Entity Framework
+   Data Classes - HttpClient API
+   Web API MVC - Application
+   Web API MVC - Controllers
+   .NET MAUI - Application
+   .NET MAUI - Views
+
+Step 1:
+Copy the MAUI-CreateSolution.cmd file to your desired folder.
+This .cmd file creates the following folders/projects under this folder
+  <|NAMESPACE|>.DataLayer
+  <|NAMESPACE|>.DataLayer.API
+  <|NAMESPACE|>.EntityLayer
+  <|NAMESPACE|>.ViewModelLayer
+  <|NAMESPACE|>.WebAPI
+  <|NAMESPACE|>.MAUI
+  PDSC.Common
+Run the MAUI-CreateSolution.cmd file.
+
+Step 2: Open the SLN
+Open the <|NAMESPACE|>.MAUI.sln file using Visual Studio.
+Right mouse-click on the Solution and choose Properties from the menu.
+Select the Multiple Startup Projects radio button.
+Move the <|NAMESPACE|>.WebAPI project to the top of the list.
+  Set its Action to 'Start'.
+Move the <|NAMESPACE|>.MAUI project to the second one in the list.
+  Set its Action to 'Start'.
+Click the OK button.
+
+Step 3: Get the URL for the WebAPI project
+Open the \Properties\launchSettings.json in the <|NAMESPACE|>.WebAPI project.
+Locate the "applicationUrl":"http://localhost:xxxx" under "profiles", "http".
+Copy the url: "http://localhost:xxxx" to the clipboard.
+  NOTE: If you wish to run https, locate the option --no-https in the .cmd file and remove it.
+
+Step 4: Paste the URL into your MAUI application
+Open the <|NAMESPACE|>.MAUI\ConfigurationClasses\<|NAMESPACE|>AppSettings.cs file.
+Paste the URL you copied into the BaseWebAPIAddress property in the constructor.
+
+Step 5: Run the project
+Click on the Start button 
+After compiling you should see the Swagger for the Web API project.
+You should also see your .NET MAUI main page appear.
+Click on the different menu items to see the data appear.
