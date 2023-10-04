@@ -1,0 +1,26 @@
+﻿PDSC Developer Utilities v8.0.1 - 10/4/2023
+-----------------------------------------------------
+Renamed the create*.cmd and instructions*.txt files to put the technology name first
+  MAUI-CreateSolution.cmd, MVC-CreateSolution.cmd, etc.
+Add a CodeGen-FilesToDelete.xml file
+  The WebAPI-CreateSolution.cmd and WebAPI-Instructions*.txt files are now deleted if generating a .NET MAUI application
+Added a configuration setting so if you download a new version of the PDSC Developer Utilities and changes have been made to the templates or XML files, the old ones are automatically deleted, and the new ones are copied over.
+  <add key="DeleteTemplatesXml" value="true"/>
+  After copying the new ones, this value is reset to false
+Fixed bug where the primary key field did not match the 'TableNameId' format
+Fixed bug in Project Cleaner where it would fail on writing the log file
+
+Added Foreign Key Generation to .NET MAUI applications
+  All detail views now have use a <Picker> for FK relationships
+  Added new generation loop token {|FOR EACH FK_TABLE|}
+  Added new generation token {|REMOVE_WHEN:NoForeignKeys|}
+  Added new generation token <|CLASS_NAME_SINGULAR_ALL_LOWER|>
+  Added new generation token <|FK_REPOSITORIES_CONSTRUCTOR|> = for passing FK repositories from VMCommands to ViewModel
+  Added new generation token <|PK_PROPERTY_INITIALIZER|> = get the initializer for the primary key field
+  Added new generation token <|PK_TABLE_CLASS_NAME_SINGULAR|> = Foreign Key Class Name as Singular
+  Added new generation token <|PK_TABLE_CLASS_NAME_PLURAL|> = Foreign Key Class Name as Plural
+  Added new generation token <|PK_TABLE_PK_PROPERTY_NAME|> = Foreign Key Primary Key Property Name
+  Added new template CodeGen-Controls-MAUI\Picker.txt to support foreign key generation
+  Updated the CodeGen-Controls.xml to add new Picker.txt control
+  Updated the DetailView.cs.txt template
+  Updated the ViewModel.txt template
