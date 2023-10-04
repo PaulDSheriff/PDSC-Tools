@@ -138,7 +138,7 @@ public class <|CLASS_NAME|>RepositoryAPI : HttpClientRepositoryBase, IRepository
     string id;
 
     // Get the primary key to locate
-    id = (entity?.<|CLASS_NAME|>Id ?? 0).ToString();
+    id = (entity?.<|PK_PROPERTY_NAME|> ?? <|PK_PROPERTY_INITIALIZER|>).ToString();
 
     // Attempt to update a record
     ret = await PutAsync<<|CLASS_NAME|>>(URL_PATH, id, entity);
@@ -163,7 +163,7 @@ public class <|CLASS_NAME|>RepositoryAPI : HttpClientRepositoryBase, IRepository
     string id;
 
     // Get the primary key to locate
-    id = (entity?.<|CLASS_NAME|>Id ?? 0).ToString();
+    id = (entity?.<|PK_PROPERTY_NAME|> ?? <|PK_PROPERTY_INITIALIZER|>).ToString();
 
     // Attempt to delete a record
     dr = await DeleteAsync<<|CLASS_NAME|>>(URL_PATH, id);
