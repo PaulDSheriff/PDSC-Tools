@@ -40,14 +40,19 @@ public partial class <|CLASS_NAME|>ViewModel : AppViewModel<<|CLASS_NAME|>, <|CL
 
   {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
   public <|CLASS_NAME|>ViewModel(IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository,
-    ILogger<<|CLASS_NAME|>ViewModel> logger) : base(logger)
   {|END_REMOVE|}
   {|REMOVE_WHEN:IsPrimaryKeyInteger|}
   public <|CLASS_NAME|>ViewModel(IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> repository, 
-    ILogger<<|CLASS_NAME|>ViewModel> logger) : base(logger)
   {|END_REMOVE|}
+  {|FOR EACH FK_TABLE|}
+    IRepository<<|CLASS_NAME_SINGULAR|>, <|CLASS_NAME_SINGULAR|>Search> <|CLASS_NAME_SINGULAR_ALL_LOWER|>Repo,
+  {|END_LOOP|}
+    ILogger<<|CLASS_NAME|>ViewModel> logger) : base(logger)
   {
     Repository = repository;
+    {|FOR EACH FK_TABLE|}
+    <|PRIVATE_FIELD_PREFIX|><|CLASS_NAME_SINGULAR|>Repo = <|CLASS_NAME_SINGULAR_ALL_LOWER|>Repo;
+    {|END_LOOP|}
   }    
   #endregion
 
@@ -57,6 +62,14 @@ public partial class <|CLASS_NAME|>ViewModel : AppViewModel<<|CLASS_NAME|>, <|CL
   private <|CLASS_NAME|>Search _SearchEntity = new() {
     SortExpression = nameof(<|CLASS_NAME|>Search.<|DESCRIPTION_FIELD|>)
   };
+  {|REMOVE_WHEN:NoForeignKeys|}
+  // Foreign Key Variables
+  {|END_REMOVE|}  
+  {|FOR EACH FK_TABLE|}
+  private readonly IRepository<<|CLASS_NAME_SINGULAR|>, <|CLASS_NAME_SINGULAR|>Search>? <|PRIVATE_FIELD_PREFIX|><|CLASS_NAME_SINGULAR|>Repo;
+  private ObservableCollection<<|CLASS_NAME_SINGULAR|>> <|PRIVATE_FIELD_PREFIX|><|CLASS_NAME_PLURAL|> = new();
+  private <|CLASS_NAME_SINGULAR|>? <|PRIVATE_FIELD_PREFIX|>Selected<|CLASS_NAME_SINGULAR|>;
+  {|END_LOOP|}
   #endregion
 
   #region Public Properties
@@ -95,6 +108,34 @@ public partial class <|CLASS_NAME|>ViewModel : AppViewModel<<|CLASS_NAME|>, <|CL
       RaisePropertyChanged(nameof(SearchEntity));
     }
   }
+
+  {|REMOVE_WHEN:NoForeignKeys|}
+  // Foreign Key Public Properties
+  {|END_REMOVE|}
+  {|FOR EACH FK_TABLE|}
+  public ObservableCollection<<|CLASS_NAME_SINGULAR|>> <|CLASS_NAME_PLURAL|>
+  {
+    get { return <|PRIVATE_FIELD_PREFIX|><|CLASS_NAME_PLURAL|>; }
+    set
+    {
+      <|PRIVATE_FIELD_PREFIX|><|CLASS_NAME_PLURAL|> = value;
+      RaisePropertyChanged(nameof(<|CLASS_NAME_PLURAL|>));
+    }
+  }
+
+  public <|CLASS_NAME_SINGULAR|>? Selected<|CLASS_NAME_SINGULAR|>
+  {
+    get { return <|PRIVATE_FIELD_PREFIX|>Selected<|CLASS_NAME_SINGULAR|>; }
+    set
+    {
+      <|PRIVATE_FIELD_PREFIX|>Selected<|CLASS_NAME_SINGULAR|> = value;
+      if (CurrentEntity != null && Selected<|CLASS_NAME_SINGULAR|> != null) {
+        CurrentEntity.<|PK_TABLE_PK_PROPERTY_NAME|> = Selected<|CLASS_NAME_SINGULAR|>.<|PK_PROPERTY_NAME|>;
+      }
+      RaisePropertyChanged(nameof(Selected<|CLASS_NAME_SINGULAR|>));
+    }
+  }
+  {|END_LOOP|}
   #endregion
     
   #region Init Method
@@ -419,7 +460,7 @@ public partial class <|CLASS_NAME|>ViewModel : AppViewModel<<|CLASS_NAME|>, <|CL
   #region UpdateAsync Method
   public async Task<DataResponse<<|CLASS_NAME|>>> UpdateAsync()
   {
-    return await UpdateAsync(CurrentEntity?.<|PRIMARY_KEY_FIELD|> ?? <|PROPERTY_INITIALIZER|>, CurrentEntity);
+    return await UpdateAsync(CurrentEntity?.<|PRIMARY_KEY_FIELD|> ?? <|PK_PROPERTY_INITIALIZER|>, CurrentEntity);
   }
 
   public async Task<DataResponse<<|CLASS_NAME|>>> UpdateAsync(<|PK_LANGUAGE_DATA_TYPE|> id, <|CLASS_NAME|>? entity)
@@ -605,4 +646,23 @@ public partial class <|CLASS_NAME|>ViewModel : AppViewModel<<|CLASS_NAME|>, <|CL
     };
   }
   #endregion
+
+  {|REMOVE_WHEN:NoForeignKeys|}
+  #region Foreign Key Methods
+  {|FOR EACH FK_TABLE|}
+  #region Load<|CLASS_NAME_PLURAL|>Async Method
+  public async Task Load<|CLASS_NAME_PLURAL|>Async()
+  {
+    if (<|PRIVATE_FIELD_PREFIX|><|CLASS_NAME_SINGULAR|>Repo != null) {
+      var list = await <|PRIVATE_FIELD_PREFIX|><|CLASS_NAME_SINGULAR|>Repo.GetAsync();
+      <|CLASS_NAME_PLURAL|> = new ObservableCollection<<|CLASS_NAME_SINGULAR|>>(list);
+      if (<|CLASS_NAME_PLURAL|>.Count > 0) {
+        Selected<|CLASS_NAME_SINGULAR|> = <|CLASS_NAME_PLURAL|>.FirstOrDefault(row => row.<|PK_PROPERTY_NAME|> == CurrentEntity?.<|PK_TABLE_PK_PROPERTY_NAME|>);
+      }
+    }
+  }
+  #endregion
+  {|END_LOOP|}
+  #endregion
+  {|END_REMOVE|}
 }
