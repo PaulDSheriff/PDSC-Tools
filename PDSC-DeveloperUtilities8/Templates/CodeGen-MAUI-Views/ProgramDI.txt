@@ -3,10 +3,12 @@
   mauiAppBuilder.Services.AddScoped<IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search>, <|CLASS_NAME|>RepositoryAPI>();
 {|END_LOOP|}
 
+
 // ADD THE FOLLOWING TO THE RegisterViewModels() method
 {|FOR EACH TABLE|}
   mauiAppBuilder.Services.AddScoped<<|CLASS_NAME|>ViewModelCommands>();
 {|END_LOOP|}
+
 
 // ADD THE FOLLOWING TO THE RegisterViews() method
 {|FOR EACH TABLE|}

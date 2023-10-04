@@ -28,7 +28,14 @@ public partial class <|CLASS_NAME|>DetailView : ContentPage
       ViewModel.CurrentEntity = ViewModel.CreateEmpty();
     }
     else {
+      // Load <|CLASS_NAME_PLURAL|> First
       await ViewModel.GetAsync(<|PK_PROPERTY_NAME|>);
+      {|REMOVE_WHEN:NoForeignKeys|}
+      // Get Data for all Foreign Keys
+      {|END_REMOVE|}
+      {|FOR EACH FK_TABLE|}
+      await ViewModel.Load<|CLASS_NAME_PLURAL|>Async();
+      {|END_LOOP|}
     }
   }
 }

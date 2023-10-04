@@ -92,12 +92,12 @@
                     <ImageButton Source="edit.png"
                                  ToolTipProperties.Text="Edit <|CLASS_NAME_SINGULAR|>"                                 
                                  BackgroundColor="{StaticResource EditButton}"
-                                 CommandParameter="{Binding <|CLASS_NAME|>Id}"
+                                 CommandParameter="{Binding <|PK_PROPERTY_NAME|>}"
                                  Command="{Binding BindingContext.EditCommand, Source={x:Reference <|CLASS_NAME|>ListPage}}" />
                     <ImageButton Source="trash.png"
                                  ToolTipProperties.Text="Delete <|CLASS_NAME_SINGULAR|>"
                                  BackgroundColor="{StaticResource DeleteButton}"
-                                 CommandParameter="{Binding <|CLASS_NAME|>Id}"
+                                 CommandParameter="{Binding <|PK_PROPERTY_NAME|>}"
                                  Command="{Binding BindingContext.DeleteCommand, Source={x:Reference <|CLASS_NAME|>ListPage}}" />
                   </HorizontalStackLayout>
                 </VerticalStackLayout>

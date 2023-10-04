@@ -12,14 +12,27 @@ namespace <|NAMESPACE|>.MAUI.CommandClasses
   public class <|CLASS_NAME|>ViewModelCommands : <|CLASS_NAME|>ViewModel
   {
     #region Constructors
+    {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
     public <|CLASS_NAME|>ViewModelCommands(IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository) : base(repository)
+    {|END_REMOVE|}
+    {|REMOVE_WHEN:IsPrimaryKeyInteger|}
+    public <|CLASS_NAME|>ViewModelCommands(IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> repository) : base(repository)
+    {|END_REMOVE|}
     {
     }
 
+    {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
     public <|CLASS_NAME|>ViewModelCommands(IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository,
-      ILogger<<|CLASS_NAME|>ViewModel> logger) : base(repository, logger)
+    {|END_REMOVE|}
+    {|REMOVE_WHEN:IsPrimaryKeyInteger|}
+    public <|CLASS_NAME|>ViewModelCommands(IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> repository, 
+    {|END_REMOVE|}
+    {|FOR EACH FK_TABLE|}
+      IRepository<<|CLASS_NAME_SINGULAR|>, <|CLASS_NAME_SINGULAR|>Search> <|CLASS_NAME_SINGULAR_ALL_LOWER|>Repo,
+    {|END_LOOP|}
+      ILogger<<|CLASS_NAME|>ViewModel> logger) : base(repository, <|FK_REPOSITORIES_CONSTRUCTOR|> logger)
     {
-    }
+    }       
     #endregion
     
     #region Private Variables    
