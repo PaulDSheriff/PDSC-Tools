@@ -1,0 +1,21 @@
+Instructions to Create a MVC Website Application
+------------------------------------------------------------------
+If you have not already done so, generate the following templates groups:
+   Entity/ViewModel Classes
+   Data Classes - Entity Framework
+   MVC Website - Application
+   MVC Website - Views
+
+Step 1: Run the MVC-CreateSolution.cmd file
+Copy the MVC-CreateSolution.cmd file to your desired folder.
+This .cmd file creates the following folders/projects under this folder
+  <|NAMESPACE|>.DataLayer
+  <|NAMESPACE|>.EntityLayer
+  <|NAMESPACE|>.ViewModelLayer
+  <|NAMESPACE|>.MVC
+  PDSC.Common
+Run the MVC-CreateSolution.cmd file.
+
+Step 2: Open the SLN file
+A <|NAMESPACE|>.sln file is created in your desired folder.
+Open this .sln file and you can run your MVC Website project.
