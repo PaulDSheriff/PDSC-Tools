@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenTemplateGroups>
+  <!-- ************************************-->
+  <!-- ** Entity & Database Classes      **-->
+  <!-- ************************************-->
+  <!-- Entity/View Model Classes Templates -->
+  <TemplateGroup>
+    <GroupId>1</GroupId>
+    <DependentGroupIds></DependentGroupIds>
+    <DisplayOrder>100</DisplayOrder>
+    <GroupName>Entity/ViewModel Classes</GroupName>
+    <Description>Generate entity, search, and view model classes</Description>
+    <LanguageCode>CSharp</LanguageCode>
+    <TemplatesXmlFileName>CodeGen-EntityViewModel.xml</TemplatesXmlFileName>
+  </TemplateGroup>
+  <!-- Data Classes EF Templates -->
+  <TemplateGroup>
+    <GroupId>2</GroupId>
+    <DependentGroupIds>1</DependentGroupIds>
+    <DisplayOrder>100</DisplayOrder>
+    <GroupName>Data Classes - Entity Framework</GroupName>
+    <Description>Generate repository classes using the Entity Framework</Description>
+    <LanguageCode>CSharp</LanguageCode>
+    <TemplatesXmlFileName>CodeGen-DataClasses-EF.xml</TemplatesXmlFileName>
+  </TemplateGroup>
+  <!-- Data Classes HttpClient API Repository Templates -->
+  <TemplateGroup>
+    <GroupId>3</GroupId>
+    <DependentGroupIds>1</DependentGroupIds>
+    <DisplayOrder>100</DisplayOrder>
+    <GroupName>Data Classes - HttpClient API</GroupName>
+    <Description>Generate a repository class to call a Web API endpoint</Description>
+    <LanguageCode>CSharp</LanguageCode>
+    <TemplatesXmlFileName>CodeGen-DataClasses-API.xml</TemplatesXmlFileName>
+  </TemplateGroup>
+  
+  <!-- ************************************-->
+  <!-- ** UI Technologies                **-->
+  <!-- ************************************-->
+  <!-- MVC Web API Templates -->
+  <TemplateGroup>
+    <GroupId>101</GroupId>
+    <DependentGroupIds>1,2,102</DependentGroupIds>
+    <DisplayOrder>10</DisplayOrder>
+    <GroupName>Web API MVC - Application</GroupName>
+    <Description>Generate a complete MVC Web API application</Description>
+    <LanguageCode>CSharp</LanguageCode>
+    <TemplatesXmlFileName>CodeGen-WebAPI-MVC-App-Controllers.xml</TemplatesXmlFileName>
+  </TemplateGroup>
+  <TemplateGroup>
+    <GroupId>102</GroupId>
+    <DependentGroupIds></DependentGroupIds>
+    <DisplayOrder>100</DisplayOrder>
+    <GroupName>Web API MVC - Controllers</GroupName>
+    <Description>Generate a complete MVC (Controllers) Web API application</Description>
+    <LanguageCode>CSharp</LanguageCode>
+    <TemplatesXmlFileName>CodeGen-WebAPI-MVC-Controllers.xml</TemplatesXmlFileName>
+  </TemplateGroup>
+  
+  <!-- .NET MAUI Templates -->
+  <!-- NOTE: The .NET MAUI template group should be listed AFTER the Web API template group so the Web API CMD and TXT files are removed. -->
+  <TemplateGroup>
+    <GroupId>201</GroupId>
+    <DependentGroupIds>1,2,3,101,102,202</DependentGroupIds>
+    <DisplayOrder>20</DisplayOrder>
+    <GroupName>.NET MAUI - Application</GroupName>
+    <Description>Generate a complete .NET MAUI application</Description>
+    <LanguageCode>CSharp</LanguageCode>
+    <TemplatesXmlFileName>CodeGen-MAUI-App.xml</TemplatesXmlFileName>
+  </TemplateGroup>
+  <TemplateGroup>
+    <GroupId>202</GroupId>
+    <DependentGroupIds></DependentGroupIds>
+    <DisplayOrder>100</DisplayOrder>
+    <GroupName>.NET MAUI - Views</GroupName>
+    <Description>Generate list/detail pages and commanding view model class</Description>
+    <LanguageCode>CSharp</LanguageCode>
+    <TemplatesXmlFileName>CodeGen-MAUI-Views.xml</TemplatesXmlFileName>
+  </TemplateGroup>
+  
+  <!-- MVC Website Templates -->
+  <TemplateGroup>
+    <GroupId>301</GroupId>
+    <DependentGroupIds>1,2,302</DependentGroupIds>
+    <DisplayOrder>30</DisplayOrder>
+    <GroupName>MVC Website - Application</GroupName>
+    <Description>Generate a complete MVC application</Description>
+    <LanguageCode>CSharp</LanguageCode>
+    <TemplatesXmlFileName>CodeGen-MVC-App.xml</TemplatesXmlFileName>
+  </TemplateGroup>
+  <TemplateGroup>
+    <GroupId>302</GroupId>
+    <DependentGroupIds></DependentGroupIds>
+    <DisplayOrder>100</DisplayOrder>
+    <GroupName>MVC Website - Views</GroupName>
+    <Description>Generate list/detail/search pages</Description>
+    <LanguageCode>CSharp</LanguageCode>
+    <TemplatesXmlFileName>CodeGen-MVC-Views.xml</TemplatesXmlFileName>
+  </TemplateGroup>
+</CodeGenTemplateGroups>

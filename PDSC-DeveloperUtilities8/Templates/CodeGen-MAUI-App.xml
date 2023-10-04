@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenTemplates>
+  <Template>
+    <Name>.NET MAUI - Create Solution CMD File</Name>
+    <TemplateFileName>CodeGen-MAUI-App\MAUI-CreateSolution.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder></OutputSubFolder>
+    <OutputFileExtension>.cmd</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>.NET MAUI - Create Solution Instructions</Name>
+    <TemplateFileName>CodeGen-MAUI-App\MAUI-InstructionsToCreateSolution.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder></OutputSubFolder>
+    <OutputFileExtension>.txt</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>.NET MAUI - AppSettings Class</Name>
+    <TemplateFileName>CodeGen-MAUI-App\AppSettings.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.MAUI\ConfigurationClasses</OutputSubFolder>
+    <OutputFileExtension>.cs</OutputFileExtension>
+    <OutputFilePrefix>{|NAMESPACE|}</OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>.NET MAUI - AppShell.xaml</Name>
+    <TemplateFileName>CodeGen-MAUI-App\AppShell.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.MAUI</OutputSubFolder>
+    <OutputFileExtension>.xaml</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>.NET MAUI - AppShell.cs</Name>
+    <TemplateFileName>CodeGen-MAUI-App\AppShell.cs.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.MAUI</OutputSubFolder>
+    <OutputFileExtension>.xaml.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>.NET MAUI - HeaderView.xaml</Name>
+    <TemplateFileName>CodeGen-MAUI-App\HeaderView.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.MAUI\ViewsPartial</OutputSubFolder>
+    <OutputFileExtension>.xaml</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>.NET MAUI - HeaderView.cs</Name>
+    <TemplateFileName>CodeGen-MAUI-App\HeaderView.cs.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.MAUI\ViewsPartial</OutputSubFolder>
+    <OutputFileExtension>.xaml.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+		<Name>.NET MAUI - MainPage.xaml</Name>
+    <TemplateFileName>CodeGen-MAUI-App\MainPage.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>{|NAMESPACE|}.MAUI</OutputSubFolder>
+		<OutputFileExtension>.xaml</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>.NET MAUI - MainPage.cs</Name>
+    <TemplateFileName>CodeGen-MAUI-App\MainPage.cs.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.MAUI</OutputSubFolder>
+    <OutputFileExtension>.xaml.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>.NET MAUI - MauiProgram</Name>
+    <TemplateFileName>CodeGen-MAUI-App\MauiProgram.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.MAUI</OutputSubFolder>
+    <OutputFileExtension>.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>.NET MAUI - Styles</Name>
+    <TemplateFileName>CodeGen-MAUI-App\Styles.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.MAUI\Resources\Styles</OutputSubFolder>
+    <OutputFileExtension>.xaml</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+</CodeGenTemplates>

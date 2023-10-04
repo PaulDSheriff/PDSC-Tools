@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenTemplates>
+  <Template>
+    <Name>MVC - Create Solution CMD File</Name>
+    <TemplateFileName>CodeGen-MVC-App\MVC-CreateSolution.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder></OutputSubFolder>
+    <OutputFileExtension>.cmd</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>MVC - Create Solution Instructions</Name>
+    <TemplateFileName>CodeGen-MVC-App\MVC-InstructionsToCreateSolution.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder></OutputSubFolder>
+    <OutputFileExtension>.txt</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+	<Template>
+		<Name>Home Page</Name>
+		<TemplateFileName>CodeGen-MVC-App\Index.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>{|NAMESPACE|}.MVC\Views\Home</OutputSubFolder>
+		<OutputFileExtension>.cshtml</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+	<Template>
+		<Name>_Layout.cshtml</Name>
+		<TemplateFileName>CodeGen-MVC-App\_Layout.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>{|NAMESPACE|}.MVC\Views\Shared</OutputSubFolder>
+		<OutputFileExtension>.cshtml</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+	<Template>
+		<Name>Program.cs</Name>
+		<TemplateFileName>CodeGen-MVC-App\Program.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>{|NAMESPACE|}.MVC</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+	</Template>
+  <Template>
+    <Name>MVC Web App - appSettings.Development.json</Name>
+    <TemplateFileName>CodeGen-MVC-App\appSettings.Development.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.MVC</OutputSubFolder>
+    <OutputFileExtension>.Development.json</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+	<Template>
+		<Name>Program.cs Scoped Repos</Name>
+		<TemplateFileName>CodeGen-MVC-App\ProgramScopedRepos.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>_DoNotAddToProject-Includes</OutputSubFolder>
+		<OutputFileExtension>.txt</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>true</AppendToFile>
+	</Template>
+	<Template>
+		<Name>Program.cs Scoped Repos (other PK type)</Name>
+		<TemplateFileName>CodeGen-MVC-App\ProgramScopedReposOther.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>_DoNotAddToProject-Includes</OutputSubFolder>
+		<OutputFileExtension>.txt</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>true</AppendToFile>
+	</Template>
+</CodeGenTemplates>
