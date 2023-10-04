@@ -1,0 +1,4 @@
+        <Picker Grid.Row="<|GRID_ROW_SECOND|>"
+                Grid.Column="1"
+                ItemsSource="{Binding <|PK_TABLE_CLASS_NAME_PLURAL|>}"
+                SelectedItem="{Binding Selected<|PK_TABLE_CLASS_NAME_SINGULAR|>}" />
