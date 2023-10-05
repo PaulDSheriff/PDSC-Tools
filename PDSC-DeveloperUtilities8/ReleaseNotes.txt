@@ -1,4 +1,30 @@
-﻿PDSC Developer Utilities v8.0.1 - 10/4/2023
+﻿Enhancement List - Code Generator - 10/5/2023
+-----------------------------------------------------
+Ability to use either camel-case or pascal-case for backing fields after underscore
+Option to turn off foreign key generation
+Show the FK relationships of each table
+Ability to uncheck all selected tables
+Ability to uncheck all selected templates
+Generate WPF applications and screens
+
+
+
+PDSC Developer Utilities v8.0.2 - 10/5/2023
+-----------------------------------------------------
+Fixed self-referencing tables when working with FK relationships
+Fixed a few bugs where the PK was not an int data type in the different templates
+Fixed bug in several .NET MAUI templates that had a hard-coded namespace
+Fixed a few bugs where the IRepositoryOtherPK<> interface was not used for tables that did not have an int data type for the PK
+Fixed a bug where the DateTime data type was emitted as 'datetime' in the Search classes.
+Fixed the dialog button the Generate Output Folder
+Trimmed the Schema and Name filters
+When you select a table with foreign keys, the other related tables are now loaded and selected for generation
+Added a ComboBox above the rows to select a table
+Added new generation loop token {|FOR EACH COLUMN:SortExpressions|} to only get those valid sort expressions for the OrderBy() method in repository classes
+Changed so the Description field can't be an invalid SQL Server data type
+
+
+PDSC Developer Utilities v8.0.1 - 10/4/2023
 -----------------------------------------------------
 Renamed the create*.cmd and instructions*.txt files to put the technology name first
   MAUI-CreateSolution.cmd, MVC-CreateSolution.cmd, etc.
