@@ -92,7 +92,7 @@ public partial class <|CLASS_NAME|>Repository : RepositoryBase, IRepositoryOther
 
     // Determine how to sort the data
     switch (search.SortExpression) {
-    {|FOR EACH COLUMN:NoStandardFields|}
+    {|FOR EACH COLUMN:SortExpressions|}
       case "<|PROPERTY_NAME_ALL_LOWER|>":
       case "<|PROPERTY_NAME_ALL_LOWER|>_asc":
         query = query.OrderBy(row => row.<|PROPERTY_NAME|>);
