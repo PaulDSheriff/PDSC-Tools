@@ -2,7 +2,7 @@
 <CodeGenTemplates>
   <Template>
     <Name>.NET MAUI - Create Solution CMD File</Name>
-    <TemplateFileName>CodeGen-MAUI-App\CreateMAUISolution.txt</TemplateFileName>
+    <TemplateFileName>CodeGen-MAUI-App\MAUI-CreateSolution.txt</TemplateFileName>
     <BaseClassName></BaseClassName>
     <OutputSubFolder></OutputSubFolder>
     <OutputFileExtension>.cmd</OutputFileExtension>
@@ -13,7 +13,7 @@
   </Template>
   <Template>
     <Name>.NET MAUI - Create Solution Instructions</Name>
-    <TemplateFileName>CodeGen-MAUI-App\InstructionsToCreateMAUISolution.txt</TemplateFileName>
+    <TemplateFileName>CodeGen-MAUI-App\MAUI-InstructionsToCreateSolution.txt</TemplateFileName>
     <BaseClassName></BaseClassName>
     <OutputSubFolder></OutputSubFolder>
     <OutputFileExtension>.txt</OutputFileExtension>

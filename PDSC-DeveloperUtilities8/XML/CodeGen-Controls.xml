@@ -4,10 +4,15 @@
   <!-- Valid GenericType values are: 
          IsBoolean,IsDateTime,IsTime,IsNumeric,
          IsCurrency,IsCreditCard,IsEmail,IsTelephone,
-         IsString,IsUniqueIdentifier -->
+         IsString,IsUniqueIdentifier,IsForeignKey -->
   <!-- *************************************************** -->
 
   <!-- .NET MAUI Controls -->
+  <Control>
+    <GroupId>202</GroupId>
+    <GenericType>IsForeignKey</GenericType>
+    <TemplateFileName>CodeGen-Controls-MAUI\Picker.txt</TemplateFileName>
+  </Control>
   <Control>
     <GroupId>202</GroupId>
     <GenericType>IsBoolean</GenericType>

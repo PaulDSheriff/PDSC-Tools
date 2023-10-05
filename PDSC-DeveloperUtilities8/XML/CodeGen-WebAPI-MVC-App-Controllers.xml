@@ -2,7 +2,7 @@
 <CodeGenTemplates>
   <Template>
     <Name>MVC Web API - Create Solution Instructions</Name>
-    <TemplateFileName>CodeGen-WebAPI-MVC-App-Controllers\InstructionsToCreateWebAPISolution.txt</TemplateFileName>
+    <TemplateFileName>CodeGen-WebAPI-MVC-App-Controllers\WebAPI-InstructionsToCreateSolution.txt</TemplateFileName>
     <BaseClassName></BaseClassName>
     <OutputSubFolder></OutputSubFolder>
     <OutputFileExtension>.txt</OutputFileExtension>
@@ -13,7 +13,7 @@
   </Template>
   <Template>
     <Name>MVC Web API - Create Solution CMD File</Name>
-    <TemplateFileName>CodeGen-WebAPI-MVC-App-Controllers\CreateWebAPISolution.txt</TemplateFileName>
+    <TemplateFileName>CodeGen-WebAPI-MVC-App-Controllers\WebAPI-CreateSolution.txt</TemplateFileName>
     <BaseClassName></BaseClassName>
     <OutputSubFolder></OutputSubFolder>
     <OutputFileExtension>.cmd</OutputFileExtension>

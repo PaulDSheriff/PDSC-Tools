@@ -2,7 +2,7 @@
 <CodeGenTemplates>
   <Template>
     <Name>MVC - Create Solution CMD File</Name>
-    <TemplateFileName>CodeGen-MVC-App\CreateMVCSolution.txt</TemplateFileName>
+    <TemplateFileName>CodeGen-MVC-App\MVC-CreateSolution.txt</TemplateFileName>
     <BaseClassName></BaseClassName>
     <OutputSubFolder></OutputSubFolder>
     <OutputFileExtension>.cmd</OutputFileExtension>
@@ -13,7 +13,7 @@
   </Template>
   <Template>
     <Name>MVC - Create Solution Instructions</Name>
-    <TemplateFileName>CodeGen-MVC-App\InstructionsToCreateMVCSolution.txt</TemplateFileName>
+    <TemplateFileName>CodeGen-MVC-App\MVC-InstructionsToCreateSolution.txt</TemplateFileName>
     <BaseClassName></BaseClassName>
     <OutputSubFolder></OutputSubFolder>
     <OutputFileExtension>.txt</OutputFileExtension>

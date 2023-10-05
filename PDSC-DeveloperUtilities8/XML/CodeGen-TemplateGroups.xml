@@ -58,6 +58,7 @@
   </TemplateGroup>
   
   <!-- .NET MAUI Templates -->
+  <!-- NOTE: The .NET MAUI template group should be listed AFTER the Web API template group so the Web API CMD and TXT files are removed. -->
   <TemplateGroup>
     <GroupId>201</GroupId>
     <DependentGroupIds>1,2,3,101,102,202</DependentGroupIds>
