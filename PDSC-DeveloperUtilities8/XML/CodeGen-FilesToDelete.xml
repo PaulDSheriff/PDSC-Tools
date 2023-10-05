@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenFilesToDelete>
+  <File>
+    <GroupId>201</GroupId>
+    <FileName>WebAPI-CreateSolution.cmd</FileName>
+  </File>
+  <File>
+    <GroupId>201</GroupId>
+    <FileName>WebAPI-InstructionsToCreateSolution.txt</FileName>
+  </File>
+</CodeGenFilesToDelete>
