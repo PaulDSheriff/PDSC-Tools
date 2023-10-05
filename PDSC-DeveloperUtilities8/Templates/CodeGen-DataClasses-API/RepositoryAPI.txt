@@ -5,7 +5,12 @@ using System.Net;
 
 namespace <|NAMESPACE|>.DataLayer.API;
 
+{|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
 public class <|CLASS_NAME|>RepositoryAPI : HttpClientRepositoryBase, IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search>
+{|END_REMOVE|}
+{|REMOVE_WHEN:IsPrimaryKeyInteger|}
+public class <|CLASS_NAME|>RepositoryAPI : HttpClientRepositoryBase, IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search>
+{|END_REMOVE|}
 {
   #region Constructors
   public <|CLASS_NAME|>RepositoryAPI()
@@ -52,7 +57,7 @@ public class <|CLASS_NAME|>RepositoryAPI : HttpClientRepositoryBase, IRepository
   #endregion
 
   #region GetAsync(id) Method
-  public async Task<<|CLASS_NAME|>?> GetAsync(int id)
+  public async Task<<|CLASS_NAME|>?> GetAsync(<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|> id)
   {
     DataResponse<<|CLASS_NAME|>> response;
 
