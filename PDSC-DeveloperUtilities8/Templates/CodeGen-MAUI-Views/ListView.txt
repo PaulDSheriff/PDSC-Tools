@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:FilmCollection.MAUI.CommandClasses"
-             xmlns:model="clr-namespace:FilmCollection.EntityLayer;assembly=FilmCollection.EntityLayer"
-             xmlns:partialViews="clr-namespace:FilmCollection.MAUI.ViewsPartial"
-             x:Class="FilmCollection.MAUI.Views.<|CLASS_NAME|>ListView"
+             xmlns:vm="clr-namespace:<|NAMESPACE|>.MAUI.CommandClasses"
+             xmlns:model="clr-namespace:<|NAMESPACE|>.EntityLayer;assembly=<|NAMESPACE|>.EntityLayer"
+             xmlns:partialViews="clr-namespace:<|NAMESPACE|>.MAUI.ViewsPartial"
+             x:Class="<|NAMESPACE|>.MAUI.Views.<|CLASS_NAME|>ListView"
              x:Name="<|CLASS_NAME|>ListPage"
              x:DataType="vm:<|CLASS_NAME|>ViewModelCommands"
              Title="<|CLASS_NAME|> List">

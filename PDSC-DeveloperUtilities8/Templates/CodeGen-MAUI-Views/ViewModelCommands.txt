@@ -152,8 +152,8 @@ namespace <|NAMESPACE|>.MAUI.CommandClasses
       GetCommand = new Command(async () => await GetAllAsync(), () => IsGetCommandEnabled);
       SearchCommand = new Command(async () => await SearchAsync(), () => IsSearchCommandEnabled);
       AddCommand = new Command(async () => await AddAsync(), () => IsAddCommandEnabled);
-      EditCommand = new Command<int>(async (int id) => await EditAsync(id), (id) => IsEditCommandEnabled);
-      DeleteCommand = new Command<int>(async (int id) => await DeleteAsync(id), (id) => IsDeleteCommandEnabled);
+      EditCommand = new Command<<|PK_LANGUAGE_DATA_TYPE|>>(async (<|PK_LANGUAGE_DATA_TYPE|> id) => await EditAsync(id), (id) => IsEditCommandEnabled);
+      DeleteCommand = new Command<<|PK_LANGUAGE_DATA_TYPE|>>(async (<|PK_LANGUAGE_DATA_TYPE|> id) => await DeleteAsync(id), (id) => IsDeleteCommandEnabled);
       SaveCommand = new Command(async () => await SaveAsync(), () => IsSaveCommandEnabled);
       CancelCommand = new Command(async () => await CancelAsync(), () => IsCancelCommandEnabled);
     }
@@ -192,7 +192,7 @@ namespace <|NAMESPACE|>.MAUI.CommandClasses
     #endregion
 
     #region EditAsync Method
-    protected async Task EditAsync(int id)
+    protected async Task EditAsync(<|PK_LANGUAGE_DATA_TYPE|> id)
     {
       await Shell.Current.GoToAsync($"{nameof(Views.<|CLASS_NAME|>DetailView)}?id={id}&isAdding={false}");
     }
@@ -213,7 +213,7 @@ namespace <|NAMESPACE|>.MAUI.CommandClasses
     #endregion
 
     #region DeleteAsync Method
-    protected new async Task DeleteAsync(int id)
+    protected new async Task DeleteAsync(<|PK_LANGUAGE_DATA_TYPE|> id)
     {
       // TODO: Ask user for confirmation
       string action = await TheView.DisplayActionSheet("Delete this <|CLASS_NAME_SINGULAR|>?", "Cancel", "Delete");
