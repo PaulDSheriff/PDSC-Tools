@@ -19,7 +19,7 @@ public partial class <|CLASS_NAME|>Search : AppSearch
   #endregion
 
   {|FOR EACH COLUMN:IsSearchField|}
-  private <|LANGUAGE_DATA_TYPE_NULLABLE|> <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|> <|PROPERTY_INITIALIZER_STATEMENT|>;
+  private <|LANGUAGE_DATA_TYPE_NULLABLE|> <|PRIVATE_FIELD_PREFIX|><|PROPERTY_NAME|> = null;
 
   [Display(Name = "<|PROPERTY_LABEL|>")]
   public <|LANGUAGE_DATA_TYPE_NULLABLE|> <|PROPERTY_NAME|>
