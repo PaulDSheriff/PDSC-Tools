@@ -33,6 +33,6 @@ public partial class <|CLASS_NAME|>ListView : ContentPage
 
     // NOTE: The list is refreshed each time the page appears.
     // If this is not want you want, move the following line within the if() statement above.
-    DataResponse<ObservableCollection<<|CLASS_NAME|>>> response = await ViewModel.GetAsync();
+    DataResponse<ObservableCollection<JohnDatabase.EntityLayer.<|CLASS_NAME|>>> response = await ViewModel.GetAsync();
   }
 }

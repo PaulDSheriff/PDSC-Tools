@@ -13,19 +13,19 @@ namespace <|NAMESPACE|>.MAUI.CommandClasses
   {
     #region Constructors
     {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
-    public <|CLASS_NAME|>ViewModelCommands(IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository) : base(repository)
+    public <|CLASS_NAME|>ViewModelCommands(IRepository<<|NAMESPACE|>.EntityLayer.<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository) : base(repository)
     {|END_REMOVE|}
     {|REMOVE_WHEN:IsPrimaryKeyInteger|}
-    public <|CLASS_NAME|>ViewModelCommands(IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> repository) : base(repository)
+    public <|CLASS_NAME|>ViewModelCommands(IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|NAMESPACE|>.EntityLayer.<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository) : base(repository)
     {|END_REMOVE|}
     {
     }
 
     {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
-    public <|CLASS_NAME|>ViewModelCommands(IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository,
+    public <|CLASS_NAME|>ViewModelCommands(IRepository<<|NAMESPACE|>.EntityLayer.<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository,
     {|END_REMOVE|}
     {|REMOVE_WHEN:IsPrimaryKeyInteger|}
-    public <|CLASS_NAME|>ViewModelCommands(IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> repository, 
+    public <|CLASS_NAME|>ViewModelCommands(IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|NAMESPACE|>.EntityLayer.<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository, 
     {|END_REMOVE|}
     {|FOR EACH FK_TABLE|}
       IRepository<<|CLASS_NAME_SINGULAR|>, <|CLASS_NAME_SINGULAR|>Search> <|CLASS_NAME_SINGULAR_ALL_LOWER|>Repo,
@@ -170,7 +170,7 @@ namespace <|NAMESPACE|>.MAUI.CommandClasses
     #region SearchAsync Method
     protected new async Task SearchAsync()
     {
-      DataResponse<ObservableCollection<<|CLASS_NAME|>>> response = await base.SearchAsync(base.SearchEntity);
+      DataResponse<ObservableCollection<JohnDatabase.EntityLayer.<|CLASS_NAME|>>> response = await base.SearchAsync(base.SearchEntity);
       if (response != null && response.StatusCode == HttpStatusCode.OK) {
         base.InfoMessage = $"Total Searched and Found: {(response.Data ?? new()).Count}";
       }
@@ -199,9 +199,9 @@ namespace <|NAMESPACE|>.MAUI.CommandClasses
     #endregion
 
     #region SaveAsync Method
-    public async override Task<DataResponse<<|CLASS_NAME|>>> SaveAsync()
+    public async override Task<DataResponse<JohnDatabase.EntityLayer.<|CLASS_NAME|>>> SaveAsync()
     {
-      DataResponse<<|CLASS_NAME|>> response = await base.SaveAsync();
+      DataResponse<JohnDatabase.EntityLayer.<|CLASS_NAME|>> response = await base.SaveAsync();
 
       if (response.StatusCode == HttpStatusCode.Created ||
           response.StatusCode == HttpStatusCode.OK) {
@@ -220,7 +220,7 @@ namespace <|NAMESPACE|>.MAUI.CommandClasses
       switch (action) {
         case "Delete":
           // Perform delete
-          DataResponse<<|CLASS_NAME|>> response = await base.DeleteAsync(id);
+          DataResponse<JohnDatabase.EntityLayer.<|CLASS_NAME|>> response = await base.DeleteAsync(id);
           if (response != null && response.StatusCode == HttpStatusCode.NoContent) {
             base.InfoMessage = "<|CLASS_NAME_SINGULAR|> Deleted";
           }
