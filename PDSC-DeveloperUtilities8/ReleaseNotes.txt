@@ -1,11 +1,28 @@
-﻿Enhancement List - Code Generator - 10/5/2023
+﻿PDSC Utilities Enhancement List - 10/9/2023
 -----------------------------------------------------
-Ability to use either camel-case or pascal-case for backing fields after underscore
-Option to turn off foreign key generation
+Code Generator: Option to turn off foreign key generation
+Code Generator: Generate WPF applications and screens
+SQL Compare: Change so it uses a drop-down of connection strings
+Utilities: Create Maintenance Pages for all XML files
+Utilities: Fix dockpanel lastchild so if the main window is resized, the usercontrol is maximized within the dockpanel.
+
+
+
+PDSC Developer Utilities v8.0.3 - 10/9/2023
+-----------------------------------------------------
+Fixed bug in SQL Compare where an invalid connection string caused the utilities to crash
+Fixed bug in the ViewModel template where it was using the PK field name instead of the property name.
+Fixed bug where Computer Cleaner did not detect VS versions correctly
+Added check to turn off StandardFieldsInTables if at least one table does not have standard fields.
+Added a <RequiredPropertyChangedEvent> element to Template Groups so the appropriate check boxes are now turned on if required
+You may place any templates or XML files from the MyDocuments\PDSCDeveloperUtilities8 folder into the MyDocuments\PDSCDeveloperUtilities8-{LoginId} folder to add these to the standard ones shipped with this tool.
+  For example, you could copy the CodeGen-StandardFields.xml file over to MyDocuments\PDSCDeveloperUtilities8-{LoginId} and add any standard fields you use in your database and put them into this file
+Moved the CodeGen-StandardFields.xml into the MyDocuments\PDSCDeveloperUtilities8-{LoginId} folder with my standard field names
+Removed all standard fields from the Xml\CodeGen-StandardFields.xml file
+Added ability to use either camel-case or pascal-case for backing fields after underscore
+Fixed bug where not all standard fields were getting set on FK tables
 Show the FK relationships of each table
-Ability to uncheck all selected tables
-Ability to uncheck all selected templates
-Generate WPF applications and screens
+Added rowversion and hierarchyid data types
 
 
 
