@@ -460,7 +460,7 @@ public partial class <|CLASS_NAME|>ViewModel : AppViewModel<<|CLASS_NAME|>, <|CL
   #region UpdateAsync Method
   public async Task<DataResponse<<|CLASS_NAME|>>> UpdateAsync()
   {
-    return await UpdateAsync(CurrentEntity?.<|PRIMARY_KEY_FIELD|> ?? <|PK_PROPERTY_INITIALIZER|>, CurrentEntity);
+    return await UpdateAsync(CurrentEntity?.<|PK_PROPERTY_NAME|> ?? <|PK_PROPERTY_INITIALIZER|>, CurrentEntity);
   }
 
   public async Task<DataResponse<<|CLASS_NAME|>>> UpdateAsync(<|PK_LANGUAGE_DATA_TYPE|> id, <|CLASS_NAME|>? entity)
@@ -649,6 +649,7 @@ public partial class <|CLASS_NAME|>ViewModel : AppViewModel<<|CLASS_NAME|>, <|CL
 
   {|REMOVE_WHEN:NoForeignKeys|}
   #region Foreign Key Methods
+
   {|FOR EACH FK_TABLE|}
   #region Load<|CLASS_NAME_PLURAL|>Async Method
   public async Task Load<|CLASS_NAME_PLURAL|>Async()
@@ -662,6 +663,7 @@ public partial class <|CLASS_NAME|>ViewModel : AppViewModel<<|CLASS_NAME|>, <|CL
     }
   }
   #endregion
+
   {|END_LOOP|}
   #endregion
   {|END_REMOVE|}
