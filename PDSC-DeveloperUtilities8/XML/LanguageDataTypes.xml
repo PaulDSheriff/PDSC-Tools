@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DataTypes>
-	<DataType>
+  <!-- *********************** -->
+  <!-- *** C# Data Types   *** -->
+  <!-- *********************** -->
+  <DataType>
 		<LanguageCode>CSharp</LanguageCode>
 		<SqlServerType>bit</SqlServerType>
 		<LanguageType>bool</LanguageType>
@@ -110,7 +113,7 @@
   </DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
-		<SqlServerType>binary,varbinary,image,filestream,timestamp</SqlServerType>
+		<SqlServerType>binary,varbinary,image,filestream,timestamp,rowversion</SqlServerType>
 		<LanguageType>byte[]</LanguageType>
 		<Nullable>byte[]?</Nullable>
 		<Initializer>Array.Empty&lt;byte&gt;()</Initializer>
@@ -215,7 +218,10 @@
 		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
     <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|} == null ? true : search.{|PROPERTY_NAME|}</SearchPatternNullable>
   </DataType>
-	<DataType>
+  <!-- *************************** -->
+  <!-- *** VB.NET Data Types   *** -->
+  <!-- *************************** -->
+  <DataType>
 		<LanguageCode>VBNET</LanguageCode>
 		<SqlServerType>bit</SqlServerType>
 		<LanguageType>Boolean</LanguageType>
