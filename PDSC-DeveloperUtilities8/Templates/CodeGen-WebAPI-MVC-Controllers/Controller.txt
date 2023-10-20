@@ -15,7 +15,7 @@ public class <|CLASS_NAME|>Controller : ControllerBaseAPI
   #region Constructor
   public <|CLASS_NAME|>Controller(<|CLASS_NAME|>ViewModel vm,
     ILogger<<|CLASS_NAME|>Controller> logger,
-    IOptionsMonitor<<|NAMESPACE|>AppSettings> settings) : base(logger)
+    IOptionsMonitor<<|NAMESPACE_CLEAN|>AppSettings> settings) : base(logger)
   {
     ViewModel = vm;
     Settings = settings.CurrentValue;
@@ -26,7 +26,7 @@ public class <|CLASS_NAME|>Controller : ControllerBaseAPI
 
   #region Private Variables
   private readonly <|CLASS_NAME|>ViewModel ViewModel;
-  private readonly <|NAMESPACE|>AppSettings Settings;
+  private readonly <|NAMESPACE_CLEAN|>AppSettings Settings;
   #endregion
 
   #region Get Method
