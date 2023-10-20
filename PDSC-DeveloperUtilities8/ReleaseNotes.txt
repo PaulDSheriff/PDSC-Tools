@@ -1,15 +1,42 @@
-﻿PDSC Utilities Enhancement List - 10/9/2023
+﻿PDSC Utilities Enhancement List - 10/??/2023
 -----------------------------------------------------
 Code Generator: Option to turn off foreign key generation
 Code Generator: Generate WPF applications and screens
-SQL Compare: Change so it uses a drop-down of connection strings
+Code Generator: Check how to work with TimeSpan when searching - AddWhereClause()
+Code Generator: In DetailView.cs, if Id is the primary key, you need to use the 'new' keyword. Come up with how to do this.
+Code Generator: Add option to generate Web API using HTTPS
+Computer Cleaner: Move "Cancel Cleaning" button next to "Clean" button
 Utilities: Create Maintenance Pages for all XML files
-Utilities: Fix dockpanel lastchild so if the main window is resized, the usercontrol is maximized within the dockpanel.
+Utilities: Bug Reporting Screen
+
+
+
+PDSC Developer Utilities v8.0.4 - 10/20/2023
+-----------------------------------------------------
+SQL Compare: Changed so it uses a drop-down of connection strings
+Property Generator: Removed TypeScript and AutoMapper
+Property Generator: Fixed problem of multiple empty commas in property list
+Code Generator:
+  Replaced hard-coded instances of 'JohnDatabase' with <|NAMESPACE|> token within the MauiProgram.txt and ViewModelCommands.txt templates
+  Added a new token <|NAMESPACE_CLEAN|> and {|NAMESPACE_CLEAN|} which returns the Namespace stripped of all commas, periods, or any other characters that would be an invalid name
+  Added a new token <|FIRST_SORT_FIELD|> to return the first sort field found.
+  Added a new token <|GRID_ROW_AUTO_SEARCH|> to return Auto,Auto,... for each IsSearchField in a table
+  Replaced <|NAMESPACE|> with <|NAMESPACE_CLEAN|> in several template files
+  Replaced {|NAMESPACE|} with {|NAMESPACE_CLEAN|} in several XML files
+  Fixed the problem where moving between different tables in the code generator caused you to lose changes on the table and columns
+  Fixed the problem in the AddWhereClause() where it was generating an invalid LINQ WHERE clause
+  Fixed a bug where the column name was the same as the table name (or the class that was generated from the table name)
+  Added code to write log file even if there is an error
+Updated the documentation to reflect all changes made in this release
+  Added a table to describe the columns in the grids in the code generator
+Updated all utilities to better handle smaller screens and to add scroll bars where necessary
+Added MIT license on splash screen
 
 
 
 PDSC Developer Utilities v8.0.3 - 10/9/2023
 -----------------------------------------------------
+Added a <ScrollViewer> around all user controls
 Fixed bug in SQL Compare where an invalid connection string caused the utilities to crash
 Fixed bug in the ViewModel template where it was using the PK field name instead of the property name.
 Fixed bug where Computer Cleaner did not detect VS versions correctly
