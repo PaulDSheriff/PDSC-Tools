@@ -1,8 +1,8 @@
 ﻿namespace <|NAMESPACE|>;
 
-public class <|NAMESPACE|>AppSettings
+public class <|NAMESPACE_CLEAN|>AppSettings
 {
-  public <|NAMESPACE|>AppSettings()
+  public <|NAMESPACE_CLEAN|>AppSettings()
   {
     ApplicationName = "<|APPLICATION_NAME|>";
     BaseWebAPIService = "https://your.webapiurl.com/api";

@@ -6,9 +6,9 @@ public static class WebApplicationBuilderExtensions
   {
     // Configure Global Settings
 
-    // Read "<|NAMESPACE|>AppSettings" section
-    // Use the IOptionsMonitor<<|NAMESPACE|>AppSettings> in controller's constructor
-    builder.Services.Configure<<|NAMESPACE|>AppSettings>(
-      builder.Configuration.GetSection("<|NAMESPACE|>AppSettings"));
+    // Read "<|NAMESPACE_CLEAN|>AppSettings" section
+    // Use the IOptionsMonitor<<|NAMESPACE_CLEAN|>AppSettings> in controller's constructor
+    builder.Services.Configure<<|NAMESPACE_CLEAN|>AppSettings>(
+      builder.Configuration.GetSection("<|NAMESPACE_CLEAN|>AppSettings"));
   }
 }
