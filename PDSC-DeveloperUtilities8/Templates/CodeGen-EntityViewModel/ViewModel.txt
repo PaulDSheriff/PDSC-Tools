@@ -60,7 +60,7 @@ public partial class <|CLASS_NAME|>ViewModel : AppViewModel<<|CLASS_NAME|>, <|CL
   private ObservableCollection<<|CLASS_NAME|>> _<|CLASS_NAME_PLURAL|> = new();
   private <|CLASS_NAME|>? _CurrentEntity = new();
   private <|CLASS_NAME|>Search _SearchEntity = new() {
-    SortExpression = nameof(<|CLASS_NAME|>Search.<|DESCRIPTION_FIELD|>)
+    SortExpression = nameof(<|CLASS_NAME|>Search.<|FIRST_SORT_FIELD|>)
   };
   {|REMOVE_WHEN:NoForeignKeys|}
   // Foreign Key Variables
