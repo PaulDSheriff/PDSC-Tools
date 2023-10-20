@@ -20,26 +20,27 @@
                                ViewTitle="<|CLASS_NAME|> List"
                                ViewDescription="List, Search, Add, and Select <|CLASS_NAME_PLURAL|>." />
 
+      <|GRID_ROW_RESET|>
       <!-- *********** -->
       <!-- Search Area -->
       <!-- *********** -->
       <VerticalStackLayout Grid.Row="1">
         <Label Text="Search for <|CLASS_NAME_PLURAL|> by..."
                Style="{StaticResource SearchAreaHeader}" />
-        <Grid RowDefinitions="Auto,Auto"
+        <Grid RowDefinitions="<|GRID_ROW_AUTO_SEARCH|>,Auto"
               ColumnDefinitions="Auto,*"
               Style="{StaticResource Grid.SearchArea}">
           {|FOR EACH COLUMN:IsSearchField|}
-          <Label Grid.Row="0"
+          <Label Grid.Row="<|GRID_ROW_FIRST|>"
                   Grid.Column="0"
                   TextColor="{StaticResource SearchLabel}"
                   Text="<|PROPERTY_LABEL|>" />
-          <Entry Grid.Row="0"
+          <Entry Grid.Row="<|GRID_ROW_SECOND|>"
                   Grid.Column="1"
                   Placeholder="Enter partial <|PROPERTY_LABEL|>"
                   Text="{Binding SearchEntity.<|PROPERTY_NAME|>}" />
           {|END_LOOP|}
-          <HorizontalStackLayout Grid.Row="1"
+          <HorizontalStackLayout Grid.Row="<|GRID_ROW_FIRST|>"
                                   Grid.Column="1">
             <ImageButton Source="magnifyingglass.png"
                           ToolTipProperties.Text="Search for <|CLASS_NAME_PLURAL|>"
