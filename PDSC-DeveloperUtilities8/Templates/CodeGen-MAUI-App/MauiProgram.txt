@@ -29,9 +29,9 @@ public static class MauiProgram
     //* Add DI Services to MAUI App
     //**********************************
     // Register <|NAMESPACE|>AppSettings object
-    builder.Services.AddSingleton<<|NAMESPACE|>AppSettings>(new <|NAMESPACE|>AppSettings());
+    builder.Services.AddSingleton<<|NAMESPACE_CLEAN|>AppSettings>(new <|NAMESPACE_CLEAN|>AppSettings());
     // Add HttpClient with base address for Web API calls
-    RegisterHttpClient(builder, new <|NAMESPACE|>AppSettings().BaseWebAPIAddress);
+    RegisterHttpClient(builder, new <|NAMESPACE_CLEAN|>AppSettings().BaseWebAPIAddress);
     // Add repositories
     builder.RegisterRepositories();
     // Add view models
@@ -79,7 +79,7 @@ public static class MauiProgram
   public static MauiAppBuilder RegisterRepositories(this MauiAppBuilder mauiAppBuilder)
   {
   {|FOR EACH TABLE|}
-    mauiAppBuilder.Services.AddScoped<{|REPO_INTERFACE|}JohnDatabase.EntityLayer.<|CLASS_NAME|>, <|CLASS_NAME|>Search>, <|CLASS_NAME|>RepositoryAPI>();
+    mauiAppBuilder.Services.AddScoped<{|REPO_INTERFACE|}<|NAMESPACE|>.EntityLayer.<|CLASS_NAME|>, <|CLASS_NAME|>Search>, <|CLASS_NAME|>RepositoryAPI>();
   {|END_LOOP|}
 
     return mauiAppBuilder;

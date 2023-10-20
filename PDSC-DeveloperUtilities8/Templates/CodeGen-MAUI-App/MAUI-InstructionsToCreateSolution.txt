@@ -24,11 +24,14 @@ Run the MAUI-CreateSolution.cmd file.
 Step 2: Open the SLN
 Open the <|NAMESPACE|>.MAUI.sln file using Visual Studio.
 Right mouse-click on the Solution and choose Properties from the menu.
-Select the Multiple Startup Projects radio button.
-Move the <|NAMESPACE|>.WebAPI project to the top of the list.
-  Set its Action to 'Start'.
-Move the <|NAMESPACE|>.MAUI project to the second one in the list.
-  Set its Action to 'Start'.
+Under Common Properties | Startup Project...
+  Select the Multiple Startup Projects radio button.
+  Move the <|NAMESPACE|>.WebAPI project to the top of the list.
+    Set its Action to 'Start'.
+  Move the <|NAMESPACE|>.MAUI project to the second one in the list.
+    Set its Action to 'Start'.
+Under Configuration Properties...
+  Check the Deploy button next to the <|NAMESPACE|>.MAUI project
 Click the OK button.
 
 Step 3: Get the URL for the WebAPI project

@@ -3,9 +3,9 @@
 /// <summary>
 /// Put any application-specific settings in this class
 /// </summary>
-public class <|NAMESPACE|>AppSettings
+public class <|NAMESPACE_CLEAN|>AppSettings
 {
-  public <|NAMESPACE|>AppSettings()
+  public <|NAMESPACE_CLEAN|>AppSettings()
   {
     ApplicationName = "<|APPLICATION_NAME|>";
     BaseWebAPIAddress = "https://your.webapiurl.com/api";
