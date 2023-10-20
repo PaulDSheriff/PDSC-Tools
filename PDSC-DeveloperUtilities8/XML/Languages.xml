@@ -16,20 +16,4 @@
 		<LogicalOr>Or</LogicalOr>
 		<ConditionalOr>OrElse</ConditionalOr>
   </Language>
-	<Language>
-		<Name>TypeScript</Name>
-		<LanguageCode>TypeScript</LanguageCode>
-		<LogicalAnd>&amp;</LogicalAnd>
-		<ConditionalAnd>&amp;&amp;</ConditionalAnd>
-		<LogicalOr>|</LogicalOr>
-		<ConditionalOr>||</ConditionalOr>
-	</Language>
-	<Language>
-		<Name>AutoMapper (.NET object mapper)</Name>
-		<LanguageCode>AutoMapper</LanguageCode>
-		<LogicalAnd>&amp;</LogicalAnd>
-		<ConditionalAnd>&amp;&amp;</ConditionalAnd>
-		<LogicalOr>|</LogicalOr>
-		<ConditionalOr>||</ConditionalOr>
-	</Language>
 </Languages>

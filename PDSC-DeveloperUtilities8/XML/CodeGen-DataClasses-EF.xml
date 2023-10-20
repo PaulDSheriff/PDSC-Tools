@@ -17,7 +17,7 @@
 		<BaseClassName></BaseClassName>
 		<OutputSubFolder>{|NAMESPACE|}.DataLayer\DbContextClasses</OutputSubFolder>
 		<OutputFileExtension>.cs</OutputFileExtension>
-		<OutputFilePrefix>{|NAMESPACE|}</OutputFilePrefix>
+		<OutputFilePrefix>{|NAMESPACE_CLEAN|}</OutputFilePrefix>
 		<OutputFileSuffix></OutputFileSuffix>
 		<UseClassNameAsFileName>false</UseClassNameAsFileName>
 		<AppendToFile>false</AppendToFile>

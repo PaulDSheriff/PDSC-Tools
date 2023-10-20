@@ -28,7 +28,7 @@
     <BaseClassName></BaseClassName>
     <OutputSubFolder>{|NAMESPACE|}.MAUI\ConfigurationClasses</OutputSubFolder>
     <OutputFileExtension>.cs</OutputFileExtension>
-    <OutputFilePrefix>{|NAMESPACE|}</OutputFilePrefix>
+    <OutputFilePrefix>{|NAMESPACE_CLEAN|}</OutputFilePrefix>
     <OutputFileSuffix></OutputFileSuffix>
     <UseClassNameAsFileName>false</UseClassNameAsFileName>
     <AppendToFile>false</AppendToFile>
