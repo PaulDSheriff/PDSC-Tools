@@ -1,0 +1,17 @@
+namespace <|NAMESPACE|>;
+
+public partial class <|CLASS_NAME|>
+{
+  {|FOR EACH COLUMN:NoStandardFields|}
+  public <|LANGUAGE_DATA_TYPE|> <|PROPERTY_NAME|> { get; set; } = <|PROPERTY_INITIALIZER|>;
+  {|END_LOOP|}
+  {|FOR EACH COLUMN:StandardFields|}
+  public <|LANGUAGE_DATA_TYPE|> <|PROPERTY_NAME|> { get; set; } <|PROPERTY_INITIALIZER|>;
+  {|END_LOOP|}
+
+  #region ToString Override
+  public override string ToString() {
+    return $"{<|DESCRIPTION_FIELD|>}";
+  }
+  #endregion
+}
