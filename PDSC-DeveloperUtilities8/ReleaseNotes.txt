@@ -1,13 +1,44 @@
-﻿PDSC Utilities Enhancement List - 10/20/2023
------------------------------------------------------
-Code Generator: Option to turn off foreign key generation
+﻿PDSC Utilities Enhancement List
+------------------------------------------------------------------------------
 Code Generator: Generate WPF applications and screens
 Code Generator: Check how to work with TimeSpan when searching - AddWhereClause()
-Code Generator: In DetailView.cs, if Id is the primary key, you need to use the 'new' keyword. Come up with how to do this.
-Code Generator: Add option to generate Web API using HTTPS
-Computer Cleaner: Move "Cancel Cleaning" button next to "Clean" button
 Utilities: Create Maintenance Pages for all XML files
-Utilities: Bug Reporting Screen
+
+
+
+PDSC Developer Utilities v8.0.5 - 10/22/2023
+-----------------------------------------------------
+C# Data Repository Generator
+  Integrated this tool as templates in the Code Generator
+  Removed \Configuration\PDSCRepoDataGen.config file
+  Removed menu item on the main window for this tool
+
+Code Generator
+  Added Use Https flag to generate the Web API project using HTTPS
+  Added <|NO_HTTPS|> token
+    Modified the MAUI-CreateSolution.txt file to use this new token
+    Modified the MVC-CreateSolution.txt file to use this new token
+    Modified the WebAPI-CreateSolution.txt file to use this new token
+  Added <|REMOVE_WHEN:Https|> and <|REMOVE_WHEN:NoHttps|> tokens
+    Modified the MAUI-InstructionsToCreateSolution.txt file to use these new tokens
+  Added Generate Foreign Keys flag to turn on/off foreign key generation
+  Modified the \CodeGen-MVC-App\Program.txt to use the {|REPO_INTERFACE|} instead of {|INCLUDE|}
+    Removed the \CodeGen-MVC-App\ProgramScopedRepos.txt file
+    Removed the \CodeGen-MVC-App\ProgramScopedReposOther.txt file
+    Removed these entries from the \Xml\CodeGen-MVC-App.xml file
+
+Project Cleaner
+  Moved the expander options to a separate tab
+
+XML Files
+  Added a screen to display a list of all XML files used in the PDSC Developer Utilities
+  Added an \XML\XmlFileList.xml file which has a description of each XML file used by the PDSC Developer Utilities
+
+General Updates
+  Lots of minor internal user control changes to make the XAML simpler and more maintainable
+  Lots of minor changes to screens to make things more consistent
+  Changed the Table selection tab to eliminate the Expander for the Filtering
+  Updated documentation to reflect changes in this release
 
 
 
@@ -16,6 +47,7 @@ PDSC Developer Utilities v8.0.4 - 10/20/2023
 SQL Compare: Changed so it uses a drop-down of connection strings
 Property Generator: Removed TypeScript and AutoMapper
 Property Generator: Fixed problem of multiple empty commas in property list
+Computer Cleaner: Move "Cancel Cleaning" button next to "Clean" button
 Code Generator:
   Replaced hard-coded instances of 'JohnDatabase' with <|NAMESPACE|> token within the MauiProgram.txt and ViewModelCommands.txt templates
   Added a new token <|NAMESPACE_CLEAN|> and {|NAMESPACE_CLEAN|} which returns the Namespace stripped of all commas, periods, or any other characters that would be an invalid name
