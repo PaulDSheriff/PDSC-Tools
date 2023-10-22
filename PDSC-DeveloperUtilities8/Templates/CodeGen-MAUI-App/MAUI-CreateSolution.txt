@@ -45,7 +45,7 @@ dotnet add <|NAMESPACE|>.ViewModelLayer/<|NAMESPACE|>.ViewModelLayer.csproj refe
 
 ECHO *************************************
 ECHO ** Creating <|NAMESPACE|>.WebAPI Web API
-dotnet new webapi --name <|NAMESPACE|>.WebAPI --output <|NAMESPACE|>.WebAPI --no-https
+dotnet new webapi --name <|NAMESPACE|>.WebAPI --output <|NAMESPACE|>.WebAPI <|NO_HTTPS|>
 del <|NAMESPACE|>.WebAPI\Controllers\WeatherForecastController.cs
 del <|NAMESPACE|>.WebAPI\WeatherForecast.cs
 xcopy <|GEN_PATH|><|NAMESPACE|>.WebAPI <|NAMESPACE|>.WebAPI /s /q /y

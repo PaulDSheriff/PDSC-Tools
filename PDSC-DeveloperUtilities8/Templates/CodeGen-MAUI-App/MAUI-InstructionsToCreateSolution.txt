@@ -36,9 +36,14 @@ Click the OK button.
 
 Step 3: Get the URL for the WebAPI project
 Open the \Properties\launchSettings.json in the <|NAMESPACE|>.WebAPI project.
+{|REMOVE_WHEN:Https|}
 Locate the "applicationUrl":"http://localhost:xxxx" under "profiles", "http".
 Copy the url: "http://localhost:xxxx" to the clipboard.
-  NOTE: If you wish to run https, locate the option --no-https in the .cmd file and remove it.
+{|END_REMOVE|}
+{|REMOVE_WHEN:NoHttps|}
+Locate the "applicationUrl":"https://localhost:xxxx" under "profiles", "https".
+Copy the url: "https://localhost:xxxx" to the clipboard.
+{|END_REMOVE|}
 
 Step 4: Paste the URL into your MAUI application
 Open the <|NAMESPACE|>.MAUI\ConfigurationClasses\<|NAMESPACE|>AppSettings.cs file.
