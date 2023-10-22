@@ -16,14 +16,11 @@ builder.Services.AddDbContext<<|NAMESPACE|>DbContext>(
   options => options.UseSqlServer(connString));
 
 // Create scoped versions of your Repository classes
-{|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
-{|INCLUDE:ProgramScopedRepos.txt|}
-{|END_REMOVE|}
+{|FOR EACH TABLE|}
+builder.Services.AddScoped<{|REPO_INTERFACE|} <|CLASS_NAME|>, <|CLASS_NAME|>Search>, <|CLASS_NAME|>Repository>();
+{|END_LOOP|}
 
-{|REMOVE_WHEN:IsPrimaryKeyInteger|}
-{|INCLUDE:ProgramScopedReposOther.txt|}
-{|END_REMOVE|}
-
+// Create instance of a WebApplication object
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

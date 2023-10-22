@@ -36,7 +36,7 @@ dotnet add <|NAMESPACE|>.ViewModelLayer/<|NAMESPACE|>.ViewModelLayer.csproj refe
 
 ECHO ****************************************************
 ECHO ** Creating <|NAMESPACE|>.Web Application
-dotnet new mvc --name <|NAMESPACE|>.MVC --output <|NAMESPACE|>.MVC
+dotnet new mvc --name <|NAMESPACE|>.MVC --output <|NAMESPACE|>.MVC <|NO_HTTPS|>
 xcopy <|GEN_PATH|><|NAMESPACE|>.MVC <|NAMESPACE|>.MVC /s /q /y
 dotnet add <|NAMESPACE|>.MVC/<|NAMESPACE|>.MVC.csproj reference PDSC.Common/PDSC.Common.csproj
 dotnet add <|NAMESPACE|>.MVC/<|NAMESPACE|>.MVC.csproj reference <|NAMESPACE|>.EntityLayer/<|NAMESPACE|>.EntityLayer.csproj
