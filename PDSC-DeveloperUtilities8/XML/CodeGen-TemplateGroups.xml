@@ -12,6 +12,7 @@
     <Description>Generate entity, search, and view model classes</Description>
     <LanguageCode>CSharp</LanguageCode>
     <TemplatesXmlFileName>CodeGen-EntityViewModel.xml</TemplatesXmlFileName>
+    <RequirePropertyChangedEvent>False</RequirePropertyChangedEvent>
   </TemplateGroup>
   <!-- Data Classes EF Templates -->
   <TemplateGroup>
@@ -22,6 +23,7 @@
     <Description>Generate repository classes using the Entity Framework</Description>
     <LanguageCode>CSharp</LanguageCode>
     <TemplatesXmlFileName>CodeGen-DataClasses-EF.xml</TemplatesXmlFileName>
+    <RequirePropertyChangedEvent>False</RequirePropertyChangedEvent>
   </TemplateGroup>
   <!-- Data Classes HttpClient API Repository Templates -->
   <TemplateGroup>
@@ -32,6 +34,7 @@
     <Description>Generate a repository class to call a Web API endpoint</Description>
     <LanguageCode>CSharp</LanguageCode>
     <TemplatesXmlFileName>CodeGen-DataClasses-API.xml</TemplatesXmlFileName>
+    <RequirePropertyChangedEvent>False</RequirePropertyChangedEvent>
   </TemplateGroup>
   
   <!-- ************************************-->
@@ -46,6 +49,7 @@
     <Description>Generate a complete MVC Web API application</Description>
     <LanguageCode>CSharp</LanguageCode>
     <TemplatesXmlFileName>CodeGen-WebAPI-MVC-App-Controllers.xml</TemplatesXmlFileName>
+    <RequirePropertyChangedEvent>False</RequirePropertyChangedEvent>
   </TemplateGroup>
   <TemplateGroup>
     <GroupId>102</GroupId>
@@ -55,6 +59,7 @@
     <Description>Generate a complete MVC (Controllers) Web API application</Description>
     <LanguageCode>CSharp</LanguageCode>
     <TemplatesXmlFileName>CodeGen-WebAPI-MVC-Controllers.xml</TemplatesXmlFileName>
+    <RequirePropertyChangedEvent>False</RequirePropertyChangedEvent>
   </TemplateGroup>
   
   <!-- .NET MAUI Templates -->
@@ -67,6 +72,7 @@
     <Description>Generate a complete .NET MAUI application</Description>
     <LanguageCode>CSharp</LanguageCode>
     <TemplatesXmlFileName>CodeGen-MAUI-App.xml</TemplatesXmlFileName>
+    <RequirePropertyChangedEvent>True</RequirePropertyChangedEvent>
   </TemplateGroup>
   <TemplateGroup>
     <GroupId>202</GroupId>
@@ -76,6 +82,7 @@
     <Description>Generate list/detail pages and commanding view model class</Description>
     <LanguageCode>CSharp</LanguageCode>
     <TemplatesXmlFileName>CodeGen-MAUI-Views.xml</TemplatesXmlFileName>
+    <RequirePropertyChangedEvent>True</RequirePropertyChangedEvent>
   </TemplateGroup>
   
   <!-- MVC Website Templates -->
@@ -87,6 +94,7 @@
     <Description>Generate a complete MVC application</Description>
     <LanguageCode>CSharp</LanguageCode>
     <TemplatesXmlFileName>CodeGen-MVC-App.xml</TemplatesXmlFileName>
+    <RequirePropertyChangedEvent>False</RequirePropertyChangedEvent>
   </TemplateGroup>
   <TemplateGroup>
     <GroupId>302</GroupId>
@@ -96,5 +104,20 @@
     <Description>Generate list/detail/search pages</Description>
     <LanguageCode>CSharp</LanguageCode>
     <TemplatesXmlFileName>CodeGen-MVC-Views.xml</TemplatesXmlFileName>
+    <RequirePropertyChangedEvent>False</RequirePropertyChangedEvent>
+  </TemplateGroup>
+
+  <!-- ***********************************-->
+  <!-- ** Hard-Coded Repository Classes **-->
+  <!-- ***********************************-->
+  <TemplateGroup>
+    <GroupId>401</GroupId>
+    <DependentGroupIds></DependentGroupIds>
+    <DisplayOrder>40</DisplayOrder>
+    <GroupName>Hard-Coded Data Repository</GroupName>
+    <Description>Generate Hard-Coded Repository and Entity classes</Description>
+    <LanguageCode>CSharp</LanguageCode>
+    <TemplatesXmlFileName>CodeGen-RepositoryDataGen.xml</TemplatesXmlFileName>
+    <RequirePropertyChangedEvent>False</RequirePropertyChangedEvent>
   </TemplateGroup>
 </CodeGenTemplateGroups>

@@ -66,26 +66,4 @@
     <UseClassNameAsFileName>false</UseClassNameAsFileName>
     <AppendToFile>false</AppendToFile>
   </Template>
-	<Template>
-		<Name>Program.cs Scoped Repos</Name>
-		<TemplateFileName>CodeGen-MVC-App\ProgramScopedRepos.txt</TemplateFileName>
-		<BaseClassName></BaseClassName>
-		<OutputSubFolder>_DoNotAddToProject-Includes</OutputSubFolder>
-		<OutputFileExtension>.txt</OutputFileExtension>
-		<OutputFilePrefix></OutputFilePrefix>
-		<OutputFileSuffix></OutputFileSuffix>
-		<UseClassNameAsFileName>false</UseClassNameAsFileName>
-		<AppendToFile>true</AppendToFile>
-	</Template>
-	<Template>
-		<Name>Program.cs Scoped Repos (other PK type)</Name>
-		<TemplateFileName>CodeGen-MVC-App\ProgramScopedReposOther.txt</TemplateFileName>
-		<BaseClassName></BaseClassName>
-		<OutputSubFolder>_DoNotAddToProject-Includes</OutputSubFolder>
-		<OutputFileExtension>.txt</OutputFileExtension>
-		<OutputFilePrefix></OutputFilePrefix>
-		<OutputFileSuffix></OutputFileSuffix>
-		<UseClassNameAsFileName>false</UseClassNameAsFileName>
-		<AppendToFile>true</AppendToFile>
-	</Template>
 </CodeGenTemplates>

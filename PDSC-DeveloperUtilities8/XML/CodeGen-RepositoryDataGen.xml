@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenTemplates>
+  <!-- ********************************************** -->
+  <!-- Templates for the C# Repository Data Generator -->
+  <!-- ********************************************** -->
+  <Template>
+		<Name>Entity Class</Name>
+    <TemplateFileName>RepositoryGenerator\Entity.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>HardCodedRepository</OutputSubFolder>
+		<OutputFileExtension>.cs</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>true</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>Repository Class</Name>
+    <TemplateFileName>RepositoryGenerator\RepositoryDataClass.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>HardCodedRepository</OutputSubFolder>
+    <OutputFileExtension>.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix>Repository</OutputFileSuffix>
+    <UseClassNameAsFileName>true</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+</CodeGenTemplates>
