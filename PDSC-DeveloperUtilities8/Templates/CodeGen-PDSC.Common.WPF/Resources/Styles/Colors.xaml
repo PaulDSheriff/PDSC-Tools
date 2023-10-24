@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Color x:Key="Primary">#512BD4</Color>
+  <Color x:Key="Secondary">#DFD8F7</Color>
+  <Color x:Key="Tertiary">#2B0B98</Color>
+  <Color x:Key="Success">Blue</Color>
+  <Color x:Key="Danger">Red</Color>
+  <Color x:Key="Info">Yellow</Color>
+
+  <SolidColorBrush x:Key="PrimaryBrush"
+                   Color="{StaticResource Primary}" />
+  <SolidColorBrush x:Key="SecondaryBrush"
+                   Color="{StaticResource Secondary}" />
+  <SolidColorBrush x:Key="TertiaryBrush"
+                   Color="{StaticResource Tertiary}" />
+  <SolidColorBrush x:Key="SuccessBrush"
+                   Color="{StaticResource Success}" />
+  <SolidColorBrush x:Key="DangerBrush"
+                   Color="{StaticResource Danger}" />
+  <SolidColorBrush x:Key="InfoBrush"
+                   Color="{StaticResource Info}" />
+
+  <!-- ********************** -->
+  <!-- Custom Color Resources -->
+  <!-- ********************** -->
+  <SolidColorBrush x:Key="SearchLabel">Green</SolidColorBrush>
+  
+  <SolidColorBrush x:Key="SearchButton">Green</SolidColorBrush>
+  <SolidColorBrush x:Key="RefreshButton">Green</SolidColorBrush>
+  <SolidColorBrush x:Key="SaveButton">#512BD4</SolidColorBrush>
+  <SolidColorBrush x:Key="CancelButton">#512BD4</SolidColorBrush>
+  <SolidColorBrush x:Key="AddButton">#512BD4</SolidColorBrush>
+  <SolidColorBrush x:Key="EditButton">#512BD4</SolidColorBrush>
+  <SolidColorBrush x:Key="DeleteButton">Red</SolidColorBrush>
+</ResourceDictionary>
