@@ -5,6 +5,11 @@
   <input type="hidden" asp-for="CurrentEntity.<|PK_PROPERTY_NAME|>" />
   {|END_REMOVE|}
   <input type="hidden" asp-for="IsAdding" />
+  {|REMOVE_WHEN:NoStandardFields|}
+  {|FOR EACH COLUMN:StandardFields|}
+  <input type="hidden" asp-for="CurrentEntity.<|PROPERTY_NAME|>" />
+  {|END_LOOP|}
+  {|END_REMOVE|}
 
   <div asp-validation-summary="All" class="text-danger">
   </div>

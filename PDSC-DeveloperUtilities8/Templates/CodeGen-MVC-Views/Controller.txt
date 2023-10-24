@@ -31,7 +31,7 @@ public class <|CLASS_NAME|><|OUTPUT_SUFFIX|> : Controller
     <|CLASS_NAME|>ViewModel vm = new(_Repo);
 
     // Call method to load <|CLASS_NAME|> objects
-    await vm.SearchAsync();
+    await vm.GetAsync();
 
     return View(vm);
   }
@@ -81,7 +81,13 @@ public class <|CLASS_NAME|><|OUTPUT_SUFFIX|> : Controller
   }
 
   [HttpGet]
+  {|REMOVE_WHEN:IsAutoIncrement|}
+  [Route("/{Controller}/Add", Name = "nextId")]
+  public IActionResult CustomerAdd(int nextId)
+  {|END_REMOVE|}
+  {|REMOVE_WHEN:IsNotAutoIncrement|}
   public IActionResult <|CLASS_NAME|>Add()
+  {|END_REMOVE|}
   {
     // Create view model, passing in repository
     <|CLASS_NAME|>ViewModel vm = new(_Repo)
@@ -89,9 +95,13 @@ public class <|CLASS_NAME|><|OUTPUT_SUFFIX|> : Controller
       IsDetailVisible = true,
       IsAdding = true
     };
+    {|REMOVE_WHEN:IsAutoIncrement|}
+    // Assign next id to generate
+    vm.NextId = nextId;
+    {|END_REMOVE|}
 
     // Call method to create an empty <|CLASS_NAME|> object
-    vm.CreateEmpty();
+    vm.CurrentEntity = vm.CreateEmpty();
 
     return View("<|CLASS_NAME|>Index", vm);
   }

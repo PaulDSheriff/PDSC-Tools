@@ -1,4 +1,12 @@
 @model <|NAMESPACE|>.ViewModelLayer.<|CLASS_NAME|>ViewModel
+{|REMOVE_WHEN:IsAutoIncrement|}
+@{
+  var parms = new Dictionary<string, string>
+      {
+        { "nextId", Model.NextId.ToString() }
+      };
+}
+{|END_REMOVE|}
 
 <form method="get" asp-action="<|CLASS_NAME|>Search">
   <div class="card">
@@ -16,7 +24,12 @@
     <div class="card-footer bg-primary text-light">
       <div class="row">
         <div class="col-9">
+          {|REMOVE_WHEN:IsAutoIncrement|}
+          <a class="me-5 btn btn-secondary" asp-action="<|CLASS_NAME|>Add" asp-all-route-data="parms">
+          {|END_REMOVE|}
+          {|REMOVE_WHEN:IsNotAutoIncrement|}
           <a class="me-5 btn btn-secondary" asp-action="<|CLASS_NAME|>Add">
+          {|END_REMOVE|}
             Add
           </a>
           <button formnovalidate="formnovalidate" class="btn btn-success">Search</button>
