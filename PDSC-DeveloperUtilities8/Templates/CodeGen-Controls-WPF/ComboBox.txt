@@ -1,0 +1,7 @@
+      <ComboBox Grid.Row="<|GRID_ROW_SECOND|>"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                ItemsSource="{Binding Path=<|PK_TABLE_CLASS_NAME_PLURAL|>}"
+                SelectedValuePath="<|FK_TABLE_PK_FIELD_PROPERTY_NAME|>"
+                DisplayMemberPath="<|FK_TABLE_DESC_FIELD_PROPERTY_NAME|>"
+                SelectedValue="{Binding Path=CurrentEntity.<|PROPERTY_NAME|>}" />

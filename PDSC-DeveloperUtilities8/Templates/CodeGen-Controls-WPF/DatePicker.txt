@@ -1,0 +1,6 @@
+      <DatePicker Grid.Row="<|GRID_ROW_SECOND|>"
+                  Grid.Column="1"
+                  Style="{StaticResource DatePickerStyle}"
+                  HorizontalAlignment="Left"
+                  VerticalContentAlignment="Center"
+                  Text="{Binding Path=CurrentEntity.<|PROPERTY_NAME|>}" />
