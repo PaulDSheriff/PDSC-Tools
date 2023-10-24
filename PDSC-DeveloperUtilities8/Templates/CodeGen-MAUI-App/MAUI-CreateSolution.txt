@@ -72,11 +72,11 @@ dotnet add <|NAMESPACE|>.MAUI/<|NAMESPACE|>.MAUI.csproj reference <|NAMESPACE|>.
 ECHO ************************************
 ECHO ** Creating <|NAMESPACE|>.MAUI Solution
 dotnet new sln --name <|NAMESPACE|>.MAUI
+dotnet sln <|NAMESPACE|>.MAUI.sln add <|NAMESPACE|>.MAUI/<|NAMESPACE|>.MAUI.csproj
+dotnet sln <|NAMESPACE|>.MAUI.sln add <|NAMESPACE|>.WebAPI/<|NAMESPACE|>.WebAPI.csproj
 dotnet sln <|NAMESPACE|>.MAUI.sln add PDSC.Common/PDSC.Common.csproj
 dotnet sln <|NAMESPACE|>.MAUI.sln add <|NAMESPACE|>.EntityLayer/<|NAMESPACE|>.EntityLayer.csproj
 dotnet sln <|NAMESPACE|>.MAUI.sln add <|NAMESPACE|>.DataLayer/<|NAMESPACE|>.DataLayer.csproj
 dotnet sln <|NAMESPACE|>.MAUI.sln add <|NAMESPACE|>.DataLayer.API/<|NAMESPACE|>.DataLayer.API.csproj
 dotnet sln <|NAMESPACE|>.MAUI.sln add <|NAMESPACE|>.ViewModelLayer/<|NAMESPACE|>.ViewModelLayer.csproj
-dotnet sln <|NAMESPACE|>.MAUI.sln add <|NAMESPACE|>.MAUI/<|NAMESPACE|>.MAUI.csproj
-dotnet sln <|NAMESPACE|>.MAUI.sln add <|NAMESPACE|>.WebAPI/<|NAMESPACE|>.WebAPI.csproj
 pause
