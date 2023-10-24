@@ -187,14 +187,14 @@ namespace <|NAMESPACE|>.MAUI.CommandClasses
     #region AddAsync Method
     protected async Task AddAsync()
     {
-      await Shell.Current.GoToAsync($"{nameof(Views.<|CLASS_NAME|>DetailView)}?id={0}&isAdding={true}");
+      await Shell.Current.GoToAsync($"{nameof(Views.<|CLASS_NAME|>DetailView)}?id={base.NextId}&isAdding={true}");
     }
     #endregion
 
     #region EditAsync Method
     protected async Task EditAsync(<|PK_LANGUAGE_DATA_TYPE|> id)
     {
-      await Shell.Current.GoToAsync($"{nameof(Views.<|CLASS_NAME|>DetailView)}?id={id}&isAdding={false}");
+      await Shell.Current.GoToAsync($"{nameof(Views.<|CLASS_NAME|>DetailView)}?id={id.ToString()}&isAdding={false}");
     }
     #endregion
 

@@ -10,7 +10,7 @@
 
   <ScrollView>
     <Border Style="{StaticResource Border.Page}">
-      <Grid RowDefinitions="<|GRID_ROW_AUTO|>,Auto,*"
+      <Grid RowDefinitions="Auto,<|GRID_ROW_AUTO|>,Auto,Auto"
             ColumnDefinitions="Auto,*"
             Style="{StaticResource Grid.Page}">
 
@@ -54,7 +54,7 @@
         <!-- ******************************** -->
         <!-- Validation Failure Messages Area -->
         <!-- ******************************** -->
-        <Border Grid.Row="16"
+        <Border Grid.Row="<|GRID_ROW|>"
                 Grid.Column="1"
                 IsVisible="{Binding HasValidationErrors}"
                 Style="{StaticResource ValidationErrorArea}">
