@@ -14,10 +14,22 @@
     <CopyTo>PDSC.Common</CopyTo>
   </Folder>
   
-  <!--.NET 8 MAUI Generation-->
+  <!-- .NET 8 MAUI Generation-->
   <Folder>
     <GroupId>201</GroupId>
     <CopyFrom>CodeGen-FilesToCopy-MAUI</CopyFrom>
     <CopyTo>{|NAMESPACE|}.MAUI\Resources</CopyTo>
+  </Folder>
+
+  <!-- WPF Generation-->
+  <Folder>
+    <GroupId>401</GroupId>
+    <CopyFrom>CodeGen-PDSC.Common.WPF</CopyFrom>
+    <CopyTo>PDSC.Common.WPF</CopyTo>
+  </Folder>
+  <Folder>
+    <GroupId>401</GroupId>
+    <CopyFrom>CodeGen-FilesToCopy-WPF</CopyFrom>
+    <CopyTo>{|NAMESPACE|}.WPF\Resources</CopyTo>
   </Folder>
 </CodeGenFoldersToCopy>

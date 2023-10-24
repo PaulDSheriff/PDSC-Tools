@@ -24,8 +24,8 @@
     <InitializerStatement></InitializerStatement>
     <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
     <ConversionMethod></ConversionMethod>
-		<SearchPattern>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
-    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
   </DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -60,8 +60,8 @@
     <InitializerStatement>= System.DateTime.Now</InitializerStatement>
     <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == DateTime.MinValue ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
     <ConversionMethod>ToDateTime</ConversionMethod>
-		<SearchPattern>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}</SearchPattern>
-    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
+		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
   </DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -73,7 +73,7 @@
     <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
     <ConversionMethod>ToDecimal</ConversionMethod>
 		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
-    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
   </DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -85,7 +85,7 @@
     <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
     <ConversionMethod>ToDouble</ConversionMethod>
 		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
-    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
   </DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -97,7 +97,7 @@
     <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
     <ConversionMethod>ToInt32</ConversionMethod>
 		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
-    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
   </DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -109,7 +109,7 @@
     <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
     <ConversionMethod>ToInt64</ConversionMethod>
 		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
-    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
   </DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -127,12 +127,13 @@
 		<LanguageCode>CSharp</LanguageCode>
 		<SqlServerType>sql_variant</SqlServerType>
 		<LanguageType>object</LanguageType>
-		<Nullable>object</Nullable>
+		<Nullable>object?</Nullable>
 		<Initializer>null</Initializer>
     <InitializerStatement></InitializerStatement>
     <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|}</SetValueStatement>
     <ConversionMethod>ToObject</ConversionMethod>
 		<SearchPattern></SearchPattern>
+    <SearchPatternNullable></SearchPatternNullable>
 	</DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -156,7 +157,7 @@
     <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
     <ConversionMethod>ToInt16</ConversionMethod>
 		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
-    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
   </DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -168,7 +169,7 @@
     <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
     <ConversionMethod>ToSingle</ConversionMethod>
     <SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
-    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
   </DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -192,7 +193,7 @@
     <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == new TimeSpan() ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
     <ConversionMethod>ToString</ConversionMethod>
     <SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
-    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
   </DataType>
   <DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -204,7 +205,7 @@
     <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
     <ConversionMethod>ToUInt32</ConversionMethod>
 		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
-    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
   </DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -216,7 +217,7 @@
     <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
     <ConversionMethod>ToUInt64</ConversionMethod>
 		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
-    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
   </DataType>
 	<DataType>
 		<LanguageCode>CSharp</LanguageCode>
@@ -228,7 +229,7 @@
     <SetValueStatement>current.{|PROPERTY_NAME|} = changes.{|PROPERTY_NAME|} == 0 ? current.{|PROPERTY_NAME|} : changes.{|PROPERTY_NAME|}</SetValueStatement>
     <ConversionMethod>ToUInt16</ConversionMethod>
 		<SearchPattern>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}</SearchPattern>
-    <SearchPatternNullable>row.{|PROPERTY_NAME|} == search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
+    <SearchPatternNullable>row.{|PROPERTY_NAME|} >= search.{|PROPERTY_NAME|}.Value</SearchPatternNullable>
   </DataType>
   <!-- *************************** -->
   <!-- *** VB.NET Data Types   *** -->

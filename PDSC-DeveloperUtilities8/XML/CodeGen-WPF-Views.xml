@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenTemplates>
+  <Template>
+    <Name>WPF - DetailView.xaml</Name>
+    <TemplateFileName>CodeGen-WPF-Views\DetailView.xaml.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WPF\Views</OutputSubFolder>
+    <OutputFileExtension>.xaml</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix>DetailView</OutputFileSuffix>
+    <UseClassNameAsFileName>true</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>WPF - DetailView.cs</Name>
+    <TemplateFileName>CodeGen-WPF-Views\DetailView.cs.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WPF\Views</OutputSubFolder>
+    <OutputFileExtension>.xaml.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix>DetailView</OutputFileSuffix>
+    <UseClassNameAsFileName>true</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>WPF - ListView.xaml</Name>
+    <TemplateFileName>CodeGen-WPF-Views\ListView.xaml.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WPF\Views</OutputSubFolder>
+    <OutputFileExtension>.xaml</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix>ListView</OutputFileSuffix>
+    <UseClassNameAsFileName>true</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>WPF - ListView.cs</Name>
+    <TemplateFileName>CodeGen-WPF-Views\ListView.cs.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WPF\Views</OutputSubFolder>
+    <OutputFileExtension>.xaml.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix>ListView</OutputFileSuffix>
+    <UseClassNameAsFileName>true</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+</CodeGenTemplates>

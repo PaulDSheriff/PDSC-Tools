@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeGenTemplates>
+  <Template>
+    <Name>WPF - Create Solution CMD File</Name>
+    <TemplateFileName>CodeGen-WPF-App\WPF-CreateSolution.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder></OutputSubFolder>
+    <OutputFileExtension>.cmd</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>WPF - Create Solution Instructions</Name>
+    <TemplateFileName>CodeGen-WPF-App\WPF-InstructionsToCreateSolution.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder></OutputSubFolder>
+    <OutputFileExtension>.txt</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>WPF - AppSettings Class</Name>
+    <TemplateFileName>CodeGen-WPF-App\AppSettings.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WPF\ConfigurationClasses</OutputSubFolder>
+    <OutputFileExtension>.cs</OutputFileExtension>
+    <OutputFilePrefix>{|NAMESPACE_CLEAN|}</OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>WPF - App.config</Name>
+    <TemplateFileName>CodeGen-WPF-App\App.config.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WPF</OutputSubFolder>
+    <OutputFileExtension>.config</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>WPF - App.xaml</Name>
+    <TemplateFileName>CodeGen-WPF-App\App.xaml.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WPF</OutputSubFolder>
+    <OutputFileExtension>.xaml</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>WPF - App.cs</Name>
+    <TemplateFileName>CodeGen-WPF-App\App.cs.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WPF</OutputSubFolder>
+    <OutputFileExtension>.xaml.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>WPF - UserControlBase.xaml</Name>
+    <TemplateFileName>CodeGen-WPF-App\UserControlBase.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WPF\BaseClasses</OutputSubFolder>
+    <OutputFileExtension>.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>WPF - HeaderView.xaml</Name>
+    <TemplateFileName>CodeGen-WPF-App\HeaderView.xaml.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WPF\ViewsPartial</OutputSubFolder>
+    <OutputFileExtension>.xaml</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>WPF - HeaderView.cs</Name>
+    <TemplateFileName>CodeGen-WPF-App\HeaderView.cs.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WPF\ViewsPartial</OutputSubFolder>
+    <OutputFileExtension>.xaml.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+		<Name>WPF - MainWindow.xaml</Name>
+    <TemplateFileName>CodeGen-WPF-App\MainWindow.xaml.txt</TemplateFileName>
+		<BaseClassName></BaseClassName>
+		<OutputSubFolder>{|NAMESPACE|}.WPF</OutputSubFolder>
+		<OutputFileExtension>.xaml</OutputFileExtension>
+		<OutputFilePrefix></OutputFilePrefix>
+		<OutputFileSuffix></OutputFileSuffix>
+		<UseClassNameAsFileName>false</UseClassNameAsFileName>
+		<AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>WPF - MainWindow.cs</Name>
+    <TemplateFileName>CodeGen-WPF-App\MainWindow.cs.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WPF</OutputSubFolder>
+    <OutputFileExtension>.xaml.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>WPF - HomeView.xaml</Name>
+    <TemplateFileName>CodeGen-WPF-App\HomeView.xaml.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WPF\Views</OutputSubFolder>
+    <OutputFileExtension>.xaml</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>WPF - HomeView.cs</Name>
+    <TemplateFileName>CodeGen-WPF-App\HomeView.cs.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WPF\Views</OutputSubFolder>
+    <OutputFileExtension>.xaml.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>WPF - LoginView.xaml</Name>
+    <TemplateFileName>CodeGen-WPF-App\LoginView.xaml.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WPF\Views</OutputSubFolder>
+    <OutputFileExtension>.xaml</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>WPF - LoginView.cs</Name>
+    <TemplateFileName>CodeGen-WPF-App\LoginView.cs.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.WPF\Views</OutputSubFolder>
+    <OutputFileExtension>.xaml.cs</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+</CodeGenTemplates>

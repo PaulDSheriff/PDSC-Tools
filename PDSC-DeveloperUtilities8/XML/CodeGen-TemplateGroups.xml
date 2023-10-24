@@ -107,13 +107,35 @@
     <RequirePropertyChangedEvent>False</RequirePropertyChangedEvent>
   </TemplateGroup>
 
+  <!-- WPF Templates -->
+  <TemplateGroup>
+    <GroupId>401</GroupId>
+    <DependentGroupIds>1,2,402</DependentGroupIds>
+    <DisplayOrder>40</DisplayOrder>
+    <GroupName>WPF - Application</GroupName>
+    <Description>Generate a complete WPF application</Description>
+    <LanguageCode>CSharp</LanguageCode>
+    <TemplatesXmlFileName>CodeGen-WPF-App.xml</TemplatesXmlFileName>
+    <RequirePropertyChangedEvent>True</RequirePropertyChangedEvent>
+  </TemplateGroup>
+  <TemplateGroup>
+    <GroupId>402</GroupId>
+    <DependentGroupIds></DependentGroupIds>
+    <DisplayOrder>100</DisplayOrder>
+    <GroupName>WPF - Views</GroupName>
+    <Description>Generate list/detail/search pages</Description>
+    <LanguageCode>CSharp</LanguageCode>
+    <TemplatesXmlFileName>CodeGen-WPF-Views.xml</TemplatesXmlFileName>
+    <RequirePropertyChangedEvent>True</RequirePropertyChangedEvent>
+  </TemplateGroup>
+
   <!-- ***********************************-->
   <!-- ** Hard-Coded Repository Classes **-->
   <!-- ***********************************-->
   <TemplateGroup>
-    <GroupId>401</GroupId>
+    <GroupId>601</GroupId>
     <DependentGroupIds></DependentGroupIds>
-    <DisplayOrder>40</DisplayOrder>
+    <DisplayOrder>50</DisplayOrder>
     <GroupName>Hard-Coded Data Repository</GroupName>
     <Description>Generate Hard-Coded Repository and Entity classes</Description>
     <LanguageCode>CSharp</LanguageCode>

@@ -65,4 +65,42 @@
     <GenericType>Default</GenericType>
     <TemplateFileName>CodeGen-Controls-MVC\Entry.txt</TemplateFileName>
   </Control>
+
+  <!-- WPF Controls -->
+  <Control>
+    <GroupId>402</GroupId>
+    <GenericType>IsForeignKey</GenericType>
+    <TemplateFileName>CodeGen-Controls-WPF\ComboBox.txt</TemplateFileName>
+  </Control>
+  <Control>
+    <GroupId>402</GroupId>
+    <GenericType>IsBoolean</GenericType>
+    <TemplateFileName>CodeGen-Controls-WPF\Checkbox.txt</TemplateFileName>
+  </Control>
+  <Control>
+    <GroupId>402</GroupId>
+    <GenericType>IsEmail</GenericType>
+    <TemplateFileName>CodeGen-Controls-WPF\Email.txt</TemplateFileName>
+  </Control>
+  <Control>
+    <GroupId>402</GroupId>
+    <GenericType>IsDateTime</GenericType>
+    <TemplateFileName>CodeGen-Controls-WPF\DatePicker.txt</TemplateFileName>
+  </Control>
+  <Control>
+    <GroupId>402</GroupId>
+    <GenericType>IsTelephone</GenericType>
+    <TemplateFileName>CodeGen-Controls-WPF\Phone.txt</TemplateFileName>
+  </Control>
+  <Control>
+    <GroupId>402</GroupId>
+    <GenericType>IsString</GenericType>
+    <TemplateFileName>CodeGen-Controls-WPF\TextBox.txt</TemplateFileName>
+  </Control>
+  <Control>
+    <GroupId>402</GroupId>
+    <GenericType>Default</GenericType>
+    <TemplateFileName>CodeGen-Controls-WPF\TextBox.txt</TemplateFileName>
+  </Control>
+
 </Controls>

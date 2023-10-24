@@ -49,6 +49,14 @@
     <Description>Template file names used when generating Views for lists and details, and Controller classes for an MVC Website application</Description>
   </XmlFile>
   <XmlFile>
+    <FileName>CodeGen-WPF-App.xml</FileName>
+    <Description>Template file names used when generating a complete WPF application</Description>
+  </XmlFile>
+  <XmlFile>
+    <FileName>CodeGen-WPF-Views.xml</FileName>
+    <Description>Template file names used when generating Views for lists and details for a WPF application</Description>
+  </XmlFile>
+  <XmlFile>
     <FileName>CodeGen-RepositoryDataGen.xml</FileName>
     <Description>Template file names used when generating hard-coded C# Data Repository classes from data within a specific table</Description>
   </XmlFile>
