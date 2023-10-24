@@ -1,0 +1,138 @@
+﻿<wpfBase:UserControlBase x:Class="<|NAMESPACE|>.WPF.Views.<|CLASS_NAME|>ListView"
+                         xmlns:wpfBase="clr-namespace:<|NAMESPACE|>.WPF.BaseClasses"
+                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                         xmlns:partialViews="clr-namespace:<|NAMESPACE|>.WPF.ViewsPartial"
+                         mc:Ignorable="d"
+                         d:DesignHeight="450"
+                         d:DesignWidth="800"
+                         Loaded="UserControl_Loaded">
+  <Grid Style="{StaticResource Grid.Page}">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <!-- *********** -->
+    <!-- Header Area -->
+    <!-- *********** -->
+    <partialViews:HeaderView Grid.Row="0"
+                             ViewTitle="<|CLASS_NAME_SINGULAR|> List"
+                             ViewDescription="List, Search, Add, and Select <|CLASS_NAME_PLURAL|>." />
+
+    <!-- *********** -->
+    <!-- Search Area -->
+    <!-- *********** -->
+    <StackPanel Grid.Row="1">
+      <Label Content="Search for <|CLASS_NAME_PLURAL|> by..."
+             Style="{StaticResource SearchAreaHeader}" />
+      <Grid Style="{StaticResource Grid.SearchArea}">
+        <Grid.RowDefinitions>
+          {|FOR EACH COLUMN:IsSearchField|}
+          <RowDefinition Height="Auto" />
+          {|END_LOOP|}
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <|GRID_ROW_RESET|>
+        {|FOR EACH COLUMN:IsSearchField|}
+        <Label Grid.Row="<|GRID_ROW_FIRST|>"
+               Grid.Column="0"
+               Foreground="{StaticResource SearchLabel}"
+               Content="<|PROPERTY_LABEL|>" />
+        <TextBox Grid.Row="<|GRID_ROW_SECOND|>"
+                 Grid.Column="1"
+                 Text="{Binding SearchEntity.<|PROPERTY_NAME|>}" />
+        {|END_LOOP|}
+        <StackPanel Grid.Row="<|GRID_ROW_FIRST|>"
+                    Grid.Column="1"
+                    Orientation="Horizontal">
+          <Button ToolTip="Search for <|CLASS_NAME_PLURAL|>"
+                  Style="{StaticResource Button.WithImage}"
+                  Background="{StaticResource SearchButton}"
+                  Click="Search_Click">
+            <Image Source="/Resources/Images/magnifyingglass.png" />
+          </Button>
+          <Button ToolTip="Reset Search/Get All"
+                  Style="{StaticResource Button.WithImage}"
+                  Background="{StaticResource RefreshButton}"
+                  Click="Refresh_Click">
+            <Image Source="/Resources/Images/refresh.png" />
+          </Button>
+          <Rectangle Style="{StaticResource Separator.Left}" />
+          <Button ToolTip="Add New <|CLASS_NAME_SINGULAR|>"
+                  Style="{StaticResource Button.WithImage}"
+                  Background="{StaticResource AddButton}"
+                  Click="Add_Click">
+            <Image Source="/Resources/Images/plus.png" />
+          </Button>
+        </StackPanel>
+      </Grid>
+    </StackPanel>
+
+    <!-- ************************** -->
+    <!-- Informational Message Area -->
+    <!-- ************************** -->
+    <Label Grid.Row="2"
+           Content="{Binding Path=InfoMessage}"
+           Style="{StaticResource InfoMessageArea}" />
+
+    <!-- ********* -->
+    <!-- List Area -->
+    <!-- ********* -->
+    <Border Grid.Row="3"
+            Style="{StaticResource Border.List}">
+      <DataGrid SelectedIndex="0"
+                IsSynchronizedWithCurrentItem="True"
+                AutoGenerateColumns="False"
+                HorizontalContentAlignment="Stretch"
+                VerticalContentAlignment="Center"
+                CanUserAddRows="False"
+                ItemsSource="{Binding Path=<|CLASS_NAME_PLURAL|>}">
+        <DataGrid.Columns>
+          <DataGridTemplateColumn Header="Actions">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <Button ToolTip="Edit this <|CLASS_NAME_SINGULAR|>"
+                        Click="EditButton_Click"
+                        Tag="{Binding}"
+                        Style="{StaticResource Button.SmallImage}">
+                  <Image Source="/Resources/Images/edit.png" />
+                </Button>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          {|FOR EACH COLUMN:DisplayInTable|}
+          <DataGridTemplateColumn Header="<|PROPERTY_LABEL|>">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <TextBlock Text="{Binding Path=<|PROPERTY_NAME|>}"
+                           VerticalAlignment="Center" />
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          {|END_LOOP|}
+          <DataGridTemplateColumn Header="Delete">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <Button ToolTip="Delete this <|CLASS_NAME_SINGULAR|>"
+                        Click="DeleteButton_Click"
+                        Tag="{Binding}"
+                        Style="{StaticResource Button.SmallImage}">
+                  <Image Source="/Resources/Images/trash.png" />
+                </Button>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+        </DataGrid.Columns>
+      </DataGrid>
+    </Border>
+  </Grid>
+</wpfBase:UserControlBase>

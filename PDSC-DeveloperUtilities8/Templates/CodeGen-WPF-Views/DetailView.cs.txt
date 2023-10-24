@@ -1,0 +1,79 @@
+﻿using <|NAMESPACE|>.DataLayer;
+using <|NAMESPACE|>.EntityLayer;
+using <|NAMESPACE|>.ViewModelLayer;
+using <|NAMESPACE|>.WPF.BaseClasses;
+using PDSC.Common;
+using System;
+using System.Net;
+using System.Windows;
+
+namespace <|NAMESPACE|>.WPF.Views;
+
+public partial class <|CLASS_NAME|>DetailView : UserControlBase
+{
+  public <|CLASS_NAME|>DetailView()
+  {
+    InitializeComponent();
+
+    // Create View Model Object
+    ViewModel = new();
+    // Assign DataContext of this UserControl to the View Model
+    DataContext = ViewModel;
+  }
+
+  public <|CLASS_NAME|>ViewModel ViewModel { get; set; }
+  public <|PK_LANGUAGE_DATA_TYPE|> ID { get; set; }
+
+  protected void InitViewModel()
+  {
+    // Create Repository for View Model
+    if (_MainWindow != null) {
+      ViewModel.Repository = new <|CLASS_NAME|>Repository(_MainWindow.Settings.DbContext);
+      ViewModel.NextId = ID;
+
+      {|REMOVE_WHEN:NoForeignKeys|}
+      // Set FK Repositories
+      {|END_REMOVE|}
+      {|FOR EACH FK_TABLE|}
+      ViewModel.<|CLASS_NAME_SINGULAR|>Repository = new <|CLASS_NAME_SINGULAR|>Repository(_MainWindow.Settings.DbContext);
+      {|END_LOOP|}
+    }
+  }
+
+  private async void UserControl_Loaded(object sender, RoutedEventArgs e)
+  {
+    // Initialize View Model
+    InitViewModel();
+
+    ViewModel.IsAdding = IsAdding;
+    if (IsAdding) {
+      ViewModel.CurrentEntity = ViewModel.CreateEmpty();
+    }
+    else {
+      {|REMOVE_WHEN:NoForeignKeys|}
+      // Load Foreign Keys
+      {|END_REMOVE|}
+      {|FOR EACH FK_TABLE|}
+      await ViewModel.Load<|CLASS_NAME_PLURAL|>Async();
+      {|END_LOOP|}
+
+      // Load Detail Data
+      await ViewModel.GetAsync(ID);
+    }
+  }
+
+  private async void SaveButton_Click(object sender, RoutedEventArgs e)
+  {
+    DataResponse<EntityLayer.<|CLASS_NAME|>> response = await ViewModel.SaveAsync();
+
+    if (response.StatusCode == HttpStatusCode.Created ||
+        response.StatusCode == HttpStatusCode.OK) {
+      GoBack();
+    }
+  }
+
+  private void CancelButton_Click(object sender, RoutedEventArgs e)
+  {
+    GoBack();
+  }
+}

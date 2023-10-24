@@ -1,0 +1,89 @@
+﻿using <|NAMESPACE|>.DataLayer;
+using <|NAMESPACE|>.EntityLayer;
+using <|NAMESPACE|>.ViewModelLayer;
+using <|NAMESPACE|>.WPF.BaseClasses;
+using PDSC.Common;
+using System;
+using System.Collections.ObjectModel;
+using System.Net;
+using System.Windows;
+using System.Windows.Controls;
+
+namespace <|NAMESPACE|>.WPF.Views;
+
+public partial class <|CLASS_NAME|>ListView : UserControlBase
+{
+  public <|CLASS_NAME|>ListView()
+  {
+    InitializeComponent();
+
+    // Create View Model Object
+    ViewModel = new();
+    // Assign DataContext of this UserControl to the View Model
+    DataContext = ViewModel;
+  }
+
+  public <|CLASS_NAME|>ViewModel ViewModel { get; set; }
+
+  protected void InitViewModel()
+  {
+    // Create Repository for View Model
+    if (_MainWindow != null) {
+      ViewModel.Repository = new <|CLASS_NAME|>Repository(_MainWindow.Settings.DbContext);
+    }
+  }
+
+  private void UserControl_Loaded(object sender, RoutedEventArgs e)
+  {
+    // Initialize View Model
+    InitViewModel();
+
+    // Load All Records
+    GetAll();
+  }
+
+  private async void GetAll()
+  {
+    ViewModel.SearchEntity = new();
+    await ViewModel.GetAsync();
+  }
+
+  private async void Search_Click(object sender, RoutedEventArgs e)
+  {
+    DataResponse<ObservableCollection<EntityLayer.<|CLASS_NAME|>>> response = await ViewModel.SearchAsync(ViewModel.SearchEntity);
+    if (response == null || response.StatusCode != HttpStatusCode.OK) {
+      ViewModel.InfoMessage = "No <|CLASS_NAME_PLURAL|> Matching the Search Criteria Were Found.";
+    }
+  }
+
+  private void Refresh_Click(object sender, RoutedEventArgs e)
+  {
+    GetAll();
+  }
+
+  private void Add_Click(object sender, RoutedEventArgs e)
+  {
+    RouteToDetail<int>("<|CLASS_NAME|>DetailView", ViewModel.NextId, true);
+  }
+
+  private void EditButton_Click(object sender, RoutedEventArgs e)
+  {
+    RouteToDetail<<|PK_LANGUAGE_DATA_TYPE|>>("<|CLASS_NAME|>DetailView",
+         ((EntityLayer.<|CLASS_NAME|>)((Button)sender).Tag).<|PK_PROPERTY_NAME|>);
+  }
+
+  private async void DeleteButton_Click(object sender, RoutedEventArgs e)
+  {
+    MessageBoxResult dr;
+    <|PK_LANGUAGE_DATA_TYPE|> id = ((EntityLayer.<|CLASS_NAME|>)((Button)sender).Tag).<|PK_PROPERTY_NAME|>;
+
+    dr = MessageBox.Show("Delete this <|CLASS_NAME_SINGULAR|>?", "Delete?", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes);
+
+    if (dr == MessageBoxResult.Yes) {
+      // Delete the record
+      await ViewModel.DeleteAsync(id);
+      // Refresh the list
+      GetAll();
+    }
+  }
+}
