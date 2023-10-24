@@ -15,9 +15,11 @@ public abstract class ViewModelBase<TEntity, TSearch> : CommonBase
 {
   #region Private Variables
   private int _RowsAffected;
+  private int _NextId;
   private bool _IsDataProcessing = true;
   private bool _IsDetailVisible;
   private bool _HasValidationErrors;
+  private bool _ExceptionHappened;
   private bool _IsAdding;
   private ObservableCollection<ValidationMessage> _ValidationMessages = new();
   #endregion
@@ -33,6 +35,19 @@ public abstract class ViewModelBase<TEntity, TSearch> : CommonBase
     {
       _RowsAffected = value;
       RaisePropertyChanged(nameof(RowsAffected));
+    }
+  }
+
+  /// <summary>
+  /// Get/Set the next ID to generate for those tables that are not auto-incrementing
+  /// </summary>
+  public int NextId
+  {
+    get { return _NextId; }
+    set
+    {
+      _NextId = value;
+      RaisePropertyChanged(nameof(NextId));
     }
   }
 
@@ -72,6 +87,19 @@ public abstract class ViewModelBase<TEntity, TSearch> : CommonBase
     {
       _HasValidationErrors = value;
       RaisePropertyChanged(nameof(HasValidationErrors));
+    }
+  }
+
+  /// <summary>
+  /// Get/Set whether or not the page had exception occur
+  /// </summary>
+  public bool ExceptionHappened
+  {
+    get { return _ExceptionHappened; }
+    set
+    {
+      _ExceptionHappened = value;
+      RaisePropertyChanged(nameof(ExceptionHappened));
     }
   }
 
@@ -200,6 +228,7 @@ public abstract class ViewModelBase<TEntity, TSearch> : CommonBase
     LastException = response.LastException;
     LastErrorMessage = response.LastErrorMessage ?? string.Empty;
     IsDataProcessing = false;
+    ExceptionHappened = !string.IsNullOrEmpty(LastErrorMessage);
   }
   #endregion
 
