@@ -1,10 +1,30 @@
 ﻿PDSC Utilities Enhancement List
 ------------------------------------------------------------------------------
-Code Generator: Generate WPF applications and screens
-Code Generator: Check how to work with TimeSpan when searching - AddWhereClause()
 Utilities: Create Maintenance Pages for all XML files
 
 
+PDSC Developer Utilities v8.0.6 - 10/24/2023
+-----------------------------------------------------
+Code Generation
+  Added generation of WPF applications
+  Modified CodeGen-TemplateGroups.xml to support generation of WPF applications
+  Added XML\CodeGen-WPF-App.xaml to support generation of WPF applications
+  Added XML\CodeGen-WPF-Views.xaml to support generation of WPF applications
+  Added Entries to XML\CodeGen-Controls.xml to support WPF generation
+  Added Templates\CodeGen-Controls-WPF folder and text files to support WPF generation
+  Added Templates\CodeGen-WPF-App folder and text files to support generation of WPF applications
+  Added Templates\CodeGen-WPF-Views folder and text files to support generation of WPF applications
+  Added <|CLASS_NAME_ALL_LOWER|> token
+  Added <|PK_TABLE_DESC_FIELD_PROPERTY_NAME|> token
+  Added <|PROPERTY_NAME_WITH_VALUE_IF_NULL|> token that adds a ".Value" after the property name if the column is nullable
+  Added GenericsHelper.cs class in the PDSC.Common library
+  Added logic to work with tables that do not have an auto-incrementing integer primary key
+  Fixed bug in DetailView for MAUI where it was missing a RowDefinition and had a hard-coded Grid.Row
+  Fixed a few bugs when working with Guid primary keys
+  Fixed a few bugs when working with image, binary, varbinary, uniqueidentifier, and timestamp
+  Added ExceptionHappened property to ViewModelBase.cs class
+  Modified the Search pattern in LanguageDataTypes.xml file for all DateTime, Numerics, and TimeSpan to use >= for searching in the AddWhereClause() method in the Repository classes
+  
 
 PDSC Developer Utilities v8.0.5 - 10/22/2023
 -----------------------------------------------------
