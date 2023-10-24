@@ -45,7 +45,7 @@ public partial class <|CLASS_NAME|>ViewModel : AppViewModel<<|CLASS_NAME|>, <|CL
   public <|CLASS_NAME|>ViewModel(IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> repository, 
   {|END_REMOVE|}
   {|FOR EACH FK_TABLE|}
-    IRepository<<|CLASS_NAME_SINGULAR|>, <|CLASS_NAME_SINGULAR|>Search> <|CLASS_NAME_SINGULAR_ALL_LOWER|>Repo,
+    {|REPO_INTERFACE|} <|NAMESPACE|>.EntityLayer.<|CLASS_NAME|>, <|CLASS_NAME|>Search> <|CLASS_NAME_SINGULAR_ALL_LOWER|>Repo,
   {|END_LOOP|}
     ILogger<<|CLASS_NAME|>ViewModel> logger) : base(logger)
   {
@@ -66,7 +66,7 @@ public partial class <|CLASS_NAME|>ViewModel : AppViewModel<<|CLASS_NAME|>, <|CL
   // Foreign Key Variables
   {|END_REMOVE|}  
   {|FOR EACH FK_TABLE|}
-  private readonly IRepository<<|CLASS_NAME_SINGULAR|>, <|CLASS_NAME_SINGULAR|>Search>? <|PRIVATE_FIELD_PREFIX|><|CLASS_NAME_SINGULAR|>Repo;
+  private {|REPO_INTERFACE|} <|NAMESPACE|>.EntityLayer.<|CLASS_NAME|>, <|CLASS_NAME|>Search>? <|PRIVATE_FIELD_PREFIX|><|CLASS_NAME_SINGULAR|>Repo;
   private ObservableCollection<<|CLASS_NAME_SINGULAR|>> <|PRIVATE_FIELD_PREFIX|><|CLASS_NAME_PLURAL|> = new();
   private <|CLASS_NAME_SINGULAR|>? <|PRIVATE_FIELD_PREFIX|>Selected<|CLASS_NAME_SINGULAR|>;
   {|END_LOOP|}
@@ -113,6 +113,16 @@ public partial class <|CLASS_NAME|>ViewModel : AppViewModel<<|CLASS_NAME|>, <|CL
   // Foreign Key Public Properties
   {|END_REMOVE|}
   {|FOR EACH FK_TABLE|}
+  public {|REPO_INTERFACE|} <|NAMESPACE|>.EntityLayer.<|CLASS_NAME|>, <|CLASS_NAME|>Search>? <|CLASS_NAME_SINGULAR|>Repository
+  {
+    get { return <|PRIVATE_FIELD_PREFIX|><|CLASS_NAME_SINGULAR|>Repo; }
+    set
+    {
+      <|PRIVATE_FIELD_PREFIX|><|CLASS_NAME_SINGULAR|>Repo = value;
+      RaisePropertyChanged(nameof(<|CLASS_NAME_SINGULAR|>Repository));
+    }
+  }
+
   public ObservableCollection<<|CLASS_NAME_SINGULAR|>> <|CLASS_NAME_PLURAL|>
   {
     get { return <|PRIVATE_FIELD_PREFIX|><|CLASS_NAME_PLURAL|>; }
@@ -183,6 +193,10 @@ public partial class <|CLASS_NAME|>ViewModel : AppViewModel<<|CLASS_NAME|>, <|CL
         }
         ret.Data = <|CLASS_NAME_PLURAL|>;
         ret.RowsAffected = RowsAffected;
+        {|REMOVE_WHEN:IsAutoIncrement|}
+        // Get Next id to assign
+        NextId = <|CLASS_NAME_PLURAL|>.Max(row => row.<|PK_PROPERTY_NAME|>) + 1;
+        {|END_REMOVE|}
       }
       catch (Exception ex) {
         // Publish the exception here
@@ -403,11 +417,20 @@ public partial class <|CLASS_NAME|>ViewModel : AppViewModel<<|CLASS_NAME|>, <|CL
             {|END_LOOP|}
             {|END_REMOVE|}
 
+            {|REMOVE_WHEN:IsAutoIncrement|}
+            // Set the next id
+            entity.<|PK_PROPERTY_NAME|> = NextId;
+            {|END_REMOVE|}
+
             // Insert the new <|CLASS_NAME|> into data store
             CurrentEntity = await Repository.InsertAsync(entity);
             if (CurrentEntity != null) {
               IsAdding = false;
               RowsAffected = 1;
+              {|REMOVE_WHEN:IsAutoIncrement|}
+              // Increment the next id
+              NextId++;
+              {|END_REMOVE|}
 
               // Success, return a '201 Created'
               ret.Data = CurrentEntity;
@@ -631,7 +654,7 @@ public partial class <|CLASS_NAME|>ViewModel : AppViewModel<<|CLASS_NAME|>, <|CL
   #region CreateEmpty Method
   public override <|CLASS_NAME|> CreateEmpty()
   {
-    return new()
+    <|CLASS_NAME|> ret = new()
     {
       <|COMMA_SET|>
       {|FOR EACH COLUMN:NoStandardFields|}
@@ -644,6 +667,12 @@ public partial class <|CLASS_NAME|>ViewModel : AppViewModel<<|CLASS_NAME|>, <|CL
       <|COMMA_REMOVE|>
       {|END_REMOVE|}
     };
+    
+    {|REMOVE_WHEN:IsAutoIncrement|}
+    ret.<|PK_PROPERTY_NAME|> = NextId;
+    {|END_REMOVE|}
+
+    return ret;
   }
   #endregion
 
