@@ -51,6 +51,9 @@ cd..
 ECHO ****************************************************
 ECHO ** Creating <|NAMESPACE|>.MVC Solution
 dotnet new sln --name <|NAMESPACE|>.MVC
-dotnet sln add <|NAMESPACE|>.MVC\<|NAMESPACE|>.MVC.csproj PDSC.Common/PDSC.Common.csproj <|NAMESPACE|>.EntityLayer/<|NAMESPACE|>.EntityLayer.csproj <|NAMESPACE|>.DataLayer/<|NAMESPACE|>.DataLayer.csproj <|NAMESPACE|>.ViewModelLayer/<|NAMESPACE|>.ViewModelLayer.csproj
-
+dotnet sln <|NAMESPACE|>.MVC.sln add <|NAMESPACE|>.MVC/<|NAMESPACE|>.MVC.csproj
+dotnet sln <|NAMESPACE|>.MVC.sln add PDSC.Common/PDSC.Common.csproj
+dotnet sln <|NAMESPACE|>.MVC.sln add <|NAMESPACE|>.EntityLayer/<|NAMESPACE|>.EntityLayer.csproj
+dotnet sln <|NAMESPACE|>.MVC.sln add <|NAMESPACE|>.DataLayer/<|NAMESPACE|>.DataLayer.csproj
+dotnet sln <|NAMESPACE|>.MVC.sln add <|NAMESPACE|>.ViewModelLayer/<|NAMESPACE|>.ViewModelLayer.csproj
 pause
