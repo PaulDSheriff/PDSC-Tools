@@ -1,0 +1,90 @@
+﻿using <|NAMESPACE|>.WPF.ConfigurationClasses;
+using <|NAMESPACE|>.WPF.Views;
+using PDSC.Common;
+using System;
+using System.Windows;
+using System.Windows.Controls;
+
+namespace <|NAMESPACE|>.WPF;
+
+public partial class MainWindow : Window
+{
+  public MainWindow()
+  {
+    InitializeComponent();
+
+    Settings = new();
+  }
+
+  public <|NAMESPACE|>AppSettings Settings { get; set; }
+
+  private void Window_Loaded(object sender, RoutedEventArgs e)
+  {
+    ContentArea.Children.Add(new HomeView());
+  }
+
+  private void Menu_Click(object sender, RoutedEventArgs e)
+  {
+    MenuItem mnu = ((MenuItem)e.Source);
+    string? tag = mnu.Tag == null ? "" : mnu.Tag as string;
+
+    if (!string.IsNullOrEmpty(tag)) {
+      RouteTo(tag);
+    }
+  }
+
+  public void RouteTo(string url)
+  {
+    ContentArea.Children.Clear();
+    switch (url.ToLower()) {
+      case "homeview":
+        ContentArea.Children.Add(new HomeView());
+        break;
+      case "loginview":
+        ContentArea.Children.Add(new LoginView());
+        break;
+      {|FOR EACH TABLE|}
+      case "<|CLASS_NAME_ALL_LOWER|>listview":
+        ContentArea.Children.Add(new <|CLASS_NAME|>ListView());
+        break;
+      {|END_LOOP|}
+      case "exit":
+        this.Close();
+        break;
+    }
+  }
+
+  public UserControl? LastUserControl { get; set; }
+
+  public void GoBack()
+  {
+    if (LastUserControl != null) {
+      ContentArea.Children.Clear();
+      ContentArea.Children.Add(LastUserControl);
+      LastUserControl = null;
+    }
+  }
+
+  public void RouteToDetail<T>(string url, T id, bool isAdding = false)
+  {
+    UserControl uc;
+
+    // Save the last user control displayed
+    if (ContentArea.Children.Count > 0) {
+      LastUserControl = (UserControl)ContentArea.Children[0];
+    }
+
+    ContentArea.Children.Clear();
+    switch (url.ToLower()) {
+      {|FOR EACH TABLE|}
+      case "<|CLASS_NAME_ALL_LOWER|>detailview":
+        uc = new <|CLASS_NAME|>DetailView() {
+          ID = GenericsHelpers.ChangeType<<|PK_LANGUAGE_DATA_TYPE|>>(id),
+          IsAdding = isAdding
+        };
+        ContentArea.Children.Add(uc);
+        break;
+      {|END_LOOP|}
+    }
+  }
+}

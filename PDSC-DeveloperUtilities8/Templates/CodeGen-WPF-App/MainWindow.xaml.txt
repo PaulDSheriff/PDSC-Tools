@@ -1,0 +1,41 @@
+﻿<Window x:Class="<|NAMESPACE|>.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:<|NAMESPACE|>.WPF"
+        mc:Ignorable="d"
+        Title="{StaticResource ApplicationTitle}"
+        WindowState="Maximized"
+        d:Height="450"
+        d:Width="800"
+        Loaded="Window_Loaded">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Menu Grid.Row="0">
+      <MenuItem Header="_File">
+        <MenuItem Header="E_xit"
+                  Tag="Exit"
+                  Click="Menu_Click" />
+      </MenuItem>
+      <MenuItem Header="Home"
+                Tag="HomeView"
+                Click="Menu_Click" />
+      <MenuItem Header="Login"
+                Tag="LoginView"
+                Click="Menu_Click" />
+      {|FOR EACH TABLE|}
+      <MenuItem Header="<|CLASS_DESC_PLURAL|>"
+                Tag="<|CLASS_NAME|>ListView"
+                Click="Menu_Click" />
+      {|END_LOOP|}
+    </Menu>
+    <Border Grid.Row="1"
+            Style="{StaticResource Border.Page}">
+      <Grid x:Name="ContentArea" />
+    </Border>
+  </Grid>
+</Window>

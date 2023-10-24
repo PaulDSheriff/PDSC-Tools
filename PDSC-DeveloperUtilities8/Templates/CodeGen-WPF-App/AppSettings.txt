@@ -1,0 +1,31 @@
+﻿using <|NAMESPACE|>.DataLayer;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Configuration;
+
+namespace <|NAMESPACE|>.WPF.ConfigurationClasses;
+
+public class <|NAMESPACE|>AppSettings
+{
+  public <|NAMESPACE|>AppSettings()
+  {
+    ApplicationName = ConfigurationManager.AppSettings["ApplicationName"] ?? "<|APPLICATION_NAME|>";
+    LoginDateTime = DateTime.Now;
+    UserName = "Unknown";
+    ConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+    DbContext = CreateDbContext();
+  }
+
+  public string ApplicationName { get; set; }
+  public DateTime LoginDateTime { get; set; }
+  public string UserName { get; set; }
+  public string ConnectionString { get; set; }
+  public <|NAMESPACE|>DbContext DbContext { get; set; }
+
+  public <|NAMESPACE|>DbContext CreateDbContext()
+  {
+    DbContextOptionsBuilder<<|NAMESPACE|>DbContext> optionsBuilder = new();
+    optionsBuilder.UseSqlServer(ConnectionString);
+    return new(optionsBuilder.Options);
+  }
+}

@@ -1,0 +1,11 @@
+﻿using System.Windows.Controls;
+
+namespace <|NAMESPACE|>.WPF.Views;
+
+public partial class HomeView : UserControl
+{
+  public HomeView()
+  {
+    InitializeComponent();
+  }
+}

@@ -1,0 +1,24 @@
+﻿using System.Windows;
+
+namespace <|NAMESPACE|>.WPF.BaseClasses;
+
+public class UserControlBase : System.Windows.Controls.UserControl
+{
+  public UserControlBase() : base()
+  {
+    _MainWindow = (MainWindow)Application.Current.MainWindow;
+  }
+
+  protected MainWindow? _MainWindow;
+  public bool IsAdding { get; set; }
+
+  protected void RouteToDetail<T>(string url, T id, bool isAdding = false)
+  {
+    _MainWindow?.RouteToDetail<T>(url, id, isAdding);
+  }
+
+  protected void GoBack()
+  {
+    _MainWindow?.GoBack();
+  }
+}

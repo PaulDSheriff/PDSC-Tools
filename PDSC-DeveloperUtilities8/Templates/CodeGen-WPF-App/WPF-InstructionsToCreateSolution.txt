@@ -1,0 +1,32 @@
+Instructions to Create a WPF Application
+------------------------------------------------------------------
+If you have not already done so, generate the following templates groups:
+   Entity/ViewModel Classes
+   Data Classes - Entity Framework
+   WPF - Application
+   WPF - Views
+
+Step 1:
+Copy the WPF-CreateSolution.cmd file to your desired folder.
+This .cmd file creates the following folders/projects under this folder
+  <|NAMESPACE|>.DataLayer
+  <|NAMESPACE|>.EntityLayer
+  <|NAMESPACE|>.ViewModelLayer
+  <|NAMESPACE|>.WPF
+  PDSC.Common
+  PDSC.Common.WPF
+Run the WPF-CreateSolution.cmd file.
+
+Step 2: Open the SLN
+Open the <|NAMESPACE|>.WPF.sln file using Visual Studio.
+
+Step 3: Set Images to Resource
+Expand the \Resources\Images folder
+Highlight all the files in this folder
+Bring up the Properties Window
+Set the Build Action on all files to Resource
+
+Step 4: Run the project
+Click on the Start button 
+You should also see your WPF main window appear.
+Click on the different menu items to see the data appear.

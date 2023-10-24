@@ -1,0 +1,65 @@
+@ECHO OFF
+
+ECHO *************************************
+ECHO ** Creating PDSC.Common Class Library
+dotnet new classlib --name PDSC.Common --output PDSC.Common
+xcopy <|GEN_PATH|>PDSC.Common PDSC.Common /s /q
+cd PDSC.Common
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+del Class1.cs
+cd ..
+
+ECHO *************************************
+ECHO ** Creating PDSC.Common.WPF Class Library
+dotnet new wpflib --name PDSC.Common.WPF --output PDSC.Common.WPF
+xcopy <|GEN_PATH|>PDSC.Common.WPF PDSC.Common.WPF /s /q
+cd PDSC.Common.WPF
+del Class1.cs
+cd ..
+
+ECHO *************************************
+ECHO ** Creating <|NAMESPACE|>.EntityLayer Class Library
+dotnet new classlib --name <|NAMESPACE|>.EntityLayer --output <|NAMESPACE|>.EntityLayer
+del <|NAMESPACE|>.EntityLayer\Class1.cs
+xcopy <|GEN_PATH|><|NAMESPACE|>.EntityLayer <|NAMESPACE|>.EntityLayer /s /q
+dotnet add <|NAMESPACE|>.EntityLayer/<|NAMESPACE|>.EntityLayer.csproj reference PDSC.Common/PDSC.Common.csproj
+
+ECHO *************************************
+ECHO ** Creating <|NAMESPACE|>.DataLayer Class Library
+dotnet new classlib --name <|NAMESPACE|>.DataLayer --output <|NAMESPACE|>.DataLayer
+del <|NAMESPACE|>.DataLayer\Class1.cs
+xcopy <|GEN_PATH|><|NAMESPACE|>.DataLayer <|NAMESPACE|>.DataLayer /s /q
+dotnet add <|NAMESPACE|>.DataLayer/<|NAMESPACE|>.DataLayer.csproj reference PDSC.Common/PDSC.Common.csproj
+dotnet add <|NAMESPACE|>.DataLayer/<|NAMESPACE|>.DataLayer.csproj reference <|NAMESPACE|>.EntityLayer/<|NAMESPACE|>.EntityLayer.csproj
+cd <|NAMESPACE|>.DataLayer
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+cd..
+
+ECHO *************************************
+ECHO ** Creating <|NAMESPACE|>.ViewModelLayer Class Library
+dotnet new classlib --name <|NAMESPACE|>.ViewModelLayer --output <|NAMESPACE|>.ViewModelLayer
+del <|NAMESPACE|>.ViewModelLayer\Class1.cs
+xcopy <|GEN_PATH|><|NAMESPACE|>.ViewModelLayer <|NAMESPACE|>.ViewModelLayer /s /q
+dotnet add <|NAMESPACE|>.ViewModelLayer/<|NAMESPACE|>.ViewModelLayer.csproj reference PDSC.Common/PDSC.Common.csproj
+dotnet add <|NAMESPACE|>.ViewModelLayer/<|NAMESPACE|>.ViewModelLayer.csproj reference <|NAMESPACE|>.EntityLayer/<|NAMESPACE|>.EntityLayer.csproj
+
+ECHO *************************************
+ECHO ** Creating <|NAMESPACE|>.WPF Application
+dotnet new wpf --name <|NAMESPACE|>.WPF --output <|NAMESPACE|>.WPF
+xcopy <|GEN_PATH|><|NAMESPACE|>.WPF <|NAMESPACE|>.WPF /s /q /y
+dotnet add <|NAMESPACE|>.WPF/<|NAMESPACE|>.WPF.csproj reference PDSC.Common/PDSC.Common.csproj
+dotnet add <|NAMESPACE|>.WPF/<|NAMESPACE|>.WPF.csproj reference PDSC.Common.WPF/PDSC.Common.WPF.csproj
+dotnet add <|NAMESPACE|>.WPF/<|NAMESPACE|>.WPF.csproj reference <|NAMESPACE|>.EntityLayer/<|NAMESPACE|>.EntityLayer.csproj
+dotnet add <|NAMESPACE|>.WPF/<|NAMESPACE|>.WPF.csproj reference <|NAMESPACE|>.DataLayer/<|NAMESPACE|>.DataLayer.csproj
+dotnet add <|NAMESPACE|>.WPF/<|NAMESPACE|>.WPF.csproj reference <|NAMESPACE|>.ViewModelLayer/<|NAMESPACE|>.ViewModelLayer.csproj
+
+ECHO ************************************
+ECHO ** Creating <|NAMESPACE|>.WPF Solution
+dotnet new sln --name <|NAMESPACE|>.WPF
+dotnet sln <|NAMESPACE|>.WPF.sln add <|NAMESPACE|>.WPF/<|NAMESPACE|>.WPF.csproj
+dotnet sln <|NAMESPACE|>.WPF.sln add PDSC.Common/PDSC.Common.csproj
+dotnet sln <|NAMESPACE|>.WPF.sln add PDSC.Common.WPF/PDSC.Common.WPF.csproj
+dotnet sln <|NAMESPACE|>.WPF.sln add <|NAMESPACE|>.EntityLayer/<|NAMESPACE|>.EntityLayer.csproj
+dotnet sln <|NAMESPACE|>.WPF.sln add <|NAMESPACE|>.DataLayer/<|NAMESPACE|>.DataLayer.csproj
+dotnet sln <|NAMESPACE|>.WPF.sln add <|NAMESPACE|>.ViewModelLayer/<|NAMESPACE|>.ViewModelLayer.csproj
+pause
