@@ -4,7 +4,7 @@ PDS Consulting has created a set of tools to help you develop WPF, MVC, or .NET 
 ## Documentation
 For best results, it is important that you read the documentation.
 
-You will find the documentation under the \Documentation folder.
+You will find the documentation under the \Documentation folder. The current documentation is PDSC-DeveloperUtilities8.pdf.
 
 ## How to Use PDSC Developer Utilities v8 
 1. Download the PDSC-DeveloperUtilities8 to you computer.
