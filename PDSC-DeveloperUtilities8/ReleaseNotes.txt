@@ -2,10 +2,9 @@
 ------------------------------------------------------------------------------
 Document: How to add new code generation templates
 Xml File Edit Screens: Add help for each XML file editor
-Minimal Code Generation: Ability to use non-int PKs
 
 
-PDSC Developer Utilities v8.0.7 - 11/??/2023
+PDSC Developer Utilities v8.0.7 - 11/04/2023
 -----------------------------------------------------
 The files in the [My Documents]\PDSCDeveloperUtilites8-[LoginID]\XML folder are no longer copied over. This protects any of your files that you edited from being overwritten.
 Cleaned up PDSC.Common and PDSC.WPF DLLs
@@ -30,8 +29,8 @@ Code Generation
   Added <|REPOSITORY_INTERACE|> token to return the value in the <RepositoryInterface> in the LanguageData.xml file
   Added <|VIEWMODEL_INTERACE|> token to return the value in the <ViewModelInterface> in the LanguageData.xml file
   Deleted the {|REPO_INTERFACE|} token since it is replaced with the <|REPOSITORY_INTERACE|> token
-  Deleted the {|REMOVE_WHEN:IsPrimaryKeyInteger|} since it is no longer used
-  Deleted the {|REMOVE_WHEN:IsPrimaryKeyNotInteger|} since it is no longer used
+  Deleted the {|REMOVE_WHEN:IsPrimaryKeyInteger|} token since it is no longer used
+  Deleted the {|REMOVE_WHEN:IsPrimaryKeyNotInteger|} token since it is no longer used
 .NET MAUI Generation
   Deleted \CodeGen-FilesToCopy-MAUI\Styles folder
   Moved all custom styles into AppStyles.xaml, leaving the pre-built one from MSFT as-is
