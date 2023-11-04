@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <CodeGenFoldersToDelete>
-  <Folder>
+  <!--<Folder>
     <GroupId></GroupId>
     <FolderName></FolderName>
-  </Folder>
+  </Folder>-->
 </CodeGenFoldersToDelete>

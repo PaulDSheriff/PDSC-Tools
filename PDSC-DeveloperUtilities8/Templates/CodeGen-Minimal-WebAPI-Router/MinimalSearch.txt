@@ -1,0 +1,33 @@
+﻿namespace <|NAMESPACE|>.MinWebAPI.SearchClasses;
+
+/// <summary>
+/// This class is used for Minimal Web API Searching
+/// </summary>
+public class <|CLASS_NAME|>BindSearch
+{
+  {|FOR EACH COLUMN:IsSearchField|}
+  public string? <|PROPERTY_NAME|> { get; set; }
+  {|END_LOOP|}
+
+  /// <summary>
+  /// The following allows us to bind the <|CLASS_NAME|>Search on the query line when using Minimal APIs
+  /// NOTE: Swagger will not display any parameters from the Search class
+  ///       You need to just call the search on the query line yourself
+  /// Example: https://www.sample.com/api/CLASS_NAME/Search?SearchProperty=SearchValue
+  /// </summary>
+  /// <param name="httpContext"></param>
+  /// <returns></returns>
+  public static ValueTask<<|CLASS_NAME|>BindSearch> BindAsync(HttpContext httpContext)
+  {
+    ValueTask<<|CLASS_NAME|>BindSearch> ret;
+    <|COMMA_SET|>
+    ret = ValueTask.FromResult(
+      new <|CLASS_NAME|>BindSearch {
+        {|FOR EACH COLUMN:IsSearchField|}
+        <|PROPERTY_NAME|> = httpContext.Request.Query["<|PROPERTY_NAME|>"].ToString()
+        {|END_LOOP|}
+      });
+
+    return ret;
+  }
+}

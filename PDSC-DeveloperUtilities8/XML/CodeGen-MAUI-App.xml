@@ -111,11 +111,44 @@
     <AppendToFile>false</AppendToFile>
   </Template>
   <Template>
-    <Name>.NET MAUI - Styles</Name>
-    <TemplateFileName>CodeGen-MAUI-App\Styles.txt</TemplateFileName>
+    <Name>.NET MAUI - App Colors</Name>
+    <TemplateFileName>CodeGen-MAUI-App\AppColors.txt</TemplateFileName>
     <BaseClassName></BaseClassName>
     <OutputSubFolder>{|NAMESPACE|}.MAUI\Resources\Styles</OutputSubFolder>
     <OutputFileExtension>.xaml</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>.NET MAUI - App Styles</Name>
+    <TemplateFileName>CodeGen-MAUI-App\AppStyles.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.MAUI\Resources\Styles</OutputSubFolder>
+    <OutputFileExtension>.xaml</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>.NET MAUI - App.xaml File</Name>
+    <TemplateFileName>CodeGen-MAUI-App\App.xaml.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.MAUI</OutputSubFolder>
+    <OutputFileExtension>.xaml</OutputFileExtension>
+    <OutputFilePrefix></OutputFilePrefix>
+    <OutputFileSuffix></OutputFileSuffix>
+    <UseClassNameAsFileName>false</UseClassNameAsFileName>
+    <AppendToFile>false</AppendToFile>
+  </Template>
+  <Template>
+    <Name>.NET MAUI - App.xaml.cs File</Name>
+    <TemplateFileName>CodeGen-MAUI-App\App.cs.txt</TemplateFileName>
+    <BaseClassName></BaseClassName>
+    <OutputSubFolder>{|NAMESPACE|}.MAUI</OutputSubFolder>
+    <OutputFileExtension>.xaml.cs</OutputFileExtension>
     <OutputFilePrefix></OutputFilePrefix>
     <OutputFileSuffix></OutputFileSuffix>
     <UseClassNameAsFileName>false</UseClassNameAsFileName>

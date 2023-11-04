@@ -12,21 +12,11 @@ namespace <|NAMESPACE|>.MAUI.CommandClasses
   public class <|CLASS_NAME|>ViewModelCommands : <|CLASS_NAME|>ViewModel
   {
     #region Constructors
-    {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
-    public <|CLASS_NAME|>ViewModelCommands(IRepository<<|NAMESPACE|>.EntityLayer.<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository) : base(repository)
-    {|END_REMOVE|}
-    {|REMOVE_WHEN:IsPrimaryKeyInteger|}
-    public <|CLASS_NAME|>ViewModelCommands(IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|NAMESPACE|>.EntityLayer.<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository) : base(repository)
-    {|END_REMOVE|}
+    public <|CLASS_NAME|>ViewModelCommands(<|REPOSITORY_INTERFACE|> repository) : base(repository)
     {
     }
 
-    {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
-    public <|CLASS_NAME|>ViewModelCommands(IRepository<<|NAMESPACE|>.EntityLayer.<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository,
-    {|END_REMOVE|}
-    {|REMOVE_WHEN:IsPrimaryKeyInteger|}
-    public <|CLASS_NAME|>ViewModelCommands(IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|NAMESPACE|>.EntityLayer.<|CLASS_NAME|>, <|CLASS_NAME|>Search> repository, 
-    {|END_REMOVE|}
+    public <|CLASS_NAME|>ViewModelCommands(<|REPOSITORY_INTERFACE|> repository,
     {|FOR EACH FK_TABLE|}
       IRepository<<|NAMESPACE|>.EntityLayer.<|CLASS_NAME|>, <|CLASS_NAME|>Search> <|CLASS_NAME_SINGULAR_ALL_LOWER|>Repo,
     {|END_LOOP|}

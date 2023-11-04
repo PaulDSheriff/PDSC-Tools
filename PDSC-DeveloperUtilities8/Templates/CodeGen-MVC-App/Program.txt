@@ -17,7 +17,7 @@ builder.Services.AddDbContext<<|NAMESPACE|>DbContext>(
 
 // Create scoped versions of your Repository classes
 {|FOR EACH TABLE|}
-builder.Services.AddScoped<{|REPO_INTERFACE|} <|CLASS_NAME|>, <|CLASS_NAME|>Search>, <|CLASS_NAME|>Repository>();
+builder.Services.AddScoped<<|REPOSITORY_INTERFACE|>, <|CLASS_NAME|>Repository>();
 {|END_LOOP|}
 
 // Create instance of a WebApplication object

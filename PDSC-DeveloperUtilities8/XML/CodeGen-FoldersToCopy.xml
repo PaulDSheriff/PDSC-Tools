@@ -32,4 +32,11 @@
     <CopyFrom>CodeGen-FilesToCopy-WPF</CopyFrom>
     <CopyTo>{|NAMESPACE|}.WPF\Resources</CopyTo>
   </Folder>
+
+  <!-- Minimal Web API Generation-->
+  <Folder>
+    <GroupId>701</GroupId>
+    <CopyFrom>CodeGen-PDSC.Common.Web</CopyFrom>
+    <CopyTo>PDSC.Common.Web</CopyTo>
+  </Folder>
 </CodeGenFoldersToCopy>

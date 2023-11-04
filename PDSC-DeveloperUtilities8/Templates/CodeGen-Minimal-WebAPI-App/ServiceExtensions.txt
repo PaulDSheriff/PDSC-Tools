@@ -1,0 +1,65 @@
+﻿using <|NAMESPACE|>.DataLayer;
+using <|NAMESPACE|>.EntityLayer;
+using <|NAMESPACE|>.MinWebAPI.RouterClasses;
+using <|NAMESPACE|>.ViewModelLayer;
+using Microsoft.AspNetCore.Http.Json;
+using Microsoft.EntityFrameworkCore;
+using PDSC.Common;
+using PDSC.Common.Web;
+
+namespace <|NAMESPACE|>.MinWebAPI.ExtensionClasses;
+
+public static class ServiceExtension
+{
+  public static void AddRepositoryClasses(this IServiceCollection services)
+  {
+    // Add Repository Classes
+    {|FOR EACH TABLE|}
+    services.AddScoped<<|REPOSITORY_INTERFACE|>, <|CLASS_NAME|>Repository>();
+    {|END_LOOP|}
+  }
+  
+  public static void AddViewModelClasses(this IServiceCollection services)
+  {
+    // Add View Model Classes
+    {|FOR EACH TABLE|}
+    services.AddScoped<<|VIEWMODEL_INTERFACE|>, <|CLASS_NAME|>ViewModel>();
+    {|END_LOOP|}
+  }
+  
+  public static void AddRouterClasses(this IServiceCollection services)
+  {
+    // Add "Router" classes as a service
+    services.AddScoped<RouterBase, ErrorRouter>();
+
+    {|FOR EACH TABLE|}
+    services.AddScoped<RouterBase, <|CLASS_NAME|>Router>();
+    {|END_LOOP|}
+  }
+
+  public static IServiceCollection ConfigureDataStore(this IServiceCollection services, string? cnn)
+  {
+    // Setup the DbContext object
+    return services.AddDbContext<<|DB_CONTEXT|>>(
+      options => options.UseSqlServer(cnn));
+  }
+
+  public static void ConfigureOpenAPI(this IServiceCollection services)
+  {
+    // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+    services.AddEndpointsApiExplorer();
+    services.AddSwaggerGen();
+  }
+  
+  public static IServiceCollection ConfigureJsonOptions(this IServiceCollection services)
+  {
+    // Configure JSON Serialization
+    return services.Configure<JsonOptions>(options =>
+    {
+      // Set property names to PascalCase
+      //options.SerializerOptions.PropertyNamingPolicy = null;
+      // Ignore "readonly" fields
+      options.SerializerOptions.IgnoreReadOnlyProperties = true;
+    });
+  }
+}

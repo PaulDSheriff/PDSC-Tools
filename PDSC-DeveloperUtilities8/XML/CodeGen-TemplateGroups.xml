@@ -36,11 +36,13 @@
     <TemplatesXmlFileName>CodeGen-DataClasses-API.xml</TemplatesXmlFileName>
     <RequirePropertyChangedEvent>False</RequirePropertyChangedEvent>
   </TemplateGroup>
-  
+
   <!-- ************************************-->
-  <!-- ** UI Technologies                **-->
+  <!-- ** UI Technology Templates        **-->
   <!-- ************************************-->
-  <!-- MVC Web API Templates -->
+  <!-- ************************************-->
+  <!-- ** MVC Web API Templates          **-->
+  <!-- ************************************-->
   <TemplateGroup>
     <GroupId>101</GroupId>
     <DependentGroupIds>1,2,102</DependentGroupIds>
@@ -61,8 +63,10 @@
     <TemplatesXmlFileName>CodeGen-WebAPI-MVC-Controllers.xml</TemplatesXmlFileName>
     <RequirePropertyChangedEvent>False</RequirePropertyChangedEvent>
   </TemplateGroup>
-  
-  <!-- .NET MAUI Templates -->
+
+  <!-- ************************************-->
+  <!-- ** .NET MAUI Templates            **-->
+  <!-- ************************************-->
   <!-- NOTE: The .NET MAUI template group should be listed AFTER the Web API template group so the Web API CMD and TXT files are removed. -->
   <TemplateGroup>
     <GroupId>201</GroupId>
@@ -84,8 +88,10 @@
     <TemplatesXmlFileName>CodeGen-MAUI-Views.xml</TemplatesXmlFileName>
     <RequirePropertyChangedEvent>True</RequirePropertyChangedEvent>
   </TemplateGroup>
-  
-  <!-- MVC Website Templates -->
+
+  <!-- ************************************-->
+  <!-- ** MVC Website Templates          **-->
+  <!-- ************************************-->
   <TemplateGroup>
     <GroupId>301</GroupId>
     <DependentGroupIds>1,2,302</DependentGroupIds>
@@ -107,7 +113,9 @@
     <RequirePropertyChangedEvent>False</RequirePropertyChangedEvent>
   </TemplateGroup>
 
-  <!-- WPF Templates -->
+  <!-- ************************************-->
+  <!-- ** WPF Templates                  **-->
+  <!-- ************************************-->
   <TemplateGroup>
     <GroupId>401</GroupId>
     <DependentGroupIds>1,2,402</DependentGroupIds>
@@ -129,13 +137,37 @@
     <RequirePropertyChangedEvent>True</RequirePropertyChangedEvent>
   </TemplateGroup>
 
+  <!-- *******************************-->
+  <!-- ** Minimal Web API Templates **-->
+  <!-- *******************************-->
+  <TemplateGroup>
+    <GroupId>701</GroupId>
+    <DependentGroupIds>1,2,702</DependentGroupIds>
+    <DisplayOrder>50</DisplayOrder>
+    <GroupName>Minimal Web API Application</GroupName>
+    <Description>Generate a complete Minimal Web API Application</Description>
+    <LanguageCode>CSharp</LanguageCode>
+    <TemplatesXmlFileName>CodeGen-MinimalWebAPI-App.xml</TemplatesXmlFileName>
+    <RequirePropertyChangedEvent>False</RequirePropertyChangedEvent>
+  </TemplateGroup>
+  <TemplateGroup>
+    <GroupId>702</GroupId>
+    <DependentGroupIds></DependentGroupIds>
+    <DisplayOrder>100</DisplayOrder>
+    <GroupName>Minimal Web API Routers and Search Classes</GroupName>
+    <Description>Generate Minimal Web API Routers and Search Classes</Description>
+    <LanguageCode>CSharp</LanguageCode>
+    <TemplatesXmlFileName>CodeGen-MinimalWebAPI-Routers.xml</TemplatesXmlFileName>
+    <RequirePropertyChangedEvent>False</RequirePropertyChangedEvent>
+  </TemplateGroup>
+  
   <!-- ***********************************-->
   <!-- ** Hard-Coded Repository Classes **-->
   <!-- ***********************************-->
   <TemplateGroup>
     <GroupId>601</GroupId>
     <DependentGroupIds></DependentGroupIds>
-    <DisplayOrder>50</DisplayOrder>
+    <DisplayOrder>60</DisplayOrder>
     <GroupName>Hard-Coded Data Repository</GroupName>
     <Description>Generate Hard-Coded Repository and Entity classes</Description>
     <LanguageCode>CSharp</LanguageCode>

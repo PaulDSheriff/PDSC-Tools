@@ -1,0 +1,20 @@
+﻿using Serilog;
+using Serilog.Events;
+
+namespace <|NAMESPACE|>.MinWebAPI.ExtensionClasses;
+
+public static class HostExtension
+{
+  public static IHostBuilder ConfigureSeriLog(this IHostBuilder host)
+  {
+    return host.UseSerilog((ctx, lc) =>
+    {
+      lc.WriteTo.File("Logs/InfoLog-.txt",
+        rollingInterval: RollingInterval.Day,
+        restrictedToMinimumLevel: LogEventLevel.Information);
+      lc.WriteTo.File("Logs/ErrorLog-.txt",
+        rollingInterval: RollingInterval.Day,
+        restrictedToMinimumLevel: LogEventLevel.Error);
+    });
+  }
+}

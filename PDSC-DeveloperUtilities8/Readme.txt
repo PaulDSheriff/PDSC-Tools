@@ -9,7 +9,7 @@ You will find the documentation under the \Documentation folder.
 
 How to Use PDSC Developer Utilities v8 
 --------------------------------------------
-1. Download the PDSC-DeveloperUtilities8 to you computer.
+1. Download the PDSC-DeveloperUtilities8 folder to you computer.
 2. Unzip or go to the folder where you did the git.
-3. Run the PDSCDeveloperUtilities8.exe.
+3. Run the PDSCDeveloperUtilities.exe.
 4. Read the PDSC-DeveloperUtilities8.pdf file

@@ -7,22 +7,12 @@ namespace <|NAMESPACE|>.Controllers;
 
 public class <|CLASS_NAME|><|OUTPUT_SUFFIX|> : Controller
 {
-  {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
-  public <|CLASS_NAME|><|OUTPUT_SUFFIX|>(IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> repo)
-  {|END_REMOVE|}
-  {|REMOVE_WHEN:IsPrimaryKeyInteger|}
-  public <|CLASS_NAME|><|OUTPUT_SUFFIX|>(IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> repo)
-  {|END_REMOVE|}
+  public <|CLASS_NAME|><|OUTPUT_SUFFIX|>(<|REPOSITORY_INTERFACE|> repo)
   {
     _Repo = repo;
   }
 
-  {|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
-  private readonly IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search> _Repo;
-  {|END_REMOVE|}
-  {|REMOVE_WHEN:IsPrimaryKeyInteger|}
-  private readonly IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search> _Repo;
-  {|END_REMOVE|}
+  private readonly <|REPOSITORY_INTERFACE|> _Repo;
 
   [HttpGet]
   public async Task<IActionResult> <|CLASS_NAME|>Index()

@@ -1,0 +1,25 @@
+﻿using PDSC.Common.JWT;
+
+namespace <|NAMESPACE|>.MinWebAPI;
+
+public class <|NAMESPACE|>AppSettings
+{
+  public <|NAMESPACE|>AppSettings()
+  {
+    ApplicationName = "Film Collection";
+    BaseWebAPIService = "https://your.webapiurl.com/api";
+    InfoMessageDefault = "Problem Attempting to {Verb} using the {ClassName} API. Please Contact Your System Administrator.";
+    LoginDateTime = DateTime.Now;
+    UserName = "Unknown";
+    CORSPolicyName = "<|NAMESPACE|>Cors";
+    JWTSettings = new();
+  }
+
+  public string ApplicationName { get; set; }
+  public string BaseWebAPIService { get; set; }
+  public string InfoMessageDefault { get; set; }
+  public DateTime LoginDateTime { get; set; }
+  public string UserName { get; set; }
+  public string CORSPolicyName { get; set; }
+  public JwtSettings JWTSettings { get; set; }
+}

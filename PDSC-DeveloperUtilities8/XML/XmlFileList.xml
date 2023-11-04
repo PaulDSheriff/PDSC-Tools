@@ -3,113 +3,141 @@
   <XmlFile>
     <FileName>CodeGen-Controls.xml</FileName>
     <Description>Control template file names for different types of data, for different technologies (MAUI, MVC, WPF, etc.)</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-DataAnnotations.xml</FileName>
     <Description>Data Annotations to be used for different data types</Description>
+    <IsEditable>True</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-DataClasses-API.xml</FileName>
     <Description>Template file names used when generating Data Repository classes that call Web APIs</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-DataClasses-EF.xml</FileName>
     <Description>Template file names used when generating Data Repository classes that use the Entity Framework</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-EntityViewModel.xml</FileName>
     <Description>Template file names used when generating Entity, Search, and View Model classes</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-FilesToDelete.xml</FileName>
     <Description>Files to delete after code generation is complete for a template group</Description>
+    <IsEditable>True</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-FoldersToCopy.xml</FileName>
     <Description>Folders to copy after code generation is complete for a template group</Description>
+    <IsEditable>True</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-FoldersToDelete.xml</FileName>
     <Description>Folders to delete after code generation is complete for a template group</Description>
+    <IsEditable>True</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-MAUI-App.xml</FileName>
     <Description>Template file names used when generating a complete .NET MAUI application</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-MAUI-Views.xml</FileName>
     <Description>Template file names used when generating Views for lists and details, and View Model Commanding classes for a .NET MAUI application</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-MVC-App.xml</FileName>
     <Description>Template file names used when generating a complete MVC Website application</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-MVC-Views.xml</FileName>
     <Description>Template file names used when generating Views for lists and details, and Controller classes for an MVC Website application</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-WPF-App.xml</FileName>
     <Description>Template file names used when generating a complete WPF application</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-WPF-Views.xml</FileName>
     <Description>Template file names used when generating Views for lists and details for a WPF application</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-RepositoryDataGen.xml</FileName>
     <Description>Template file names used when generating hard-coded C# Data Repository classes from data within a specific table</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-ReservedWords.xml</FileName>
     <Description>File names that contain reserved words for different languages supported by the code generator</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-StandardFields.xml</FileName>
     <Description>Standard fields used in all tables of a database</Description>
+    <IsEditable>True</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-TemplateGroups.xml</FileName>
     <Description>The template group list that appears on the Code Generator utility</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-WebAPI-MVC-App-Controllers.xml</FileName>
     <Description>Template file names used when generating a complete Web API MVC application</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>CodeGen-WebAPI-MVC-Controllers.xml</FileName>
     <Description>Template file names used when generating Controller classes for a Web API MVC application</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>ComputerCleaner-FilesToRecycle.xml</FileName>
     <Description>File names to send to recycle bin when running the Computer Cleaner utility</Description>
+    <IsEditable>True</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>ComputerCleaner-FoldersToRecycle.xml</FileName>
     <Description>Folder names to send to recycle bin when running the Computer Cleaner utility</Description>
+    <IsEditable>True</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>LanguageDataTypes.xml</FileName>
     <Description>Data types used for each language supported in the PDSC Developer Utilities</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>Languages.xml</FileName>
     <Description>Languages supported in the PDSC Developer Utilities</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>LanguageScopes.xml</FileName>
     <Description>Scope keywords for each language supported in the PDSC Developer Utilities</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>ProjectCleaner-SourceControlTags.xml</FileName>
     <Description>Tags used in .SLN or .CSPROJ files that can be removed when running the Project Cleaner utility</Description>
+    <IsEditable>True</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>PropertyGen-Templates.xml</FileName>
     <Description>Template file names used in the Property Generation utility</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
   <XmlFile>
     <FileName>XmlFileList.xml</FileName>
     <Description>Descriptions for each of the XML files used by the PDSC Developer Utilities</Description>
+    <IsEditable>False</IsEditable>
   </XmlFile>
 </XmlFiles>

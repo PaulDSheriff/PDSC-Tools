@@ -1,0 +1,22 @@
+Instructions to Create a Minimal Web API Application
+------------------------------------------------------------------
+If you have not already done so, generate the following templates groups:
+   Entity/ViewModel Classes
+   Data Classes - Entity Framework
+   Minimal Web API - Application
+   Minimal Web API - Routers
+
+Step 1: Run the MinimalWebAPI-CreateSolution.cmd file
+Copy the MinimalWebAPI-CreateSolution.cmd file to your desired folder.
+This .cmd file creates the following folders/projects under this folder
+  <|NAMESPACE|>.DataLayer
+  <|NAMESPACE|>.EntityLayer
+  <|NAMESPACE|>.ViewModelLayer
+  <|NAMESPACE|>.MinWebAPI
+  PDSC.Common
+  PDSC.Common.Web
+Run the MinimalWebAPI-CreateSolution.cmd file.
+
+Step 2: Open the SLN file
+A <|NAMESPACE|>.MinWebAPI.sln file is created in your desired folder.
+Open this .sln file and you can run your Minimal Web API project.

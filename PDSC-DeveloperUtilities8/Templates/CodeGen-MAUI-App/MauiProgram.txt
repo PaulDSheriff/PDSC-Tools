@@ -79,7 +79,7 @@ public static class MauiProgram
   public static MauiAppBuilder RegisterRepositories(this MauiAppBuilder mauiAppBuilder)
   {
   {|FOR EACH TABLE|}
-    mauiAppBuilder.Services.AddScoped<{|REPO_INTERFACE|}<|NAMESPACE|>.EntityLayer.<|CLASS_NAME|>, <|CLASS_NAME|>Search>, <|CLASS_NAME|>RepositoryAPI>();
+    mauiAppBuilder.Services.AddScoped<<|REPOSITORY_INTERFACE|>, <|CLASS_NAME|>RepositoryAPI>();
   {|END_LOOP|}
 
     return mauiAppBuilder;

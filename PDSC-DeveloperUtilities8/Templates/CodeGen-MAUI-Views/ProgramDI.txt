@@ -1,6 +1,6 @@
 ﻿// ADD THE FOLLOWING TO THE RegisterRepositories() method
 {|FOR EACH TABLE|}
-  mauiAppBuilder.Services.AddScoped<{|REPO_INTERFACE|} <|NAMESPACE|>.EntityLayer.<|CLASS_NAME|>, <|CLASS_NAME|>Search>, <|CLASS_NAME|>RepositoryAPI>();
+  mauiAppBuilder.Services.AddScoped<<|REPOSITORY_INTERFACE|>, <|CLASS_NAME|>RepositoryAPI>();
 {|END_LOOP|}
 
 

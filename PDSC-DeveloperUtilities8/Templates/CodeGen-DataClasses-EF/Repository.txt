@@ -9,12 +9,7 @@ namespace <|NAMESPACE|>.DataLayer;
 /// constructors and properties.
 /// This class makes async calls to your data store.
 /// </summary>
-{|REMOVE_WHEN:IsPrimaryKeyNotInteger|}
-public partial class <|CLASS_NAME|>Repository : RepositoryBase, IRepository<<|CLASS_NAME|>, <|CLASS_NAME|>Search>
-{|END_REMOVE|}
-{|REMOVE_WHEN:IsPrimaryKeyInteger|}
-public partial class <|CLASS_NAME|>Repository : RepositoryBase, IRepositoryOtherPK<<|PK_LANGUAGE_DATA_TYPE_NEVER_NULLABLE|>, <|CLASS_NAME|>, <|CLASS_NAME|>Search>
-{|END_REMOVE|}
+public partial class <|CLASS_NAME|>Repository : RepositoryBase, <|REPOSITORY_INTERFACE|>
 {
   #region Constructor
   public <|CLASS_NAME|>Repository(<|DB_CONTEXT|> context)

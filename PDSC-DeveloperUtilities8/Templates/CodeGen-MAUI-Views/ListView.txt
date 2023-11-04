@@ -58,6 +58,7 @@
           </HorizontalStackLayout>
         </Grid>
       </VerticalStackLayout>
+      <|GRID_ROW_RESET|>
 
       <!-- ********* -->
       <!-- List Area -->
@@ -73,36 +74,36 @@
           </CollectionView.EmptyView>
           <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="model:<|CLASS_NAME|>">
-              <Frame Style="{StaticResource Frame.CollectionTemplate}">
-                <VerticalStackLayout Spacing="5"
-                                     Padding="5">
-                  <VerticalStackLayout.Resources>
-                    <Style TargetType="HorizontalStackLayout">
-                      <Setter Property="Padding"
-                              Value="5" />
-                    </Style>
-                  </VerticalStackLayout.Resources>
-                  {|FOR EACH COLUMN:DisplayInTable|}
-                  <HorizontalStackLayout>
-                    <Label Text="<|PROPERTY_LABEL|>"
-                           FontAttributes="Bold" />
-                    <Label Text="{Binding <|PROPERTY_NAME|>}" />
-                  </HorizontalStackLayout>
-                  {|END_LOOP|}
-                  <HorizontalStackLayout>
-                    <ImageButton Source="edit.png"
-                                 ToolTipProperties.Text="Edit <|CLASS_NAME_SINGULAR|>"                                 
-                                 BackgroundColor="{StaticResource EditButton}"
-                                 CommandParameter="{Binding <|PK_PROPERTY_NAME|>}"
-                                 Command="{Binding BindingContext.EditCommand, Source={x:Reference <|CLASS_NAME|>ListPage}}" />
-                    <ImageButton Source="trash.png"
-                                 ToolTipProperties.Text="Delete <|CLASS_NAME_SINGULAR|>"
-                                 BackgroundColor="{StaticResource DeleteButton}"
-                                 CommandParameter="{Binding <|PK_PROPERTY_NAME|>}"
-                                 Command="{Binding BindingContext.DeleteCommand, Source={x:Reference <|CLASS_NAME|>ListPage}}" />
-                  </HorizontalStackLayout>
-                </VerticalStackLayout>
-              </Frame>
+              <Grid RowDefinitions="<|GRID_ROW_AUTO_TABLE|>,Auto,Auto" 
+                    ColumnDefinitions="Auto,*"
+                    ColumnSpacing="4"
+                    RowSpacing="2">
+                {|FOR EACH COLUMN:DisplayInTable|}
+                <Label Grid.Row="<|GRID_ROW_FIRST|>"
+                        Grid.Column="0"
+                        Text="<|PROPERTY_LABEL|>"
+                        Style="{StaticResource Grid.Label.Description}" />
+                <Label Grid.Row="<|GRID_ROW_SECOND|>"
+                        Grid.Column="1"
+                        Text="{Binding <|PROPERTY_NAME|>}" />
+                {|END_LOOP|}
+                <HorizontalStackLayout Grid.Row="<|GRID_ROW|>"
+                                        Grid.ColumnSpan="2">
+                  <ImageButton Source="edit.png"
+                                ToolTipProperties.Text="Edit <|CLASS_NAME_SINGULAR|>"                                 
+                                BackgroundColor="{StaticResource EditButton}"
+                                CommandParameter="{Binding <|PK_PROPERTY_NAME|>}"
+                                Command="{Binding BindingContext.EditCommand, Source={x:Reference <|CLASS_NAME|>ListPage}}" />
+                  <ImageButton Source="trash.png"
+                                ToolTipProperties.Text="Delete <|CLASS_NAME_SINGULAR|>"
+                                BackgroundColor="{StaticResource DeleteButton}"
+                                CommandParameter="{Binding <|PK_PROPERTY_NAME|>}"
+                                Command="{Binding BindingContext.DeleteCommand, Source={x:Reference <|CLASS_NAME|>ListPage}}" />
+                </HorizontalStackLayout>
+                <BoxView Grid.Row="<|GRID_ROW|>"
+                         Grid.ColumnSpan="2"                         
+                         Style="{StaticResource Grid.Item.Separator}" />
+              </Grid>
             </DataTemplate>
           </CollectionView.ItemTemplate>
         </CollectionView>

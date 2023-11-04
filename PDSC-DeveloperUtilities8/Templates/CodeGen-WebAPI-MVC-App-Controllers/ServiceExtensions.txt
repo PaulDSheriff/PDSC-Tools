@@ -12,7 +12,7 @@ public static class ServiceExtension
   {
     // Add Repository Classes
     {|FOR EACH TABLE|}
-    services.AddScoped<{|REPO_INTERFACE|} <|CLASS_NAME|>, <|CLASS_NAME|>Search>, <|CLASS_NAME|>Repository>();
+    services.AddScoped<<|REPOSITORY_INTERFACE|>, <|CLASS_NAME|>Repository>();
     {|END_LOOP|}
   }
   

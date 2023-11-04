@@ -1,0 +1,58 @@
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
+namespace <|NAMESPACE|>.MinWebAPI.ExtensionClasses;
+
+public static class SecurityExtensions
+{
+  public static AuthenticationBuilder ConfigureJwtAuthentication(this IServiceCollection services, <|NAMESPACE|>AppSettings settings)
+  {
+    // Add Authentication to Services
+    return services.AddAuthentication(options =>
+    {
+      options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+      options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+      options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+    }).AddJwtBearer(jwtOptions =>
+    {
+      jwtOptions.TokenValidationParameters =
+        new TokenValidationParameters {
+          ValidIssuer = settings.JWTSettings.Issuer,
+          ValidAudience = settings.JWTSettings.Audience,
+          IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(settings.JWTSettings.Key)),
+          ValidateIssuer = true,
+          ValidateAudience = true,
+          ValidateLifetime = true,
+          ValidateIssuerSigningKey = true,
+          ClockSkew = TimeSpan.FromMinutes(settings.JWTSettings.MinutesToExpiration)
+        };
+    });
+  }
+
+  public static IServiceCollection ConfigureJwtAuthorization(this IServiceCollection services)
+  {
+    return services.AddAuthorization(options =>
+    {
+      // TODO: Add any policies here
+      options.AddPolicy("POLICY NAME", policy => policy.RequireClaim("CLAIM TYPE"));
+    });
+  }
+
+  public static IServiceCollection ConfigureCors(this IServiceCollection services, <|NAMESPACE|>AppSettings settings)
+  {
+    // Add CORS
+    return services.AddCors(options =>
+    {
+      options.AddPolicy(settings.CORSPolicyName,
+        builder =>
+        {
+          // Add any valid IP's that can call this Web API
+          foreach (var ip in settings.JWTSettings.AllowedIPAddresses) {
+            builder.WithOrigins(ip);
+          }
+        });
+    });
+  }
+}

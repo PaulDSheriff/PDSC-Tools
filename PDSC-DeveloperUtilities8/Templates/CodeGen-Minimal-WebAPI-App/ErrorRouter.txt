@@ -1,0 +1,79 @@
+﻿using Microsoft.AspNetCore.Diagnostics;
+using PDSC.Common.Web;
+
+namespace <|NAMESPACE|>.MinWebAPI.RouterClasses;
+
+public class ErrorRouter : RouterBase
+{
+  public ErrorRouter(ILogger<ErrorRouter> logger) : base(logger)
+  {
+  }
+
+  /// <summary>
+  /// Add routes
+  /// </summary>
+  /// <param name="app">A WebApplication object</param>
+  public override void AddRoutes(WebApplication app)
+  {
+    app.Map("/StatusCode/{code:int}", (int code, HttpContext context) => StatusCode(code, context));
+    app.Map("/DevelopmentError", (HttpContext context) => DevelopmentErrorHandler(context));
+    app.Map("/ProductionError", (HttpContext context) => ProductionErrorHandler(context));
+  }
+
+  protected virtual IResult StatusCode(int code, HttpContext context)
+  {
+    string msg = "Unknown Code";
+
+    // Get some path information
+    var feature = context.Features.Get<IStatusCodeReExecuteFeature>();
+    if (feature != null) {
+      msg = feature.OriginalPathBase
+          + feature.OriginalPath
+          + feature.OriginalQueryString;
+    }
+
+    switch (code) {
+      case 401:
+        msg = $"You are not authorized for this route: '{msg}'";
+        break;
+      case 403:
+        msg = $"You are forbidden from accessing this route: '{msg}'";
+        break;
+      case 404:
+        msg = $"API Route Was Not Found: '{msg}'";
+        break;
+      default:
+        break;
+    }
+
+    return Results.Problem(msg, statusCode: code);
+  }
+
+  protected virtual IResult DevelopmentErrorHandler(HttpContext context)
+  {
+    string msg = "Unknown Exception";
+
+    var features = context.Features.Get<IExceptionHandlerFeature>();
+
+    if (features != null) {
+      msg = "Message: " + features.Error.Message;
+      msg += Environment.NewLine + "Source: " + features.Error.Source;
+      msg += Environment.NewLine + features.Error.StackTrace;
+    }
+
+    return Results.Problem(msg);
+  }
+
+  protected virtual IResult ProductionErrorHandler(HttpContext context)
+  {
+    string msg = "Unknown Exception";
+
+    var features = context.Features.Get<IExceptionHandlerFeature>();
+
+    if (features != null) {
+      msg = features.Error.Message;
+    }
+
+    return Results.Problem(msg);
+  }
+}

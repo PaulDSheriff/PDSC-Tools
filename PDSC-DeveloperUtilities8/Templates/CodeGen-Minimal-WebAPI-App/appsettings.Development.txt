@@ -1,0 +1,25 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "<|CONNECTION_STRING|>;MultipleActiveResultSets=true;TrustServerCertificate=True;Application Name=<|APPLICATION_NAME_NO_SPACES|>"
+  },
+  "<|NAMESPACE|>AppSettings": {
+    "ApplicationName" : "<|APPLICATION_NAME|>",
+    "BaseWebAPIService": "http://localhost:5000/api",
+        "UserName": "ApiUser", // This should be overridden in your application
+    "InfoMessageDefault": "Problem Attempting to {Verb} using the {ClassName} API. Please Contact Your System Administrator.",
+    "CORSPolicyName": "FilmCollectionCors",
+    "JwtSettings": {
+      "key": "This!Is&A*Long(Key)For#Creating(A)Symmetric*Key",
+      "issuer": "https://localhost:7083",
+      "audience": "AdvWorksAPI",
+      "minutesToExpiration": "10",
+      "AllowedIPAddresses": [ "https://www.ipaddr1.com", "https://www.ipaddr2.com" ]
+    }
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  }
+}

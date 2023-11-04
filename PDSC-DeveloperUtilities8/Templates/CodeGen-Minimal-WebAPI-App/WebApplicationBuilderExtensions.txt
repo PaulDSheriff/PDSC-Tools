@@ -1,0 +1,17 @@
+﻿namespace <|NAMESPACE|>.MinWebAPI.ExtensionClasses;
+
+public static class WebApplicationBuilderExtensions
+{
+  public static <|NAMESPACE|>AppSettings ConfigureGlobalSettings(this WebApplicationBuilder builder)
+  {
+    // Configure Global Settings
+    builder.Services.AddSingleton<<|NAMESPACE|>AppSettings, <|NAMESPACE|>AppSettings>();
+
+    // Read "<|NAMESPACE|>AppSettings" section and add as a singleton
+    <|NAMESPACE|>AppSettings settings = new();
+    builder.Configuration.GetSection("<|NAMESPACE|>AppSettings").Bind(settings);
+    builder.Services.AddSingleton<<|NAMESPACE|>AppSettings>(settings);
+
+    return settings;
+  }
+}
