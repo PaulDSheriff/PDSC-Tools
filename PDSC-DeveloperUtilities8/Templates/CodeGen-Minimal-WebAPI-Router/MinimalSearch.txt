@@ -24,7 +24,7 @@ public class <|CLASS_NAME|>BindSearch
     ret = ValueTask.FromResult(
       new <|CLASS_NAME|>BindSearch {
         {|FOR EACH COLUMN:IsSearchField|}
-        <|PROPERTY_NAME|> = httpContext.Request.Query["<|PROPERTY_NAME|>"].ToString()
+        <|PROPERTY_NAME|> = httpContext.Request.Query["<|PROPERTY_NAME|>"].ToString()<|COMMA|>
         {|END_LOOP|}
       });
 

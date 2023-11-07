@@ -1,10 +1,19 @@
-﻿PDSC Developer Utilities v8.1.0 - 11/06/2023
+﻿PLEASE NOTE!
+The new version of these utilities (written in .NET 7) is located at https://github.com/PaulDSheriff/PDSC-DevUtils.
+
+
+PDSC Developer Utilities v8.1.1 - 11/07/2023
+-----------------------------------------------------
+Fixed bug in Minimal API Search class where a comma was missing
+Fixed the Styles.xaml file in the WPF project where the wrong class named was used for a resource
+
+
+PDSC Developer Utilities v8.1.0 - 11/06/2023
 -----------------------------------------------------
 Added ability to read release notes from the splash screen
 Added MIT License in the lower right status bar
 Remove the shadows around the borders of the screens and modified other cosmetic items
 More clean up of older classes in PDSC.Common library
-
 NOTE: This is the last version of these tools written in .NET Framework 4.8
 
 

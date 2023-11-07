@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
-                    xmlns:common="clr-namespace:PDSC.WPF;assembly=PDSC.WPF">
+                    xmlns:converters="clr-namespace:PDSC.Common.WPF.Converters">
   <!-- *************** -->
   <!-- Other Resources -->
   <!-- *************** -->
@@ -9,7 +9,7 @@
     Film Collection
   </sys:String>
   <BooleanToVisibilityConverter x:Key="BoolToVisibility" />
-  <common:PDSCNotBooleanToVisibilityConverter x:Key="InvertBoolToVisibility" />
+  <converters:InvertedBoolConverter x:Key="InvertBoolToVisibility" />
 
   <!-- ************************************************** -->
   <!-- ** Base Control Styles ** -->
